@@ -2,7 +2,7 @@
 .logo1{
     height: 100px;
     width: 300px;
-    margin-left: -100px;
+    margin-left: -20px;
 }
 
 .links{
@@ -28,7 +28,7 @@
 .menu{
     color: black;
     font-size: 20px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
 }
 .bg_img5{
     background-image: url(../Assets/Assets/Bottom/img5.png) ;
@@ -41,3 +41,37 @@
     color: #fff;
 }
 
+.pitch{
+    background-image: url(../Assets/Assets/Home/pitch.png);
+}
+.train{
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+}
+.child{
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+
+}
+.adult{
+    border-radius: 50%;
+    border: 1px solid #F2A745;
+    border-style: solid;
+}
+.license{
+    color: white;
+    background-color: #F96945;
+    border-radius: 50px;
+    height: 60px;
+    font-weight: 800;
+    /* margin-top: 210px; */
+    width: 210px;
+    text-align: center;
+    
+}

@@ -28,9 +28,11 @@ const Header = () => {
               <Nav.Link href="#home" className='ms-3 menu'>Contact</Nav.Link>
              
             </Nav>
-            <img src={logo1} className='logo2' />
+            {/* <img src={logo1} className='logo2 ' /> */}
           </Navbar.Collapse>
+          
         </Container>
+        <img src={logo1} className='logo2'/>
       </Navbar>
 
     </>
