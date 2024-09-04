@@ -1,6 +1,6 @@
 
 .logo1{
-    height: 100px;
+    height: 90px;
     width: 300px;
     margin-left: -20px;
 }
@@ -41,6 +41,11 @@
     color: #fff;
 }
 
+.footericon{
+    height: 40px;
+    width: 40px;
+}
+
 .pitch{
     background-image: url(../Assets/Assets/Home/pitch.png);
 }
@@ -64,14 +69,49 @@
     border: 1px solid #F2A745;
     border-style: solid;
 }
+/* .sidebox{
+    height: "500px";
+    background-color: white;
+     border-radius: 10px;
+     box-shadow: 8px 8px 40px 0px #00000040;
+      border-bottom: 10px solid #F96945;
+} */
 .license{
     color: white;
     background-color: #F96945;
     border-radius: 50px;
-    height: 60px;
+    height: 50px;
     font-weight: 800;
-    /* margin-top: 210px; */
-    width: 210px;
     text-align: center;
-    
 }
+.rto{
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.circle{
+    position: absolute;
+    background-image: url(../Assets/Assets/Homecounter/circle.png);
+    border-radius: 50%;
+    height: 250px;
+    border: 10px solid #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+.abc{
+    max-width: 100%;
+}
+@media screen and (max-width:756px){
+     .train{
+        width: 100% !important;
+        
+     }
+     .child{
+        width: 100% !important;
+     }
+     .adult{
+        width: 100%;
+     }
+     
+    }

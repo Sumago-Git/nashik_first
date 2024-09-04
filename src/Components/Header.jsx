@@ -12,7 +12,7 @@ const Header = () => {
   
   return (
     <>
-      <Navbar expand="lg" className="">
+      <Navbar expand="lg" className="p-0">
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo1} className='logo1' />
@@ -20,7 +20,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto links">
-              <Nav.Link href="#home" className='ms-3 menu '>About Us</Nav.Link>
+              <Nav.Link href="about" className='ms-3 menu '>About Us</Nav.Link>
               <Nav.Link href="#link" className='ms-3 menu'>Events</Nav.Link>
               <Nav.Link href="#home" className='ms-3 menu'>Training</Nav.Link>
               <Nav.Link href="#link" className='ms-3 menu'>Traffic Awarness video</Nav.Link>

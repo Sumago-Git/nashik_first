@@ -1,7 +1,7 @@
 import React from 'react'
 // import '../Components/Header.css'
-import lghead from '../../../Assets/Assets/MainBanner/lghead.png';
-import img4 from "../../../Assets/Assets/MainBanner/img4.jpg"
+import lghead from '../Assets/Assets/MainBanner/lghead.png';
+import img4 from "../Assets/Assets/MainBanner/img4.jpg";
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 

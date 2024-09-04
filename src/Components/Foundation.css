@@ -1,0 +1,44 @@
+.body{
+    background: #F7F7F7;
+
+}
+
+.text{
+    font-size: 45px ;
+    font-family: "Nanum Gothic", sans-serif;
+    /* font-weight: 40px; */
+    
+}
+.text1{
+    font-size: 25px !important;
+    font-family: "Nanum Gothic", sans-serif;
+    line-height: 1.2;
+
+}
+.text2{
+    font-size: 16px ;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.gruop{
+    width: 500px;
+    height: 400px;
+}
+
+@media screen and (max-width:756px){
+    .gruop{
+        width: 100%;
+    }
+    .text{width: 100%;
+        font-size: 15px;
+        font-weight: 20;
+    }
+    .text1{
+        font-size: 20px;
+    }
+    .text2{
+        font-size: 15px;
+    }
+
+    
+}

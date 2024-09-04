@@ -1,0 +1,37 @@
+.text{
+    font-size: 45px;
+    font-weight: 800;
+}
+.v{
+    width: 100% ;
+    height: 300px;
+    position: relative;
+}
+
+.vtext{
+    position: absolute;
+    margin-left: 710px;
+    margin-top: -210px;
+    color: white;
+    font-size: 25px;
+    font-family: "Nanum Gothic", sans-serif;
+    line-height: 1;
+
+    
+}
+
+.m{
+    width: 100% ;
+    height: 400px;
+    position: relative;
+}
+
+.mtext{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: -330px;
+    color: white;
+    font-size: 26px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+}
