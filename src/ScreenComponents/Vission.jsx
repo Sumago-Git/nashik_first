@@ -10,9 +10,9 @@ const Vission = () => {
   return (
     <>
       <Container fluid className='mt-5 p-0'>
-        <Row>
+        <Row className='me-0'>
           <Col lg={4}>
-            < text className='text ms-5 ps-5'>Our Vision</text>
+            < text className='text ms-5 ps-0'>Our Vision</text>
           </Col>
         </Row>
 
@@ -28,7 +28,7 @@ const Vission = () => {
       </Container>
 
       <Container fluid className='mt-5 p-0'>
-        <Row>
+        <Row className='me-0'>
           <Col lg={12} className='text-end pe-5'>
             < text className='text me-5 pe-5'>Our Mission</text>
           </Col>

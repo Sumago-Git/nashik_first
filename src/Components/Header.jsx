@@ -14,18 +14,18 @@ const Header = () => {
     <>
       <Navbar expand="lg" className="p-0">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="home">
             <img src={logo1} className='logo1' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto links">
               <Nav.Link href="about" className='ms-3 menu '>About Us</Nav.Link>
-              <Nav.Link href="#link" className='ms-3 menu'>Events</Nav.Link>
-              <Nav.Link href="#home" className='ms-3 menu'>Training</Nav.Link>
-              <Nav.Link href="#link" className='ms-3 menu'>Traffic Awarness video</Nav.Link>
-              <Nav.Link href="#link" className='ms-3 menu'>Investor</Nav.Link>
-              <Nav.Link href="#home" className='ms-3 menu'>Contact</Nav.Link>
+              <Nav.Link href="events" className='ms-3 menu'>Events</Nav.Link>
+              <Nav.Link href="training" className='ms-3 menu'>Training</Nav.Link>
+              <Nav.Link href="awarnessvideo" className='ms-3 menu'>Traffic Awarness video</Nav.Link>
+              <Nav.Link href="investor" className='ms-3 menu'>Investor</Nav.Link>
+              <Nav.Link href="contact" className='ms-3 menu'>Contact</Nav.Link>
              
             </Nav>
             {/* <img src={logo1} className='logo2 ' /> */}

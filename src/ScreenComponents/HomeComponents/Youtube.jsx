@@ -6,7 +6,6 @@ import yt1 from '../../Assets/Assets/Youtube/yt1.png';
 import '../../Components/Youtube.css';
 
 const Youtube = () => {
-  // Array of YouTube videos
   const videos = [
     {
       imgSrc: yt1,
@@ -14,14 +13,14 @@ const Youtube = () => {
     },
     {
       imgSrc: yt1,
-      url: null, // no link for the second image
+      url: null, 
     },
   ];
 
   return (
     <>
       <Container className='mt-5'>
-        <Row className='mx-auto'>
+        <Row className='mx-5'>
           {videos.map((video, index) => (
             <Col key={index} lg={6}>
               {video.url ? (

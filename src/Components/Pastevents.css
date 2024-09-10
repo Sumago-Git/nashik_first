@@ -1,0 +1,30 @@
+.eventbanner{
+    position: relative;
+}
+
+/* .eventheadline{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -900px;
+    color: white;
+} */
+
+.trainingeventbg{
+    background: linear-gradient(90deg, #FFFFFF 0%, #FFE9E4 100%);
+
+}
+
+.trainingeventheadline{
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+}
+
+.eventimg{
+    width: 400px;
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,37 @@
+.videobg {
+    background: #FFEFEB;
+}
+
+.videoheadline {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.videoimg {
+    width: 429px;
+    height: 300px;
+    margin-left: -33px;
+    margin-top: -39px;
+}
+
+.videotext {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    margin-top: -30px;
+}
+
+.ourvideoheadline {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+@media screen and(min-width:480px) {
+    .videoimg{
+        width: 100%;
+    }
+    
+}

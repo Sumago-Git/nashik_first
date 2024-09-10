@@ -1,8 +1,6 @@
 import React from 'react';
 import '../Components/Header.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Container } from 'react-bootstrap';
+import { Container,Row,Col } from 'react-bootstrap';
 import phone from '../Assets/Assets/Bottom/phone.png';
 import email from '../Assets/Assets/Bottom/email.png';
 import location from '../Assets/Assets/Bottom/location.png';
@@ -14,10 +12,8 @@ import email2 from '../Assets/Assets/Bottom/email2.png';
 import whatsapp2 from '../Assets/Assets/Bottom/whatsapp2.png';
 
 const Bottom = () => {
-  // Array for Quick Links
   const quickLinks = ['Home', 'About us', 'Events', 'Training', 'Traffic Awareness Video'];
 
-  // Array for Contact Details
   const contactDetails = [
     { icon: whatsapp, text: '+91 0000000000' },
     { icon: phone, text: '+91 253 2315966' },
@@ -25,7 +21,6 @@ const Bottom = () => {
     { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true },
   ];
 
-  // Array for Social Media Icons
   const socialIcons = [facebook, insta, email2, whatsapp2];
 
   return (
@@ -33,7 +28,6 @@ const Bottom = () => {
       <section className='bg_img5'>
         <Container fluid>
           <Row className='loc'>
-            {/* Location Section */}
             <Col lg={5} className='mt-5 ms-5'>
               <h2 className='text-start'>LOCATION</h2>
               <iframe
@@ -48,7 +42,6 @@ const Bottom = () => {
               ></iframe>
             </Col>
 
-            {/* Quick Links Section */}
             <Col sm={2} className='mt-5 ms-1'>
               <h4 className='text-start'>QUICK LINKS</h4>
               {quickLinks.map((link, index) => (
@@ -63,7 +56,6 @@ const Bottom = () => {
               ))}
             </Col>
 
-            {/* Contact Details Section */}
             <Col lg={3} className="mt-5 ms-4 text-start">
               <h4>CONTACT DETAILS</h4>
               {contactDetails.map((detail, index) => (
@@ -77,7 +69,6 @@ const Bottom = () => {
                 </Row>
               ))}
 
-              {/* Social Media Icons */}
               <Row className="mt-1">
                 <Col lg={4}>
                   <p className='text-start'>FollowUs On</p>
