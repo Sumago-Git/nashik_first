@@ -1,6 +1,4 @@
-.eventbanner{
-    position: relative;
-}
+
 
 /* .eventheadline{
     font-family: "Nanum Gothic", sans-serif;
@@ -23,8 +21,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-.eventimg{
+.events{
     width: 400px;
-    margin: 0px;
-    padding: 0px;
 }

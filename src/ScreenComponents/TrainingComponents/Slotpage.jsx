@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.png";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
+import { useLocation } from 'react-router-dom';
 
 const Slotpage = () => {
+    const [slotDate, setSlotDate] = useState("")
+    const location = useLocation()
+
+    useEffect(() => {
+        if (location) {
+            const date = new Date(location.state.selectedDate);
+            // Format options
+            const options = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
+
+            // Get the formatted date in 'Tuesday 10/09/2024' format
+            const formattedDate = date.toLocaleDateString('en-GB', options).replace(',', '');
+            setSlotDate(formattedDate)
+
+        }
+    }, [location])
+
+
+
     const sessions = [
         { time: "10:30 A.M.", session: "Session 1" },
         { time: "03:30 P.M.", session: "Session 2" }
@@ -22,9 +41,9 @@ const Slotpage = () => {
                         organized by RTO, Nashik and Nashik First.
                     </p>
                     <p className='slotpagepara text-start'>
-                        This programme is conducted exclusively for people holding Learner License & applied for Permanent License. 
-                        It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving, 
-                        Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving. 
+                        This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
+                        It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
+                        Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
                         Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
                     </p>
 
@@ -32,7 +51,7 @@ const Slotpage = () => {
                         Click on the calendar date & time slot, then fill out the form below to schedule your training.
                     </Container>
 
-                    <h1 className='daydate mt-5'>Saturday 07/09/2024</h1>
+                    <h1 className='daydate mt-5'>{slotDate}</h1>
 
                     <Container className='mt-5'>
                         <Row>

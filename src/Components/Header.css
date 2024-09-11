@@ -102,16 +102,3 @@
 .abc{
     max-width: 100%;
 }
-@media screen and (max-width:756px){
-     .train{
-        width: 100% !important;
-        
-     }
-     .child{
-        width: 100% !important;
-     }
-     .adult{
-        width: 100%;
-     }
-     
-    }

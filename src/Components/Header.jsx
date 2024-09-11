@@ -9,7 +9,7 @@ import logo1 from '../Assets/Assets/Home/logo1.png';
 
 
 const Header = () => {
-  
+
   return (
     <>
       <Navbar expand="lg" className="p-0">
@@ -26,13 +26,13 @@ const Header = () => {
               <Nav.Link href="awarnessvideo" className='ms-3 menu'>Traffic Awarness video</Nav.Link>
               <Nav.Link href="investor" className='ms-3 menu'>Investor</Nav.Link>
               <Nav.Link href="contact" className='ms-3 menu'>Contact</Nav.Link>
-             
+
             </Nav>
             {/* <img src={logo1} className='logo2 ' /> */}
           </Navbar.Collapse>
-          
+
         </Container>
-        <img src={logo1} className='logo2'/>
+        <img src={logo1} className='logo2' />
       </Navbar>
 
     </>
