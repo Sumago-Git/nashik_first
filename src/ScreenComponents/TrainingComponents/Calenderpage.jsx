@@ -3,6 +3,7 @@ import { Container, Table, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
+import lghead from "../../Assets/Assets/MainBanner/lghead.png"
 import "../../Components/Calender.css";
 
 // Define static event data with text
@@ -86,17 +87,39 @@ const Calendar = () => {
   };
 
   return (
+<>
+    <Container fluid className='m-0 p-0'>
+    <img src={lghead} className='w-100' alt="Header" />
+  </Container>
+
     <Container fluid className="slotbg pb-5 mb-4">
+
+    <Container>
+          <p className='slotheadline text-start m-0 pt-5'>
+            Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First.
+          </p>
+          <p className='slotpagepara text-start'>
+            This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
+            It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
+            Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
+            Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
+          </p>
+
+          <Container className='datetime p-3'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </Container>
+        </Container>
       <Container className="calender mt-5">
         <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
           <button className="btn ms-1" onClick={() => changeMonth('prev')}>
-            <img src={leftarrow} className="w-75 arrowimg" alt="Previous" />
+            <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
           </button>
-          <h3 className="calenderheadline mx-4">
+          <h3 className="calenderheadline mx-4 mt-4">
             {monthNames[currentMonth]} {currentYear}
           </h3>
-          <button className="btn ms-1" onClick={() => changeMonth('next')}>
-            <img src={rightarrow} className="w-75 arrowimg" alt="Next" />
+          <button className="btn ms-1 " onClick={() => changeMonth('next')}>
+            <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
           </button>
         </Col>
 
@@ -158,6 +181,7 @@ const Calendar = () => {
         </Container>
       </Container>
     </Container>
+    </>
   );
 };
 
