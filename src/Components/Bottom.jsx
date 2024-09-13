@@ -51,35 +51,35 @@ const Bottom = () => {
               {quickLinks.map((link, index) => (
                 <Row key={index}>
                   <Col sm={1} xs={1} className='mt-3'>
-                    <img src={Ellipse} alt="Bullet" style={{ width: '10px' }} />
+                    <img src={Ellipse} alt="Bullet" style={{ width: '20px' }} />
                   </Col>
                   <Col sm={10} xs={10} className='mt-3'>
-                    <h6 className='text-start'>{link}</h6>
+                    <h4 className='text-start'>{link}</h4>
                   </Col>
                 </Row>
               ))}
             </Col>
 
             <Col sm={12} lg={4} className="mt-5">
-              <h4>CONTACT DETAILS</h4>
+              <h4 className='text-start'>CONTACT DETAILS</h4>
               {contactDetails.map((detail, index) => (
                 <Row className={`align-items-center mt-3 ${detail.isAddress ? 'pt-2' : ''}`} key={index}>
                   <Col lg={2} xs={2}>
                     <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} />
                   </Col>
                   <Col lg={10} xs={10}>
-                    {detail.isAddress ? <p className="text-start">{detail.text}</p> : <h6 className="text-start">{detail.text}</h6>}
+                    {detail.isAddress ? <p className="text-start" style={{fontSize:"20px", fontWeight:"600"}}>{detail.text}</p> : <h4 className="text-start">{detail.text}</h4>}
                   </Col>
                 </Row>
               ))}
 
               <Row className="mt-3">
-                <Col lg={4}>
-                  <p className='text-start'>Follow Us On</p>
+                <Col lg={4} className='text-start p-0'>
+                  <h4 className=' mt-4'>Follow Us On</h4>
                 </Col>
                 {socialIcons.map((icon, index) => (
-                  <Col lg={2} xs={2} key={index}>
-                    <img src={icon} className='footericon' alt="Social Icon" />
+                  <Col lg={2} xs={2} key={index} style={{width:"70px"}}>
+                    <img src={icon} className='followicon' alt="Social Icon"  />
                   </Col>
                 ))}
               </Row>

@@ -67,6 +67,10 @@ const Calendar = () => {
     "July", "August", "September", "October", "November", "December"
   ];
 
+  // Get today's date
+  const today = new Date();
+  const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
+
   // Helper function to check if a date has an event and return the text
   const getEventText = (date) => {
     const event = eventData.find(event => {
@@ -85,6 +89,12 @@ const Calendar = () => {
       // Redirect to another page and pass the date as state
       navigate("/slotpage", { state: { selectedDate: clickedDate } });
     }
+  };
+
+  // Compare date to check if it is in the past
+  const isPastDate = (day) => {
+    const dateToCheck = new Date(currentYear, currentMonth, day);
+    return dateToCheck < today.setHours(0, 0, 0, 0); // Disable all past dates before today
   };
 
   return (
@@ -114,13 +124,21 @@ const Calendar = () => {
         </Container>
         <Container className="calender mt-5">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
-            <button className="btn ms-1" onClick={() => changeMonth('prev')}>
+            {/* Disable the left arrow if the user is on the current month */}
+            <button 
+              className="btn ms-1" 
+              onClick={() => changeMonth('prev')}
+              disabled={isCurrentMonth} // Disable if current month is being displayed
+            >
               <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
             </button>
             <h3 className="calenderheadline mx-4 mt-4">
               {monthNames[currentMonth]} {currentYear}
             </h3>
-            <button className="btn ms-1 " onClick={() => changeMonth('next')}>
+            <button 
+              className="btn ms-1" 
+              onClick={() => changeMonth('next')}
+            >
               <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
             </button>
           </Col>
@@ -150,20 +168,21 @@ const Calendar = () => {
                     {week.map((day, dayIndex) => {
                       const date = day && new Date(currentYear, currentMonth, day);
                       const eventText = date && getEventText(date);
+                      const disabled = day && isPastDate(day); // Check if day is in the past
 
                       return (
                         <td
                           key={dayIndex}
-                          onMouseEnter={() => day && setHoveredDay(day)}
-                          onMouseLeave={() => day && setHoveredDay(null)}
-                          onClick={() => handleDateClick(day)} // Handle date click
+                          onMouseEnter={() => day && !disabled && setHoveredDay(day)}
+                          onMouseLeave={() => day && !disabled && setHoveredDay(null)}
+                          onClick={() => !disabled && handleDateClick(day)} // Handle date click only if it's not disabled
                           style={{
                             height: "100px",
                             textAlign: "end",
                             verticalAlign: "middle", // Center the text vertically
-                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (day === hoveredDay ? "#e0e0e0" : "white")),
-                            color: day && (day.isNextMonth ? "#ccc" : "black"),
-                            pointerEvents: day && day.isNextMonth ? "none" : "auto", // Disable interaction for next month's days
+                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (disabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
+                            color: day && (day.isNextMonth ? "#ccc" : disabled ? "#999" : "black"),
+                            pointerEvents: day && (disabled ? "none" : "auto"), // Disable interaction for past days
                             transition: 'background-color 0.3s', // Smooth transition for background color change
                           }}
                         >
@@ -174,6 +193,7 @@ const Calendar = () => {
                             </div>
                           )}
                         </td>
+
                       );
                     })}
                   </tr>

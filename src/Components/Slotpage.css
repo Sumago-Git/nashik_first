@@ -81,3 +81,15 @@ font-size: 29px;
     border: 2px solid #F96945;
     border-radius: 20px;
 }
+
+.radiobtn{
+    height: 25px;
+    width: 25px;
+    background-color: #F96945;
+    /* margin-left: -455px; */
+}
+
+.btntext{
+    font-size: 25px;
+    font-weight: 600;
+}

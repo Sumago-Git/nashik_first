@@ -1,4 +1,4 @@
-.calender{
+.calender {
     height: 750px;
     width: 1000px !important;
     box-shadow: 12px 13px 120px 0px #00000040;
@@ -6,29 +6,32 @@
     background-color: white;
 }
 
-.calenderheadline{
+.calenderheadline {
     font-family: "Nanum Gothic", sans-serif;
     font-size: 40px;
     font-weight: 800 !important;
 }
 
-.btn{
+.btn {
     border: 0px;
     background: none;
+    outline: none;
 }
 
-.arrowimg{
+.arrowimg {
     margin-top: -20px;
+    border: 0px;
+    outline: none;
 }
 
-.datebox{
+.datebox {
     height: 110px;
     width: 130px !important;
     border: 2px solid grey;
     margin-left: -20px;
 }
 
-.holidaybox{
+.holidaybox {
     background: #FFE2DB;
     color: #C50E22;
     font-size: 25px;
@@ -36,10 +39,19 @@
     font-family: "Poppins", sans-serif;
 }
 
-.availablebox{
+.availablebox {
     background: #DBFFE3;
     font-size: 20px;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
 
+}
+
+.btn:disabled,
+fieldset:disabled .btn {
+    border-color: floralwhite !important;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    border-color: floralwhite !important;
 }
