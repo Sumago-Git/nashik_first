@@ -28,9 +28,14 @@
     font-weight: 600;
     font-size: 30px;
     border-radius: 20px;
-
 }
 
+@media (max-width: 576px){
+    .session{
+        margin: 25px;
+        
+    }
+}
 .returnbutton{
     background-color: #F96945;
     border-radius: 20px;

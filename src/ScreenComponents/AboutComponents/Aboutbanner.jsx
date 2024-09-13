@@ -1,5 +1,6 @@
 import React from 'react'
 import lghead from "../../Assets/Assets/MainBanner/lghead.png";
+import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import { Container } from 'react-bootstrap';
 import '../../Components/About.css'
 import city from '../../Assets/Assets/Aboutpage/city.png'
@@ -8,7 +9,8 @@ const Aboutbanner = () => {
     return (
         <>
             <Container fluid className='pe-0 me-0'>
-                <img src={lghead} style={{ width: "100%" }} />
+            <img src={lghead} className='lghead d-none d-md-block'/>
+            <img src={img4} className='img4 d-block d-md-none'/>
             </Container>
             <Container fluid className='backgrnd mt-4'>
            <h4 className='text-start ms-5 headline pt-5'><span style={{fontWeight:"800"}}>Happiness...</span> is living in the <br/>city of your dreams...</h4>
@@ -21,7 +23,7 @@ const Aboutbanner = () => {
             working with government authorities to do what matters most.
            </p>
            <Container className='me-0'>
-            <img src={city} className='city '/>
+            <img src={city} className='city d-none d-md-block'/>
            </Container>
             </Container>
         </>

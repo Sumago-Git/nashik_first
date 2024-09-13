@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate from react
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
 import lghead from "../../Assets/Assets/MainBanner/lghead.png"
+import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import "../../Components/Calender.css";
 
 // Define static event data with text
@@ -71,8 +72,8 @@ const Calendar = () => {
     const event = eventData.find(event => {
       const eventDate = new Date(event.date);
       return eventDate.getDate() === date.getDate() &&
-             eventDate.getMonth() === date.getMonth() &&
-             eventDate.getFullYear() === date.getFullYear();
+        eventDate.getMonth() === date.getMonth() &&
+        eventDate.getFullYear() === date.getFullYear();
     });
     return event ? event.text : null;
   };
@@ -87,14 +88,15 @@ const Calendar = () => {
   };
 
   return (
-<>
-    <Container fluid className='m-0 p-0'>
-    <img src={lghead} className='w-100' alt="Header" />
-  </Container>
+    <>
+      <Container fluid className='m-0 p-0'>
+        <img src={lghead} className='lghead d-none d-md-block' />
+        <img src={img4} className='img4 d-block d-md-none' />
+      </Container>
 
-    <Container fluid className="slotbg pb-5 mb-4">
+      <Container fluid className="slotbg pb-5 mb-4">
 
-    <Container>
+        <Container>
           <p className='slotheadline text-start m-0 pt-5'>
             Road Safety & Traffic Awareness programme jointly <br />
             organized by RTO, Nashik and Nashik First.
@@ -110,77 +112,77 @@ const Calendar = () => {
             Click on the calendar date & time slot, then fill out the form below to schedule your training.
           </Container>
         </Container>
-      <Container className="calender mt-5">
-        <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
-          <button className="btn ms-1" onClick={() => changeMonth('prev')}>
-            <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
-          </button>
-          <h3 className="calenderheadline mx-4 mt-4">
-            {monthNames[currentMonth]} {currentYear}
-          </h3>
-          <button className="btn ms-1 " onClick={() => changeMonth('next')}>
-            <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
-          </button>
-        </Col>
+        <Container className="calender mt-5">
+          <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
+            <button className="btn ms-1" onClick={() => changeMonth('prev')}>
+              <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
+            </button>
+            <h3 className="calenderheadline mx-4 mt-4">
+              {monthNames[currentMonth]} {currentYear}
+            </h3>
+            <button className="btn ms-1 " onClick={() => changeMonth('next')}>
+              <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
+            </button>
+          </Col>
 
-        <Container className="mt-4">
-          <Table
-            bordered
-            responsive
-            style={{
-              tableLayout: 'fixed',
-              borderCollapse: 'collapse'
-            }}
-          >
-            <thead>
-              <tr>
-                {daysOfWeek.map((day) => (
-                  <th key={day}>{day}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {weeks.map((week, weekIndex) => (
-                <tr
-                  key={weekIndex}
-                  style={{ cursor: 'default' }} // Prevent pointer cursor
-                >
-                  {week.map((day, dayIndex) => {
-                    const date = day && new Date(currentYear, currentMonth, day);
-                    const eventText = date && getEventText(date);
-                    
-                    return (
-                      <td
-                        key={dayIndex}
-                        onMouseEnter={() => day && setHoveredDay(day)}
-                        onMouseLeave={() => day && setHoveredDay(null)}
-                        onClick={() => handleDateClick(day)} // Handle date click
-                        style={{
-                          height: "100px",
-                          textAlign: "center",
-                          verticalAlign: "middle", // Center the text vertically
-                          backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (day === hoveredDay ? "#e0e0e0" : "white")),
-                          color: day && (day.isNextMonth ? "#ccc" : "black"),
-                          pointerEvents: day && day.isNextMonth ? "none" : "auto", // Disable interaction for next month's days
-                          transition: 'background-color 0.3s', // Smooth transition for background color change
-                        }}
-                      >
-                        {day && (day.isNextMonth ? day.day : day || "")}
-                        {eventText && (
-                          <div style={{ fontSize: '12px', marginTop: '5px' }}>
-                            {eventText}
-                          </div>
-                        )}
-                      </td>
-                    );
-                  })}
+          <Container className="mt-4">
+            <Table
+              bordered
+              responsive
+              style={{
+                tableLayout: 'fixed',
+                borderCollapse: 'collapse'
+              }}
+            >
+              <thead>
+                <tr className="text-start">
+                  {daysOfWeek.map((day) => (
+                    <th key={day}>{day}</th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {weeks.map((week, weekIndex) => (
+                  <tr
+                    key={weekIndex}
+                    style={{ cursor: 'default' }} // Prevent pointer cursor
+                  >
+                    {week.map((day, dayIndex) => {
+                      const date = day && new Date(currentYear, currentMonth, day);
+                      const eventText = date && getEventText(date);
+
+                      return (
+                        <td
+                          key={dayIndex}
+                          onMouseEnter={() => day && setHoveredDay(day)}
+                          onMouseLeave={() => day && setHoveredDay(null)}
+                          onClick={() => handleDateClick(day)} // Handle date click
+                          style={{
+                            height: "100px",
+                            textAlign: "end",
+                            verticalAlign: "middle", // Center the text vertically
+                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (day === hoveredDay ? "#e0e0e0" : "white")),
+                            color: day && (day.isNextMonth ? "#ccc" : "black"),
+                            pointerEvents: day && day.isNextMonth ? "none" : "auto", // Disable interaction for next month's days
+                            transition: 'background-color 0.3s', // Smooth transition for background color change
+                          }}
+                        >
+                          {day && (day.isNextMonth ? day.day : day || "")}
+                          {eventText && (
+                            <div style={{ fontSize: '12px', marginTop: '5px' }}>
+                              {eventText}
+                            </div>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Container>
         </Container>
       </Container>
-    </Container>
     </>
   );
 };

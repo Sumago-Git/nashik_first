@@ -18,20 +18,20 @@ const Supporter = () => {
       <Container fluid className='mt-5 pt-4'>
         <Row>
           <Col className='p-0'>
-            <img src={banner} style={{ width: '100%' }} />
+            <img src={banner} style={{ width: '100%' }} alt="Banner" />
           </Col>
         </Row>
       </Container>
 
-      <Container fluid className='mt-5 pt-2 support'>
+      <Container fluid className='mt-5 pt-2 support text-center'>
         <h1 style={{ fontWeight: '600' }}>
           Our <span style={{ color: '#F96945' }}> Supporters</span>
         </h1>
         <Container fluid>
-          <Row className='justify-content-center p-5'>
+          <Row className='justify-content-center p-3'>
             {supportersData.map((supporter, index) => (
-              <Col lg={2} className={index !== 0 ? 'ms-3' : ''} key={index}>
-                <img src={supporter} className='trademark' />
+              <Col xs={6} sm={4} md={3} lg={2} className='mb-3' key={index}>
+                <img src={supporter} className='trademark img-fluid' alt={`Supporter ${index + 1}`} />
               </Col>
             ))}
           </Row>

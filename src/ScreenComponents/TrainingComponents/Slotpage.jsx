@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.png";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 
 const Slotpage = () => {
     const [slotDate, setSlotDate] = useState("")
     const location = useLocation()
+    const navigate = useNavigate(); // Get the navigate function from useNavigate hook
+
 
     useEffect(() => {
         if (location) {
@@ -27,6 +30,9 @@ const Slotpage = () => {
         { time: "10:30 A.M.", session: "Session 1" },
         { time: "03:30 P.M.", session: "Session 2" }
     ];
+
+
+
 
     return (
         <>
@@ -55,18 +61,20 @@ const Slotpage = () => {
 
                     <Container className='mt-5'>
                         <Row>
-                            {sessions.map((session, index) => (
-                                <Col key={index} lg={6} className={index === 0 ? 'pe-5' : 'ps-5'}>
-                                    <Container className='session p-3'>
-                                        {session.time} - {session.session}
-                                    </Container>
-                                </Col>
-                            ))}
-
+                            {sessions.map((session, index) => 
+                                (
+                                    <Col key={index} lg={6} className={index === 0 ? 'pe-5' : 'ps-5'}>
+                                        <button onClick={()=> navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-3'>
+                                            {session.time} - {session.session}
+                                        </Container></button>
+                                    </Col>
+                                )
+                            )
+                        }
                             <Col lg={12} className='mt-5 pt-3 pb-5 mb-2'>
-                                <button className='returnbutton p-3'>
+                                <Link to='/training'><button className='returnbutton p-3'>
                                     Return
-                                </button>
+                                </button></Link>
                             </Col>
                         </Row>
                     </Container>

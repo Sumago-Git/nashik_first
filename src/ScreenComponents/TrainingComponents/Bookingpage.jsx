@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.png";
 import { Container } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
+import { useLocation } from 'react-router-dom';
+
 
 const Bookingpage = () => {
-  const formFields = [
-    { label: "Booking Date", value: "Saturday 07/09/2024 03:30 P.M.- Session 2", type: "text" },
-    { label: "Learning License Number*", placeholder: "MH15/0012345/2021", type: "input" }
-  ];
+
+  const [slotTime, setSlotTime] = useState("")
+  const location = useLocation()
+
+
+  useEffect(() => {
+    if (location) {
+      console.log("location.state", location.state.selectedDate);
+      console.log("location.selectedTime", location.state.selectedTime);
+      setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`)
+
+    }
+  }, [location])
 
   return (
     <>
@@ -35,24 +46,48 @@ const Bookingpage = () => {
 
         <Container className='bookingdetails mt-5 pt-4 pb-5'>
           <h1 className='bookingheadline mt-3'>Please fill in your details</h1>
-
-          {formFields.map((field, index) => (
-            <div key={index} className='form-group mb-4'>
-              <p className='bookingdate text-black text-start ms-4'>{field.label}</p>
-              {field.type === 'input' ? (
-                <input
-                  name=''
-                  placeholder={field.placeholder}
-                  className='dateinput p-3 mt-2 w-100'
-                />
-              ) : (
-                <p className='detailtext text-black text-start ms-4'>{field.value}</p>
-              )}
-            </div>
-          ))}
-
+          <div className='form-group mb-4'>
+            <p className='bookingdate text-black text-start ms-4'>{"Booking Date"}</p>
+            <p className='detailtext text-black text-start ms-4 mb-4'>{slotTime}</p>
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Learning License Number*"}</p>
+            <input
+              name=''
+              placeholder={"MH15/0012345/2021"}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"First Name*"}</p>
+            <input
+              name=''
+              placeholder={"First Name"}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Last Name*"}</p>
+            <input
+              name=''
+              placeholder={"Last Name"}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Email*"}</p>
+            <input
+              name=''
+              placeholder={"Email"}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Phone*"}</p>
+            <input
+              name=''
+              placeholder={"Phone "}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+              <input
+              type="radio"
+              name=''
+              // placeholder={"Phone "}
+              className='dateinput p-3 m-0 mt-0 '
+            />
+          </div>
           <div className='text-center'>
-            <button className='returnbutton p-3 mt-4'>
+            <button className='returnbutton p-3 mt-2'>
               Book Now
             </button>
           </div>

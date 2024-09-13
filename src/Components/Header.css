@@ -14,9 +14,9 @@
 }
 
 .logo2{
-    height: 100px;
-    width: 300px;
-    justify-content: end;
+    height: 70px;
+    width: 200px;
+    justify-content: start;
 }
 
 .img4{
@@ -98,7 +98,4 @@
     border: 10px solid #FFFFFF;
     box-shadow: 0px 4px 4px 0px #00000040;
 
-}
-.abc{
-    max-width: 100%;
 }

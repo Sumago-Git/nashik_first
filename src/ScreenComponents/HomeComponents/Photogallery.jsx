@@ -27,17 +27,19 @@ const Photogallery = () => {
 
   return (
     <>
-      <Container fluid className='mt-5 pt-4'>
+      <Container fluid className='mt-5 pt-4 text-center'>
         <h1 style={{ fontWeight: '700' }}>
           Photo <span style={{ color: '#F96945' }}> Gallery</span>
         </h1>
-        <Row className='mt-5 p-0 ms-5 me-5'>
+        <Row className='mt-5 p-0 px-3'>
           {photos.map((photo, index) => (
-            <Col key={index} lg={4}>
-              <Card className='photo'>
-                <img src={photo.src} className='picture' alt={`Photo ${index + 1}`} />
+            <Col xs={12} sm={6} md={4} lg={4} className='mb-4' key={index}>
+              <Card className='photo h-100'>
+                <img src={photo.src} className='picture img-fluid' alt={`Photo ${index + 1}`} />
                 <Card.Body>
-                  <Card.Text className='mt-3 text1 text-start'>{photo.text}</Card.Text>
+                  <Card.Text className='mt-3 text1 text-start'>
+                    {photo.text}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
