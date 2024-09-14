@@ -17,7 +17,6 @@
     border-radius: 10px;
     position: relative;
     margin-top: 80px;
-
 }
 
 .eventimg {
@@ -34,7 +33,7 @@
     font-weight: 600;
     color: #F96945;
     font-family: "Nanum Gothic", sans-serif;
-
+    position: relative;
 }
 
 .upcomingtext2 {
@@ -43,4 +42,22 @@
 
 .coll {
     transform: skewX(194deg);
+}
+
+.soontext{
+    margin-left: 240px;
+    color: black;
+    font-size: 15px;
+}
+
+.soonbox{
+    height: 40px !important;
+    width: 40px !important;
+    background-color: #F96945;
+    position: absolute;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }

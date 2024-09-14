@@ -13,7 +13,7 @@ const Contactus = () => {
         <>
             <img src={lghead} className='lghead d-none d-md-block' />
             <img src={img4} className='img4 d-block d-md-none' />
-            <Container fluid className=' contactbg pb-5 '>
+            <Container fluid className=' contactbg pb-5 d-none d-md-block'>
                 <Row>
                     <Col lg={5}></Col>
                     <Col lg={7} className='mt-5'>
@@ -40,6 +40,8 @@ const Contactus = () => {
                     </Col>
                 </Row>
             </Container>
+            
+
         </>
     )
 }

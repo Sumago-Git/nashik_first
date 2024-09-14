@@ -43,13 +43,16 @@ const Upcomingevents = () => {
             <Container className='event '>
               <Row>
                 <Col lg={4}></Col>
-                <Col lg={8} className='text-start coll'>
-                  <p className='upcomingtext1 mb-0'>Time Duration</p>
-                  <p className='upcomingtext2 mb-0'>{event.timeDuration}</p>
-                  <p className='upcomingtext1 mb-0'>Area</p>
-                  <p className='upcomingtext2 mb-0'>{event.area}</p>
-                  <p className='upcomingtext1 mb-0'>Purpose of the campaign</p>
-                  <p className='upcomingtext2'>
+                <Col lg={8} className='text-start coll '>
+                  <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext'>COMING SOON</span></p>
+                  <Container className='soonbox' style={{marginLeft:"420px"}}>05</Container>
+                  <Container className='soonbox'style={{marginLeft:"470px"}}>55</Container>
+                <Container className='soonbox' style={{marginLeft:"520px"}}>00</Container>
+                  <p className='upcomingtext2 mb-0 ms-3'>{event.timeDuration}</p>
+                  <p className='upcomingtext1 mb-0 ms-3'>Area</p>
+                  <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>
+                  <p className='upcomingtext1 mb-0 ms-3'>Purpose of the campaign</p>
+                  <p className='upcomingtext2 ms-3'>
                     {event.purpose.split("\n").map((line, index) => (
                       <React.Fragment key={index}>
                         {line}
@@ -57,6 +60,8 @@ const Upcomingevents = () => {
                       </React.Fragment>
                     ))}
                   </p>
+
+
                 </Col>
               </Row>
             </Container>

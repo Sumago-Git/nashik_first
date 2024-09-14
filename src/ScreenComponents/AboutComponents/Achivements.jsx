@@ -7,6 +7,7 @@ import addressing from '../../Assets/Assets/Aboutpage/addressing.png'
 import don from '../../Assets/Assets/Aboutpage/don.png'
 import hub from '../../Assets/Assets/Aboutpage/hub.png'
 import bike from '../../Assets/Assets/Aboutpage/bike.png'
+import "../../Components/About.css"
 
 const Achivements = () => {
   return (

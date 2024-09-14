@@ -2,7 +2,12 @@
     width: 100%;
     background-image: url("../Assets/Assets/ContactPage/Contacts.png");
     background-size: cover;
+    position: relative;
     
+}
+.contactbg2{
+    width: 100%;
+    background-image: url("../Assets/Assets/ContactPage/Contacts2.png");
 }
 
 .contactheadline{
