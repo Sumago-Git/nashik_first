@@ -92,7 +92,8 @@ const Homecounter = () => {
                   </Container>
                   <Row>
                     <Col lg={3} className='ms-5 pt-2 '><Container className='license pt-1' style={{ width: "150px" }}><h6 className='fs-5'>School Students</h6></Container></Col>
-                    <Col lg={6} className='ms-2 pt-2 w-50'><Container className='license pt-2' ><h5>Adult(Collage / Organization)</h5></Container></Col>
+                    <Col lg={6} className='ms-2
+                     pt-2 w-50'><Container className='license pt-2' ><h5>Adult(Collage / Organization)</h5></Container></Col>
                   </Row>
                   <Container style={{ marginTop: "-250px", width: "250px", marginLeft: "520px" }} className='circle d-none d-md-block'></Container>
                 </Col>

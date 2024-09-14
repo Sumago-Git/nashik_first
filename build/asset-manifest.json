@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f6e6e4a.css",
-    "main.js": "/static/js/main.7e0a793d.js",
+    "main.css": "/static/css/main.1a28d6f3.css",
+    "main.js": "/static/js/main.8baa8507.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/img5.png": "/static/media/img5.b0553d7493f6a515df2d.png",
+    "static/media/Frame 3.png": "/static/media/Frame 3.6876a7c0ea29b021ed03.png",
     "static/media/lghead.png": "/static/media/lghead.320b7091ffcbbc397de4.png",
+    "static/media/Frame 5.png": "/static/media/Frame 5.18bba71a6895594365ab.png",
+    "static/media/Frame 1.png": "/static/media/Frame 1.cdbcc1ec0948d7e53bf0.png",
+    "static/media/Frame 2.png": "/static/media/Frame 2.7412e13a3e38cf59d762.png",
+    "static/media/Frame 4.png": "/static/media/Frame 4.96ba1daee86dbcef02ed.png",
     "static/media/V.png": "/static/media/V.9df1c97002d6b05449e0.png",
     "static/media/Contacts.png": "/static/media/Contacts.642c6c58da8aefdd02f6.png",
     "static/media/achive.png": "/static/media/achive.f707b60504504d52d891.png",
+    "static/media/Contacts2.png": "/static/media/Contacts2.d26f7166190890a19916.png",
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
     "static/media/city.png": "/static/media/city.2ef535adf1195410b029.png",
@@ -15,6 +21,7 @@
     "static/media/event7.png": "/static/media/event7.8fdf68ac3063c66d7d5e.png",
     "static/media/event1.png": "/static/media/event1.1cdcf2b220edd5fa9a5b.png",
     "static/media/circle.png": "/static/media/circle.f45ea80a248ef3678ab1.png",
+    "static/media/group.png": "/static/media/group.b8aa6ddc4c772bc4526a.png",
     "static/media/event8.png": "/static/media/event8.7570d0b9c48252c2c416.png",
     "static/media/event9.png": "/static/media/event9.7570d0b9c48252c2c416.png",
     "static/media/event5.png": "/static/media/event5.7635255a368c96c63336.png",
@@ -36,7 +43,6 @@
     "static/media/training.png": "/static/media/training.811e2f6cd88d70b06e70.png",
     "static/media/hub.png": "/static/media/hub.63dd9836a943a6733537.png",
     "static/media/img4.jpg": "/static/media/img4.c414e3449d1bfcf9392c.jpg",
-    "static/media/group.png": "/static/media/group.37f1de3e3f7338ab451e.png",
     "static/media/whatsapp.png": "/static/media/whatsapp.ee33b68c9ac2fb84ac6f.png",
     "static/media/location.png": "/static/media/location.39ab82fa50d487ffebb8.png",
     "static/media/mail.png": "/static/media/mail.071867b7bc89bd9c301d.png",
@@ -51,12 +57,12 @@
     "static/media/support2.png": "/static/media/support2.5cfe5e0a3926db14c92b.png",
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
-    "main.7f6e6e4a.css.map": "/static/css/main.7f6e6e4a.css.map",
-    "main.7e0a793d.js.map": "/static/js/main.7e0a793d.js.map",
+    "main.1a28d6f3.css.map": "/static/css/main.1a28d6f3.css.map",
+    "main.8baa8507.js.map": "/static/js/main.8baa8507.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f6e6e4a.css",
-    "static/js/main.7e0a793d.js"
+    "static/css/main.1a28d6f3.css",
+    "static/js/main.8baa8507.js"
   ]
 }
