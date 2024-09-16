@@ -5,8 +5,8 @@
 
 }
 
-.text{
-    font-size: 39px !important ;
+.para{
+    font-size: 42px !important ;
     font-family: "Century Gothic", sans-serif;
     /* font-weight: 40px; */
     
@@ -15,6 +15,7 @@
     font-size: 25px !important;
     font-family: "Century Gothic", sans-serif;
     line-height: 1.2;
+    word-spacing: 2px;
 
 }
 .para2{

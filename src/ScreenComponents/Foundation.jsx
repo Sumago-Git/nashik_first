@@ -12,8 +12,8 @@ const Foundation = () => {
       <Container fluid className='body text-start mt-5 pb-5'>
         <Row>
           <Col lg={7}  className='mt-5 pt-5'>
-            <text className='text ms-5'>The Advantage</text>
-            <text style={{  fontWeight: "800" }} className='text'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
+            <text className='para ms-5'>The Advantage</text>
+            <text style={{  fontWeight: "650" }} className='text'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
             <Col>
               <p className='ms-5 mt-3 para1'>Nashik First, an initiative of <span style={{fontWeight:"800"}}>Advantage Nashik</span><br/> 
               <span style={{fontWeight:"800"}}>Foundation (ANF) </span>is a group of people working for<br/>
@@ -33,10 +33,10 @@ const Foundation = () => {
             </Col>
           </Col>
 
-          <Col lg={5} className='mt-4 pt-5'>
-            <Container className='mt-2'>
+          <Col lg={5} className='mt-5 pt-5 p-0'>
+            {/* <Container className='mt-2'> */}
               <img src={group} className='group mt-4 ' />
-            </Container>
+            {/* </Container> */}
           </Col>
         </Row>
 

@@ -1,37 +1,38 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import yt1 from '../../Assets/Assets/Youtube/yt1.png';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../../Components/Youtube.css';
 
 const Youtube = () => {
-  const videos = [
-    {
-      imgSrc: yt1,
-      url: 'https://youtu.be/Rek0NWPCNOc?si=xflborI9KrV-2AhW',
-    },
-    {
-      imgSrc: yt1,
-      url: null, 
-    },
-  ];
-
   return (
     <>
-      <Container className='mt-5'>
-        <Row className='mx-5'>
-          {videos.map((video, index) => (
-            <Col key={index} lg={6}>
-              {video.url ? (
-                <a href={video.url}>
-                  <img src={video.imgSrc} className='yt1' alt={`YouTube video ${index + 1}`} />
-                </a>
-              ) : (
-                <img src={video.imgSrc} className='yt1' alt={`YouTube thumbnail ${index + 1}`} />
-              )}
-            </Col>
-          ))}
+      <Container className='mt-5 '>
+        <Row className="mx-auto">
+          <Col lg={6}>
+            <div className="video-container" style={{ position: 'relative', width: '500px', height: '250px' }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/0j3X0OaHZro"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Col>
+          <Col lg={6}>
+            <div className="video-container" style={{ position: 'relative', width: '550px', height: '250px' }}>
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/WpJFmvsVRW4"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Col>
         </Row>
       </Container>
     </>
