@@ -13,6 +13,7 @@
     
 }
 
+
 .logo2{
     height: 70px;
     width: 200px;
@@ -45,6 +46,13 @@
 .followicon{
     height: 70px;
     width: 70px;
+}
+
+.homecounterheadline{
+    /* color: #F96945; */
+    font-family: Nanum Gothic, sans-serif;
+     font-weight: 800;
+     font-size: 50px;
 }
 
 .pitch{

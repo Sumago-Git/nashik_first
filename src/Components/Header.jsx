@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo1 from '../Assets/Assets/Home/logo1.png';
 import traffic from '../Assets/Assets/Homecounter/traffic.png';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -27,12 +28,12 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-auto links">
-                <Nav.Link href="about" className='ms-3 menu'>About Us</Nav.Link>
-                <Nav.Link href="events" className='ms-3 menu'>Events</Nav.Link>
-                <Nav.Link href="training" className='ms-3 menu'>Training</Nav.Link>
-                <Nav.Link href="awarnessvideo" className='ms-3 menu'>Traffic Awarness Video</Nav.Link>
-                <Nav.Link href="investor" className='ms-3 menu'>Investor</Nav.Link>
-                <Nav.Link href="contact" className='ms-3 menu'>Contact</Nav.Link>
+                <Link to="about" className={` text-decoration-none text-black mx-3`}>About Us</Link>
+                <Link to="events" className={`text-decoration-none text-black mx-3`}>Events</Link>
+                <Link to="training" className={`text-decoration-none text-black mx-3`} >Training</Link>
+                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-3`} >Traffic Awarness Video</Link>
+                <Link to="investor" className={`text-decoration-none text-black mx-3`}>Investor</Link>
+                <Link to="contact" className={`text-decoration-none text-black mx-3`} >Contact</Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

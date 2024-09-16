@@ -15,11 +15,11 @@ const Foundation = () => {
             <text className='text ms-5'>The Advantage</text>
             <text style={{  fontWeight: "800" }} className='text'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
             <Col>
-              <p className='ms-5 mt-3 text1'> <span style={{fontWeight:"400"}}>Nashik First, an initiative of </span> Advantage Nashik <br/> 
-              Foundation (ANF) <span style={{fontWeight:"400"}}>is a group of people working for</span><br/>
-              improving quality life of Citizens of Nashik.</p>
+              <p className='ms-5 mt-3 para1'>Nashik First, an initiative of <span style={{fontWeight:"800"}}>Advantage Nashik</span><br/> 
+              <span style={{fontWeight:"800"}}>Foundation (ANF) </span>is a group of people working for<br/>
+              <span style={{fontWeight:"800"}}>improving quality life of Citizens of Nashik.</span></p>
             </Col>
-            <Col className='ms-5 text2'>
+            <Col className='ms-5 para2 mt-4'>
               We are a group of people who act as a catalyst for the growth of the city <br />
               and in many cases, becoming the primary factor responsible for the growth.<br />
               Through independent assessment of different projects & various activities<br />
@@ -35,7 +35,7 @@ const Foundation = () => {
 
           <Col lg={5} className='mt-4 pt-5'>
             <Container className='mt-2'>
-              <img src={group} className='gruop mt-5 ' />
+              <img src={group} className='group mt-4 ' />
             </Container>
           </Col>
         </Row>
