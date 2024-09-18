@@ -7,11 +7,19 @@
 
 .links{
     text-align: center;
-    font-size: 23px;
+    font-size: 21px;
     /* color: rgb(221, 12, 12); */
     margin-top: 40px;
     
 }
+
+
+  
+  /* Bold on hover */
+  .links a:hover {
+    font-weight: 800;
+  }
+  
 
 
 .logo2{
@@ -27,30 +35,34 @@
     width: 100%;
 }
 
-.bg_img5{
-    background-image: url(../Assets/Assets/Bottom/img5.png) ;
+.bottombg{
+    background-image: url(../Assets/Assets/Bottom/bottombg.jpg) ;
+    background-size: cover;
    
 }
-
+ .bottomheadline{
+    font-family: Century Gothic ,sans-serif ;
+    font-weight: 600;
+ }
 .loc{
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: -200px;
     color: #fff;
 }
 
 .footericon{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 .followicon{
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
 .homecounterheadline{
     /* color: #F96945; */
-    font-family: Nanum Gothic, sans-serif;
+    font-family: Century Gothic, sans-serif;
      font-weight: 800;
      font-size: 50px;
 }

@@ -24,14 +24,14 @@ const Supporter = () => {
       </Container>
 
       <Container fluid className='mt-5 pt-2 support text-center'>
-        <h1 style={{ fontWeight: '600' }}>
+        <p style={{ fontWeight: '600' }} className='supporttext'>
           Our <span style={{ color: '#F96945' }}> Supporters</span>
-        </h1>
-        <Container fluid>
+        </p>
+        <Container fluid className='pb-4'>
           <Row className='justify-content-center p-3'>
             {supportersData.map((supporter, index) => (
-              <Col xs={6} sm={4} md={3} lg={2} className='mb-3' key={index}>
-                <img src={supporter} className='trademark img-fluid' alt={`Supporter ${index + 1}`} />
+              <Col xs={6} sm={4} md={3} lg={3} className='mb-3 mt-4' key={index}>
+                <img src={supporter} className='trademark img-fluid ' alt={`Supporter ${index + 1}`} />
               </Col>
             ))}
           </Row>

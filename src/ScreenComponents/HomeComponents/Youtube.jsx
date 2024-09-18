@@ -8,7 +8,7 @@ const Youtube = () => {
       <Container className='mt-5 '>
         <Row className="mx-auto">
           <Col lg={6}>
-            <div className="video-container" style={{ position: 'relative', width: '500px', height: '250px' }}>
+            <div className="video-container" style={{ position: 'relative', width: '510px', height: '250px' }}>
               <iframe
                 width="100%"
                 height="100%"
@@ -21,7 +21,7 @@ const Youtube = () => {
             </div>
           </Col>
           <Col lg={6}>
-            <div className="video-container" style={{ position: 'relative', width: '550px', height: '250px' }}>
+            <div className="video-container" style={{ position: 'relative', width: '510px', height: '250px' }}>
               <iframe
                 width="100%"
                 height="100%"

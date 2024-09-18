@@ -1,9 +1,13 @@
 .support{
     background: linear-gradient(90deg, #FFFFFF 0%, #FFE9E4 100%);
-
-
 }
 
 .trademark{
-    width: 200px;
+    width: 290px;
+    height: 140px;
+}
+
+.supporttext{
+   font-family:  Century Gothic, sans-serif;
+   font-size: 45px;
 }

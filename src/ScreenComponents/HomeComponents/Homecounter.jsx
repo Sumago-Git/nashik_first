@@ -7,7 +7,7 @@ import lives from '../../Assets/Assets/Homecounter/lives.png';
 import child from '../../Assets/Assets/Homecounter/child.png';
 import adult from '../../Assets/Assets/Homecounter/adult.png';
 import circle2 from "../../Assets/Assets/Homecounter/circle2.png"
-
+import "../../Components/Header.css";
 
 const Homecounter = () => {
   return (
@@ -69,7 +69,7 @@ const Homecounter = () => {
                 <Col lg={12} className='mt-4 ms-5 w-100' style={{ height: "320px", backgroundColor: "white", borderRadius: '10px', boxShadow: '8px 8px 40px 0px #00000040', borderBottom: '10px solid #F96945', position: 'relative' }}>
                   <Container>
                     <h2 className='text-start pt-4  ms-4  '>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
-                    <h6 className='text-start ms-4 rto'><b>Road Safety & Traffic Awareness programme jointly <br />organized by RTO, Nashik and Nashik First. </b><br /></h6>
+                    <h4 className='text-start ms-4 rto'><b>Road Safety & Traffic Awareness programme jointly <br />organized by RTO, Nashik and Nashik First. </b><br /></h4>
                     <p className='text-start ms-4 rto'> In this initiative, the learning license holders (youth aged 18 <br />to  25 yrs) will get permanent license only after undergoing<br />
                       Counselling & Training on Road Safety & Traffic Awareness <br />Programme for two hours.</p>
                   </Container>
@@ -78,7 +78,7 @@ const Homecounter = () => {
                     <Col lg={3} className='ms-3'><Container className='license pt-1' style={{ width: "160px" }} ><h6 className='fs-5'>Suspended License</h6></Container></Col>
                     <Col lg={3} className='ms-3'><Container className='license pt-1' style={{ width: "160px" }}><h6 className='fs-5'>School bus driver</h6></Container></Col>
                   </Row>
-                  <Container className="circle d-none d-md-block" style={{ marginTop: "-200px", width: "250px", marginLeft: "570px" }}></Container>
+                  <Container className="circle d-none d-md-block" style={{ marginTop: "-200px", width: "250px", marginLeft: "600px" }}></Container>
                 </Col>
                 <Col lg={8} className='mt-4 ms-5 w-100' style={{ height: "330px", backgroundColor: "white", borderRadius: '10px', boxShadow: '8px 8px 40px 0px #00000040', borderBottom: '10px solid #F96945' }}>
                   <Container>
@@ -94,7 +94,7 @@ const Homecounter = () => {
                     <Col lg={6} className='ms-2 pt-2'><Container className='license pt-2'style={{width:"320px"}}><h5 className='mt-2'>Adult(Collage / Organization)</h5></Container></Col>
                   </Row>
                 
-                  <img src={circle2} style={{ marginTop: "-270px", width: "250px", marginLeft: "570px" }} className='circle2 d-none d-md-block'/>
+                  <img src={circle2} style={{ marginTop: "-270px", width: "250px", marginLeft: "600px" }} className='circle2 d-none d-md-block'/>
                 </Col>
               </Col>
             </Row>
