@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c3874d8.css",
-    "main.js": "/static/js/main.e2d8cc66.js",
+    "main.css": "/static/css/main.f606f1f3.css",
+    "main.js": "/static/js/main.ae116ca1.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
-    "static/media/img5.png": "/static/media/img5.b0553d7493f6a515df2d.png",
     "static/media/Frame 3.png": "/static/media/Frame 3.6876a7c0ea29b021ed03.png",
     "static/media/lghead.png": "/static/media/lghead.320b7091ffcbbc397de4.png",
     "static/media/Frame 5.png": "/static/media/Frame 5.18bba71a6895594365ab.png",
@@ -16,6 +15,7 @@
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
     "static/media/city.png": "/static/media/city.2ef535adf1195410b029.png",
+    "static/media/bottombg.jpg": "/static/media/bottombg.a359d896379a12094825.jpg",
     "static/media/event7.png": "/static/media/event7.8fdf68ac3063c66d7d5e.png",
     "static/media/event1.png": "/static/media/event1.1cdcf2b220edd5fa9a5b.png",
     "static/media/group.png": "/static/media/group.b8aa6ddc4c772bc4526a.png",
@@ -59,12 +59,12 @@
     "static/media/support2.png": "/static/media/support2.5cfe5e0a3926db14c92b.png",
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
-    "main.3c3874d8.css.map": "/static/css/main.3c3874d8.css.map",
-    "main.e2d8cc66.js.map": "/static/js/main.e2d8cc66.js.map",
+    "main.f606f1f3.css.map": "/static/css/main.f606f1f3.css.map",
+    "main.ae116ca1.js.map": "/static/js/main.ae116ca1.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c3874d8.css",
-    "static/js/main.e2d8cc66.js"
+    "static/css/main.f606f1f3.css",
+    "static/js/main.ae116ca1.js"
   ]
 }

@@ -1,49 +1,67 @@
-.backgrnd{
+.backgrnd {
     background: linear-gradient(266.1deg, #EDFCFF 43.75%, #EBFCFF 85.16%);
     position: relative;
 }
 
-.headline{
-    font-family: "Nanum Gothic", sans-serif;
+.headline {
+    font-family: "Century Gothic", sans-serif;
     position: relative;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.2;
 }
-.para{
+
+.headlinetext {
     font-family: "Poppins", sans-serif;
     position: relative;
+    font-size: 20px !important;
+    font-weight: 400;
 }
-.city{
-    height: 368px;
+
+.city {
+    height: 400px;
     width: 632px;
     position: absolute;
-    margin-top: -385px;
+    margin-top: -420px;
     margin-left: 508px;
 }
- /* directors */
-.directorbg{
+
+/* directors */
+.directorbg {
     background: linear-gradient(90deg, #FFFFFF 0%, #FFE9E4 100%);
 
 }
 
-.drheadline{
+.drheadline {
     font-family: "Poppins", sans-serif;
     font-size: 50px;
     font-weight: 600;
 }
 
-.section{
+.drname {
+    font-size: 29px;
+    font-family: "Poppins", sans-serif;
+}
+
+.drpost {
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+
+
+}
+
+.section {
     height: 190px;
     width: 290px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0px 4px 4px 3px #00000040;
     position: relative;
-    margin :auto;
+    margin: auto;
 }
 
-.sectiontext{
+.sectiontext {
     margin-top: 65px;
     position: absolute;
     font-weight: 600;
@@ -51,10 +69,11 @@
     text-align: left;
     font-size: 15px;
 }
-.sectiontop{
+
+.sectiontop {
     height: 80px;
-    width: 290px;
-    margin-left: -10px;
+    width: 280px;
+    margin-left: -8px;
     margin-top: -210px;
     background-color: #F96945;
     position: absolute;
@@ -63,58 +82,77 @@
     font-size: 30px;
     font-weight: 600;
     color: white;
-    line-height:1;
+    line-height: 1;
 }
- /* achivement */
 
- .achiveheadline{
-    font-size: 50px;
+/* achivement */
+
+.achiveheadline {
+    font-size: 45px;
     font-weight: 600;
- }
-.achivebg{
+    font-family: "Poppins", sans-serif;
+
+
+}
+
+.achivebg {
     background-image: url("../Assets/Assets/Aboutpage/achive.png");
 }
 
-.listtext{
+.listtext {
     font-size: 21px;
-    font-family: "Poppins", sans-serif;
+    font-family: Century Gothic, sans-serif;
     font-weight: 400;
     word-spacing: 2px;
-    line-height: 1.5;
+    line-height: 1.3;
+}
+@media (max-width: 768px){
+    .listtext{
+        font-size: 13px;
+        text-align: start;
+    }
+    .achiveheadline{
+        font-size: 35px;
+    }
+
+    .listimgtext{
+        text-align: center;
+    }
 }
 
-.listimg{
+.listimg {
     height: 230px;
     width: 230px;
 }
 
-.listimgtext{
-    font-family: "Nanum Gothic", sans-serif;
+.listimgtext {
+    font-family: Century Gothic, sans-serif;
     width: 230px;
-    font-weight: 800;
-    
+    font-weight: 800 !important;
+    font-size: 15px;
+
 }
 
 /* opportunities */
-.oppobg{
+.oppobg {
     background: linear-gradient(180deg, rgba(217, 217, 217, 0.16) 0%, #FEDFC7 100%);
 }
 
-.oppoheadline{
+.oppoheadline {
     font-family: "Poppins", sans-serif;
     font-weight: 800;
 }
 
-.oppoimg{
-    height:350px;
+.oppoimg {
+    height: 350px;
     width: 370px;
     position: relative;
 }
 
-.oppoimgtext{
+.oppoimgtext {
     position: absolute;
-   margin-top: -70px;
-   margin-left: -30px;
+    margin-top: -70px;
+    margin-left: -20px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 }

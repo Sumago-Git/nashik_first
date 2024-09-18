@@ -16,10 +16,10 @@ const Achivements = () => {
         <text className='achiveheadline'>
           Few of the Remarkable achievements are
         </text>
-        <Container fluid className='mt-4 pe-5'>
+        <Container fluid className='mt-5 pe-5'>
           <text>
-            <ul className='listtext text-start pb-4'>
-              <li >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students</span> <br />and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
+            <ul className='listtext text-start pb-4 ms-4'>
+              <li >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students</span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
               <li><span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.</li>
               <li><span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span></li>
               <li>A well appreciated creative campaign <span style={{ fontWeight: "800" }}>DON (Dost Of Nashik)</span> to create traffic rule <span style={{ fontWeight: "800" }}>awareness among youth.</span></li>
