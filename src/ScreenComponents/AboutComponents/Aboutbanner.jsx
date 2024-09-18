@@ -13,7 +13,8 @@ const Aboutbanner = () => {
             <img src={img4} className='img4 d-block d-md-none'/>
             </Container>
             <Container fluid className='backgrnd mt-4'>
-           <p className='text-start ms-5 headline pt-5'><span style={{fontWeight:"800"}}>Happiness...</span> is living in the <br/>city of your dreams...</p>
+          <Container fluid className='ms-3'>
+          <p className='text-start ms-5 headline pt-5'><span style={{fontWeight:"800"}}>Happiness...</span> is living in the <br/>city of your dreams...</p>
            <p className='text-start ms-5 headlinetext pb-5'>
            Cities in India are getting smarter and looking for secure,<br/>
             intelligent and smarter solutions of resource optimisation. <br/>
@@ -22,8 +23,9 @@ const Aboutbanner = () => {
             catalysing this growth by helping individuals, communities, <br/>
             working with government authorities to do what matters most.
            </p>
+          </Container>
            <Container className='me-0'>
-            <img src={city} className='city d-none d-md-block'/>
+            <img src={city} className='city d-none d-md-block img-fluid'/>
            </Container>
             </Container>
         </>

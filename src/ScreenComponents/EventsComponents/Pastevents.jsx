@@ -29,9 +29,9 @@ const Pastevents = () => {
 
       <Container fluid className='trainingeventbg pb-5'>
         <p className='trainingeventheadline mt-5 pt-5 text-center'>Special Training Event</p>
-        <Row>
+        <Row className='mx-5'>
           {specialEvents.map((event, index) => (
-            <Col xs={12} sm={6} md={4} key={index} className='mb-4'>
+            <Col xs={12} sm={6} md={4} key={index} className='mb-2'> {/* Reduced the margin-bottom */}
               <img src={event} className='events img-fluid' alt={`Event ${index + 1}`} />
             </Col>
           ))}
@@ -39,10 +39,10 @@ const Pastevents = () => {
       </Container>
 
       <Container fluid className='trainingeventbg pb-5'>
-        <p className='trainingeventheadline mt-5 pt-5 text-center'>Event Gallery</p>
-        <Row>
+        <p className='trainingeventheadline mt-5 pt-5  text-center'>Event Gallery</p>
+        <Row className='mx-5 p-0'>
           {eventGallery.map((event, index) => (
-            <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-5 mb-4' : 'mb-4'}>
+            <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
               <img src={event} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
             </Col>
           ))}

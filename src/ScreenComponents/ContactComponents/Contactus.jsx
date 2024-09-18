@@ -36,7 +36,7 @@ const Contactus = () => {
                     </Col>
                     <Col lg={1} className='ms-5 ps-5 '>
                         <img src={location} className='icons ms-5 ps-4' />
-                        <text className='ms-5 ps-5 icontext text-start'>Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.</text>
+                        <text className='ms-5 ps-5 icontext text-start'>Survey No. 590/591, Motkari<br/> Nagar, Near Nelson Hospital, <br/>Behind Tupsakhare Lawns, <br/>Near Mumbai Naka, Nashik.</text>
                     </Col>
                 </Row>
             </Container>

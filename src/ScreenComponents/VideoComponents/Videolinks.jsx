@@ -6,7 +6,7 @@ const Youtube = () => {
   return (
     <>
       <Container className='mt-5 pb-5 '>
-        <p className='ourvideoheadline'>Our Videos</p>
+        <p className='ourvideoheadline pb-5'>Our Videos</p>
         <Row className="mx-auto pb-5">
           <Col lg={6}>
             <div className="video-container" style={{ position: 'relative', width: '510px', height: '250px' }}>

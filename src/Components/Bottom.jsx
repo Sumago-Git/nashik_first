@@ -21,15 +21,21 @@ const Bottom = () => {
     { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true },
   ];
 
-  const socialIcons = [facebook, insta, email2, whatsapp2];
+  // Now each social link has the icon and URL together
+  const socialLinks = [
+    { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/ ' },
+    { icon: insta, url: 'https://www.instagram.com/nashikfirst/ ' },
+    { icon: email2, url: 'mailto:your-email@example.com' },
+    { icon: whatsapp2, url: 'https://wa.me/910000000000' }, // Replace with your actual WhatsApp number
+  ];
 
   return (
     <>
       <section className='bottombg'>
         <Container fluid className='pb-5'>
           <Row className='loc'>
-            <Col lg={5} >
-              <h2 className='text-start bottomheadline ms-4 loc'>LOCATION</h2>
+            <Col lg={5}>
+              <p className='text-start bottomheadline ms-4 loc'>LOCATION</p>
               {/* Map iframe for desktop */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14998.042739114164!2d73.77339834282328!3d19.987070168042514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb1abfce8b67%3A0x31f677d2506ffcb7!2sMumbai%20Naka%2C%20Renuka%20Nagar%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724840869222!5m2!1sen!2sin"
@@ -47,7 +53,7 @@ const Bottom = () => {
             </Col>
 
             <Col sm={6} lg={3} className='mt-5 '>
-              <h3 className='text-start bottomheadline pb-3'>QUICK LINKS</h3>
+              <p className='text-start bottomheadline pb-3'>Quick Links</p>
               {quickLinks.map((link, index) => (
                 <Row key={index}>
                   <Col sm={1} xs={1} className='mt-3 ms-4'>
@@ -61,14 +67,14 @@ const Bottom = () => {
             </Col>
 
             <Col sm={12} lg={4} className="mt-5">
-              <h4 className='text-start bottomheadline pb-3'>CONTACT DETAILS</h4>
+              <p className='text-start bottomheadline pb-3'>Contact Details</p>
               {contactDetails.map((detail, index) => (
                 <Row className={`align-items-center mt-2 ${detail.isAddress ? 'pt-0' : ''}`} key={index}>
-                  <Col lg={2} xs={2}>
+                  <Col lg={2} xs={2} className='p-0'>
                     <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} />
                   </Col>
-                  <Col lg={10} xs={10}>
-                    {detail.isAddress ? <p className="text-start" style={{fontSize:"19px", fontWeight:"600"}}>{detail.text}</p> : <h5 className="text-start">{detail.text}</h5>}
+                  <Col lg={10} xs={10} className='p-0'>
+                    {detail.isAddress ? <p className="text-start" style={{fontSize:"19px", fontWeight:"600"}}>{detail.text}</p> : <h5 className="text-start ms-0 p-0">{detail.text}</h5>}
                   </Col>
                 </Row>
               ))}
@@ -77,9 +83,11 @@ const Bottom = () => {
                 <Col lg={4} className='text-start p-0'>
                   <h4 className=' mt-2'>Follow Us On</h4>
                 </Col>
-                {socialIcons.map((icon, index) => (
+                {socialLinks.map((link, index) => (
                   <Col lg={2} xs={2} key={index} style={{width:"70px"}} className='p-0'>
-                    <img src={icon} className='followicon  ' alt="Social Icon"  />
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                      <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} />
+                    </a>
                   </Col>
                 ))}
               </Row>

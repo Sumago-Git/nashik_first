@@ -1,83 +1,88 @@
-
-.logo1{
+.logo1 {
     height: 90px;
     width: 300px;
     margin-left: -20px;
 }
 
-.links{
+.links {
     text-align: center;
     font-size: 21px;
     /* color: rgb(221, 12, 12); */
     margin-top: 40px;
-    
+
 }
 
 
-  
-  /* Bold on hover */
-  .links a:hover {
+
+/* Bold on hover */
+.links a:hover {
     font-weight: 800;
-  }
-  
+}
 
 
-.logo2{
+
+.logo2 {
     height: 70px;
     width: 200px;
     justify-content: start;
 }
 
-.img4{
-    width: 100%;
-}
-.lghead{
+.img4 {
     width: 100%;
 }
 
-.bottombg{
-    background-image: url(../Assets/Assets/Bottom/bottombg.jpg) ;
-    background-size: cover;
-   
+.lghead {
+    width: 100%;
 }
- .bottomheadline{
-    font-family: Century Gothic ,sans-serif ;
+
+.bottombg {
+    background-image: url(../Assets/Assets/Bottom/bottombg.jpg);
+    background-size: cover;
+
+}
+
+.bottomheadline {
+    font-family: Century Gothic, sans-serif;
     font-weight: 600;
- }
-.loc{
+    font-size: 30px;
+}
+
+.loc {
     margin-top: 50px;
     margin-left: -200px;
     color: #fff;
 }
 
-.footericon{
+.footericon {
     height: 40px;
     width: 40px;
 }
 
-.followicon{
+.followicon {
     height: 60px;
     width: 60px;
 }
 
-.homecounterheadline{
+.homecounterheadline {
     /* color: #F96945; */
     font-family: Century Gothic, sans-serif;
-     font-weight: 800;
-     font-size: 50px;
+    font-weight: 800;
+    font-size: 50px;
 }
 
-.pitch{
+.pitch {
     background-image: url(../Assets/Assets/Home/pitch.png);
 }
-.train{
+
+.train {
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
     border-color: grey;
     border-width: 1px;
     border-style: solid;
 }
-.child{
+
+.child {
     border-top-right-radius: 60px;
     border-bottom-left-radius: 60px;
     border-color: grey;
@@ -85,13 +90,14 @@
     border-style: solid;
 
 }
-.adult{
+
+.adult {
     border-radius: 50%;
     border: 1px solid #F2A745;
     border-style: solid;
 }
 
-.license{
+.license {
     color: white;
     background-color: #F96945;
     border-radius: 50px;
@@ -99,21 +105,22 @@
     font-weight: 800;
     text-align: center;
 }
-.rto{
+
+.rto {
     font-family: "Poppins", sans-serif;
     font-size: 17px;
     font-weight: 500;
 }
 
-.circle{
+.circle {
     position: absolute;
     background-image: url(../Assets/Assets/Homecounter/circle1.png);
     height: 250px;
     background-size: cover;
 }
 
-.circle2{
+.circle2 {
     position: absolute;
     height: 250px;
-    background-size:cover;
+    background-size: cover;
 }

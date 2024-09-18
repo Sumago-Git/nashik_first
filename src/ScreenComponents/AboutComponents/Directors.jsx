@@ -23,12 +23,12 @@ const Directors = () => {
           <Row className=' mx-5'>
             {directors.map((director, index) => (
               <Col lg={4} md={6} sm={12} className='mb-5' key={index}>
-                <div className='section mt-4'>
+                <div className='section mt-4 '>
                   <p className='sectiontext p-1'>{director.description}</p>
                 </div>
-                <div className='sectiontop text-center'>
-                  <p className='mt-3 drname mb-2'>{director.name}</p>
-                  <p className='drpost'>{director.title}</p>
+                <div className='sectiontop text-center pb-5 '>
+                  <p className='mt-3 drname mb-1'>{director.name}</p>
+                  <p className='drpost mb-5'>{director.title}</p>
                 </div>
               </Col>
             ))}

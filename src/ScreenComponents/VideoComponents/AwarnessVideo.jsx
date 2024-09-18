@@ -17,7 +17,7 @@ const AwarnessVideo = () => {
         <h1 className='pt-5  videoheadline'>Traffic Awareness Video</h1>
 
         <Container className='pb-4'>
-          <Row className='mx-auto'>
+          <Row className='mx-4'>
             {Array.from({ length: 9 }).map((_, index) => (
               <Col lg={4} md={6} sm={12} key={index} className={index >= 3 ? 'mt-5' : 'mt-4'}>
                 <Card style={{ width: '22rem', borderRadius: '20px', backgroundColor: '#F96945' }}>

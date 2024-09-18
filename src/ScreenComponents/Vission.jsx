@@ -11,15 +11,15 @@ const Vission = () => {
     <>
       <Container fluid className='mt-5 p-0'>
         <Row className='me-0'>
-          <Col lg={4}>
-            < text className='text ms-5 ps-0'>Our Vision</text>
+          <Col lg={4} className='pb-4'>
+            < text className='text ms-5 ps-0 '>Our Vision</text>
           </Col>
         </Row>
 
         <Container fluid className='p-0 vbg '>
-          <Row className='justify-content-center p-0 m-0'>
-            <Col lg={6}>
-              <img src={icons1} className='w-100 h-75   mt-5 pt-5' />
+          <Row className='justify-content-center p-2 m-0'>
+            <Col lg={6} className='mt-4'>
+              <img src={icons1} className='w-100 h-75 ms-4  mt-5 pt-4' />
             </Col>
             <Col lg={6}>
               <p className='vtext text-start mt-5 pt-5 ps-4 ms-5' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe, <br />
@@ -34,7 +34,7 @@ const Vission = () => {
 
       <Container fluid className='mt-5 p-0'>
         <Row className='me-0'>
-          <Col lg={12} className='text-end pe-5'>
+          <Col lg={12} className='text-end pe-5 pb-4'>
             < text className='text me-5 pe-5'>Our Mission</text>
           </Col>
         </Row>
