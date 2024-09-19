@@ -42,7 +42,7 @@ const Vission = () => {
         <Container fluid className='p-0 mbg'>
           <Row className='justify-content-center p-0 m-0'>
             <Col lg={7}>
-              <p className='mtext text-start mt-5 ms-5 pt-1'> <span style={{ fontWeight: "800" }}>"Nashik First"</span> is a proactive group of citizens
+              <p className='mtext text-start mt-5 ms-5 pt-2 ps-2'> <span style={{ fontWeight: "800" }}>"Nashik First"</span> is a proactive group of citizens
                 dedicated<br/> to improving Nashik's quality of life. For
                 years, Nashik has <br/>seen discussions on rapid
                 development, but little action.<br/> Recognizing this, Nashik

@@ -17,7 +17,7 @@
 }
 
 .contacttext{
-    font-family: "Century Gothic" sans-serif;
+    font-family: 'Century Gothic Paneuropean', sans-serif;
     text-align: start;
 }
 
@@ -33,7 +33,7 @@
     margin-top: -50px;
     position: absolute;
     font-size: 15px;
-    font-family: "Century Gothic" sans-serif;
+    font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1;
     word-spacing: 1px;
 }

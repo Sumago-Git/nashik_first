@@ -53,7 +53,7 @@ const Bottom = () => {
             </Col>
 
             <Col sm={6} lg={3} className='mt-5 '>
-              <p className='text-start bottomheadline pb-3'>Quick Links</p>
+              <p className='text-start bottomheadline pb-3 ms-3'>Quick Links</p>
               {quickLinks.map((link, index) => (
                 <Row key={index}>
                   <Col sm={1} xs={1} className='mt-3 ms-4'>
@@ -67,7 +67,7 @@ const Bottom = () => {
             </Col>
 
             <Col sm={12} lg={4} className="mt-5">
-              <p className='text-start bottomheadline pb-3'>Contact Details</p>
+              <p className='text-start bottomheadline pb-3 ms-2'>Contact Details</p>
               {contactDetails.map((detail, index) => (
                 <Row className={`align-items-center mt-2 ${detail.isAddress ? 'pt-0' : ''}`} key={index}>
                   <Col lg={2} xs={2} className='p-0'>

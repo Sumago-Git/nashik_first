@@ -8,7 +8,7 @@ import city from '../../Assets/Assets/Aboutpage/city.png'
 const Aboutbanner = () => {
     return (
         <>
-            <Container fluid className='pe-0 me-0'>
+            <Container fluid className='pe-0 me-0 p-0'>
             <img src={lghead} className='lghead d-none d-md-block'/>
             <img src={img4} className='img4 d-block d-md-none'/>
             </Container>

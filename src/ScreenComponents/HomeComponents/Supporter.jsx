@@ -24,7 +24,7 @@ const Supporter = () => {
       </Container>
 
       <Container fluid className='mt-5 pt-2 support text-center'>
-        <p style={{ fontWeight: '600' }} className='supporttext'>
+        <p style={{ fontWeight: '700' }} className='supporttext'>
           Our <span style={{ color: '#F96945' }}> Supporters</span>
         </p>
         <Container fluid className='pb-4'>

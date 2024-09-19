@@ -31,14 +31,14 @@ const Homecounter = () => {
               <Col xs={6} >
                 <Col lg={12} className='train mt-5 ms-5' style={{ height: '280px', backgroundColor: "#F96945" }}>
                   <Container style={{ marginTop: "50px", color: "white" }}>
-                    <h6>Training Imparted</h6>
+                    <h6 className='boxheadline'>Training Imparted</h6>
                     <img src={training} className='h-50 w-75'/>
                     <h2>5,120</h2>
                   </Container>
                 </Col>
                 <Col lg={12} className='adult mt-3 ms-5' style={{ height: "210px", backgroundColor: "#FDEDD8", boxShadow: '25px 38px 80px 0px #00000040' }}>
                   <Container style={{ marginTop: "20px", color: "blac" }}>
-                    <h5>Adult</h5>
+                    <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} style={{ height: "90px" }} />
                     <h2>135,127</h2>
                   </Container>
@@ -47,14 +47,14 @@ const Homecounter = () => {
               <Col xs={6} >
                 <Col lg={12} className='child mt-5 ms-5' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
                   <Container style={{ marginTop: "50px", color: "black" }}>
-                    <h5>Lives Changed</h5>
+                    <h5 className='boxheadline'>Lives Changed</h5>
                     <img src={lives} />
                     <h2>271,062</h2>
                   </Container>
                 </Col>
                 <Col lg={12} className='child ms-5 mt-3' style={{ height: '200px', backgroundColor: 'white', boxShadow: " 18px -25px 50px 0px #00000040" }}>
                   <Container style={{ marginTop: "10px", color: "black" }}>
-                    <h5>Children</h5>
+                    <h5 className='boxheadline'>Children</h5>
                     <img src={child} style={{ height: "100px" }} />
                     <h2>271,062</h2>
                   </Container>

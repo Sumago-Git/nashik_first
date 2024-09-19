@@ -144,7 +144,7 @@ const Calendar = () => {
           </Col>
 
           <Container className="mt-4">
-            <Table
+            <Table 
               bordered
               responsive
               style={{
@@ -184,6 +184,9 @@ const Calendar = () => {
                             color: day && (day.isNextMonth ? "#ccc" : disabled ? "#999" : "black"),
                             pointerEvents: day && (disabled ? "none" : "auto"), // Disable interaction for past days
                             transition: 'background-color 0.3s', // Smooth transition for background color change
+                            fontFamily: "Poppins",
+                            fontWeight:"600",
+
                           }}
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
