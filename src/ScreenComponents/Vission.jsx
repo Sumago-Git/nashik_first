@@ -19,7 +19,7 @@ const Vission = () => {
         <Container fluid className='p-0 vbg '>
           <Row className='justify-content-center p-2 m-0'>
             <Col lg={6} className='mt-4'>
-              <img src={icons1} className='w-100 h-75 ms-4  mt-5 pt-4' />
+              <img src={icons1} className='w-100 h-75 ms-4  mt-5 pt-4 d-none d-md-block' />
             </Col>
             <Col lg={6}>
               <p className='vtext text-start mt-5 pt-5 ps-4 ms-5' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe, <br />

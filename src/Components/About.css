@@ -108,8 +108,10 @@
 }
 @media (max-width: 768px){
     .listtext{
-        font-size: 13px;
+        font-size: 15px;
         text-align: start;
+        margin: 0px;
+        padding: 0px;
     }
     .achiveheadline{
         font-size: 35px;
@@ -118,6 +120,8 @@
     .listimgtext{
         text-align: center;
     }
+   
+
 }
 
 .listimg {

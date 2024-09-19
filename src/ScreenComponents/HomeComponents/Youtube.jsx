@@ -5,13 +5,12 @@ import '../../Components/Youtube.css';
 const Youtube = () => {
   return (
     <>
-      <Container className='mt-5 '>
+      <Container className='mt-5'>
         <Row className="mx-auto">
-          <Col lg={6}>
-            <div className="video-container" style={{ position: 'relative', width: '530px', height: '250px' }}>
+          <Col xs={12} md={6} className='mb-4'>
+            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
               <iframe
-                width="100%"
-                height="100%"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 src="https://www.youtube.com/embed/0j3X0OaHZro"
                 title="YouTube video player"
                 frameBorder="0"
@@ -20,11 +19,10 @@ const Youtube = () => {
               />
             </div>
           </Col>
-          <Col lg={6} className='ps-4'>
-            <div className="video-container" style={{ position: 'relative', width: '510px', height: '250px' }}>
+          <Col xs={12} md={6} className='mb-4'>
+            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
               <iframe
-                width="100%"
-                height="100%"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 src="https://www.youtube.com/embed/WpJFmvsVRW4"
                 title="YouTube video player"
                 frameBorder="0"

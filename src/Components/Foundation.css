@@ -5,20 +5,31 @@
 
 }
 
-.para{
+.fheadline{
     font-size: 42px !important ;
     font-family: 'Century Gothic Paneuropean', sans-serif;
     /* font-weight: 40px; */
-    
 }
-.para1{
+@media (max-width: 768px) {
+   .fheadline{
+    font-size: 40px !important;
+    text-align: center;
+   }
+   .fpara1{
+    font-size: 15px !important;
+    text-align: start;
+   }
+
+}  
+
+.fpara1{
     font-size: 25px !important;
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1.2;
     word-spacing: 2px;
 
 }
-.para2{
+.fpara2{
     font-size: 16.5px ;
     font-family: "Poppins";
     font-weight: 500;
