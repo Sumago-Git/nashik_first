@@ -9,7 +9,7 @@ import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
 import '../../Components/Photogallery.css';
 
 const Photogallery = () => {
-  // Array of photo objects
+ 
   const photos = [
     {
       src: photo1,
@@ -31,13 +31,13 @@ const Photogallery = () => {
         <h1 style={{ fontWeight: '700' }}>
           Photo <span style={{ color: '#F96945' }}> Gallery</span>
         </h1>
-        <Row className='mt-5 p-0 px-3'>
+        <Row className='mt-5 p-0 px-3 mx-5'>
           {photos.map((photo, index) => (
             <Col xs={12} sm={6} md={4} lg={4} className='mb-4' key={index}>
-              <Card className='photo h-100'>
+              <Card className='photo h-100 pb-4'>
                 <img src={photo.src} className='picture img-fluid' alt={`Photo ${index + 1}`} />
                 <Card.Body>
-                  <Card.Text className='mt-3 text1 text-start'>
+                  <Card.Text className='mt-3 cardtext text-start'>
                     {photo.text}
                   </Card.Text>
                 </Card.Body>

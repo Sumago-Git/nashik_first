@@ -11,9 +11,9 @@
 .picture{
     height: 270px;
 }
-.text1{
-font-weight: 800 !important;
+.cardtext{
+font-weight: 900;
 font-size: 20px !important;
-font-family: "Nanum Gothic", sans-serif;
+font-family: "Century-Gothic" sans-serif;
 
 }

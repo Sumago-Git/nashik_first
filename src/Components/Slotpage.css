@@ -3,28 +3,28 @@
 }
 
 .slotheadline{
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 30px;
     font-weight: 600;
 }
 
 .slotpagepara{
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
 }
 
 .datetime{
     background: linear-gradient(90deg, #FFA088 21.08%, rgba(255, 214, 204, 0.658439) 85.93%, rgba(255, 255, 255, 0.4) 100%);
     font-size: 23px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
    font-weight: 600;
 }
 .daydate{
     font-weight: 800;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 .session{
     background: #FFBCAA;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-size: 30px;
     border-radius: 20px;
@@ -44,7 +44,7 @@
     width: 230px;
     border: 0px;
     color: white;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 .bookingdetails{
@@ -60,16 +60,16 @@
     font-size: 35px;
     color: #F96945;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 .bookingdate{
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 font-weight: 600;
 font-size: 29px;
 
 }
 .detailtext{
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 29px;
     font-weight: 500;
     line-height: 0.5;

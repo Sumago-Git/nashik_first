@@ -4,7 +4,7 @@
 }
 
 .headline {
-    font-family: "Century Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
     position: relative;
     font-size: 45px;
     font-weight: 400;
@@ -12,7 +12,7 @@
 }
 
 .headlinetext {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins';
     position: relative;
     font-size: 20px !important;
     font-weight: 400;
@@ -33,19 +33,19 @@
 }
 
 .drheadline {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 50px;
     font-weight: 600;
 }
 
 .drname {
     font-size: 29px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 .drpost {
     font-size: 22px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 200;
 
 
@@ -65,7 +65,7 @@
     margin-top: 65px;
     position: absolute;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins';
     text-align: left;
     font-size: 15px;
 }
@@ -90,7 +90,7 @@
 .achiveheadline {
     font-size: 45px;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 
 
 }
@@ -101,7 +101,7 @@
 
 .listtext {
     font-size: 21px;
-    font-family: Century Gothic, sans-serif;
+    font-family: "Century Gothic" sans-serif;
     font-weight: 400;
     word-spacing: 2px;
     line-height: 1.3;
@@ -126,7 +126,7 @@
 }
 
 .listimgtext {
-    font-family: Century Gothic, sans-serif;
+    font-family: "Century Gothic" sans-serif;
     width: 230px;
     font-weight: 800 !important;
     font-size: 15px;
@@ -139,8 +139,9 @@
 }
 
 .oppoheadline {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 800;
+    font-size: 50px;
 }
 
 .oppoimg {
@@ -153,7 +154,7 @@
     position: absolute;
     margin-top: -70px;
     margin-left: -20px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
 }
 

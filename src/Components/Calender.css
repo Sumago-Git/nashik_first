@@ -7,7 +7,7 @@
 }
 
 .calenderheadline {
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
     font-size: 40px;
     font-weight: 800 !important;
 }
@@ -36,14 +36,14 @@
     color: #C50E22;
     font-size: 25px;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 .availablebox {
     background: #DBFFE3;
     font-size: 20px;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 
 }
 

@@ -21,7 +21,7 @@ const Opportunities = () => {
             <Container fluid className='oppobg mt-5 pb-5 pt-4'>
                 <h1 className='oppoheadline pt-5'>Opportunities of Work for ANF</h1>
                 <Container>
-                    <Row className='mt-4 justify-content-center'>
+                    <Row className='mt-2 justify-content-center '>
                         {opportunitiesData.map((item, index) => (
                             <Col lg={3} className={item.pb ? 'pb-5' : ''} key={index}>
                                 <img src={item.imgSrc} className='oppoimg' style={{ marginTop: item.marginTop || '0px' }} />

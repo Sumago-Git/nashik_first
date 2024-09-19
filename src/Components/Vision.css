@@ -11,7 +11,7 @@
 }
  .vtext{
     color: white;
-    font-family: "Century Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
     font-size: 26px;
     line-height: 1.2;
     font-weight: 200;
@@ -28,7 +28,7 @@
 
 .mtext{
     color: white;
-    font-family: "Century Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
     font-size: 28px;
     line-height: 1;
 }

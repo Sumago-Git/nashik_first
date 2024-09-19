@@ -5,7 +5,7 @@
 .upcomingheadline {
     font-size: 50px;
     font-weight: 800;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 .event {
@@ -32,12 +32,12 @@
     font-size: 25px;
     font-weight: 600;
     color: #F96945;
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
     position: relative;
 }
 
 .upcomingtext2 {
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: "Century Gothic" sans-serif;
 }
 
 .coll {

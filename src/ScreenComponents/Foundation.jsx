@@ -4,20 +4,20 @@ import group from '../Assets/Assets/Foundation/group.png';
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import one from '../../../Assets/Assets/Foundation/one.png'
+
 
 const Foundation = () => {
   return (
     <>
       <Container fluid className='body text-start mt-5 pb-5'>
         <Row>
-          <Col lg={7}  className='mt-5 pt-5'>
+          <Col lg={7} className='mt-5 pt-5'>
             <text className='para ms-5'>The Advantage</text>
-            <text style={{  fontWeight: "650" }} className='text'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
+            <text style={{ fontWeight: "650" }} className='text'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
             <Col>
-              <p className='ms-5 mt-3 para1'>Nashik First, an initiative of <span style={{fontWeight:"800"}}>Advantage Nashik</span><br/> 
-              <span style={{fontWeight:"800"}}>Foundation (ANF) </span>is a group of people working for<br/>
-              <span style={{fontWeight:"800"}}>improving quality life of Citizens of Nashik.</span></p>
+              <p className='ms-5 mt-3 para1'>Nashik First, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span><br />
+                <span style={{ fontWeight: "800" }}>Foundation (ANF) </span>is a group of people working for<br />
+                <span style={{ fontWeight: "800" }}>improving quality life of Citizens of Nashik.</span></p>
             </Col>
             <Col className='ms-5 para2 mt-4'>
               We are a group of people who act as a catalyst for the growth of the city <br />
@@ -34,9 +34,9 @@ const Foundation = () => {
           </Col>
 
           <Col lg={5} className='mt-5 pt-5 p-0'>
-            {/* <Container className='mt-2'> */}
-              <img src={group} className='group mt-4 ' />
-            {/* </Container> */}
+
+            <img src={group} className='group mt-4 ' />
+
           </Col>
         </Row>
 

@@ -5,7 +5,7 @@
 .inverstorheadline{
     font-size: 50px;
     font-weight: 800;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
 }
 
 .return{
@@ -22,7 +22,7 @@
 }
 
 .returntext{
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-size: 30px;
     line-height: 0.5;

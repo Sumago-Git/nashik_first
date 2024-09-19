@@ -3,7 +3,7 @@
 }
 
 .videoheadline {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-size: 50px;
 }
@@ -16,7 +16,7 @@
 }
 
 .videotext {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 30px;
     font-weight: 600;
     color: white;
@@ -24,7 +24,7 @@
 }
 
 .ourvideoheadline {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-weight: 600;
     font-size: 50px;
 }
