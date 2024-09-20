@@ -16,9 +16,9 @@ const Achivements = () => {
         <text className='achiveheadline'>
           Few of the Remarkable achievements are
         </text>
-        <Container fluid className='mt-5 pe-5'>
+        <Container fluid className='mt-5  pe-lg-5 '>
           <text>
-            <ul className='listtext text-start pb-4 ms-4'>
+            <ul className='listtext text-start pb-lg-4 ms-lg-4'>
               <li >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students</span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
               <li><span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.</li>
               <li><span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span></li>
@@ -35,24 +35,24 @@ const Achivements = () => {
       <Container fluid className='mt-5 me-0 p-3' >
         <Row className='ps-0'>
           <Col lg={2}>
-            <img src={training} className='listimg ms-3' />
-            <p className='ms-4 mt-3 ps-3 listimgtext'>Traffic Training Sessions for School & College students</p>
+            <img src={training} className='listimg ms-lg-3' />
+            <p className='ms-lg-4 ms-5 mt-3 ps-3 listimgtext'>Traffic Training Sessions for School & College students</p>
           </Col>
-          <Col lg={2} className='ms-0 ps-5'>
-            <img src={addressing} className='listimg ms-3' />
-            <p className='ms-2 mt-3 listimgtext'> Addressing the Traffic Condition & problems</p>
+          <Col lg={2} className='ms-0 ps-lg-5'>
+            <img src={addressing} className='listimg ms-lg-3' />
+            <p className='ms-lg-2 ms-5 mt-3 listimgtext'> Addressing the Traffic Condition & problems</p>
           </Col>
-          <Col lg={2} className='me-0 ps-5'>
-            <img src={don} className='listimg ms-5' />
+          <Col lg={2} className='me-0 ps-lg-5'>
+            <img src={don} className='listimg ms-lg-5' />
             <p className='ms-5 ps-5 pe-3 mt-3 listimgtext'> DON (Dost Of Nashik) awareness among youth.</p>
           </Col>
-          <Col lg={3} className='ms-5'>
-            <img src={hub} className='listimg ms-5' />
+          <Col lg={3} className='ms-lg-5'>
+            <img src={hub} className='listimg ms-lg-5' />
             <p className='ms-3 mt-3 listimgtext text-end'> Knowledge Hub</p>
           </Col>
           <Col lg={2} className='ms-0'>
-            <img src={bike} className='listimg ms-0' />
-            <p className='ms-3 mt-3 listimgtext'>Aika Na Nashikkar</p>
+            <img src={bike} className='listimg ms-lg-0' />
+            <p className='ms-lg-3 ms-5 mt-3 listimgtext'>Aika Na Nashikkar</p>
           </Col>
         </Row>
       </Container>

@@ -37,3 +37,14 @@
     line-height: 1;
     word-spacing: 1px;
 }
+
+@media (max-width:768px) {
+
+    .icontext{
+        margin-top: 0px;
+        color: white;
+    }
+    .icons{
+        margin-left: -150px;
+    }
+}

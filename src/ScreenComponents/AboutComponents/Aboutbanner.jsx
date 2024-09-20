@@ -14,8 +14,8 @@ const Aboutbanner = () => {
             </Container>
             <Container fluid className='backgrnd mt-4'>
           <Container fluid className='ms-3'>
-          <p className='text-start ms-5 headline pt-5'><span style={{fontWeight:"800"}}>Happiness...</span> is living in the <br/>city of your dreams...</p>
-           <p className='text-start ms-5 headlinetext pb-5'>
+          <p className='text-start ms-lg-5 ms-md-0 headline pt-5'><span style={{fontWeight:"800"}}>Happiness...</span> is living in the <br/>city of your dreams...</p>
+           <p className='text-start ms-lg-5 ms-ms-0 headlinetext pb-5'>
            Cities in India are getting smarter and looking for secure,<br/>
             intelligent and smarter solutions of resource optimisation. <br/>
             Quality of Life is at the heart of this transformation. Nashik<br/>

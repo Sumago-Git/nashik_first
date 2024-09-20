@@ -17,7 +17,7 @@ const Homecounter = () => {
         <Container>
           <Row className='justify-content-center'>
             <text>
-              <ul className='listtext text-start ps-5 ms-5'>
+              <ul className='listtext text-start lg-ps-5 lg-ms-5 md-ms-0 md-ps-0'>
                 <li className='pt-5'>Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions <br />for School & College students</span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
                 <li><span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of <br />budget for the same.</li>
                 <li><span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway<br /> Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span></li>
@@ -116,12 +116,12 @@ const Homecounter = () => {
                   </Container>
                   <Row className="justify-content-center mt-3">
                     <Col xs={5} sm={6} md={4} lg={4} className='pt-2'>
-                      <Container className='license pt-1 text-center' style={{ width: "170px" }}>
+                      <Container className='license pt-lg-1 pt-md-0 text-center' style={{ width: "170px" }}>
                         <h6 className='fs-5 mt-2'>School Students</h6>
                       </Container>
                     </Col>
                     <Col xs={10} sm={6} md={6} lg={6} className='pt-2'>
-                      <Container className='license pt-2 text-center' style={{ width: "320px" }}>
+                      <Container className='license pt-lg-2 pt-md-1 text-center' style={{ width: "320px" }}>
                         <h5 className='mt-2'>Adults (College / Organization)</h5>
                       </Container>
                     </Col>

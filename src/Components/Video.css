@@ -29,9 +29,10 @@
     font-size: 50px;
 }
 
-@media screen and(min-width:480px) {
-    .videoimg{
-        width: 100%;
-    }
+@media (max-width:768px) {
     
+    
+    .videoheadline{
+        font-size: 25px !important;
+    }
 }

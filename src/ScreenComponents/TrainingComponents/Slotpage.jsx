@@ -61,17 +61,17 @@ const Slotpage = () => {
 
                     <Container className='mt-5'>
                         <Row>
-                            {sessions.map((session, index) => 
-                                (
-                                    <Col key={index} lg={6} className={index === 0 ? 'pe-5' : 'ps-5'}>
-                                        <button onClick={()=> navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-3'>
-                                            {session.time} - {session.session}
-                                        </Container></button>
-                                    </Col>
-                                )
+                            {sessions.map((session, index) =>
+                            (
+                                <Col key={index} lg={6} sm={12} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                    <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-3'>
+                                        {session.time} - {session.session}
+                                    </Container></button>
+                                </Col>
                             )
-                        }
-                            <Col lg={12} className='mt-5 pt-3 pb-5 mb-2'>
+                            )
+                            }
+                            <Col lg={12} className='mt-lg-5 pt-lg-3 pb-5 mb-lg-2'>
                                 <Link to='/training'><button className='returnbutton p-3'>
                                     Return
                                 </button></Link>

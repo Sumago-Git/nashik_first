@@ -28,4 +28,23 @@
     line-height: 0.5;
 }
 
+@media (max-width:768px) {
+    .inverstorheadline{
+        font-size: 20px;
+    }
+    .investorbg{
+        height: 100px;
+    }
+
+    .return{
+        width: 350px !important;
+        height: 100px !important;
+        margin-left: 20px !important;
+        margin-top: -150px !important;
+    }
+
+    .returntext{
+        font-size: 10px;
+    }
+}
 

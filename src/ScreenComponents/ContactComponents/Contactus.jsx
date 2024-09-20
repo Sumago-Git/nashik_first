@@ -13,7 +13,7 @@ const Contactus = () => {
         <>
             <img src={lghead} className='lghead d-none d-md-block' />
             <img src={img4} className='img4 d-block d-md-none' />
-            <Container fluid className=' contactbg pb-5 d-none d-md-block'>
+            <Container fluid className=' contactbg pb-5 '>
                 <Row>
                     <Col lg={5}></Col>
                     <Col lg={7} className='mt-5'>
@@ -22,21 +22,21 @@ const Contactus = () => {
                             right track, with creativity that gets results!</p>
                     </Col>
                     <Col lg={4}></Col>
-                    <Col lg={1} className=' pb-5 mb-5'>
-                        <img src={whatsapp} className='icons ms-5' />
-                        <text className='ms-2 ps-5 icontext'>+91000000000</text>
+                    <Col lg={1} className=' pb-lg-5 mb-lg-5'>
+                        <img src={whatsapp} className='icons ms-lg-5 ' />
+                        <text className='ms-lg-2 ps-lg-5 icontext'>+91000000000</text>
                     </Col>
-                    <Col lg={1} className='ms-5 ps-4'>
-                        <img src={call} className='icons ms-5' />
-                        <text className='ms-4 ps-5 icontext'>+91 253 2315966</text>
+                    <Col lg={1} className='ms-lg-5 ps-lg-4'>
+                        <img src={call} className='icons ms-lg-5' />
+                        <text className='ms-lg-4 ps-lg-5 icontext'>+91 253 2315966</text>
                     </Col>
-                    <Col lg={1} className='ms-5 ps-5'>
-                        <img src={mail} className='icons ms-5' />
-                        <text className='ms-2 ps-5 icontext'>secretary@nashikfirst.com</text>
+                    <Col lg={1} className='ms-lg-5 ps-lg-5'>
+                        <img src={mail} className='icons ms-lg-5' />
+                        <text className='ms-lg-2 ps-lg-5 icontext'>secretary@nashikfirst.com</text>
                     </Col>
-                    <Col lg={1} className='ms-5 ps-5 '>
-                        <img src={location} className='icons ms-5 ps-4' />
-                        <text className='ms-5 ps-5 icontext text-start'>Survey No. 590/591, Motkari<br/> Nagar, Near Nelson Hospital, <br/>Behind Tupsakhare Lawns, <br/>Near Mumbai Naka, Nashik.</text>
+                    <Col lg={1} className='ms-lg-5 ps-lg-5 '>
+                        <img src={location} className='icons ms-lg-5 ps-lg-4' />
+                        <text className='ms-lg-5 ps-lg-5 icontext text-start'>Survey No. 590/591, Motkari<br/> Nagar, Near Nelson Hospital, <br/>Behind Tupsakhare Lawns, <br/>Near Mumbai Naka, Nashik.</text>
                     </Col>
                 </Row>
             </Container>

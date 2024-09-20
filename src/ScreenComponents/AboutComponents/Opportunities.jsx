@@ -18,12 +18,12 @@ const opportunitiesData = [
 const Opportunities = () => {
     return (
         <>
-            <Container fluid className='oppobg mt-5 pb-5 pt-4'>
-                <h1 className='oppoheadline pt-5'>Opportunities of Work for ANF</h1>
+            <Container fluid className='oppobg mt-lg-5 pb-lg-5 pt-lg-4'>
+                <h1 className='oppoheadline pt-lg-5'>Opportunities of Work for ANF</h1>
                 <Container>
-                    <Row className='mt-2 justify-content-center '>
+                    <Row className='mt-lg-2 justify-content-center '>
                         {opportunitiesData.map((item, index) => (
-                            <Col lg={3} className={item.pb ? 'pb-5' : ''} key={index}>
+                            <Col lg={3} className={item.pb ? 'pb-lg-5' : ''} key={index}>
                                 <img src={item.imgSrc} className='oppoimg' style={{ marginTop: item.marginTop || '0px' }} />
                                 <text className='oppoimgtext' dangerouslySetInnerHTML={{ __html: item.text }} />
                             </Col>

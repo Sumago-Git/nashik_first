@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.png";
-import { Container,Row,Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { useLocation } from 'react-router-dom';
 
@@ -80,35 +80,38 @@ const Bookingpage = () => {
               className='dateinput p-3 m-0 mt-0 '
             />
             <p className='bookingdate text-black text-start ms-4 mt-3'>{"Vehical type*"}</p>
-      
-            {/* <Container> */}
-              <Row>
-                <Col lg={1} className='ms-4'>
-                 <input type='checkbox' className='radiobtn mt-1'/>
-                </Col>
-                <Col lg={10} className='text-start'>
-                <lable className="btntext">2 wheelers</lable>
-                </Col>
 
-                <Col lg={1} className='ms-4'>
-                 <input type='checkbox' className='radiobtn mt-1'/>
-                </Col>
-                <Col lg={10} className='text-start'>
-                <lable className="btntext">3/5 wheelers</lable>
-                </Col>
-                <Col lg={1} className='ms-4'>
-                 <input type='checkbox' className='radiobtn mt-1'/>
-                </Col>
-                <Col lg={10} className='text-start'>
-                <lable className="btntext">4 wheelers heavy</lable>
-                </Col>
-                <Col lg={1} className='ms-4'>
-                 <input type='checkbox' className='radiobtn mt-1'/>
-                </Col>
-                <Col lg={10} className='text-start'>
-                <lable className="btntext">4 wheelers light</lable>
-                </Col>
-              </Row>
+            {/* <Container> */}
+            <Row>
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3'>
+                <input type='checkbox' className='radiobtn mt-1' />
+              </Col>
+              <Col xs={9} sm={11} lg={10} className='text-start'>
+                <label className="btntext ">2 Wheelers</label>
+              </Col>
+
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+                <input type='checkbox' className='radiobtn mt-1' />
+              </Col>
+              <Col xs={9} sm={11} lg={10} className='text-start'>
+                <label className="btntext">3/5 Wheelers</label>
+              </Col>
+
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+                <input type='checkbox' className='radiobtn mt-1' />
+              </Col>
+              <Col xs={9} sm={11} lg={10} className='text-start'>
+                <label className="btntext">4 Wheelers Heavy</label>
+              </Col>
+
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+                <input type='checkbox' className='radiobtn mt-1' />
+              </Col>
+              <Col xs={9} sm={11} lg={10} className='text-start'>
+                <label className="btntext">4 Wheelers Light</label>
+              </Col>
+            </Row>
+
             {/* </Container> */}
 
 

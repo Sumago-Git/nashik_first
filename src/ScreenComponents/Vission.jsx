@@ -22,7 +22,7 @@ const Vission = () => {
               <img src={icons1} className='w-100 h-75 ms-4  mt-5 pt-4 d-none d-md-block' />
             </Col>
             <Col lg={6}>
-              <p className='vtext text-start mt-5 pt-5 ps-4 ms-5' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe, <br />
+              <p className='vtext text-start mt-lg-5 pt-lg-5 ps-4 ms-5 mt-md-0 pt-md-0' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe, <br />
                 Economically</span> developed & Well planned having <br />
                 world class infrastructure and well connected with <br />
                 major cities of India by 2035.</p>

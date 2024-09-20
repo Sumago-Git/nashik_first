@@ -18,9 +18,9 @@ const Directors = () => {
   return (
     <>
       <Container fluid className='directorbg mt-5 pt-5'>
-        <h2 className='drheadline text-center'>Directors of Advantage Nashik Foundation</h2>
+        <h2 className='drheadline lg-text-center '>Directors of Advantage Nashik Foundation</h2>
         <Container className='mt-4 pb-5'>
-          <Row className=' mx-5'>
+          <Row className=' mx-lg-5 '>
             {directors.map((director, index) => (
               <Col lg={4} md={6} sm={12} className='mb-5' key={index}>
                 <div className='section mt-4 '>

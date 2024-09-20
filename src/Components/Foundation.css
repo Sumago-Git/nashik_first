@@ -8,7 +8,7 @@
 .fheadline{
     font-size: 42px !important ;
     font-family: 'Century Gothic Paneuropean', sans-serif;
-    /* font-weight: 40px; */
+   
 }
 @media (max-width: 768px) {
    .fheadline{
@@ -17,9 +17,14 @@
    }
    .fpara1{
     font-size: 15px !important;
-    text-align: start;
+    margin-left: 0px !important;
+    text-align: center;
    }
-
+   
+   .fpara2{
+      margin-left:0% !important;
+      text-align: center;
+   }
 }  
 
 .fpara1{
@@ -27,32 +32,16 @@
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1.2;
     word-spacing: 2px;
+    margin-left: 3rem;
 
 }
 .fpara2{
     font-size: 16.5px ;
     font-family: "Poppins";
     font-weight: 500;
+    margin-left: 3rem;
 }
 .group{
     width: 550px;
     height: 500px;
-}
-
-@media screen and (max-width:756px){
-    .gruop{
-        width: 100%;
-    }
-    .text{width: 100%;
-        font-size: 15px;
-        font-weight: 20;
-    }
-    .text1{
-        font-size: 20px;
-    }
-    .text2{
-        font-size: 15px;
-    }
-
-    
 }

@@ -29,7 +29,7 @@
 
 @media (max-width:768px) {
     .vbg{
-        /* background-repeat: no-repeat; */
+        background-repeat: no-repeat;
     }
     .vtext{
         font-size: 11px; 
