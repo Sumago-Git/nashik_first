@@ -3,7 +3,7 @@ import { Container, Table, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
-import lghead from "../../Assets/Assets/MainBanner/lghead.png"
+import lghead from "../../Assets/Assets/MainBanner/Frame 3.png"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import "../../Components/Calender.css";
 
