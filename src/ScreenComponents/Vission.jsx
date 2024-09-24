@@ -7,7 +7,8 @@ import icons1 from '../Assets/Assets/Vission/icons1.png'
 import '../Components/Vision.css';
 import m1 from "../Assets/Assets/Vission/m1.png"
 import m2 from "../Assets/Assets/Vission/m2.png";
-import m3 from "../Assets/Assets/Vission/m3.png"
+import m3 from "../Assets/Assets/Vission/m3.png";
+import divider from "../Assets/Assets/Vission/divider.png"
 
 const Vission = () => {
   return (
@@ -35,13 +36,9 @@ const Vission = () => {
         </Container>
       </Container>
 
-      <Container fluid className='mt-lg-5 p-0 mt-3'>
-        <Row className='me-0'>
-          <Col lg={12} className='text-end pe-5 pb-4'>
-            < text className='text me-lg-5 pe-lg-5 me-3'>Our Mission</text>
-          </Col>
-        </Row>
+      <img src={divider} className='w-100'/>
 
+      <Container fluid className='mt-lg-0 p-0 mt-3 '>
         <Container fluid className='p-0 mbg'>
           <Row className='justify-content-center p-0 m-0'>
             <Col lg={7}>
@@ -63,6 +60,11 @@ const Vission = () => {
             </Col>
           </Row>
         </Container>
+        <Row className='me-0'>
+          <Col lg={12} className='text-end pe-5 pb-4'>
+            < text className='text me-lg-5 pe-lg-5 me-3'>Our Mission</text>
+          </Col>
+        </Row>
       </Container>
     </>
   )
