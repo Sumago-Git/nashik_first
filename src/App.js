@@ -1,20 +1,18 @@
-// import logo from "./logo.svg";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Bottom from "./Components/Bottom";
 import Header from "./Components/Header";
 import Home from "./Screens/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import About from "./Screens/About/About"
-import Video from "./Screens/Video/Video"
-import Contact from "./Screens/Contact/Contact"
-import Investor from "./ScreenComponents/InvestorComponents/Annualreport"
-import Training from "./Screens/Training/Training"
-import Bookingpage from "./ScreenComponents/TrainingComponents/Bookingpage"
-import Slotpage from "./ScreenComponents/TrainingComponents/Slotpage"
+import About from "./Screens/About/About";
+import Video from "./Screens/Video/Video";
+import Contact from "./Screens/Contact/Contact";
+import Investor from "./ScreenComponents/InvestorComponents/Annualreport";
+import Training from "./Screens/Training/Training";
+import Bookingpage from "./ScreenComponents/TrainingComponents/Bookingpage";
+import Slotpage from "./ScreenComponents/TrainingComponents/Slotpage";
 import Events from "./Screens/Events/Events";
-import Upcomingevents from "./ScreenComponents/EventsComponents/Upcomingevents"
-
+import Upcomingevents from "./ScreenComponents/EventsComponents/Upcomingevents";
 
 function App() {
   return (
