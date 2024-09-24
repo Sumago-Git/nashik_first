@@ -3,7 +3,7 @@ import '../../Components/Video.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import video from '../../Assets/Assets/VideoPage/video.png';
-import lghead from "../../Assets/Assets/MainBanner/lghead.png"
+import lghead from "../../Assets/Assets/MainBanner/"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 
 const AwarnessVideo = () => {

@@ -35,7 +35,7 @@ const Foundation = () => {
 
           <Col lg={5} className='mt-5 pt-5 p-0'>
 
-            <img src={group} className='group mt-4 img-fluid ' />
+            <img src={group} className='group img-fluid ' />
 
           </Col>
         </Row>

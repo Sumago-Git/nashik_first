@@ -5,19 +5,21 @@ import phone from '../Assets/Assets/Bottom/phone.png';
 import email from '../Assets/Assets/Bottom/email.png';
 import location from '../Assets/Assets/Bottom/location.png';
 import Ellipse from '../Assets/Assets/Bottom/Ellipse 24.png';
-import whatsapp from '../Assets/Assets/Bottom/whatsapp.png';
+import x from '../Assets/Assets/Bottom/twitter.png';
 import facebook from '../Assets/Assets/Bottom/facebook.png';
+import youtube from '../Assets/Assets/Bottom/youtube.png';
 import insta from '../Assets/Assets/Bottom/insta.png';
 import email2 from '../Assets/Assets/Bottom/email2.png';
-import whatsapp2 from '../Assets/Assets/Bottom/whatsapp2.png';
+import whatsapp from '../Assets/Assets/Bottom/whatsapp.png';
 
 const Bottom = () => {
   const quickLinks = ['Home', 'About us', 'Events', 'Training', 'Traffic Awareness Video'];
 
   const contactDetails = [
-    { icon: whatsapp, text: '+91 0000000000' },
-    { icon: phone, text: '+91 253 2315966' },
-    { icon: email, text: 'secretary@nashikfirst.com' },
+    { icon: whatsapp, text: '+91 7796116555', isPhone: true },
+    { icon: phone, text: '+91 2532315966', isPhone: true },
+    // { icon: email, text: 'secretary@nashikfirst.com' },
+    { icon: email, text: 'secretary@nashikfirst.com', isEmail:true },
     { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true },
   ];
 
@@ -25,8 +27,9 @@ const Bottom = () => {
   const socialLinks = [
     { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/ ' },
     { icon: insta, url: 'https://www.instagram.com/nashikfirst/ ' },
-    { icon: email2, url: 'mailto:your-email@example.com' },
-    { icon: whatsapp2, url: 'https://wa.me/910000000000' }, // Replace with your actual WhatsApp number
+    // { icon: email2, url: 'mailto:your-email@example.com' },
+    { icon: youtube, url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
+    { icon: x, url: 'https://twitter.com/anfnashikfirst' }, // Replace with your actual WhatsApp number
   ];
 
   return (
@@ -38,14 +41,14 @@ const Bottom = () => {
               <p className='text-start bottomheadline ms-4 loc'>LOCATION</p>
               {/* Map iframe for desktop */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14998.042739114164!2d73.77339834282328!3d19.987070168042514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb1abfce8b67%3A0x31f677d2506ffcb7!2sMumbai%20Naka%2C%20Renuka%20Nagar%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724840869222!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29995.949551075715!2d73.779067!3d19.987784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb11dd2a51f9%3A0xe9a66ddcd7464b16!2sTraffic%20Education%20Park!5e0!3m2!1sen!2sin!4v1727086121224!5m2!1sen!2sin"
                 className='d-none d-md-block mt-3'
                 style={{ width: '100%', height: '240px', borderRadius: '9px' }}
                 loading="lazy"
               ></iframe>
               {/* Map iframe for mobile */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14998.042739114164!2d73.77339834282328!3d19.987070168042514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb1abfce8b67%3A0x31f677d2506ffcb7!2sMumbai%20Naka%2C%20Renuka%20Nagar%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724840869222!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29995.949551075715!2d73.779067!3d19.987784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb11dd2a51f9%3A0xe9a66ddcd7464b16!2sTraffic%20Education%20Park!5e0!3m2!1sen!2sin!4v1727086121224!5m2!1sen!2sin"
                 className='d-block d-md-none mt-3'
                 style={{ width: '100%', height: '250px', borderRadius: '9px' }}
                 loading="lazy"
@@ -74,7 +77,7 @@ const Bottom = () => {
                     <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} />
                   </Col>
                   <Col lg={10} xs={10} className='p-0'>
-                    {detail.isAddress ? <p className="text-start" style={{fontSize:"19px", fontWeight:"600"}}>{detail.text}</p> : <h5 className="text-start ms-0 p-0">{detail.text}</h5>}
+                    {detail.isAddress ? <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.text}</p> : detail.isPhone ? <h5 className="text-start ms-0 p-0"><a href={`tel:${detail.text}`} className='text-decoration-none text-white'>{detail.text}</a></h5> :detail.isEmail ? <h5 className="text-start ms-0 p-0"><a href={`mailto:${detail.text}`} className='text-decoration-none text-white'>{detail.text}</a></h5> : <h5 className="text-start ms-0 p-0">{detail.text}</h5>}
                   </Col>
                 </Row>
               ))}
@@ -84,7 +87,7 @@ const Bottom = () => {
                   <h4 className=' mt-2'>Follow Us On</h4>
                 </Col>
                 {socialLinks.map((link, index) => (
-                  <Col lg={2} xs={2} key={index} style={{width:"70px"}} className='p-0'>
+                  <Col lg={2} xs={2} key={index} style={{ width: "70px" }} className='p-0'>
                     <a href={link.url} target="_blank" rel="noopener noreferrer">
                       <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} />
                     </a>

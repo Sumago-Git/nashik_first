@@ -1,5 +1,5 @@
 import React from 'react'
-import lghead from "../../Assets/Assets/MainBanner/lghead.png"
+import lghead from "../../Assets/Assets/MainBanner/Frame 2.png"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import { Container, Row, Col } from 'react-bootstrap'
 import "../../Components/Contact.css"

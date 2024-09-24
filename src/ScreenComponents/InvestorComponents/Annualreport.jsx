@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../Components/Investor.css";
-import lghead from "../../Assets/Assets/MainBanner/lghead.png";
+import lghead from "../../Assets/Assets/MainBanner/Frame 5.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import investor from "../../Assets/Assets/Investor/investor.png";
 import { Container } from 'react-bootstrap';
