@@ -8,3 +8,9 @@
     position: absolute;
     display: block;
 }
+
+.vdoheadline{
+    font-size: 35px;
+    font-family: "Poppins";
+    font-weight: 600;
+}

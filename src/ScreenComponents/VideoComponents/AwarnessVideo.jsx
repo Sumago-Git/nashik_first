@@ -7,7 +7,7 @@ import lghead from "../../Assets/Assets/MainBanner/lghead.png"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 
 const AwarnessVideo = () => {
-  const title = 'Nashik first traffic';
+  const title = 'Nashik First Traffic';
 
   return (
     <>
@@ -16,7 +16,7 @@ const AwarnessVideo = () => {
       <Container fluid className='videobg pb-5'>
         <h1 className='pt-5  videoheadline'>Traffic Awareness Video</h1>
 
-        <Container className='pb-4'>
+        <Container className='pb-lg-4'>
           <Row className='mx-lg-4'>
             {Array.from({ length: 9 }).map((_, index) => (
               <Col lg={4} md={6} sm={12} key={index} className={index >= 3 ? 'mt-5' : 'mt-4'}>

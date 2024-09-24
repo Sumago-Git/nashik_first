@@ -17,14 +17,15 @@ const Header = () => {
           <Navbar.Brand href="/">
             <img src={logo1} className='logo1' alt="Logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
+          <Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-0'/>
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="start"
+            
           >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">Navbar</Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1' alt="Logo" /></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-auto links">

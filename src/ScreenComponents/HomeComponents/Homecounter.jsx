@@ -12,7 +12,7 @@ import "../../Components/Header.css";
 const Homecounter = () => {
   return (
     <>
-      <h1 className='mt-5 homecounterheadline '> What makes us <span style={{ color: "#F96945" }}>special?</span></h1>
+      <h1 className='mt-lg-5 homecounterheadline '> What makes us <span style={{ color: "#F96945" }}>special?</span></h1>
       <Container fluid className='pitch mt-4 pb-5'>
         <Container>
           <Row className='justify-content-center'>
@@ -26,9 +26,9 @@ const Homecounter = () => {
           </Row>
         </Container>
         <Row>
-          <Col lg={4} sm={12} className='mt-5'>
+          <Col lg={4} sm={12} className='mt-lg-5 pt-lg-3'>
             <Row>
-              <Col xs={6} md={6} className='mt-4'>
+              <Col xs={6} md={6} className='mt-5'>
                 <Col className='train' style={{ height: '280px', backgroundColor: "#F96945"}}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
                     <h6 className='boxheadline'>Training Imparted</h6>
@@ -37,7 +37,7 @@ const Homecounter = () => {
                   </Container>
                 </Col>
 
-                <Col className='adult mt-3' style={{ height: "210px", backgroundColor: "#FDEDD8", boxShadow: '25px 38px 80px 0px #00000040' }}>
+                <Col className='child mt-3' style={{ height: "280px", backgroundColor: "#FDEDD8", boxShadow: '25px 38px 80px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} className='img-fluid' style={{ height: "90px" }} alt='Adult' />
@@ -46,7 +46,7 @@ const Homecounter = () => {
                 </Col>
               </Col>
 
-              <Col xs={6} md={6} className='mt-4'>
+              <Col xs={6} md={6} className='mt-5'>
                 <Col className='child' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Lives Changed</h5>
@@ -55,7 +55,7 @@ const Homecounter = () => {
                   </Container>
                 </Col>
 
-                <Col className='child mt-3' style={{ height: '200px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040"}}>
+                <Col className='child mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040"}}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Children</h5>
                     <img src={child} className='img-fluid' style={{ height: "100px" }} alt='Children' />

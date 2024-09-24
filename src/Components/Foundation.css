@@ -28,7 +28,7 @@
 }  
 
 .fpara1{
-    font-size: 25px !important;
+    font-size: 26px !important;
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1.2;
     word-spacing: 2px;
@@ -36,12 +36,12 @@
 
 }
 .fpara2{
-    font-size: 16.5px ;
+    font-size: 19px ;
     font-family: "Poppins";
     font-weight: 500;
     margin-left: 3rem;
 }
 .group{
-    width: 475px;
+    width: 520px;
     height: 500px;
 }

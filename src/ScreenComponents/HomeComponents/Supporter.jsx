@@ -15,7 +15,7 @@ const Supporter = () => {
 
   return (
     <>
-      <Container fluid className='mt-5 pt-4'>
+      <Container fluid className='mt-lg-5 pt-4'>
         <Row>
           <Col className='p-0'>
             <img src={banner} style={{ width: '100%' }} alt="Banner" />
@@ -23,14 +23,14 @@ const Supporter = () => {
         </Row>
       </Container>
 
-      <Container fluid className='mt-5 pt-2 support text-center'>
+      <Container fluid className='mt-lg-5 pt-2 support text-center'>
         <p style={{ fontWeight: '700' }} className='supporttext'>
           Our <span style={{ color: '#F96945' }}> Supporters</span>
         </p>
         <Container fluid className='pb-4'>
           <Row className='justify-content-center p-3'>
             {supportersData.map((supporter, index) => (
-              <Col xs={6} sm={4} md={3} lg={3} className='mb-3 mt-4' key={index}>
+              <Col xs={6} sm={4} md={3} lg={3} className='mb-3 mt-lg-4' key={index}>
                 <img src={supporter} className='trademark img-fluid ' alt={`Supporter ${index + 1}`} />
               </Col>
             ))}

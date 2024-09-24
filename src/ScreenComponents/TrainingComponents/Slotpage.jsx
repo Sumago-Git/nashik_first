@@ -53,26 +53,26 @@ const Slotpage = () => {
                         Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
                     </p>
 
-                    <Container className='datetime p-3'>
+                    <Container className='datetime p-lg-3'>
                         Click on the calendar date & time slot, then fill out the form below to schedule your training.
                     </Container>
 
                     <h1 className='daydate mt-5'>{slotDate}</h1>
 
-                    <Container className='mt-5'>
+                    <Container className='mt-lg-5'>
                         <Row>
                             {sessions.map((session, index) =>
                             (
                                 <Col key={index} lg={6} sm={12} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
-                                    <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-3'>
+                                    <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-lg-3'>
                                         {session.time} - {session.session}
                                     </Container></button>
                                 </Col>
                             )
                             )
                             }
-                            <Col lg={12} className='mt-lg-5 pt-lg-3 pb-5 mb-lg-2'>
-                                <Link to='/training'><button className='returnbutton p-3'>
+                            <Col lg={12} className='mt-lg-5 pt-lg-3 pb-5 mb-lg-2 mt-4'>
+                                <Link to='/training'><button className='returnbutton p-lg-3'>
                                     Return
                                 </button></Link>
                             </Col>

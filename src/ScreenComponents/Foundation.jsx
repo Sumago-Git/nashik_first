@@ -9,13 +9,13 @@ import Col from 'react-bootstrap/Col';
 const Foundation = () => {
   return (
     <>
-      <Container fluid className='body text-start mt-5 pb-5'>
+      <Container fluid className='body text-start mt-lg-5 pb-lg-5'>
         <Row>
-          <Col lg={7} className='mt-5 pt-5'>
+          <Col lg={7} className='mt-lg-5 pt-lg-5 mt-4'>
             <text className='fheadline ms-5'>The Advantage</text>
             <text style={{ fontWeight: "650" }} className='fheadline'><span style={{ color: "#F96945" }}> Nashik</span> Foundation</text>
             <Col>
-              <p className=' mt-3 fpara1'>Nashik First, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span><br />
+              <p className=' mt-lg-3 mt-4 fpara1'>Nashik First, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span><br />
                 <span style={{ fontWeight: "800" }}>Foundation (ANF) </span>is a group of people working for<br />
                 <span style={{ fontWeight: "800" }}>improving quality life of Citizens of Nashik.</span></p>
             </Col>
@@ -33,7 +33,7 @@ const Foundation = () => {
             </Col>
           </Col>
 
-          <Col lg={5} className='mt-5 pt-5 p-0'>
+          <Col lg={5} className='mt-lg-5 pt-5 p-0'>
 
             <img src={group} className='group img-fluid ' />
 

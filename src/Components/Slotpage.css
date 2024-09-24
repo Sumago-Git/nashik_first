@@ -1,28 +1,30 @@
-.slotbg{
+.slotbg {
     background-color: #FFEFEB;
 }
 
-.slotheadline{
+.slotheadline {
     font-family: "Poppins";
     font-size: 30px;
     font-weight: 600;
 }
 
-.slotpagepara{
+.slotpagepara {
     font-family: 'Century Gothic Paneuropean', sans-serif;
 }
 
-.datetime{
+.datetime {
     background: linear-gradient(90deg, #FFA088 21.08%, rgba(255, 214, 204, 0.658439) 85.93%, rgba(255, 255, 255, 0.4) 100%);
     font-size: 23px;
     font-family: "Poppins";
-   font-weight: 600;
+    font-weight: 600;
 }
-.daydate{
+
+.daydate {
     font-weight: 800;
     font-family: "Poppins";
 }
-.session{
+
+.session {
     background: #FFBCAA;
     font-family: "Poppins";
     font-weight: 600;
@@ -30,13 +32,7 @@
     border-radius: 20px;
 }
 
-@media (max-width: 576px){
-    .session{
-        margin: 25px;
-        
-    }
-}
-.returnbutton{
+.returnbutton {
     background-color: #F96945;
     border-radius: 20px;
     font-size: 35px;
@@ -47,9 +43,9 @@
     font-family: "Poppins";
 }
 
-.bookingdetails{
+.bookingdetails {
     /* height: 300px; */
-    width: 700px !important;
+    width: 950px !important;
     background-color: white;
     box-shadow: 4px 4px 4px 0px #00000040;
     border-radius: 20px;
@@ -57,46 +53,64 @@
 
 @media (max-width: 768px) {
 
-    .bookingdetails{
+    .bookingdetails {
         width: 380px !important;
     }
-    .bookingheadline{
+
+    .bookingheadline {
         font-size: 26px !important;
     }
 
-    .detailtext{
+    .detailtext {
         font-size: 15px !important;
     }
-    .bookingdate{
+
+    .bookingdate {
         font-size: 20px !important;
     }
 
-.dateinput{
-    width: 330px !important;
-}
-.radiobtn{
-    height: 20px !important;
-    width: 20px !important;
+    .dateinput {
+        width: 330px !important;
+    }
+
+    .radiobtn {
+        height: 20px !important;
+        width: 20px !important;
+    }
+
+    .btntext {
+        font-size: 22px !important;
+    }
+
+    .slotheadline {
+        line-height: 1.1;
+    }
+
+    .session {
+        font-size: 26px;
+        margin: 10px;
+    }
+
+    .returnbutton {
+        font-size: 25px;
+    }
 }
 
-.btntext{
-    font-size: 22px !important;
-}
-}
-
-.bookingheadline{
+.bookingheadline {
     font-size: 35px;
     color: #F96945;
     font-weight: 600;
     font-family: "Poppins";
 }
-.bookingdate{
+
+.bookingdate {
     font-family: "Poppins";
-font-weight: 600;
-font-size: 29px;
+    font-weight: 600;
+    font-size: 20px;
 
 }
-.detailtext{
+
+.detailtext {
     font-family: "Poppins";
     font-size: 29px;
     font-weight: 500;
@@ -104,20 +118,22 @@ font-size: 29px;
 
 }
 
-.dateinput{
-    width: 630px;
+.dateinput {
+    width: 430px;
     border: 2px solid #F96945;
     border-radius: 20px;
+    font-weight: 700;
+    /* font-size: 20px; */
 }
 
-.radiobtn{
+.radiobtn {
     height: 25px;
     width: 25px;
     background-color: #F96945;
     /* margin-left: -455px; */
 }
 
-.btntext{
+.btntext {
     font-size: 25px;
     font-weight: 600;
 }

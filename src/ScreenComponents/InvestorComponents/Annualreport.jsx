@@ -23,7 +23,7 @@ const Annualreport = () => {
 
       <Container fluid className='investorbg pt-lg-5 pt-3 pb-0 p-0'>
         <h1 className='inverstorheadline'>Annual Reports</h1>
-        <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3  ' alt="Investor" style={{ position: "relative" }} />
+        <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
 
         <Container className='return pt-lg-4 '>
           {reports.map((report, index) => (

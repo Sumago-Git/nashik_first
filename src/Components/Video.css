@@ -31,8 +31,11 @@
 
 @media (max-width:768px) {
     
-    
     .videoheadline{
         font-size: 25px !important;
+    }
+
+    .videotext{
+        font-size: 25px;
     }
 }

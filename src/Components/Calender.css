@@ -55,3 +55,11 @@ fieldset:disabled .btn {
 .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
     border-color: floralwhite !important;
 }
+
+@media (max-width:768px) {
+
+    .calenderheadline{
+        font-size: 25px;
+    }
+    
+}

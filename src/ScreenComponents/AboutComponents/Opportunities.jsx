@@ -10,9 +10,9 @@ const opportunitiesData = [
     { imgSrc: animal, text: 'Stray Dog &<br /> Animals' },
     { imgSrc: pollution, text: 'Environment and <br />Pollution' },
     { imgSrc: safety, text: 'Safety Waste<br /> Management &<br />Sewage System' },
-    { imgSrc: transport, text: 'Sports Complex', marginTop: '-50px' },
-    { imgSrc: animal, text: 'Power Adquacy', marginTop: '-50px' },
-    { imgSrc: pollution, text: 'Clean & Flowing<br/> Godavari River', marginTop: '-50px', pb: true },
+    { imgSrc: transport, text: 'Sports Complex' },
+    { imgSrc: animal, text: 'Power Adquacy' },
+    { imgSrc: pollution, text: 'Clean & Flowing<br/> Godavari River' },
 ];
 
 const Opportunities = () => {
@@ -21,9 +21,9 @@ const Opportunities = () => {
             <Container fluid className='oppobg mt-lg-5 pb-lg-5 pt-lg-4'>
                 <h1 className='oppoheadline pt-lg-5'>Opportunities of Work for ANF</h1>
                 <Container>
-                    <Row className='mt-lg-2 justify-content-center '>
+                    <Row className='mt-lg-2  justify-content-center me-5 pe-3 '>
                         {opportunitiesData.map((item, index) => (
-                            <Col lg={3} className={item.pb ? 'pb-lg-5' : ''} key={index}>
+                            <Col lg={3}  className={item.pb ? 'pb-lg-5 '  : ''} key={index}>
                                 <img src={item.imgSrc} className='oppoimg' style={{ marginTop: item.marginTop || '0px' }} />
                                 <text className='oppoimgtext' dangerouslySetInnerHTML={{ __html: item.text }} />
                             </Col>

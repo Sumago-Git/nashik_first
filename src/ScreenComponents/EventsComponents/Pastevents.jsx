@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import banner from "../../Assets/Assets/Pastevents/banner.png"
+import pastbanner from "../../Assets/Assets/Pastevents/pastbanner.png"
 import "../../Components/Pastevents.css"
 import event1 from "../../Assets/Assets/Pastevents/event1.png";
 import event2 from "../../Assets/Assets/Pastevents/event2.png"
@@ -24,10 +24,10 @@ const Pastevents = () => {
   return (
     <>
       <Container fluid className='p-0'>
-        <img src={banner} className='w-100 img-fluid' alt="Banner" />
+        <img src={pastbanner} className='w-100 img-fluid' alt="Banner" />
       </Container>
 
-      <Container fluid className='trainingeventbg pb-5'>
+      <Container fluid className='trainingeventbg pb-lg-5'>
         <p className='trainingeventheadline mt-5 pt-5 text-center'>Special Training Event</p>
         <Row className='mx-5'>
           {specialEvents.map((event, index) => (
@@ -39,7 +39,7 @@ const Pastevents = () => {
       </Container>
 
       <Container fluid className='trainingeventbg pb-5'>
-        <p className='trainingeventheadline mt-5 pt-5  text-center'>Event Gallery</p>
+        <p className='trainingeventheadline mt-lg-5 pt-5  text-center'>Event Gallery</p>
         <Row className='mx-5 p-0'>
           {eventGallery.map((event, index) => (
             <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}

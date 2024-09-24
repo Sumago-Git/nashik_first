@@ -171,10 +171,28 @@
     }
 
     .oppoimgtext{
-        margin-left: -45px;
+        /* margin-left: -30px; */
+        margin-top: 80px;
     }
 
     .oppoheadline{
         font-size: 28px;
+    }
+    .headline{
+        font-size: 26px;
+    }
+    .drname{
+        font-size: 25px !important;
+    }
+    .drpost{
+        font-size: 18px;
+    }
+    .oppoheadline{
+        font-size: 25px;
+    }
+    .oppoimg{
+        height: 200px;
+        width: 200px;
+        margin-left: -40px;
     }
 }

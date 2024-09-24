@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import banner from "../../Assets/Assets/Pastevents/banner.png"
+import upcomingbanner from "../../Assets/Assets/Pastevents/upcomingbanner.png"
 import "../../Components/Upcomingevents.css"
 import upcoming1 from "../../Assets/Assets/Upcomingevents/upcoming1.png"
 
@@ -32,7 +32,7 @@ const Upcomingevents = () => {
   return (
     <>
       <Container fluid className='p-0'>
-        <img src={banner} className='w-100 eventbanner' alt="Event Banner" />
+        <img src={upcomingbanner} className='w-100 eventbanner' alt="Event Banner" />
       </Container>
 
       <Container fluid className='upcomingbg pb-5'>

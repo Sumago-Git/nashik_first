@@ -49,76 +49,97 @@ const Bookingpage = () => {
           <div className='form-group mb-4'>
             <p className='bookingdate text-black text-start ms-4'>{"Booking Date"}</p>
             <p className='detailtext text-black text-start ms-4 mb-4'>{slotTime}</p>
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Learning License Number*"}</p>
-            <input
-              name=''
-              placeholder={"MH15/0012345/2021"}
-              className='dateinput p-3 m-0 mt-0 '
-            />
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"First Name*"}</p>
-            <input
-              name=''
-              placeholder={"First Name"}
-              className='dateinput p-3 m-0 mt-0 '
-            />
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Last Name*"}</p>
-            <input
-              name=''
-              placeholder={"Last Name"}
-              className='dateinput p-3 m-0 mt-0 '
-            />
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Email*"}</p>
-            <input
-              name=''
-              placeholder={"Email"}
-              className='dateinput p-3 m-0 mt-0 '
-            />
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Phone*"}</p>
-            <input
-              name=''
-              placeholder={"Phone "}
-              className='dateinput p-3 m-0 mt-0 '
-            />
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Vehical type*"}</p>
 
-            {/* <Container> */}
             <Row>
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3'>
+              <Col lg={6}>
+              <p className='bookingdate text-black text-start ms-4 mt-3'>{"Learning License Number*"}</p>
+                <input
+                  name=''
+                  placeholder={"MH15/0012345/2021"}
+                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                />
+              </Col>
+              <Col lg={6}>
+                <p className='bookingdate text-black text-start ms-4 mt-3'>{"First Name*"}</p>
+                <input
+                  name=''
+                  placeholder={"First Name"}
+                  className='dateinput p-3  m-0 mt-0 ms-3'
+                />
+              </Col>
+              <Col lg={6}>
+                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Middle Name*"}</p>
+                <input
+                  name=''
+                  placeholder={"Middle Name"}
+                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                />
+              </Col>
+              <Col lg={6}>
+                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Last Name*"}</p>
+                <input
+                  name=''
+                  placeholder={"Last Name"}
+                  className='dateinput p-3 m-0 mt-0 ms-3'
+                />
+              </Col>
+              <Col lg={6}>
+                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Email*"}</p>
+                <input
+                  name=''
+                  placeholder={"Email"}
+                  className='dateinput p-3 m-0 mt-0 ms-3'
+                />
+              </Col>
+              <Col lg={6}>
+                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Phone*"}</p>
+                <input
+                  name=''
+                  placeholder={"Phone"}
+                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                />
+              </Col>
+           
+            <Col>
+            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Vehical type*"}</p>
+            <Row>
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3 ms-3'>
                 <input type='checkbox' className='radiobtn mt-1' />
               </Col>
               <Col xs={9} sm={11} lg={10} className='text-start'>
                 <label className="btntext ">2 Wheelers</label>
               </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
                 <input type='checkbox' className='radiobtn mt-1' />
               </Col>
               <Col xs={9} sm={11} lg={10} className='text-start'>
                 <label className="btntext">3/5 Wheelers</label>
               </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
                 <input type='checkbox' className='radiobtn mt-1' />
               </Col>
               <Col xs={9} sm={11} lg={10} className='text-start'>
                 <label className="btntext">4 Wheelers Heavy</label>
               </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4'>
+              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
                 <input type='checkbox' className='radiobtn mt-1' />
               </Col>
               <Col xs={9} sm={11} lg={10} className='text-start'>
                 <label className="btntext">4 Wheelers Light</label>
               </Col>
             </Row>
+            </Col>
 
-            {/* </Container> */}
+            </Row>
 
 
 
           </div>
           <div className='text-center'>
-            <button className='returnbutton p-3 mt-2'>
+            <button className='returnbutton p-lg-3 mt-2'>
               Book Now
             </button>
           </div>

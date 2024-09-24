@@ -16,7 +16,7 @@ const Achivements = () => {
         <text className='achiveheadline'>
           Few of the Remarkable achievements are
         </text>
-        <Container fluid className='mt-5  pe-lg-5 '>
+        <Container fluid className='mt-lg-5 mt-4  pe-lg-5 '>
           <text>
             <ul className='listtext text-start pb-lg-4 ms-lg-4'>
               <li >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students</span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>

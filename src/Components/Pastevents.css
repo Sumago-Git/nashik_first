@@ -24,3 +24,10 @@
 .events{
     width: 400px;
 }
+
+@media (max-width:768px) {
+    .trainingeventheadline{
+        font-size: 30px;
+    }
+    
+}

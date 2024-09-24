@@ -32,8 +32,9 @@ function App() {
         <Route path='/events' element={<Events/>}/>
         <Route path='upcomingevents' element={<Upcomingevents/>}/>
       </Routes>
-      </BrowserRouter>
       <Bottom/>
+      </BrowserRouter>
+      
 
       
     </div>

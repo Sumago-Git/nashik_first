@@ -61,3 +61,12 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+@media (max-width:768px) {
+
+    .upcomingheadline{font-size: 30px;
+    }
+    .event{
+        /* width: 300px !important; */
+    }
+}

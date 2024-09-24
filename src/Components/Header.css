@@ -61,6 +61,9 @@
     .whitebox{
         height: 490px !important;
     }
+    .homecounterheadline{
+        font-size: 35px !important;
+    }
 }
 
 .bottomheadline {
