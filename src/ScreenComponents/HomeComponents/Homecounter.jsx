@@ -32,12 +32,12 @@ const Homecounter = () => {
                 <Col className='train' style={{ height: '280px', backgroundColor: "#F96945"}}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
                     <h6 className='boxheadline'>Training Imparted</h6>
-                    <img src={training} className='img-fluid' style={{ width: '60%' }} alt='Training' />
+                    <img src={training} className='img-fluid' style={{ width: '60%' , color:"white"}} alt='Training' />
                     <h2>5,120</h2>
                   </Container>
                 </Col>
 
-                <Col className='child mt-3' style={{ height: "280px", backgroundColor: "#FDEDD8", boxShadow: '25px 38px 80px 0px #00000040' }}>
+                <Col className='child mt-3' style={{ height: "280px", backgroundColor: "white", boxShadow: '25px 38px 80px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} className='img-fluid' style={{ height: "90px" }} alt='Adult' />

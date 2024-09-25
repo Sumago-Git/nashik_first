@@ -9,8 +9,8 @@ const AnnualReturns = () => {
   // Array to hold the annual return data
   const annualReports = [
     { year: '2020 – 2021', url: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' },
-    { year: '2020 – 2021', url: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' },
-    { year: '2020 – 2021', url: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' }
+    { year: '2021 – 2022', url: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' },
+    { year: '2022 – 2023', url: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' }
   ];
 
   return (

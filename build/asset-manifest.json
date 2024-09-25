@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.6f72e8d4.css",
-    "main.js": "/static/js/main.be33769b.js",
+    "main.js": "/static/js/main.89b3ef08.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/Frame 3.png": "/static/media/Frame 3.6876a7c0ea29b021ed03.png",
-    "static/media/lghead.png": "/static/media/lghead.320b7091ffcbbc397de4.png",
     "static/media/Frame 5.png": "/static/media/Frame 5.18bba71a6895594365ab.png",
     "static/media/Frame 1.png": "/static/media/Frame 1.cdbcc1ec0948d7e53bf0.png",
     "static/media/Frame 2.png": "/static/media/Frame 2.7412e13a3e38cf59d762.png",
@@ -12,6 +11,7 @@
     "static/media/Contacts.png": "/static/media/Contacts.642c6c58da8aefdd02f6.png",
     "static/media/achive.png": "/static/media/achive.f707b60504504d52d891.png",
     "static/media/Contacts2.png": "/static/media/Contacts2.d26f7166190890a19916.png",
+    "static/media/lghead.png": "/static/media/lghead.2af91564cd6352d9932a.png",
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/pastbanner.png": "/static/media/pastbanner.afab20409cc6ee041c7d.png",
     "static/media/upcomingbanner.png": "/static/media/upcomingbanner.4abc13c332713fe3dffb.png",
@@ -32,6 +32,7 @@
     "static/media/event4.png": "/static/media/event4.8f59de23a33c2f8f5595.png",
     "static/media/event3.png": "/static/media/event3.11dcebc79e2caf889151.png",
     "static/media/video.png": "/static/media/video.991fc30ac7ee3d016ab4.png",
+    "static/media/divider.png": "/static/media/divider.0a2e9d824b6b6b667a90.png",
     "static/media/photo1.png": "/static/media/photo1.79e808d4cb32a6d87615.png",
     "static/media/circle1.png": "/static/media/circle1.7213f3f04359b047995f.png",
     "static/media/circle2.png": "/static/media/circle2.2adf1000df4cbc246abe.png",
@@ -64,11 +65,11 @@
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
     "main.6f72e8d4.css.map": "/static/css/main.6f72e8d4.css.map",
-    "main.be33769b.js.map": "/static/js/main.be33769b.js.map",
+    "main.89b3ef08.js.map": "/static/js/main.89b3ef08.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6f72e8d4.css",
-    "static/js/main.be33769b.js"
+    "static/js/main.89b3ef08.js"
   ]
 }

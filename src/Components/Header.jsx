@@ -28,7 +28,7 @@ const Header = () => {
               <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1' alt="Logo" /></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="mx-auto links">
+              <Nav className="mx-4  links">
                 <Link to="about" className={` text-decoration-none text-black mx-3`}>About Us</Link>
                 <Link to="events" className={`text-decoration-none text-black mx-3`}>Events</Link>
                 <Link to="training" className={`text-decoration-none text-black mx-3`} >Training</Link>
