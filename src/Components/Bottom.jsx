@@ -10,7 +10,6 @@ import x from '../Assets/Assets/Bottom/twitter.png';
 import facebook from '../Assets/Assets/Bottom/facebook.png';
 import youtube from '../Assets/Assets/Bottom/youtube.png';
 import insta from '../Assets/Assets/Bottom/insta.png';
-import email2 from '../Assets/Assets/Bottom/email2.png';
 import whatsapp from '../Assets/Assets/Bottom/whatsapp.png';
 
 const Bottom = () => {
@@ -23,18 +22,37 @@ const Bottom = () => {
   ];
 
   const contactDetails = [
-    { icon: whatsapp, text: '+91 7796116555', isPhone: true },
-    { icon: phone, text: '+91 2532315966', isPhone: true },
+    { icon: whatsapp, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
+    { icon: phone, text: '+91 2532315966', isPhone: true, type: 'phone' },
     { icon: email, text: 'secretary@nashikfirst.com', isEmail: true },
-    { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true },
+    { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true }
   ];
 
   const socialLinks = [
     { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
     { icon: insta, url: 'https://www.instagram.com/nashikfirst/' },
     { icon: youtube, url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
-    { icon: x, url: 'https://twitter.com/anfnashikfirst' },
+    { icon: x, url: 'https://twitter.com/anfnashikfirst' }
   ];
+
+  const handleClick = (type, text) => {
+    switch (type) {
+      case 'phone':
+        window.location.href = `tel:${text}`;
+        break;
+      case 'email':
+        window.location.href = `mailto:${text}`;
+        break;
+      case 'whatsapp':
+        window.open(`https://wa.me/${text.replace('+', '').replace(/\s/g, '')}`, '_blank');
+        break;
+      case 'location':
+        window.open(`https://www.google.com/maps?q=${encodeURIComponent(text)}`, '_blank');
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <>
@@ -78,12 +96,25 @@ const Bottom = () => {
             <Col sm={12} lg={4} className="mt-5">
               <p className='text-start bottomheadline pb-3 ms-2'>Contact Details</p>
               {contactDetails.map((detail, index) => (
-                <Row className={`align-items-center mt-2 ${detail.isAddress ? 'pt-0' : ''}`} key={index}>
+                <Row
+                  className={`align-items-center mt-2 ${detail.isAddress ? 'pt-0' : ''}`}
+                  key={index}
+                  onClick={() => handleClick(detail.type || (detail.isEmail && 'email') || (detail.isAddress && 'location'), detail.text)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <Col lg={2} xs={2} className='p-0'>
                     <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} />
                   </Col>
                   <Col lg={10} xs={10} className='p-0'>
-                    {detail.isAddress ? <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.text}</p> : detail.isPhone ? <h5 className="text-start ms-0 p-0"><a href={`tel:${detail.text}`} className='text-decoration-none text-white'>{detail.text}</a></h5> : detail.isEmail ? <h5 className="text-start ms-0 p-0"><a href={`mailto:${detail.text}`} className='text-decoration-none text-white'>{detail.text}</a></h5> : <h5 className="text-start ms-0 p-0">{detail.text}</h5>}
+                    {detail.isAddress ? (
+                      <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.text}</p>
+                    ) : detail.isPhone ? (
+                      <h5 className="text-start ms-0 p-0">{detail.text}</h5>
+                    ) : detail.isEmail ? (
+                      <h5 className="text-start ms-0 p-0">{detail.text}</h5>
+                    ) : (
+                      <h5 className="text-start ms-0 p-0">{detail.text}</h5>
+                    )}
                   </Col>
                 </Row>
               ))}
