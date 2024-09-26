@@ -27,7 +27,7 @@ const Vission = () => {
             </Col>
             <Col lg={6}>
               <p className='vtext text-start mt-lg-5 pt-lg-5 ps-lg-4 ms-lg-5 mt-3 pt-5' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe, <br />
-                Economically</span> developed & Well planned having <br />
+                Economically developed</span> & Well planned having <br />
                 world class infrastructure and well connected with <br />
                 major cities of India by 2035.</p>
             </Col>

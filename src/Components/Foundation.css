@@ -6,7 +6,7 @@
 }
 
 .fheadline{
-    font-size: 42px !important ;
+    font-size: 45px !important ;
     font-family: 'Century Gothic Paneuropean', sans-serif;
    
 }
@@ -28,7 +28,7 @@
 }  
 
 .fpara1{
-    font-size: 26px !important;
+    font-size: 27px !important;
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1.2;
     word-spacing: 2px;
@@ -36,7 +36,7 @@
 
 }
 .fpara2{
-    font-size: 19px ;
+    font-size: 21px ;
     font-family: "Poppins";
     font-weight: 500;
     margin-left: 3rem;

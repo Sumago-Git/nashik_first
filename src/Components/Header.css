@@ -84,6 +84,9 @@
     height: 40px;
     width: 40px;
 }
+.footericon:hover{
+    background-color: #c50c1c;
+}
 
 .followicon {
     height: 60px;
@@ -109,7 +112,7 @@
     border-style: solid;
 }
 
-.child {
+.lives {
     border-top-right-radius: 60px;
     border-bottom-left-radius: 60px;
     border-color: grey;
@@ -118,9 +121,11 @@
 
 }
 
-.adult {
-    border-radius: 50%;
-    border: 1px solid #F2A745;
+.childner{
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-color: grey;
+    border-width: 1px;
     border-style: solid;
 }
 
@@ -169,4 +174,14 @@
 .copyright{
     font-size: 20px;
     color: white;
+}
+
+.eventdrop{
+    /* color: rgb(218, 25, 25) !important; */
+    font-size: 20px !important;
+    padding: 0px !important;
+    font-weight: 550 !important;
+}
+.eventdrop:hover{
+    font-weight: 800 !important;
 }

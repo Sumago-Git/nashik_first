@@ -37,7 +37,7 @@ const Homecounter = () => {
                   </Container>
                 </Col>
 
-                <Col className='child mt-3' style={{ height: "280px", backgroundColor: "white", boxShadow: '25px 38px 80px 0px #00000040' }}>
+                <Col className='lives mt-3' style={{ height: "280px", backgroundColor: "white", boxShadow: '25px 38px 80px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} className='img-fluid' style={{ height: "90px" }} alt='Adult' />
@@ -47,7 +47,7 @@ const Homecounter = () => {
               </Col>
 
               <Col xs={6} md={6} className='mt-5'>
-                <Col className='child' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
+                <Col className='lives' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Lives Changed</h5>
                     <img src={lives} className='img-fluid' alt='Lives Changed' />
@@ -55,7 +55,7 @@ const Homecounter = () => {
                   </Container>
                 </Col>
 
-                <Col className='child mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040"}}>
+                <Col className=' childner mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040"}}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Children</h5>
                     <img src={child} className='img-fluid' style={{ height: "100px" }} alt='Children' />

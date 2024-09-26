@@ -145,7 +145,7 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-3 m-0 p-0 '>© {footerDate} Copyright : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='copyright mt-lg-3 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
         </Container>
       </section>
     </>

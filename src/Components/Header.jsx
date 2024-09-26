@@ -31,20 +31,21 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-4  links ">
-                <Link to="about" className={` text-decoration-none text-black mx-2`}>About Us</Link>
-                <Dropdown>
-                  <Dropdown.Toggle variant="" id="dropdown-basic"  className={` text-decoration-none text-black mx-2 `}>
+                <Link to="about" className={` text-decoration-none text-black mx-4`}>About Us</Link>
+                <Dropdown >
+                  <Dropdown.Toggle variant=""   className={` text-decoration-none text-black mx-4 eventdrop `}>
                     Events
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                  <Link to="events" className={`text-decoration-none text-black  mx-3 p-0 m-0 `}>Past Events</Link>
-                  <Link to="upcomingevents" className={`text-decoration-none text-black mx-3 `}> Upcoming Events</Link> 
+                  <Link to="events" className={`text-decoration-none text-black  `}>Past Events</Link>
+                  <Link to="upcomingevents" className={`text-decoration-none text-black `}> Upcoming Events</Link> 
                   </Dropdown.Menu>
                 </Dropdown>
-                <Link to="training" className={`text-decoration-none text-black mx-3`} >Training</Link>
-                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-3`} >Traffic Awarness Video</Link>
-                <Link to="investor" className={`text-decoration-none text-black mx-3`}>Investor</Link>
-                <Link to="contact" className={`text-decoration-none text-black mx-3`} >Contact</Link>
+                {/* <Link to="events" className={`text-decoration-none text-black mx-4`} >Events</Link> */}
+                <Link to="training" className={`text-decoration-none text-black mx-4`} >Training</Link>
+                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-4`} >Traffic Awarness Video</Link>
+                <Link to="investor" className={`text-decoration-none text-black mx-4`}>Investor</Link>
+                <Link to="contact" className={`text-decoration-none text-black mx-4`} >Contact</Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

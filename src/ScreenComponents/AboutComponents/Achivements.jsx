@@ -48,7 +48,7 @@ const Achivements = () => {
           </Col>
           <Col lg={3} className='ms-lg-5'>
             <img src={hub} className='listimg ms-lg-5' />
-            <p className='ms-3 mt-3 listimgtext text-end'> Knowledge Hub</p>
+            <p className='ms-4 mt-3 listimgtext text-end'> Knowledge Hub</p>
           </Col>
           <Col lg={2} className='ms-0'>
             <img src={bike} className='listimg ms-lg-0' />
