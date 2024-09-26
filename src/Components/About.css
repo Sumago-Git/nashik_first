@@ -23,7 +23,7 @@
     width: 632px;
     position: absolute;
     margin-top: -420px;
-    margin-left: 650px;
+    margin-left: 496px;
 }
 
 /* directors */
@@ -145,7 +145,7 @@
 .oppoimgtext {
     position: absolute;
     margin-top: -70px;
-    margin-left: -20px;
+    margin-left: -45px;
     font-family: "Poppins";
     font-weight: 600;
 }
@@ -169,12 +169,6 @@
     .achiveheadline{
         font-size: 25px;
     }
-
-    .oppoimgtext{
-        /* margin-left: -30px; */
-        margin-top: 80px;
-    }
-
     .oppoheadline{
         font-size: 28px;
     }
@@ -187,12 +181,9 @@
     .drpost{
         font-size: 18px;
     }
-    .oppoheadline{
-        font-size: 25px;
-    }
-    .oppoimg{
-        height: 200px;
-        width: 200px;
-        margin-left: -40px;
-    }
+     .headlinetext{
+        font-size: 11px !important;
+        text-align: center !important;
+     }
+   
 }

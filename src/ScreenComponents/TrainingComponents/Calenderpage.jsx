@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Container, Table, Col } from "react-bootstrap";
+import { Container, Table, Col,Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
-import lghead from "../../Assets/Assets/MainBanner/Frame 3.png"
+import frame2 from "../../Assets/Assets/MainBanner/Frame 2.png"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import "../../Components/Calender.css";
+import Nav from 'react-bootstrap/Nav';
 
 // Define static event data with text
 const eventData = [
@@ -100,7 +101,7 @@ const Calendar = () => {
   return (
     <>
       <Container fluid className='m-0 p-0'>
-        <img src={lghead} className='lghead d-none d-md-block' />
+        <img src={frame2} className='lghead d-none d-md-block' />
         <img src={img4} className='img4 d-block d-md-none' />
       </Container>
 
@@ -121,12 +122,48 @@ const Calendar = () => {
           <Container className='datetime p-3'>
             Click on the calendar date & time slot, then fill out the form below to schedule your training.
           </Container>
+
+          <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
+          <Row>
+            <Col lg={4} className="p-0">
+            <Nav.Item className="calendertabs" >
+              <Nav.Link eventKey="link-1" className="text-black ">RTO – Learner Driving License Holder <br/>Training</Nav.Link>
+            </Nav.Item>
+            </Col>
+           <Col lg={4} className="p-0">
+           <Nav.Item className="calendertabs">
+              <Nav.Link eventKey="link-2" className="text-black">RTO – Suspended Driving License Holders Training</Nav.Link>
+            </Nav.Item>
+           </Col>
+           <Col lg={4} className="p-0">
+           <Nav.Item className="calendertabs">
+              <Nav.Link eventKey="link-3" className="text-black">RTO – School Bus Driver Training</Nav.Link>
+            </Nav.Item>
+           </Col>
+            <Col lg={4} className="p-0">
+            <Nav.Item className="calendertabs">
+              <Nav.Link eventKey="link-4" className="text-black">School Students Training</Nav.Link>
+            </Nav.Item>
+            </Col>
+            <Col lg={4} className="p-0">
+            <Nav.Item className="calendertabs">
+              <Nav.Link eventKey="link-5" className="text-black">College/Organization Training – Group</Nav.Link>
+            </Nav.Item>
+            </Col>
+            <Col lg={4} className="p-0">
+            <Nav.Item className="calendertabs">
+              <Nav.Link eventKey="link-6" className="text-black">College/Organization Training – Individual</Nav.Link>
+            </Nav.Item> 
+            </Col>   
+            </Row>        
+          </Nav>
+
         </Container>
-        <Container className="calender mt-5">
+        <Container className="calender ">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
             {/* Disable the left arrow if the user is on the current month */}
-            <button 
-              className="btn ms-1" 
+            <button
+              className="btn ms-1"
               onClick={() => changeMonth('prev')}
               disabled={isCurrentMonth} // Disable if current month is being displayed
             >
@@ -135,8 +172,8 @@ const Calendar = () => {
             <h3 className="calenderheadline mx-4 mt-4">
               {monthNames[currentMonth]} {currentYear}
             </h3>
-            <button 
-              className="btn ms-1" 
+            <button
+              className="btn ms-1"
               onClick={() => changeMonth('next')}
             >
               <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
@@ -144,7 +181,7 @@ const Calendar = () => {
           </Col>
 
           <Container className="mt-4">
-            <Table 
+            <Table
               bordered
               responsive
               style={{
@@ -185,7 +222,7 @@ const Calendar = () => {
                             pointerEvents: day && (disabled ? "none" : "auto"), // Disable interaction for past days
                             transition: 'background-color 0.3s', // Smooth transition for background color change
                             fontFamily: "Poppins",
-                            fontWeight:"600",
+                            fontWeight: "600",
 
                           }}
                         >

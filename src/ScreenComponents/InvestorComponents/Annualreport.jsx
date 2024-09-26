@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../Components/Investor.css";
-import lghead from "../../Assets/Assets/MainBanner/Frame 5.png";
+import frame4 from "../../Assets/Assets/MainBanner/Frame 4.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import investor from "../../Assets/Assets/Investor/investor.png";
 import { Container } from 'react-bootstrap';
@@ -17,7 +17,7 @@ const Annualreport = () => {
   return (
     <>
       <Container fluid className='p-0 m-0 mb-0'>
-        <img src={lghead} className='lghead d-none d-md-block' />
+        <img src={frame4} className='lghead d-none d-md-block' />
         <img src={img4} className='img4 d-block d-md-none' />
       </Container>
 

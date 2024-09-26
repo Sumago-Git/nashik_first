@@ -56,6 +56,15 @@ fieldset:disabled .btn {
     border-color: floralwhite !important;
 }
 
+.calendertabs{
+    font-weight: 600;
+    /* border: 1px gray solid; */
+    /* width: 185px; */
+}
+.calendertabs:hover{
+    /* background-color:coral; */
+}
+
 @media (max-width:768px) {
 
     .calenderheadline{

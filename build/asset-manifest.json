@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.677b67a5.css",
-    "main.js": "/static/js/main.cc3ed2cc.js",
+    "main.css": "/static/css/main.325d552b.css",
+    "main.js": "/static/js/main.d24608b6.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/Frame 3.png": "/static/media/Frame 3.6876a7c0ea29b021ed03.png",
     "static/media/Frame 5.png": "/static/media/Frame 5.18bba71a6895594365ab.png",
@@ -38,11 +38,13 @@
     "static/media/circle2.png": "/static/media/circle2.2adf1000df4cbc246abe.png",
     "static/media/addressing.png": "/static/media/addressing.5cbee7b8507c536e05a0.png",
     "static/media/photo3.png": "/static/media/photo3.d709867309a7acbae2c7.png",
-    "static/media/transport.png": "/static/media/transport.9825c9b68d69743e78bf.png",
-    "static/media/animal.png": "/static/media/animal.8f89e074be59e3f91c22.png",
-    "static/media/safety.png": "/static/media/safety.24c50a9acc7c498dee38.png",
+    "static/media/social.png": "/static/media/social.f2afa7ec760f09d2a7d6.png",
+    "static/media/road.png": "/static/media/road.59beb860dbd5920c4c27.png",
+    "static/media/truck.png": "/static/media/truck.752a31e48103ec9ffd59.png",
+    "static/media/industry.png": "/static/media/industry.a6aa79f4cb7c4d778b91.png",
+    "static/media/education.png": "/static/media/education.9f221cd8f018cc712fb1.png",
+    "static/media/health.png": "/static/media/health.7e899df3bbbc030e632a.png",
     "static/media/photo2.png": "/static/media/photo2.358dc84621b9739cd70d.png",
-    "static/media/pollution.png": "/static/media/pollution.209b5e1fd46235e98312.png",
     "static/media/training.png": "/static/media/training.811e2f6cd88d70b06e70.png",
     "static/media/hub.png": "/static/media/hub.63dd9836a943a6733537.png",
     "static/media/img4.jpg": "/static/media/img4.c414e3449d1bfcf9392c.jpg",
@@ -54,6 +56,7 @@
     "static/media/bike.png": "/static/media/bike.5bfa180b651f01218cd3.png",
     "static/media/icons1.png": "/static/media/icons1.2d3055a85a81642d5820.png",
     "static/media/support3.png": "/static/media/support3.cf6d143abd6079f5636d.png",
+    "static/media/Sumagologo.png": "/static/media/Sumagologo.7dc4f8c47c773ca1b560.png",
     "static/media/traffic.png": "/static/media/traffic.c97190bf4a61269d25cf.png",
     "static/media/logo1.png": "/static/media/logo1.2796b3b1f74b24d33a26.png",
     "static/media/support1.png": "/static/media/support1.4514d8a26535766ea013.png",
@@ -64,12 +67,12 @@
     "static/media/m3.png": "/static/media/m3.8b6c39db8423e87b0af0.png",
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
-    "main.677b67a5.css.map": "/static/css/main.677b67a5.css.map",
-    "main.cc3ed2cc.js.map": "/static/js/main.cc3ed2cc.js.map",
+    "main.325d552b.css.map": "/static/css/main.325d552b.css.map",
+    "main.d24608b6.js.map": "/static/js/main.d24608b6.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.677b67a5.css",
-    "static/js/main.cc3ed2cc.js"
+    "static/css/main.325d552b.css",
+    "static/js/main.d24608b6.js"
   ]
 }

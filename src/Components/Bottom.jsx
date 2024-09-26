@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Components/Header.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import Link
@@ -6,13 +6,25 @@ import phone from '../Assets/Assets/Bottom/phone.png';
 import email from '../Assets/Assets/Bottom/email.png';
 import location from '../Assets/Assets/Bottom/location.png';
 import Ellipse from '../Assets/Assets/Bottom/Ellipse 24.png';
-import x from '../Assets/Assets/Bottom/twitter.png';
+import x from '../Assets/Assets/Bottom/twiter.png';
 import facebook from '../Assets/Assets/Bottom/facebook.png';
 import youtube from '../Assets/Assets/Bottom/youtube.png';
 import insta from '../Assets/Assets/Bottom/insta.png';
 import whatsapp from '../Assets/Assets/Bottom/whatsapp.png';
+import sumagologo from "../Assets/Assets/Bottom/Sumagologo.png"
 
 const Bottom = () => {
+  const [footerDate, setFooterDate] = useState("")
+  useEffect(() => {
+    // Create a new Date object
+    const currentDate = new Date();
+
+    // Get the current year
+    const currentYear = currentDate.getFullYear();
+    setFooterDate(currentYear)
+    // Log or use the current year
+    console.log("Current year:", currentYear);
+  }, [])
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About us', path: '/about' },
@@ -133,6 +145,7 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
+          <p className='copyright mt-lg-3 m-0 p-0 '>© {footerDate} Copyright : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
         </Container>
       </section>
     </>

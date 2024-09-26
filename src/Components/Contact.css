@@ -36,6 +36,7 @@
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1;
     word-spacing: 1px;
+    color: black;
 }
 
 @media (max-width:768px) {

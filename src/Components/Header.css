@@ -36,6 +36,7 @@
     width: 100%;
 }
 
+
 .bottombg {
     background-image: url(../Assets/Assets/Bottom/bottombg.jpg);
     background-size: cover;
@@ -163,4 +164,9 @@
     position: absolute;
     height: 250px;
     background-size: cover;
+}
+
+.copyright{
+    font-size: 20px;
+    color: white;
 }
