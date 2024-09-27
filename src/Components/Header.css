@@ -6,7 +6,7 @@
 
 .links {
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
     /* color: rgb(221, 12, 12); */
     margin-top: 40px;
     font-family: 'Century Gothic Paneuropean', sans-serif;
@@ -180,7 +180,7 @@
     /* color: rgb(218, 25, 25) !important; */
     font-size: 20px !important;
     padding: 0px !important;
-    font-weight: 550 !important;
+    font-weight: 530 !important;
 }
 .eventdrop:hover{
     font-weight: 800 !important;

@@ -25,7 +25,7 @@ const Opportunities = () => {
     return (
         <>
             <Container fluid className='oppobg mt-lg-5 pb-lg-5 pt-lg-4'>
-                <h1 className='oppoheadline pt-lg-5'>Opportunities of Work for ANF</h1>
+                <h1 className='oppoheadline pt-lg-5'>Objectives of  ANF</h1>
                 <Container>
                     <Row className='mt-lg-2  mx-1  me-5 pe-3 '>
                         {opportunitiesData.map((item, index) => (

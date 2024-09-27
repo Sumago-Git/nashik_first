@@ -30,10 +30,10 @@ const Header = () => {
               <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1' alt="Logo" /></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="mx-4  links ">
-                <Link to="about" className={` text-decoration-none text-black mx-4`}>About Us</Link>
+              <Nav className="mx-auto  links ">
+                <Link to="about" className={` text-decoration-none text-black mx-3`}>About Us</Link>
                 <Dropdown >
-                  <Dropdown.Toggle variant=""   className={` text-decoration-none text-black mx-4 eventdrop `}>
+                  <Dropdown.Toggle variant=""   className={` text-decoration-none text-black mx-3 eventdrop `}>
                     Events
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
@@ -42,10 +42,11 @@ const Header = () => {
                   </Dropdown.Menu>
                 </Dropdown>
                 {/* <Link to="events" className={`text-decoration-none text-black mx-4`} >Events</Link> */}
-                <Link to="training" className={`text-decoration-none text-black mx-4`} >Training</Link>
-                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-4`} >Traffic Awarness Video</Link>
-                <Link to="investor" className={`text-decoration-none text-black mx-4`}>Investor</Link>
-                <Link to="contact" className={`text-decoration-none text-black mx-4`} >Contact</Link>
+                <Link to="training" className={`text-decoration-none text-black mx-3`} >Training</Link>
+                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-3`} >Traffic Awarness Video</Link>
+                <Link to="investor" className={`text-decoration-none text-black mx-3`}>Annual Reports</Link>
+                <Link to="annualreturns" className={`text-decoration-none text-black mx-3`}>Annual Returns</Link>
+                <Link to="contact" className={`text-decoration-none text-black mx-3`} >Contact</Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

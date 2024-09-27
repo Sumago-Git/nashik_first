@@ -26,7 +26,7 @@
     height: 370px;
     position: relative;
     background-image: url("../Assets/Assets/Vission/road2.png");
-    background-size: cover;
+    background-size:contain;
 }
 
 @media (max-width:768px) {
@@ -54,11 +54,11 @@
 .mtext {
     color: white;
     font-family: 'Century Gothic Paneuropean', sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.25;
 }
 
 .missionimg {
-    width: 170px;
-    height: 170px;
+    width: 130px;
+    height: 130px;
 }

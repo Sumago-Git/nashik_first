@@ -41,7 +41,7 @@ const Homecounter = () => {
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} className='img-fluid' style={{ height: "90px" }} alt='Adult' />
-                    <h2>135,127</h2>
+                    <h2>1,35,127</h2>
                   </Container>
                 </Col>
               </Col>
@@ -51,7 +51,7 @@ const Homecounter = () => {
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Lives Changed</h5>
                     <img src={lives} className='img-fluid' alt='Lives Changed' />
-                    <h2>271,062</h2>
+                    <h2>2,71,062</h2>
                   </Container>
                 </Col>
 
@@ -59,7 +59,7 @@ const Homecounter = () => {
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Children</h5>
                     <img src={child} className='img-fluid' style={{ height: "100px" }} alt='Children' />
-                    <h2>271,062</h2>
+                    <h2>2,71,062</h2>
                   </Container>
                 </Col>
               </Col>

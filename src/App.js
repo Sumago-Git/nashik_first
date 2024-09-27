@@ -13,6 +13,7 @@ import Bookingpage from "./ScreenComponents/TrainingComponents/Bookingpage";
 import Slotpage from "./ScreenComponents/TrainingComponents/Slotpage";
 import Events from "./Screens/Events/Events";
 import Upcomingevents from "./ScreenComponents/EventsComponents/Upcomingevents";
+import AnnualReturns from "./ScreenComponents/Annualreturns/AnnualReturns";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/awarnessvideo' element={<Video/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/investor' element={<Investor/>}/>
+        <Route path='/annualreturns' element={<AnnualReturns/>}/>
         <Route path='/training' element={<Training/>}/>
         <Route path='/bookingpage' element={<Bookingpage/>}/>
         <Route path="/slotpage" element={<Slotpage/>}/>

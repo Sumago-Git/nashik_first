@@ -24,8 +24,8 @@ const Supporter = () => {
       </Container>
 
       <Container fluid className='mt-lg-5 pt-2 support text-center'>
-        <p style={{ fontWeight: '700' }} className='supporttext'>
-          Our <span style={{ color: '#F96945' }}> Supporters</span>
+        <p style={{ fontWeight: '700', color:'#F96945'}} className='supporttext'>
+          Thanks <span style={{ color: '#F96945' }}> To...</span>
         </p>
         <Container fluid className='pb-4'>
           <Row className='justify-content-center p-3'>
