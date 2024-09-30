@@ -25,12 +25,14 @@ const Annualreport = () => {
         <h1 className='inverstorheadline'>Annual Returns</h1>
         <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
 
-        <Container className='return pt-lg-4 '>
-          {reports.map((report, index) => (
+        <Container >
+        <div className='return mt-lg-5 position-absolute top-100 start-50 translate-middle '>
+         {reports.map((report, index) => (
             <a href={report.link} className='text-black' key={index}>
-              <p className='returntext pt-lg-3 pt-2 mt-2'>Annual Return {report.year}</p>
+              <p className='returntext pt-lg-4 pt-2 mt-2'>Annual Return {report.year}</p>
             </a>
           ))}
+         </div>
         </Container>
       </Container>
     </>

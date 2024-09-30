@@ -104,7 +104,9 @@ const Homecounter = () => {
                       </button>
                     </Col>
                   </Row>
-                  <Container className="circle d-none d-md-block" style={{ marginTop: "-270px", width: "250px", marginLeft: "600px" }}></Container>
+                  <Container>
+                    <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{  width: "250px" }}></div>
+                  </Container>
                 </Col>
                 <Col lg={8} className='mt-4 ms-lg-5 w-100 whitebox'>
                   <Container>
@@ -119,18 +121,18 @@ const Homecounter = () => {
                     </p>
                   </Container>
                   <Row className="justify-content-center mt-3">
-                    <Col xs={5} sm={6} md={4} lg={4} className='pt-2'>
+                    <Col xs={5} sm={6} md={4} lg={3} className='pt-2'>
                       <Container className='license pt-lg-1 pt-md-0 text-center' style={{ width: "170px" }}>
                         <h6 className='fs-5 mt-2'>School Students</h6>
                       </Container>
                     </Col>
-                    <Col xs={10} sm={6} md={6} lg={6} className='pt-2'>
+                    <Col xs={10} sm={6} md={6} lg={7} className='pt-2'>
                       <Container className='license pt-lg-2 pt-md-1 text-center' style={{ width: "320px" }}>
                         <h5 className='mt-2'>Adults (College / Organization)</h5>
                       </Container>
                     </Col>
                   </Row>
-                  <img src={circle2} style={{ marginTop: "-270px", width: "250px", marginLeft: "600px" }} className='circle2 d-none d-md-block' />
+                  <img src={circle2} style={{ width: "250px",  }} className='circle2 d-none d-md-block position-absolute top-50 start-100 translate-middle ' />
                 </Col>
 
               </Col>

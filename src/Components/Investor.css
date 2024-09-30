@@ -12,9 +12,9 @@
     height: 200px;
     width: 1070px !important;
     background-color: white;
-    position: absolute;
-    margin-top:-450px;
-    margin-left: 200px !important; 
+    /* position: absolute; */
+    /* margin-top:-450px; */
+    /* margin-left: 200px !important;  */
     border-radius: 20px;
     border-bottom: 8px solid #F96945 ;
     box-shadow: 8px 12px 20px 0px #00000040;
