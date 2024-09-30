@@ -6,18 +6,18 @@
 
 .links {
     text-align: center;
-    font-size: 18px;
+    font-size: 13px;
     /* color: rgb(221, 12, 12); */
     margin-top: 40px;
     font-family: 'Century Gothic Paneuropean', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 
 
 /* Bold on hover */
 .links a:hover {
-    font-weight: 800;
+    font-weight: 900;
 }
 
 
@@ -183,9 +183,9 @@
 
 .eventdrop{
     /* color: rgb(218, 25, 25) !important; */
-    font-size: 20px !important;
+    font-size: 15px !important;
     padding: 0px !important;
-    font-weight: 530 !important;
+    font-weight: 800 !important;
 }
 .eventdrop:hover{
     font-weight: 800 !important;

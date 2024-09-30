@@ -58,14 +58,14 @@ const Bottom = () => {
     { icon:whatsappborder, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
     {icon:phoneborder,  text: '+91 2532315966', isPhone: true, type: 'phone' },
     { icon:emailborder,  text: 'secretary@nashikfirst.com', isEmail: true },
-    { icon:locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true }
+    { icon:locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true },
   ];
 
   const socialLinks1 = [
     { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
     { icon: insta, url: 'https://www.instagram.com/nashikfirst/' },
     { icon: youtube, url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
-    { icon: x, url: 'https://twitter.com/anfnashikfirst' }
+    { icon: x, url: 'https://twitter.com/anfnashikfirst' },
   ];
 
   const handleClick = (type, text) => {

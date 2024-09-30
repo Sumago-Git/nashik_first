@@ -17,7 +17,7 @@ const Header = () => {
       <Navbar expand="lg" className="p-0">
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo1} className='logo1' alt="Logo" />
+            <img src={logo1} className='logo1 w-md-100' alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-0' />
           <Navbar.Offcanvas
@@ -26,8 +26,8 @@ const Header = () => {
             placement="start"
 
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1' alt="Logo" /></Offcanvas.Title>
+            <Offcanvas.Header closeButton className='p-0'>
+              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1vp-0' alt="Logo" /></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-auto  links ">

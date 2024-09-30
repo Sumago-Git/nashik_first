@@ -33,6 +33,9 @@
     .vbg {
         background-repeat: no-repeat;
     }
+    .mbg{
+        background-repeat: no-repeat;
+    }
 
     .vtext {
         font-size: 15px !important;
@@ -40,7 +43,7 @@
     }
 
     .mtext {
-        font-size: 13px !important;
+        font-size: 10px !important;
         text-align: center;
         /* padding: 20px; */
     }
@@ -54,7 +57,7 @@
 .mtext {
     color: white;
     font-family: 'Century Gothic Paneuropean', sans-serif;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 1.25;
 }
 
