@@ -8,8 +8,12 @@ import child from '../../Assets/Assets/Homecounter/child.png';
 import adult from '../../Assets/Assets/Homecounter/adult.png';
 import circle2 from "../../Assets/Assets/Homecounter/circle2.png"
 import "../../Components/Header.css";
+import { useNavigate } from "react-router-dom";
 
 const Homecounter = () => {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <h1 className='mt-lg-5 homecounterheadline '> What makes us <span style={{ color: "#F96945" }}>special?</span></h1>
@@ -85,19 +89,19 @@ const Homecounter = () => {
 
                   <Row className='justify-content-center mt-4'>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
-                      <Container className='license pt-1 text-center' style={{ width: "160px" }}>
+                      <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>Learning License</h6>
-                      </Container>
+                      </button>
                     </Col>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
-                      <Container className='license pt-1 text-center' style={{ width: "160px" }}>
+                      <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>Suspended License</h6>
-                      </Container>
+                      </button>
                     </Col>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
-                      <Container className='license pt-1 text-center' style={{ width: "160px" }}>
+                      <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>School bus driver</h6>
-                      </Container>
+                      </button>
                     </Col>
                   </Row>
                   <Container className="circle d-none d-md-block" style={{ marginTop: "-270px", width: "250px", marginLeft: "600px" }}></Container>

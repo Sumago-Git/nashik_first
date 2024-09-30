@@ -11,10 +11,31 @@ import facebook from '../Assets/Assets/Bottom/facebook.png';
 import youtube from '../Assets/Assets/Bottom/youtube.png';
 import insta from '../Assets/Assets/Bottom/insta.png';
 import whatsapp from '../Assets/Assets/Bottom/whatsapp.png';
-import sumagologo from "../Assets/Assets/Bottom/Sumagologo.png"
+import sumagologo from "../Assets/Assets/Bottom/Sumagologo.png";
+import whatsappborder from "../Assets/Assets/Bottom/whatsappborder.png"
+import phoneborder from "../Assets/Assets/Bottom/phoneborder.png";
+import emailborder from "../Assets/Assets/Bottom/emailborder.png";
+import locationborder from "../Assets/Assets/Bottom/locationborder.png"
+import axios from 'axios';
 
 const Bottom = () => {
   const [footerDate, setFooterDate] = useState("")
+  const [socialLinks, setSocialLinks] = useState([])
+
+  useEffect(() => {
+    axios
+      .get("social-contact/get-socialcontacts")
+      .then((response) => {
+        if(response.data){
+          console.log("response", response.data);
+        }else{
+          // setSocialLinks(response.data.);
+        }
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, [])
   useEffect(() => {
     // Create a new Date object
     const currentDate = new Date();
@@ -34,13 +55,13 @@ const Bottom = () => {
   ];
 
   const contactDetails = [
-    { icon: whatsapp, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
-    { icon: phone, text: '+91 2532315966', isPhone: true, type: 'phone' },
-    { icon: email, text: 'secretary@nashikfirst.com', isEmail: true },
-    { icon: location, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.', isAddress: true }
+    { icon:whatsappborder, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
+    {icon:phoneborder,  text: '+91 2532315966', isPhone: true, type: 'phone' },
+    { icon:emailborder,  text: 'secretary@nashikfirst.com', isEmail: true },
+    { icon:locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true }
   ];
 
-  const socialLinks = [
+  const socialLinks1 = [
     { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
     { icon: insta, url: 'https://www.instagram.com/nashikfirst/' },
     { icon: youtube, url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
@@ -114,8 +135,13 @@ const Bottom = () => {
                   onClick={() => handleClick(detail.type || (detail.isEmail && 'email') || (detail.isAddress && 'location'), detail.text)}
                   style={{ cursor: 'pointer' }}
                 >
-                  <Col lg={2} xs={2} className='p-0'>
-                    <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} />
+                  <Col lg={1} xs={2} className='p-0 me-lg-3 border-2 ps-1'>
+                    {/* <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} /> */}
+                    <div class="rounded-circle footericon">
+                      <img src={detail.icon} className='mt-2'/>
+                    </div>
+                    
+                    
                   </Col>
                   <Col lg={10} xs={10} className='p-0'>
                     {detail.isAddress ? (
@@ -135,7 +161,7 @@ const Bottom = () => {
                 <Col lg={4} className='text-start p-0'>
                   <h5 className=' mt-2 ms-4'>Follow Us On</h5>
                 </Col>
-                {socialLinks.map((link, index) => (
+                {socialLinks1.map((link, index) => (
                   <Col lg={2} xs={2} key={index} style={{ width: "70px" }} className='p-0'>
                     <a href={link.url} target="_blank" rel="noopener noreferrer">
                       <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} />
@@ -145,8 +171,8 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-3 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
-          <p className='p-0 m-0 copyright mt-3'>*This Website is updated in 2024 </p>
+          <p className='copyright mt-lg-5 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='p-0 m-0 copyright mt-0 p-0'>*This Website is updated in 2024 </p>
         </Container>
       </section>
     </>

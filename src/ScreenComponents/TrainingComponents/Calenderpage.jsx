@@ -127,7 +127,7 @@ const Calendar = () => {
           <Row>
             <Col lg={4} className="p-0">
             <Nav.Item className="calendertabs" >
-              <Nav.Link eventKey="link-1" className="text-black ">RTO – Learner Driving License Holder <br/>Training</Nav.Link>
+              <Nav.Link eventKey="link-1" className="text-black ">RTO – Learner Driving License Holder Training</Nav.Link>
             </Nav.Item>
             </Col>
            <Col lg={4} className="p-0">

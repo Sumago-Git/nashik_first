@@ -83,6 +83,7 @@
 .footericon {
     height: 40px;
     width: 40px;
+    background-color: white;
 }
 .footericon:hover{
     background-color: #c50c1c;
@@ -91,8 +92,11 @@
 .followicon {
     height: 60px;
     width: 60px;
+    
 }
-
+.followicon:hover{
+    color: blue;
+}
 .homecounterheadline {
     /* color: #F96945; */
     font-family: 'Century Gothic Paneuropean', sans-serif;
@@ -145,6 +149,7 @@
     height: 60px;
     font-weight: 800;
     text-align: center;
+    border: none;
 }
 
 .rto {

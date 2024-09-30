@@ -14,8 +14,14 @@ import Slotpage from "./ScreenComponents/TrainingComponents/Slotpage";
 import Events from "./Screens/Events/Events";
 import Upcomingevents from "./ScreenComponents/EventsComponents/Upcomingevents";
 import AnnualReturns from "./ScreenComponents/Annualreturns/AnnualReturns";
+import { useEffect } from "react";
+import axios from "axios";
 
 function App() {
+  useEffect(()=>{
+    console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
+    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
+  },[])
   return (
     <div className="App">
 
