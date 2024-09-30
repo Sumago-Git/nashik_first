@@ -21,10 +21,10 @@ const Annualreport = () => {
         <img src={img4} className='img4 d-block d-md-none' />
       </Container>
 
-      <Container fluid className='p-0'>
-        <div className='investorbg pt-lg-5 pt-3 pb-0 '>
+      <Container fluid >
+        <div className='investorbg pt-lg-5 pt-3 pb-0 p-0'>
           <h1 className='inverstorheadline'>Annual Returns</h1>
-          <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3' alt="Investor" style={{ position: "relative" }} />
+          <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
         </div>
       </Container>
       <Container >
@@ -42,3 +42,4 @@ const Annualreport = () => {
 };
 
 export default Annualreport;
+
