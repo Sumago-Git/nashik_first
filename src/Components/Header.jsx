@@ -27,7 +27,7 @@ const Header = () => {
 
           >
             <Offcanvas.Header closeButton className='p-0'>
-              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1vp-0' alt="Logo" /></Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1 w-md-100 p-0' alt="Logo" /></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-auto  links ">

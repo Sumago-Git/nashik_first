@@ -21,20 +21,22 @@ const Annualreport = () => {
         <img src={img4} className='img4 d-block d-md-none' />
       </Container>
 
-      <Container fluid className='investorbg pt-lg-5 pt-3 pb-0 p-0'>
-        <h1 className='inverstorheadline'>Annual Reports</h1>
-        <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
-
-        <Container>
-         <div className='return mt-lg-5 position-absolute top-100 start-50 translate-middle '>
-         {reports.map((report, index) => (
+      <Container fluid className='p-0'>
+        <div className='investorbg pt-lg-5 pt-3 pb-0 '>
+          <h1 className='inverstorheadline'>Annual Reports</h1>
+          <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
+        </div>
+      </Container>
+      <Container >
+        <div className='return mt-lg-5 position-absolute top-100 start-50 translate-middle m-lg-0'>
+          {reports.map((report, index) => (
             <a href={report.link} className='text-black' key={index}>
-              <p className='returntext pt-lg-4 pt-2 mt-2'>Annual Return {report.year}</p>
+              <p className='returntext pt-lg-4 pt-2 mt-2'>Annual Reports {report.year}</p>
             </a>
           ))}
-         </div>
-        </Container>
+        </div>
       </Container>
+
     </>
   );
 };
