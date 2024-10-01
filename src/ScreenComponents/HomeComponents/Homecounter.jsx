@@ -75,7 +75,7 @@ const Homecounter = () => {
               <Col lg={12} sm={12} className=''>
                 <Col lg={12} className='mt-4 ms-lg-5 w-100 whitebox'>
                   <Container>
-                    <h2 className='text-start pt-4 ms-4 ms-md-3 ms-lg-4'>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
+                    <h2 className='text-start pt-4 ms-4 ms-md-3 ms-lg-4 whiteboxheadline'>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h4 className='text-start ms-4 ms-md-3 ms-lg-4 rto'>
                       <b>Road Safety & Traffic Awareness programme jointly<br />organized by RTO, Nashik and Nashik First.</b><br />
                     </h4>
@@ -87,7 +87,7 @@ const Homecounter = () => {
                     </p>
                   </Container>
 
-                  <Row className='justify-content-center mt-4'>
+                  <Row className='justify-content-center mt-lg-3  m-0'>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
                       <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>Learning License</h6>
@@ -110,23 +110,23 @@ const Homecounter = () => {
                 </Col>
                 <Col lg={8} className='mt-4 ms-lg-5 w-100 whitebox'>
                   <Container>
-                    <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3'>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
+                    <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3 whiteboxheadline '>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h6 className='text-start ms-4 ms-md-3 rto'>
-                      <b>To increase awareness about Traffic Safety, we organize Road<br />Safety Traffic Awareness Workshops free of cost.</b><br />
+                      <b>To increase awareness about Traffic Safety, we organize<br /> Road Safety Traffic Awareness Workshops free of cost.</b><br />
                     </h6>
                     <p className='text-start ms-4 ms-md-3 rto'>
-                      This programme is exclusively designed for school students and<br />
-                      adults, such as college students, employees working in various<br />
-                      organizations, rickshaw drivers, bus drivers, and other adult groups.
+                      This programme is exclusively designed for school students<br />
+                       and adults, such as college students, employees working in<br /> various
+                      organizations, rickshaw drivers, bus drivers, and other<br/> adult groups.
                     </p>
                   </Container>
-                  <Row className="justify-content-center mt-3">
-                    <Col xs={5} sm={6} md={4} lg={3} className='pt-2'>
+                  <Row className="justify-content-center mt-lg-3 ">
+                    <Col xs={5} sm={6} md={4} lg={3} >
                       <Container className='license pt-lg-1 pt-md-0 text-center' style={{ width: "170px" }}>
                         <h6 className='fs-5 mt-2'>School Students</h6>
                       </Container>
                     </Col>
-                    <Col xs={10} sm={6} md={6} lg={7} className='pt-2'>
+                    <Col xs={10} sm={6} md={6} lg={7}>
                       <Container className='license pt-lg-2 pt-md-1 text-center' style={{ width: "320px" }}>
                         <h5 className='mt-2'>Adults (College / Organization)</h5>
                       </Container>

@@ -45,63 +45,63 @@ const Bookingpage = () => {
         </Container>
 
         <Container className='bookingdetails mt-5 pt-4 pb-5'>
-          <h1 className='bookingheadline mt-3'>Please fill in your details</h1>
+          <h1 className='bookingheadline mt-3 mx-auto'>Please fill in your details</h1>
           <div className='form-group mb-4'>
-            <p className='bookingdate text-black text-start ms-4'>{"Booking Date"}</p>
-            <p className='detailtext text-black text-start ms-4 mb-4'>{slotTime}</p>
+            <p className='bookingdate text-black text-start ms-lg-4'>{"Booking Date"}</p>
+            <p className='detailtext text-black text-start ms-lg-4 mb-4'>{slotTime}</p>
 
             <Row>
               <Col lg={6}>
-              <p className='bookingdate text-black text-start ms-4 mt-3'>{"Learning License Number*"}</p>
+              <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
                 <input
                   name=''
                   placeholder={"MH15/0012345/2021"}
-                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                  className='dateinput p-3 m-0 mt-0 ms-lg-3 '
                 />
               </Col>
               <Col lg={6}>
-                <p className='bookingdate text-black text-start ms-4 mt-3'>{"First Name*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"First Name*"}</p>
                 <input
                   name=''
                   placeholder={"First Name"}
-                  className='dateinput p-3  m-0 mt-0 ms-3'
+                  className='dateinput p-3  m-0 mt-0 ms-lg-3'
                 />
               </Col>
               <Col lg={6}>
-                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Middle Name*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Middle Name*"}</p>
                 <input
                   name=''
                   placeholder={"Middle Name"}
-                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                  className='dateinput p-3 m-0 mt-0 ms-lg-3 '
                 />
               </Col>
               <Col lg={6}>
-                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Last Name*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Last Name*"}</p>
                 <input
                   name=''
                   placeholder={"Last Name"}
-                  className='dateinput p-3 m-0 mt-0 ms-3'
+                  className='dateinput p-3 m-0 mt-0 ms-lg-3'
                 />
               </Col>
               <Col lg={6}>
-                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Email*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Email*"}</p>
                 <input
                   name=''
                   placeholder={"Email"}
-                  className='dateinput p-3 m-0 mt-0 ms-3'
+                  className='dateinput p-3 m-0 mt-0 ms-lg-3'
                 />
               </Col>
               <Col lg={6}>
-                <p className='bookingdate text-black text-start ms-4 mt-3'>{"Phone*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Phone*"}</p>
                 <input
                   name=''
                   placeholder={"Phone"}
-                  className='dateinput p-3 m-0 mt-0 ms-3 '
+                  className='dateinput p-3 m-0 mt-0 ms-lg-3 '
                 />
               </Col>
            
             <Col>
-            <p className='bookingdate text-black text-start ms-4 mt-3'>{"Vehical type*"}</p>
+            <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehical type*"}</p>
             <Row>
               <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3 ms-3'>
                 <input type='checkbox' className='radiobtn mt-1' />
@@ -132,11 +132,7 @@ const Bookingpage = () => {
               </Col>
             </Row>
             </Col>
-
             </Row>
-
-
-
           </div>
           <div className='text-center'>
             <button className='returnbutton p-lg-3 mt-2'>

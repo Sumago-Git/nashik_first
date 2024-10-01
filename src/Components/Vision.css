@@ -26,10 +26,10 @@
     height: 370px;
     position: relative;
     background-image: url("../Assets/Assets/Vission/road2.png");
-    background-size:contain;
+    background-size:cover;
 }
 
-@media (max-width:768px) {
+@media (max-width:576px) {
     .vbg {
         background-repeat: no-repeat;
     }
@@ -39,18 +39,18 @@
 
     .vtext {
         font-size: 15px !important;
-        text-align: center;
+        text-align: start;
     }
 
     .mtext {
-        font-size: 10px !important;
+        font-size: 11px !important;
         text-align: center;
         /* padding: 20px; */
     }
 
     .missionimg {
-        width: 100px !important;
-        height: 100px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
 }
 

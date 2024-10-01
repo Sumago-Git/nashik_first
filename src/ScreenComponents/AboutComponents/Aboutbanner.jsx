@@ -98,13 +98,13 @@ const Aboutbanner = () => {
             {/* Carousel Section */}
             <Container fluid className='backgrnd mt-4 p-0 '>
                 <Container fluid className='p-0 m-0 w-lg-75 w-sm-100'>
-                    <Carousel className=' w-50 h-75'>
+                    <Carousel className=' w-50 h-75 caru'>
                         {carouselItems.map((item, index) => (
                             <Carousel.Item key={index} className='carouselitem'>
-                                <p className='text-start ms-lg-5 ms-md-0 headline pt-lg-5 w-lg-75 w-sm-100 ms-3 '>
+                                <p className='text-start ms-lg-5 ms-md-0 headline pt-lg-5  w-sm-100 ms-3 '>
                                     {item.headline}
                                 </p>
-                                <p className='text-start ms-lg-5 headlinetext pb-5 m-lg-0 w-lg-75 w-sm-100 ms-3'>
+                                <p className='text-start ms-lg-5 headlinetext pb-5 m-lg-0 w-sm-100 ms-3'>
                                     {item.subtext}
                                 </p>
                             </Carousel.Item>

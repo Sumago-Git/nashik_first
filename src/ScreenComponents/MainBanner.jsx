@@ -10,7 +10,12 @@ import pain from "../Assets/Assets/MainBanner/pain.jpg"
 import chat from "../Assets/Assets/MainBanner/chat.jpg"
 import ears from "../Assets/Assets/MainBanner/ears.jpg"
 import head from "../Assets/Assets/MainBanner/head.jpg"
-// import frame5 from "../Assets/Assets/MainBanner/Frame 5.png"
+import pain2 from "../Assets/Assets/MainBanner/pain2.png"
+import chat2 from "../Assets/Assets/MainBanner/chat2.png"
+import ears2 from "../Assets/Assets/MainBanner/ears2.png"
+import head2 from "../Assets/Assets/MainBanner/head2.png"
+import speed2 from "../Assets/Assets/MainBanner/speed2.png"
+import speed from "../Assets/Assets/MainBanner/speed.jpg"
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -30,30 +35,30 @@ const MainBanner = () => {
       </Carousel.Item>
       <Carousel.Item>
       <img src={pain} className='lghead d-none d-md-block'/>
-        <img src={img4} className='img4 d-block d-md-none'/>
+        <img src={pain2} className='img4 d-block d-md-none'/>
         
       </Carousel.Item>
       <Carousel.Item>
       <img src={chat} className='lghead d-none d-md-block'/>
-      <img src={img4} className='img4 d-block d-md-none'/>
+      <img src={chat2} className='img4 d-block d-md-none'/>
         
       </Carousel.Item>
 
       <Carousel.Item>
       <img src={head} className='lghead d-none d-md-block'/>
-      <img src={img4} className='img4 d-block d-md-none'/>
+      <img src={head2} className='img4 d-block d-md-none'/>
         
       </Carousel.Item>
       <Carousel.Item>
       <img src={ears} className='lghead d-none d-md-block'/>
-      <img src={img4} className='img4 d-block d-md-none'/>
+      <img src={ears2} className='img4 d-block d-md-none'/>
         
       </Carousel.Item>
-      {/* <Carousel.Item>
-      <img src={frame5} className='lghead d-none d-md-block'/>
-      <img src={img4} className='img4 d-block d-md-none'/>
+      <Carousel.Item>
+      <img src={speed} className='lghead d-none d-md-block'/>
+      <img src={speed2} className='img4 d-block d-md-none'/>
         
-      </Carousel.Item> */}
+      </Carousel.Item>
     </Carousel>
    </>
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Components/Header.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,46 +7,50 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo1 from '../Assets/Assets/Home/logo1.png';
 import traffic from '../Assets/Assets/Homecounter/traffic.png';
 import { Link } from 'react-router-dom';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Dropdown from 'react-bootstrap/Dropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 const Header = () => {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
+
   return (
     <>
       <Navbar expand="lg" className="p-0">
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo1} className='logo1 w-md-100' alt="Logo" />
+            <img src={logo1} className='logo1 w-sm-75 w-md-75 w-100 p-0' alt="Logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-0' />
+          <Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-0' onClick={handleShow} />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="start"
-
+            show={showOffcanvas}
+            onHide={handleClose}
           >
             <Offcanvas.Header closeButton className='p-0'>
-              <Offcanvas.Title id="offcanvasNavbarLabel"><img src={logo1} className='logo1 w-md-100 p-0' alt="Logo" /></Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel">
+                <img src={logo1} className='logo1 p-0' alt="Logo" />
+              </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="mx-auto  links ">
-                <Link to="about" className={` text-decoration-none text-black mx-3`}>About Us</Link>
-                <Dropdown >
-                  <Dropdown.Toggle variant=""   className={` text-decoration-none text-black mx-3 eventdrop `}>
-                    Events
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                  <Link to="events" className={`text-decoration-none text-black  `}>Past Events</Link>
-                  <Link to="upcomingevents" className={`text-decoration-none text-black `}> Upcoming Events</Link> 
-                  </Dropdown.Menu>
-                </Dropdown>
-                {/* <Link to="events" className={`text-decoration-none text-black mx-4`} >Events</Link> */}
-                <Link to="training" className={`text-decoration-none text-black mx-3`} >Training</Link>
-                <Link to="awarnessvideo" className={`text-decoration-none text-black mx-3`} >Traffic Awarness Video</Link>
-                <Link to="investor" className={`text-decoration-none text-black mx-3`}>Annual Reports</Link>
-                <Link to="annualreturns" className={`text-decoration-none text-black mx-3`}>Annual Returns</Link>
-                <Link to="contact" className={`text-decoration-none text-black mx-3`} >Contact</Link>
+              <Nav className="mx-auto links">
+                <Nav.Link to="about" as={Link} onClick={handleClose} className='mx-lg-2 text-black '>About Us</Nav.Link>
+                <NavDropdown title="Events" id="basic-nav-dropdown" className='event-dropdown'>
+                  <NavDropdown.Item to="events" as={Link} onClick={handleClose} className='text-center text-black events'>Past Events</NavDropdown.Item>
+                  <NavDropdown.Item to="upcomingevents " as={Link} onClick={handleClose} className='text-center
+                  
+                  text-black events'>Upcoming Events</NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link to="training" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Training</Nav.Link>
+                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Traffic awareness video</Nav.Link>
+                <Nav.Link to="investor" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Annual Reports</Nav.Link>
+                <Nav.Link to="annualreturns" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Annual Returns</Nav.Link>
+                <Nav.Link to="contact" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Contact</Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

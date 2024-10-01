@@ -31,7 +31,7 @@ const Photogallery = () => {
         <h1 style={{ fontWeight: '700', fontFamily:"'Century Gothic Paneuropean', sans-serif", fontSize:"40px" }}>
           Photo <span style={{ color: '#F96945' }}> Gallery</span>
         </h1>
-        <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-2 px-1'>
+        <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto'>
           {photos.map((photo, index) => (
             <Col xs={12} sm={6} md={4} lg={4} className='mb-4' key={index}>
               <Card className='photo h-100 pb-4'>

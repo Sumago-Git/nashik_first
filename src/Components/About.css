@@ -20,6 +20,7 @@
 
 .carouselitem{
     height: 400px !important;
+    width: 100%;
 }
 
 .city {
@@ -143,9 +144,7 @@
     position: relative;
 }
 
-.belowthreeimg{
-    margin-top: -50px;
-}
+
 .oppoimgtext {
     position: absolute;
     margin-top: -70px;
@@ -189,5 +188,7 @@
         font-size: 11px !important;
         text-align: center !important;
      }
-   
+    .carouselitem{
+        width: 100%;
+    }
 }

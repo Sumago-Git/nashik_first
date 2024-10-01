@@ -51,10 +51,10 @@
     border-radius: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 
     .bookingdetails {
-        width: 380px !important;
+        width: 340px !important;
     }
 
     .bookingheadline {
@@ -70,7 +70,7 @@
     }
 
     .dateinput {
-        width: 330px !important;
+        width: 310px !important;
     }
 
     .radiobtn {

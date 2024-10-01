@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../../Components/Youtube.css';
+import yt1 from "../../Assets/Assets/Youtube/yt1.png"
 
 const Youtube = () => {
   const [video1Loaded, setVideo1Loaded] = useState(false);
@@ -25,7 +26,7 @@ const Youtube = () => {
             <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
               {!video1Loaded ? (
                 <img
-                src="/path/to/your/custom-thumbnail.jpg"
+                src={yt1}
                 alt="Custom Thumbnail"
                 style={{ width: '100%', cursor: 'pointer' }}
                 onClick={loadVideo1}
@@ -48,7 +49,7 @@ const Youtube = () => {
             <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
               {!video2Loaded ? (
                 <img
-                src="/path/to/your/custom-thumbnail.jpg"
+                src={yt1}
                 alt="Custom Thumbnail"
                 style={{ width: '100%', cursor: 'pointer' }}
                 onClick={loadVideo2}

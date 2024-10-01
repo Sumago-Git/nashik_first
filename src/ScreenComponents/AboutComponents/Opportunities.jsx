@@ -27,7 +27,7 @@ const Opportunities = () => {
             <Container fluid className='oppobg mt-lg-5 pb-lg-5 pt-lg-4'>
                 <h1 className='oppoheadline pt-lg-5'>Objectives of  ANF</h1>
                 <Container>
-                    <Row className='mt-lg-2  mx-1  me-5 pe-3 '>
+                    <Row className='mt-lg-2  '>
                         {opportunitiesData.map((item, index) => (
                             <Col lg={4}  className={item.pb ? 'pb-lg-5 '  : ''} key={index}>
                                 <img src={item.imgSrc} className='oppoimg' style={{ marginTop: item.marginTop || '0px' }} />

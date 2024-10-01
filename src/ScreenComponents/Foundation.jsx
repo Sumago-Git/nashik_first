@@ -11,15 +11,15 @@ const Foundation = () => {
     <>
       <Container fluid className='body text-start mt-lg-5 pb-lg-5'>
         <Row>
-          <Col lg={7} className='mt-lg-5 pt-lg-5 mt-4'>
-            <text className='fheadline ms-5' style={{fontWeight:"650", color: "#c50c1c"}}>The Advantage
-            <span style={{ color: "#c50c1c" }}> Nashik</span> Foundation</text>
+          <Col lg={7} className='mt-lg-5 pt-lg-5 mt-4 m-md-0  p-0 ms-1 '>
+            <text className='fheadline ms-lg-5' style={{fontWeight:"650", color: "#c50c1c"}}>The Advantage
+             Nashik Foundation</text>
             <Col>
               <p className=' mt-lg-3 mt-4 fpara1'><span style={{color:"#c50c1c", fontWeight:"800"}}>Nashik</span> <span style={{color:"#F96945", fontWeight:"800"}}> First</span>, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span><br />
                 <span style={{ fontWeight: "800" }}>Foundation (ANF) </span>is a group of people working for<br />
                 <span>improving quality life of Citizens of Nashik.</span></p>
             </Col>
-            <Col className=' fpara2 mt-4 '>
+            <Col className=' fpara2 mt-4  '>
               We are a group of people who act as a catalyst for the growth of the city <br />
               and in many cases, becoming the primary factor responsible for the growth.<br />
               Through independent assessment of different projects & various activities<br />
