@@ -10,6 +10,9 @@ const Bookingpage = () => {
   const [slotTime, setSlotTime] = useState("")
   const location = useLocation()
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     if (location) {
@@ -52,7 +55,7 @@ const Bookingpage = () => {
 
             <Row>
               <Col lg={6}>
-              <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
                 <input
                   name=''
                   placeholder={"MH15/0012345/2021"}
@@ -99,39 +102,39 @@ const Bookingpage = () => {
                   className='dateinput p-3 m-0 mt-0 ms-lg-3 '
                 />
               </Col>
-           
-            <Col>
-            <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehical type*"}</p>
-            <Row>
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3 ms-3'>
-                <input type='checkbox' className='radiobtn mt-1' />
-              </Col>
-              <Col xs={9} sm={11} lg={10} className='text-start'>
-                <label className="btntext ">2 Wheelers</label>
-              </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                <input type='checkbox' className='radiobtn mt-1' />
-              </Col>
-              <Col xs={9} sm={11} lg={10} className='text-start'>
-                <label className="btntext">3/5 Wheelers</label>
-              </Col>
+              <Col>
+                <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehical type*"}</p>
+                <Row>
+                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3 ms-3'>
+                    <input type='checkbox' className='radiobtn mt-1' />
+                  </Col>
+                  <Col xs={9} sm={11} lg={10} className='text-start'>
+                    <label className="btntext ">2 Wheelers</label>
+                  </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                <input type='checkbox' className='radiobtn mt-1' />
-              </Col>
-              <Col xs={9} sm={11} lg={10} className='text-start'>
-                <label className="btntext">4 Wheelers Heavy</label>
-              </Col>
+                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
+                    <input type='checkbox' className='radiobtn mt-1' />
+                  </Col>
+                  <Col xs={9} sm={11} lg={10} className='text-start'>
+                    <label className="btntext">3/5 Wheelers</label>
+                  </Col>
 
-              <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                <input type='checkbox' className='radiobtn mt-1' />
+                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
+                    <input type='checkbox' className='radiobtn mt-1' />
+                  </Col>
+                  <Col xs={9} sm={11} lg={10} className='text-start'>
+                    <label className="btntext">4 Wheelers Heavy</label>
+                  </Col>
+
+                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
+                    <input type='checkbox' className='radiobtn mt-1' />
+                  </Col>
+                  <Col xs={9} sm={11} lg={10} className='text-start'>
+                    <label className="btntext">4 Wheelers Light</label>
+                  </Col>
+                </Row>
               </Col>
-              <Col xs={9} sm={11} lg={10} className='text-start'>
-                <label className="btntext">4 Wheelers Light</label>
-              </Col>
-            </Row>
-            </Col>
             </Row>
           </div>
           <div className='text-center'>

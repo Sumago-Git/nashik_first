@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd767467.css",
-    "main.js": "/static/js/main.eb3f208a.js",
+    "main.css": "/static/css/main.4678ef19.css",
+    "main.js": "/static/js/main.257dc46b.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/lghead3.png": "/static/media/lghead3.ec0832d2b2b033a520ba.png",
     "static/media/lghead5.png": "/static/media/lghead5.87fdedd080f16250201e.png",
     "static/media/lghead2.png": "/static/media/lghead2.d5a83bb6496a15c7a88b.png",
     "static/media/lghead.png": "/static/media/lghead.a618d08be378b1ac4d89.png",
     "static/media/lghead4.png": "/static/media/lghead4.0ae1e95912deb0c55175.png",
+    "static/media/ears2.png": "/static/media/ears2.18e764517d2f0719441a.png",
+    "static/media/speed2.png": "/static/media/speed2.135391d4caa8f6107bad.png",
     "static/media/Frame 5.png": "/static/media/Frame 5.4fb29c341bfe72cf557f.png",
     "static/media/Frame 4.png": "/static/media/Frame 4.5a7932244742cd4965e6.png",
     "static/media/Frame 2.png": "/static/media/Frame 2.5140bf18edbfeaf5b47d.png",
@@ -20,8 +22,10 @@
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/upcomingbanner.png": "/static/media/upcomingbanner.4abc13c332713fe3dffb.png",
     "static/media/city.png": "/static/media/city.2ef535adf1195410b029.png",
+    "static/media/speed.jpg": "/static/media/speed.24c352d745aa1d471261.jpg",
     "static/media/bottombg.jpg": "/static/media/bottombg.a359d896379a12094825.jpg",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
+    "static/media/pain2.png": "/static/media/pain2.1d0303f4402bc12f3839.png",
     "static/media/ears.jpg": "/static/media/ears.498713bd6bd6bedfbbe2.jpg",
     "static/media/pain.jpg": "/static/media/pain.95eb3b5323711704702e.jpg",
     "static/media/event7.png": "/static/media/event7.8fdf68ac3063c66d7d5e.png",
@@ -37,8 +41,10 @@
     "static/media/event2.png": "/static/media/event2.10e36662ee4fc86fc1b0.png",
     "static/media/event4.png": "/static/media/event4.8f59de23a33c2f8f5595.png",
     "static/media/event3.png": "/static/media/event3.11dcebc79e2caf889151.png",
+    "static/media/head2.png": "/static/media/head2.c9add017384bc6090f6d.png",
     "static/media/video.png": "/static/media/video.991fc30ac7ee3d016ab4.png",
     "static/media/divider.png": "/static/media/divider.0a2e9d824b6b6b667a90.png",
+    "static/media/yt1.png": "/static/media/yt1.a758e9c23680685de7a7.png",
     "static/media/photo1.png": "/static/media/photo1.79e808d4cb32a6d87615.png",
     "static/media/circle1.png": "/static/media/circle1.7213f3f04359b047995f.png",
     "static/media/head.jpg": "/static/media/head.ad57440325a1a2a086d5.jpg",
@@ -62,6 +68,7 @@
     "static/media/call.png": "/static/media/call.20fadb14f85720f06775.png",
     "static/media/don.png": "/static/media/don.167020a9d629d253c462.png",
     "static/media/bike.png": "/static/media/bike.5bfa180b651f01218cd3.png",
+    "static/media/chat2.png": "/static/media/chat2.e01242dca5b3c15fbcb7.png",
     "static/media/icons1.png": "/static/media/icons1.7f3249d80f8ae8bf3417.png",
     "static/media/support3.png": "/static/media/support3.cf6d143abd6079f5636d.png",
     "static/media/Sumagologo.png": "/static/media/Sumagologo.7dc4f8c47c773ca1b560.png",
@@ -75,12 +82,12 @@
     "static/media/m3.png": "/static/media/m3.8b6c39db8423e87b0af0.png",
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
-    "main.dd767467.css.map": "/static/css/main.dd767467.css.map",
-    "main.eb3f208a.js.map": "/static/js/main.eb3f208a.js.map",
+    "main.4678ef19.css.map": "/static/css/main.4678ef19.css.map",
+    "main.257dc46b.js.map": "/static/js/main.257dc46b.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd767467.css",
-    "static/js/main.eb3f208a.js"
+    "static/css/main.4678ef19.css",
+    "static/js/main.257dc46b.js"
   ]
 }

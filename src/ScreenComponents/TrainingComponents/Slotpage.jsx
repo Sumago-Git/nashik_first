@@ -10,7 +10,9 @@ const Slotpage = () => {
     const location = useLocation()
     const navigate = useNavigate(); // Get the navigate function from useNavigate hook
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     useEffect(() => {
         if (location) {
             const date = new Date(location.state.selectedDate);

@@ -228,3 +228,10 @@
         padding: 0px;
     }
 }
+
+@media (max-width:1350px) {
+    .links{
+        font-size: 16px;
+    }
+    
+}

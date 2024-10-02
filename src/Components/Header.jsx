@@ -14,7 +14,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const Header = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-  const handleClose = () => setShowOffcanvas(false);
+  const handleClose = () => {
+    setShowOffcanvas(false);
+    window.scrollTo(0, 0)
+  }
   const handleShow = () => setShowOffcanvas(true);
 
   return (

@@ -26,9 +26,9 @@ const Bottom = () => {
     axios
       .get("social-contact/get-socialcontacts")
       .then((response) => {
-        if(response.data){
+        if (response.data) {
           console.log("response", response.data);
-        }else{
+        } else {
           // setSocialLinks(response.data.);
         }
       })
@@ -55,10 +55,10 @@ const Bottom = () => {
   ];
 
   const contactDetails = [
-    { icon:whatsappborder, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
-    {icon:phoneborder,  text: '+91 2532315966', isPhone: true, type: 'phone' },
-    { icon:emailborder,  text: 'secretary@nashikfirst.com', isEmail: true },
-    { icon:locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true },
+    { icon: whatsappborder, text: '+91 7796116555', isPhone: true, type: 'whatsapp' },
+    { icon: phoneborder, text: '+91 2532315966', isPhone: true, type: 'phone' },
+    { icon: emailborder, text: 'secretary@nashikfirst.com', isEmail: true },
+    { icon: locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true },
   ];
 
   const socialLinks1 = [
@@ -117,7 +117,7 @@ const Bottom = () => {
                   </Col>
                   <Col sm={10} xs={10} className='mt-3'>
                     <h5 className='text-start'>
-                      <Link to={link.path} className='text-decoration-none text-white'>
+                      <Link to={link.path} onClick={() => window.scrollTo(0, 0)} className='text-decoration-none text-white'>
                         {link.name}
                       </Link>
                     </h5>
@@ -138,10 +138,10 @@ const Bottom = () => {
                   <Col lg={1} xs={2} className='p-0 me-lg-3 border-2 ps-1'>
                     {/* <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} /> */}
                     <div class="rounded-circle footericon">
-                      <img src={detail.icon} className='mt-2'/>
+                      <img src={detail.icon} className='mt-2' />
                     </div>
-                    
-                    
+
+
                   </Col>
                   <Col lg={10} xs={10} className='p-0'>
                     {detail.isAddress ? (
