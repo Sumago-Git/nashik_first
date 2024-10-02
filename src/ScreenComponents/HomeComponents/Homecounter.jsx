@@ -30,9 +30,9 @@ const Homecounter = () => {
           </Row>
         </Container>
         <Row>
-          <Col lg={5} sm={12} className='mt-lg-5 pt-lg-3'>
+          <Col lg={4} md={3} sm={12} xl={5} className='mt-lg-5 pt-lg-3 ms-xl-4'>
             <Row className='ms-lg-5'>
-              <Col xs={6} md={6} className='mt-5'>
+              <Col xs={6} md={5} className='mt-5'>
                 <Col className='train' style={{ height: '280px', backgroundColor: "#F96945" }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
                     <h6 className='boxheadline'>Training Imparted</h6>
@@ -50,7 +50,7 @@ const Homecounter = () => {
                 </Col>
               </Col>
 
-              <Col xs={6} md={6} className='mt-5'>
+              <Col xs={6} md={5} className='mt-5'>
                 <Col className='lives' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Lives Changed</h5>
@@ -70,10 +70,10 @@ const Homecounter = () => {
             </Row>
           </Col>
 
-          <Col lg={7} sm={12} xl={6} style={{ position: "relative" }} className='mt-5' >
-            <Row>
-              <Col lg={12} sm={12} className=''>
-                <Col lg={12} xl={10} xxl={10} className='mt-4 ms-lg-5 whitebox'>
+          <Col lg={7}  sm={12} xl={6} style={{ position: "relative" }} className='mt-5' >
+            <Row >
+              <Col lg={12} sm={12} xl={10} xxl={10} >
+                <Col lg={12} xl={9} xxl={9} className='mt-4 ms-lg-5 w-100 whitebox'>
                   <Container>
                     <h2 className='text-start pt-4 ms-4 ms-md-3 ms-lg-4 whiteboxheadline'>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h4 className='text-start ms-4 ms-md-3 ms-lg-4 rto'>
@@ -108,7 +108,7 @@ const Homecounter = () => {
                     <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{ width: "250px" }}></div>
                   </Container>
                 </Col>
-                <Col lg={12} xl={10} xxl={10} md={12} sm={12} className='mt-4 ms-lg-5  whitebox'>
+                <Col lg={12} xl={8} xxl={8} md={12} sm={12} className='mt-4 ms-lg-5 w-100 whitebox'>
                   <div>
                     <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3 whiteboxheadline '>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h6 className='text-start ms-4 ms-md-3 rto'>
