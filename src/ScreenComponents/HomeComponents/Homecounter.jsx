@@ -30,8 +30,8 @@ const Homecounter = () => {
           </Row>
         </Container>
         <Row>
-          <Col lg={4} sm={12} className='mt-lg-5 pt-lg-3'>
-            <Row>
+          <Col lg={5} sm={12} className='mt-lg-5 pt-lg-3'>
+            <Row className='ms-lg-5'>
               <Col xs={6} md={6} className='mt-5'>
                 <Col className='train' style={{ height: '280px', backgroundColor: "#F96945" }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
@@ -70,10 +70,10 @@ const Homecounter = () => {
             </Row>
           </Col>
 
-          <Col lg={6} sm={12} style={{ position: "relative" }} className='mt-5' >
+          <Col lg={7} sm={12} xl={6} style={{ position: "relative" }} className='mt-5' >
             <Row>
               <Col lg={12} sm={12} className=''>
-                <Col lg={12} className='mt-4 ms-lg-5 w-100 whitebox'>
+                <Col lg={12} xl={10} xxl={10} className='mt-4 ms-lg-5 whitebox'>
                   <Container>
                     <h2 className='text-start pt-4 ms-4 ms-md-3 ms-lg-4 whiteboxheadline'>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h4 className='text-start ms-4 ms-md-3 ms-lg-4 rto'>
@@ -87,7 +87,7 @@ const Homecounter = () => {
                     </p>
                   </Container>
 
-                  <Row className=' ms-lg-5 mx-1 mt-lg-3 whiteboxbtn  '>
+                  <Row className=' ms-lg-5 mx-1 mt-lg-3 whiteboxbtn '>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
                       <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>Learning License</h6>
@@ -108,8 +108,8 @@ const Homecounter = () => {
                     <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{ width: "250px" }}></div>
                   </Container>
                 </Col>
-                <Col lg={8} className='mt-4 ms-lg-5 w-100 whitebox'>
-                  <Container>
+                <Col lg={12} xl={10} xxl={10} md={12} sm={12} className='mt-4 ms-lg-5  whitebox'>
+                  <div>
                     <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3 whiteboxheadline '>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h6 className='text-start ms-4 ms-md-3 rto'>
                       <b>To increase awareness about Traffic Safety, we organize<br /> Road Safety Traffic Awareness Workshops free of cost.</b><br />
@@ -119,8 +119,8 @@ const Homecounter = () => {
                       and adults, such as college students, employees working in<br /> various
                       organizations, rickshaw drivers, bus drivers, and other<br /> adult groups.
                     </p>
-                  </Container>
-                  <Row className=" whiteboxbtn ms-lg-5 mt-lg-3  ">
+                    </div>
+                  <Row className=" whiteboxbtn ms-lg-5 mt-lg-3 ">
                     <Col xs={5} sm={6} md={4} lg={3} >
                       <Container className='license pt-lg-1 pt-md-0 text-center' style={{ width: "170px" }}>
                         <h6 className='fs-5 mt-2'>School Students</h6>
