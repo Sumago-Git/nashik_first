@@ -82,6 +82,10 @@
         font-size: 25px !important;
         text-align: center;
     }
+
+    .whiteboxbtn{
+        justify-content: center;
+    }
 }
 
 .bottomheadline {
@@ -201,13 +205,17 @@
 }
 
 .event-dropdown .dropdown-toggle {
-    color: black !important;  /* Force the color to black */
+    color: black !important; 
   }
  
   .events{
     font-size: 20px;
     font-weight: 600;
   }
+
+.whiteboxbtn{
+    margin: 1px;
+}
 
 
 
@@ -220,10 +228,10 @@
     }
     .license{
         justify-content: start;
+        
     }
-
     .links{
-        font-size: 15px;
+        font-size: 15px !important;
         margin: 0px;
         padding: 0px;
     }
@@ -232,6 +240,6 @@
 @media (max-width:1350px) {
     .links{
         font-size: 16px;
-    }
-    
+        font-weight: 700;
+    }   
 }

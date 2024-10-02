@@ -33,10 +33,10 @@ const Homecounter = () => {
           <Col lg={4} sm={12} className='mt-lg-5 pt-lg-3'>
             <Row>
               <Col xs={6} md={6} className='mt-5'>
-                <Col className='train' style={{ height: '280px', backgroundColor: "#F96945"}}>
+                <Col className='train' style={{ height: '280px', backgroundColor: "#F96945" }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
                     <h6 className='boxheadline'>Training Imparted</h6>
-                    <img src={training} className='img-fluid' style={{ width: '60%' , color:"white"}} alt='Training' />
+                    <img src={training} className='img-fluid' style={{ width: '60%', color: "white" }} alt='Training' />
                     <h2>5,120</h2>
                   </Container>
                 </Col>
@@ -59,7 +59,7 @@ const Homecounter = () => {
                   </Container>
                 </Col>
 
-                <Col className=' childner mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040"}}>
+                <Col className=' childner mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040" }}>
                   <Container className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Children</h5>
                     <img src={child} className='img-fluid' style={{ height: "100px" }} alt='Children' />
@@ -87,7 +87,7 @@ const Homecounter = () => {
                     </p>
                   </Container>
 
-                  <Row className='justify-content-center mt-lg-3  m-0'>
+                  <Row className=' ms-lg-5 mx-1 mt-lg-3 whiteboxbtn  '>
                     <Col xs={6} sm={4} lg={3} className='mb-3 mb-md-0'>
                       <button className='license pt-1 text-center' style={{ width: "160px" }}>
                         <h6 className='fs-5'>Learning License</h6>
@@ -105,7 +105,7 @@ const Homecounter = () => {
                     </Col>
                   </Row>
                   <Container>
-                    <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{  width: "250px" }}></div>
+                    <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{ width: "250px" }}></div>
                   </Container>
                 </Col>
                 <Col lg={8} className='mt-4 ms-lg-5 w-100 whitebox'>
@@ -116,11 +116,11 @@ const Homecounter = () => {
                     </h6>
                     <p className='text-start ms-4 ms-md-3 rto'>
                       This programme is exclusively designed for school students<br />
-                       and adults, such as college students, employees working in<br /> various
-                      organizations, rickshaw drivers, bus drivers, and other<br/> adult groups.
+                      and adults, such as college students, employees working in<br /> various
+                      organizations, rickshaw drivers, bus drivers, and other<br /> adult groups.
                     </p>
                   </Container>
-                  <Row className="justify-content-center mt-lg-3 ">
+                  <Row className=" whiteboxbtn ms-lg-5 mt-lg-3  ">
                     <Col xs={5} sm={6} md={4} lg={3} >
                       <Container className='license pt-lg-1 pt-md-0 text-center' style={{ width: "170px" }}>
                         <h6 className='fs-5 mt-2'>School Students</h6>
@@ -132,7 +132,7 @@ const Homecounter = () => {
                       </Container>
                     </Col>
                   </Row>
-                  <img src={circle2} style={{ width: "250px",  }} className='circle2 d-none d-md-block position-absolute top-50 start-100 translate-middle ' />
+                  <img src={circle2} style={{ width: "250px", }} className='circle2 d-none d-md-block position-absolute top-50 start-100 translate-middle ' />
                 </Col>
 
               </Col>
