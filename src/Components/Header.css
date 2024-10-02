@@ -223,26 +223,7 @@
 
 
 
-@media (max-width:1280px) {
-    .rto {
-        font-size: 15px;
-    }
 
-    .whiteboxheadline {
-        font-size: 28px;
-    }
-
-    .license {
-        justify-content: start;
-
-    }
-
-    .navMenu {
-        font-size: 15px !important;
-        margin: 0px;
-        padding: 0px;
-    }
-}
 
 @media (min-width: 1350px) and (max-width: 1400px) {
     .navMenu {
@@ -254,4 +235,18 @@
         font-weight: 700 !important;
         font-family: "Century Gothic Paneuropean", sans-serif;
       }
+      .event-dropdown .dropdown-toggle {
+        color: black !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
+    
+    .event-dropdown .dropdown-toggle:hover{
+        font-weight: 700;
+    }
+    
+    .events {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
 }
