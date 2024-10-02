@@ -54,36 +54,38 @@
     .rto {
         font-size: 15px !important;
     }
-    
-    .license{
+
+    .license {
         height: 40px;
         width: 90% !important;
         justify-content: center;
         margin: 0px;
         text-align: center;
     }
-    
-    .whitebox{
+
+    .whitebox {
         height: 490px !important;
     }
-    .homecounterheadline{
+
+    .homecounterheadline {
         font-size: 35px !important;
     }
-    .links{
+
+    .links {
         font-size: 25px;
     }
 
-    .eventdrop{
+    .eventdrop {
         font-size: 30px !important;
     }
 
-    .events{
+    .events {
         width: 100% !important;
         font-size: 25px !important;
         text-align: center;
     }
 
-    .whiteboxbtn{
+    .whiteboxbtn {
         justify-content: center;
     }
 }
@@ -105,18 +107,21 @@
     width: 40px;
     background-color: white;
 }
-.footericon:hover{
+
+.footericon:hover {
     background-color: #c50c1c;
 }
 
 .followicon {
     height: 60px;
     width: 60px;
-    
+
 }
-.followicon:hover{
+
+.followicon:hover {
     color: blue;
 }
+
 .homecounterheadline {
     /* color: #F96945; */
     font-family: 'Century Gothic Paneuropean', sans-serif;
@@ -145,7 +150,7 @@
 
 }
 
-.childner{
+.childner {
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
     border-color: grey;
@@ -159,9 +164,10 @@
     border-radius: 10px;
     box-shadow: 8px 8px 40px 0px #00000040;
     border-bottom: 10px solid #F96945;
-    position:relative;
+    position: relative;
 }
-.whiteboxheadline{
+
+.whiteboxheadline {
     font-size: 34px;
 }
 
@@ -199,45 +205,50 @@
     background-size: cover;
 }
 
-.copyright{
+.copyright {
     font-size: 20px;
     color: white;
 }
 
 .event-dropdown .dropdown-toggle {
-    color: black !important; 
-  }
- 
-  .events{
+    color: black !important;
+}
+
+.events {
     font-size: 20px;
     font-weight: 600;
-  }
+}
 
-.whiteboxbtn{
+.whiteboxbtn {
     margin: 1px;
 }
 
 
 
 @media (max-width:1280px) {
-    .rto{
+    .rto {
         font-size: 15px;
     }
-    .whiteboxheadline{
+
+    .whiteboxheadline {
         font-size: 28px;
     }
-    .license{
+
+    .license {
         justify-content: start;
-        
+
     }
-    .links{
+
+    .links {
         font-size: 15px !important;
         margin: 0px;
         padding: 0px;
     }
 }
 
-@media only screen and (min-width: 1350px) and (max-width: 1400px){ .links{
-    font-size: 16px;
-    font-weight: 700;
-} }
+@media (min-width: 1350px) and (max-width: 1400px) {
+    .links {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
