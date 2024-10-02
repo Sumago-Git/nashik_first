@@ -4,25 +4,17 @@
     margin-left: -20px;
 }
 
-.links {
-    text-align: center;
-    font-size: 18px;
-    /* color: rgb(221, 12, 12); */
-    margin-top: 35px;
-    font-family: 'Century Gothic Paneuropean', sans-serif;
-    font-weight: 700;
-    color: black;
-    margin: 20px;
-    padding: 10px;
-}
 
-
-
-/* Bold on hover */
-.links a:hover {
+.navMenu {
+    font-size: 20px !important;
+    font-weight:600 !important ;
+    
+  }
+  .navMenu:hover {
+    /* font-size: 15px; */
     font-weight: 800;
-}
-
+    font-family: "Century Gothic Paneuropean", sans-serif;
+  }
 
 
 .logo2 {
@@ -71,7 +63,7 @@
         font-size: 35px !important;
     }
 
-    .links {
+    .navMenu {
         font-size: 25px;
     }
 
@@ -212,6 +204,12 @@
 
 .event-dropdown .dropdown-toggle {
     color: black !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.event-dropdown .dropdown-toggle:hover{
+    font-weight: 600;
 }
 
 .events {
@@ -239,7 +237,7 @@
 
     }
 
-    .links {
+    .navMenu {
         font-size: 15px !important;
         margin: 0px;
         padding: 0px;
@@ -247,11 +245,13 @@
 }
 
 @media (min-width: 1350px) and (max-width: 1400px) {
-    .links {
-        font-size: 15px;
+    .navMenu {
+        font-size: 16px;
         font-weight: 600;
-    }
-    .links:hover{
-        font-weight:700 ;
-    }
+      }
+      .navMenu:hover {
+        font-size: 15px;
+        font-weight: 700;
+        font-family: "Century Gothic Paneuropean", sans-serif;
+      }
 }

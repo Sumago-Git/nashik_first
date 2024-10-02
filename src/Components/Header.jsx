@@ -41,19 +41,19 @@ const Header = () => {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="mx-auto links">
-                <Nav.Link to="about" as={Link} onClick={handleClose} className='mx-lg-2 text-black '>About Us</Nav.Link>
+              <Nav className="mx-auto mt-lg-4 ">
+                <Nav.Link to="about" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu '>About Us</Nav.Link>
                 <NavDropdown title="Events" id="basic-nav-dropdown" className='event-dropdown'>
                   <NavDropdown.Item to="events" as={Link} onClick={handleClose} className='text-center text-black events'>Past Events</NavDropdown.Item>
                   <NavDropdown.Item to="upcomingevents " as={Link} onClick={handleClose} className='text-center
                   
                   text-black events'>Upcoming Events</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link to="training" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Training</Nav.Link>
-                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Traffic awareness video</Nav.Link>
-                <Nav.Link to="investor" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Annual Reports</Nav.Link>
-                <Nav.Link to="annualreturns" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Annual Returns</Nav.Link>
-                <Nav.Link to="contact" as={Link} onClick={handleClose} className='mx-lg-2 text-black'>Contact</Nav.Link>
+                <Nav.Link to="training" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Training</Nav.Link>
+                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Traffic awareness video</Nav.Link>
+                <Nav.Link to="investor" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Reports</Nav.Link>
+                <Nav.Link to="annualreturns" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Returns</Nav.Link>
+                <Nav.Link to="contact" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Contact</Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
