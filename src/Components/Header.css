@@ -216,6 +216,9 @@
     font-size: 20px;
     font-weight: 600;
 }
+.events:hover{
+    font-weight: 600 !important;
+}
 
 .whiteboxbtn {
     margin: 1px;
