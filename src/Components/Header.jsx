@@ -25,7 +25,7 @@ const Header = () => {
       <Navbar expand="lg" className="p-0">
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo1} className='logo1 w-sm-75 w-md-75 w-100 p-0' alt="Logo" />
+            <img src={logo1} className='logo1 w-sm-75 w-md-75 w-100  p-0' alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" className='ms-0' onClick={handleShow} />
           <Navbar.Offcanvas
