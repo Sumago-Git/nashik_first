@@ -246,12 +246,12 @@
 
 @media (min-width: 1350px) and (max-width: 1400px) {
     .navMenu {
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 16px !important;
+        font-weight: 600 !important;
       }
       .navMenu:hover {
-        font-size: 15px;
-        font-weight: 700;
+        font-size: 15px !important;
+        font-weight: 700 !important;
         font-family: "Century Gothic Paneuropean", sans-serif;
       }
 }
