@@ -252,4 +252,7 @@
         font-size: 16px !important;
         font-weight: 600 !important;
     }
+    .events:hover{
+        font-weight: 600 !important;
+    }
 }
