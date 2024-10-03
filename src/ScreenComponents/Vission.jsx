@@ -44,7 +44,7 @@ const Vission = () => {
       <Container fluid className='mt-lg-0 p-0 mt-3 '>
         <Container fluid className='p-0 mbg'>
            <Row className='justify-content-center p-2 m-0'>
-            <Col lg={6} className='mt-lg-3 pt-lg-4 mt-5 '>
+            <Col lg={6} className='mt-lg-1 pt-lg-4  '>
             <img src={m1} className='missionimg mx-4'/>
             <img src={m2} className='missionimg mx-4'/>
             <img src={m3} className='missionimg mx-4'/>
@@ -53,8 +53,8 @@ const Vission = () => {
             <Col lg={6} className='mt-lg-5'>
             < text className='text me-lg-5 pe-lg-5 me-3 text-white'>Our Mission</text>
             </Col>
-            <Col className='m-lg-0'>
-            <p className='mtext text-middle mt-lg-5 pt-lg-5  m-0'> <span style={{ fontWeight: "800",color:"#F96945" }}>"Nashik First"</span> is a proactive group of citizens
+            <Col className='m-lg-0 '>
+            <p className='mtext text-middle  mt-lg-4 pt-lg-5'> <span style={{ fontWeight: "800",color:"#F96945" }}>"Nashik First"</span> is a proactive group of citizens
                 dedicated to improving Nashik's quality of life. For
                 years, Nashik has seen discussions on rapid
                 development, but little action. Recognizing this, Nashik
