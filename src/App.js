@@ -16,6 +16,8 @@ import Upcomingevents from "./ScreenComponents/EventsComponents/Upcomingevents";
 import AnnualReturns from "./ScreenComponents/Annualreturns/AnnualReturns";
 import { useEffect } from "react";
 import axios from "axios";
+import AnnualReturn from "./ScreenComponents/Annualreturns/AnnualReturns";
+import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
 
 function App() {
   useEffect(()=>{
@@ -32,8 +34,8 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/awarnessvideo' element={<Video/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/investor' element={<Investor/>}/>
-        <Route path='/annualreturns' element={<AnnualReturns/>}/>
+        <Route path='/annualreport' element={<AnnualReport/>}/>
+        <Route path='/annualreturn' element={<AnnualReturn/>}/>
         <Route path='/training' element={<Training/>}/>
         <Route path='/bookingpage' element={<Bookingpage/>}/>
         <Route path="/slotpage" element={<Slotpage/>}/>
