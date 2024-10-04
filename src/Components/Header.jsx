@@ -51,8 +51,8 @@ const Header = () => {
                 </NavDropdown>
                 <Nav.Link to="training" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Training</Nav.Link>
                 <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Traffic awareness video</Nav.Link>
-                <Nav.Link to="investor" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Reports</Nav.Link>
-                <Nav.Link to="annualreturns" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Returns</Nav.Link>
+                <Nav.Link to="annualreport" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Reports</Nav.Link>
+                <Nav.Link to="annualreturn" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Annual Returns</Nav.Link>
                 <Nav.Link to="contact" as={Link} onClick={handleClose} className='mx-lg-1 text-black navMenu'>Contact</Nav.Link>
               </Nav>
             </Offcanvas.Body>

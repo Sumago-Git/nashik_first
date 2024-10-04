@@ -3,9 +3,10 @@ import "../../Components/Investor.css";
 import frame4 from "../../Assets/Assets/MainBanner/Frame 4.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import investor from "../../Assets/Assets/Investor/investor.png";
-import { Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
+import Banner from '../../Components/Banner';
 
-const Annualreport = () => {
+const AnnualReturn = () => {
 
   // Array of annual report details
   const reports = [
@@ -16,30 +17,37 @@ const Annualreport = () => {
 
   return (
     <>
-      <Container fluid className='p-0 m-0 mb-0'>
-        <img src={frame4} className='lghead d-none d-md-block' />
-        <img src={img4} className='img4 d-block d-md-none' />
-      </Container>
 
-      <Container fluid >
-        <div className='investorbg pt-lg-5 pt-3 pb-0 p-0'>
-          <h1 className='inverstorheadline'>Annual Returns</h1>
-          <img src={investor} className='w-100 pt-lg-5 mt-lg-5 pt-5 mt-3   ' alt="Investor" style={{ position: "relative" }} />
+      <Banner bannerImg={frame4} bannerImgMob={img4} />
+      <section className='investorbg'>
+      <Container fluid className='p-0 pt-5 pb-4'>
+          <h1 className='fw-bold '>Annual Returns</h1>
+        </Container>
+        <Container fluid className='p-0 py-5'>
+          <h1 className='fw-bold '></h1>
+        </Container>
+        <div >
+          <Container className='position-absolute start-50 translate-middle'>
+            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "5px solid red", zIndex: 1 }}>
+              {
+                reports.map((report, index) => {
+                  return (
+                    <>
+                      <a href={report.link} className='text-black my-2' key={index}>
+                        <p className='returntext'>Annual Return {report.year}</p>
+                      </a>
+                    </>
+                  )
+                })
+              }
+            </Card>
+          </Container>
+          <img src={investor} alt={investor} className='img-fluid' />
         </div>
-      </Container>
-      <Container >
-        <div className='return mt-lg-5 position-absolute top-100 start-50 translate-middle m-lg-0'>
-          {reports.map((report, index) => (
-            <a href={report.link} className='text-black' key={index}>
-              <p className='returntext pt-lg-4 pt-2 mt-2'>Annual Return {report.year}</p>
-            </a>
-          ))}
-        </div>
-      </Container>
 
+      </section>
     </>
   );
 };
 
-export default Annualreport;
-
+export default AnnualReturn;
