@@ -15,12 +15,9 @@
     width: 1070px !important;
     background-color: white;
     position: absolute;
-    /* margin-top: 450px !important; */
-    /* margin-left: 200px !important;  */
     border-radius: 20px !important;
     border-bottom: 8px solid #F96945 !important ;
     box-shadow: 8px 12px 20px 0px #00000040 !important;
-
 }
 
 .returntext{

@@ -1,7 +1,7 @@
 import React from 'react';
 import frame1 from "../../Assets/Assets/MainBanner/Frame 1.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
-import { Container, Carousel } from 'react-bootstrap';
+import { Container, Carousel, Row, Col } from 'react-bootstrap';
 import '../../Components/About.css';
 import city from '../../Assets/Assets/Aboutpage/city.png';
 
@@ -89,33 +89,35 @@ const Aboutbanner = () => {
 
     return (
         <>
-            {/* Banner Images */}
-            <Container fluid className='pe-0 me-0 p-0'>
-                <img src={frame1} className='lghead d-none d-md-block' />
-                <img src={img4} className='img4 d-block d-md-none' />
+
+            <Container fluid className=' me-0'>
+                <Row>
+                    <Col>
+                        <img src={frame1} className='lghead d-none d-md-block w-100 ' alt="Banner" />
+                        <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
+                    </Col>
+                </Row>
             </Container>
-
-            {/* Carousel Section */}
-            <Container fluid className='backgrnd mt-4 p-0 '>
-                <Container fluid className='p-0 m-0 w-lg-75 w-sm-100'>
-                    <Carousel className=' w-50 h-75 caru'>
-                        {carouselItems.map((item, index) => (
-                            <Carousel.Item key={index} className='carouselitem'>
-                                <p className='text-start ms-lg-5 ms-md-0 headline pt-lg-5  w-sm-100 ms-3 '>
-                                    {item.headline}
-                                </p>
-                                <p className='text-start ms-lg-5 headlinetext pb-5 m-lg-0 w-sm-100 ms-3'>
-                                    {item.subtext}
-                                </p>
-                            </Carousel.Item>
-                        ))}
-                    </Carousel>
-                </Container>
-
-                {/* City Image */}
-                <Container className='me-0'>
-                    <img src={city} className='city d-none d-md-block img-fluid' />
-                </Container>
+            <Container fluid className='backgrnd mt-4 '>
+                <Row >
+                    <Col lg={6} sm={12} className='mx-auto '>
+                        <Carousel className=' w-100 h-75 caru'>
+                            {carouselItems.map((item, index) => (
+                                <Carousel.Item key={index} className='carouselitem'>
+                                    <p className='text-start ms-lg-4 ms-md-0 headline pt-lg-5 w-sm-100 ms-3'>
+                                        {item.headline}
+                                    </p>
+                                    <p className='text-start ms-lg-4 headlinetext pb-5 m-lg-0 w-sm-100 ms-3'>
+                                        {item.subtext}
+                                    </p>
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </Col>
+                    <Col lg={6}>
+                        <img src={city} className='city d-none d-md-block img-fluid p-0' alt="City" />
+                    </Col>
+                </Row>
             </Container>
         </>
     );

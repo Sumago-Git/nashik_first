@@ -17,7 +17,7 @@ const Directors = () => {
 
   return (
     <>
-      <Container fluid className='directorbg mt-lg-5 pt-lg-5'>
+      <Container fluid className='directorbg mt-lg-5 pt-lg-5 p-0'>
         <h2 className='drheadline lg-text-center '>Directors of Advantage Nashik Foundation</h2>
         <Container className='mt-4 pb-lg-5'>
           <Row className=' mx-lg-5 '>

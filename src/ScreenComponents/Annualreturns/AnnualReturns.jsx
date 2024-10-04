@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import "../../Components/Investor.css";
 import frame4 from "../../Assets/Assets/MainBanner/Frame 4.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
@@ -24,7 +25,7 @@ const AnnualReturn = () => {
       <Banner bannerImg={frame4} bannerImgMob={img4} />
       <section className='investorbg'>
         <Container fluid className='p-0 pt-5 pb-4'>
-          <h1 className='fw-bold '>Annual Returns</h1>
+          <h1 className='fw-bold inverstorheadline'>Annual Returns</h1>
         </Container>
         <Container fluid className='p-0 py-5'>
           <h1 className='fw-bold '></h1>
