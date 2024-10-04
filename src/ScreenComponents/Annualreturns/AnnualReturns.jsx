@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../../Components/Investor.css";
 import frame4 from "../../Assets/Assets/MainBanner/Frame 4.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import investor from "../../Assets/Assets/Investor/investor.png";
 import { Card, Container } from 'react-bootstrap';
 import Banner from '../../Components/Banner';
+import axios from 'axios';
 
 const AnnualReturn = () => {
+
+
 
   // Array of annual report details
   const reports = [
@@ -20,7 +23,7 @@ const AnnualReturn = () => {
 
       <Banner bannerImg={frame4} bannerImgMob={img4} />
       <section className='investorbg'>
-      <Container fluid className='p-0 pt-5 pb-4'>
+        <Container fluid className='p-0 pt-5 pb-4'>
           <h1 className='fw-bold '>Annual Returns</h1>
         </Container>
         <Container fluid className='p-0 py-5'>
