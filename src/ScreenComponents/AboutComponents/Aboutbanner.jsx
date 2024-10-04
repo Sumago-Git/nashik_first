@@ -90,17 +90,17 @@ const Aboutbanner = () => {
     return (
         <>
 
-            <Container fluid className=' me-0 p-0'>
+            <Container fluid className=' me-0'>
                 <Row>
-                    <Col className='p-0' >
-                        <img src={frame1} className='lghead d-none d-md-block w-100 p-0' alt="Banner" />
+                    <Col>
+                        <img src={frame1} className='lghead d-none d-md-block w-100 ' alt="Banner" />
                         <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
                     </Col>
                 </Row>
             </Container>
-            <Container fluid className='backgrnd mt-4 p-0'>
+            <Container fluid className='backgrnd mt-4 '>
                 <Row >
-                    <Col lg={7} sm={12} className='mx-auto '>
+                    <Col lg={6} sm={12} className='mx-auto '>
                         <Carousel className=' w-100 h-75 caru'>
                             {carouselItems.map((item, index) => (
                                 <Carousel.Item key={index} className='carouselitem'>
@@ -114,7 +114,7 @@ const Aboutbanner = () => {
                             ))}
                         </Carousel>
                     </Col>
-                    <Col lg={5}>
+                    <Col lg={6}>
                         <img src={city} className='city d-none d-md-block img-fluid p-0' alt="City" />
                     </Col>
                 </Row>

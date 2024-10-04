@@ -10,9 +10,9 @@ const Bookingpage = () => {
   const [slotTime, setSlotTime] = useState("")
   const location = useLocation()
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
 
   useEffect(() => {
     if (location) {

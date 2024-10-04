@@ -65,7 +65,7 @@ const AnnualReturn = () => {
 
       <Banner bannerImg={frame4} bannerImgMob={img4} />
       <section className='investorbg'>
-      <Container fluid className='p-0 pt-5 pb-4'>
+        <Container fluid className='p-0 pt-5 pb-4'>
           <h1 className='fw-bold inverstorheadline'>Annual Returns</h1>
         </Container>
         <Container fluid className='p-0 py-5'>

@@ -157,6 +157,8 @@
 @media (max-width: 768px){
     .listtext{
         font-size: 20px;
+        text-align: center;
+        /* margin-left: 10px !important; */
     }
     .achiveheadline{
         font-size: 35px;
