@@ -1,6 +1,7 @@
 .backgrnd {
     background: linear-gradient(266.1deg, #EDFCFF 43.75%, #EBFCFF 85.16%);
     position: relative;
+    /* padding: 0px; */
 }
 
 .headline {
@@ -27,8 +28,8 @@
     height: 400px;
     width: 632px;
     position: absolute;
-    margin-top: -420px;
-    margin-left: 676px;
+    /* margin-top: -420px; */
+    /* margin-left: 676px; */
 }
 
 /* directors */

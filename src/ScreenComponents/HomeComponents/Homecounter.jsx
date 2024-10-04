@@ -9,6 +9,7 @@ import adult from '../../Assets/Assets/Homecounter/adult.png';
 import circle2 from "../../Assets/Assets/Homecounter/circle2.png"
 import "../../Components/Header.css";
 import { useNavigate } from "react-router-dom";
+import { DiJavascript } from 'react-icons/di';
 
 const Homecounter = () => {
 
@@ -30,42 +31,42 @@ const Homecounter = () => {
           </Row>
         {/* </div> */}
         <Row>
-          <Col  sm={12} xl={5} md={4} className='mt-lg-5 pt-lg-3 ms-xl-4'>
-            <Row className='ms-lg-5'>
+          <Col  sm={12} xl={5} lg={5} className='mt-lg-5 pt-lg-3 ms-xl-4'>
+            <Row className='ms-lg-2'>
               <Col xs={6} md={5} className='mt-5'>
-                <Col className='train' style={{ height: '280px', backgroundColor: "#F96945" }}>
+                <div className='train' style={{ height: '280px', backgroundColor: "#F96945" }}>
                   <div className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'white' }}>
                     <h6 className='boxheadline'>Training Imparted</h6>
                     <img src={training} className='img-fluid' style={{ width: '60%', color: "white" }} alt='Training' />
                     <h2>5,120</h2>
                   </div>
-                </Col>
+                </div>
 
-                <Col className='lives mt-3' style={{ height: "280px", backgroundColor: "white", boxShadow: '25px 38px 80px 0px #00000040' }}>
+                <div className='lives mt-3' style={{ height: "280px", backgroundColor: "white", boxShadow: '25px 38px 80px 0px #00000040' }}>
                   <div className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Adult</h5>
                     <img src={adult} className='img-fluid' style={{ height: "90px" }} alt='Adult' />
                     <h2>1,35,127</h2>
                   </div>
-                </Col>
+                </div>
               </Col>
 
               <Col xs={6} md={5} className='mt-5'>
-                <Col className='lives' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
+                <div className='lives' style={{ height: "280px", backgroundColor: 'white', boxShadow: '19px 14px 48px 0px #00000040' }}>
                   <div className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Lives Changed</h5>
                     <img src={lives} className='img-fluid' alt='Lives Changed' />
                     <h2>2,71,062</h2>
                   </div>
-                </Col>
+                </div>
 
-                <Col className=' childner mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040" }}>
+                <div className=' childner mt-3' style={{ height: '280px', backgroundColor: 'white', boxShadow: "18px -25px 50px 0px #00000040" }}>
                   <div className='d-flex flex-column align-items-center justify-content-center' style={{ height: '100%', color: 'black' }}>
                     <h5 className='boxheadline'>Children</h5>
                     <img src={child} className='img-fluid' style={{ height: "100px" }} alt='Children' />
                     <h2>2,71,062</h2>
                   </div>
-                </Col>
+                </div>
               </Col>
             </Row>
           </Col>
@@ -73,7 +74,7 @@ const Homecounter = () => {
           <Col sm={12} xl={6} md={12} style={{ position: "relative" }} className='mt-5' >
             {/* <Row > */}
               {/* <Col  > */}
-                <Col  xl={7} xxl={10} md={7} className='mt-4   whitebox'>
+                <Col  xl={7} xxl={10} md={10} lg={10} className='mt-4 whitebox'>
                   <div>
                     <h2 className='text-start pt-4 ms-4 ms-md-3 ms-lg-4 whiteboxheadline'>RTO <span style={{ color: '#F96945' }}>Training</span></h2>
                     <h4 className='text-start ms-4 ms-md-3 ms-lg-4 rto'>
