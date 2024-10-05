@@ -44,13 +44,13 @@
     transform: skewX(194deg);
 }
 
-.soontext{
+.soontext {
     margin-left: 240px;
     color: black;
     font-size: 15px;
 }
 
-.soonbox{
+.soonbox {
     height: 40px !important;
     width: 40px !important;
     background-color: #F96945;
@@ -64,22 +64,26 @@
 
 @media (max-width:768px) {
 
-    .upcomingheadline{font-size: 30px;
+    .upcomingheadline {
+        font-size: 30px;
     }
-    .event{
+
+    .event {
         width: 290px !important;
-         transform: skewX(0deg);
+        transform: skewX(0deg);
     }
-    
-    .upcomingtext1{
+
+    .upcomingtext1 {
         font-size: 20px;
     }
-    .upcomingtext2{
+
+    .upcomingtext2 {
         font-size: 15px;
     }
-    .coll{
+
+    .coll {
         transform: skewX(0deg);
 
     }
-   
+
 }

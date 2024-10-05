@@ -106,34 +106,53 @@ const Bookingpage = () => {
               <Col>
                 <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehical type*"}</p>
                 <Row>
-                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ps-lg-3 ms-3'>
-                    <input type='checkbox' className='radiobtn mt-1' />
-                  </Col>
-                  <Col xs={9} sm={11} lg={10} className='text-start'>
-                    <label className="btntext ">2 Wheelers</label>
-                  </Col>
-
-                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                    <input type='checkbox' className='radiobtn mt-1' />
-                  </Col>
-                  <Col xs={9} sm={11} lg={10} className='text-start'>
-                    <label className="btntext">3/5 Wheelers</label>
+                  {/* First Row: 2 Wheelers and 3/5 Wheelers */}
+                  <Col xs={6}>
+                    <Row>
+                      <Col xs={2} sm={2} lg={1} className='ms-lg-4'>
+                        <input type="checkbox" className="radiobtn mt-1" />
+                      </Col>
+                      <Col xs={10} sm={10} lg={10} className="text-start">
+                        <label className="btntext">2 Wheelers</label>
+                      </Col>
+                    </Row>
                   </Col>
 
-                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                    <input type='checkbox' className='radiobtn mt-1' />
-                  </Col>
-                  <Col xs={9} sm={11} lg={10} className='text-start'>
-                    <label className="btntext">4 Wheelers Heavy</label>
+                  <Col xs={6}>
+                    <Row>
+                      <Col xs={2} sm={2} lg={1}>
+                        <input type="checkbox" className="radiobtn mt-1" />
+                      </Col>
+                      <Col xs={10} sm={10} lg={10} className="text-start">
+                        <label className="btntext">3/5 Wheelers</label>
+                      </Col>
+                    </Row>
                   </Col>
 
-                  <Col xs={2} sm={1} lg={1} className='ms-lg-4 ms-3'>
-                    <input type='checkbox' className='radiobtn mt-1' />
+                  {/* Second Row: 4 Wheelers Heavy and 4 Wheelers Light */}
+                  <Col xs={6}>
+                    <Row>
+                      <Col xs={2} sm={2} lg={1} className='ms-lg-4'>
+                        <input type="checkbox" className="radiobtn mt-1" />
+                      </Col>
+                      <Col xs={10} sm={10} lg={10} className="text-start">
+                        <label className="btntext">4 Wheelers Heavy</label>
+                      </Col>
+                    </Row>
                   </Col>
-                  <Col xs={9} sm={11} lg={10} className='text-start'>
-                    <label className="btntext">4 Wheelers Light</label>
+
+                  <Col xs={6}>
+                    <Row>
+                      <Col xs={2} sm={2} lg={1}>
+                        <input type="checkbox" className="radiobtn mt-1" />
+                      </Col>
+                      <Col xs={10} sm={10} lg={10} className="text-start">
+                        <label className="btntext">4 Wheelers Light</label>
+                      </Col>
+                    </Row>
                   </Col>
                 </Row>
+
               </Col>
             </Row>
           </div>

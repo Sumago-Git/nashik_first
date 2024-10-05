@@ -30,7 +30,7 @@
 
 .icontext{
     font-weight: 800;
-    margin-top: -50px;
+    /* margin-top: -50px; */
     position: absolute;
     font-size: 15px;
     font-family: 'Century Gothic Paneuropean', sans-serif;

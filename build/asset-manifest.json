@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a1dfc0d.css",
-    "main.js": "/static/js/main.bb3b8f5a.js",
+    "main.css": "/static/css/main.cac5572f.css",
+    "main.js": "/static/js/main.2c8b9141.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/lghead3.png": "/static/media/lghead3.ec0832d2b2b033a520ba.png",
     "static/media/lghead5.png": "/static/media/lghead5.87fdedd080f16250201e.png",
@@ -22,10 +22,11 @@
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/upcomingbanner.png": "/static/media/upcomingbanner.4abc13c332713fe3dffb.png",
     "static/media/city.png": "/static/media/city.2ef535adf1195410b029.png",
+    "static/media/investorMob.jpg": "/static/media/investorMob.a3e52cfff7c1fb3dcb45.jpg",
     "static/media/speed.jpg": "/static/media/speed.24c352d745aa1d471261.jpg",
-    "static/media/bottombg.jpg": "/static/media/bottombg.a359d896379a12094825.jpg",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
     "static/media/pain2.png": "/static/media/pain2.1d0303f4402bc12f3839.png",
+    "static/media/bottombg.jpg": "/static/media/bottombg.ecd948d6c599837cb526.jpg",
     "static/media/ears.jpg": "/static/media/ears.498713bd6bd6bedfbbe2.jpg",
     "static/media/pain.jpg": "/static/media/pain.95eb3b5323711704702e.jpg",
     "static/media/event7.png": "/static/media/event7.8fdf68ac3063c66d7d5e.png",
@@ -52,12 +53,12 @@
     "static/media/chat.jpg": "/static/media/chat.bcb37ad38e2730ca6fe4.jpg",
     "static/media/addressing.png": "/static/media/addressing.5cbee7b8507c536e05a0.png",
     "static/media/photo3.png": "/static/media/photo3.d709867309a7acbae2c7.png",
-    "static/media/social.png": "/static/media/social.f2afa7ec760f09d2a7d6.png",
-    "static/media/road.png": "/static/media/road.59beb860dbd5920c4c27.png",
-    "static/media/truck.png": "/static/media/truck.752a31e48103ec9ffd59.png",
-    "static/media/industry.png": "/static/media/industry.a6aa79f4cb7c4d778b91.png",
-    "static/media/education.png": "/static/media/education.9f221cd8f018cc712fb1.png",
-    "static/media/health.png": "/static/media/health.7e899df3bbbc030e632a.png",
+    "static/media/social.png": "/static/media/social.4fd0a641078b1982e964.png",
+    "static/media/health.png": "/static/media/health.8dc7c921dcb9719703a9.png",
+    "static/media/education.png": "/static/media/education.e352d022324e31259223.png",
+    "static/media/truck.png": "/static/media/truck.5585587da30599564c63.png",
+    "static/media/road.png": "/static/media/road.4a1f5465aeb2a47fb573.png",
+    "static/media/industry.png": "/static/media/industry.d91bd576ae05670ff389.png",
     "static/media/photo2.png": "/static/media/photo2.358dc84621b9739cd70d.png",
     "static/media/training.png": "/static/media/training.811e2f6cd88d70b06e70.png",
     "static/media/hub.png": "/static/media/hub.63dd9836a943a6733537.png",
@@ -82,12 +83,12 @@
     "static/media/m3.png": "/static/media/m3.8b6c39db8423e87b0af0.png",
     "static/media/pitch.png": "/static/media/pitch.6dd1dfb717aaa7a0e560.png",
     "index.html": "/index.html",
-    "main.1a1dfc0d.css.map": "/static/css/main.1a1dfc0d.css.map",
-    "main.bb3b8f5a.js.map": "/static/js/main.bb3b8f5a.js.map",
+    "main.cac5572f.css.map": "/static/css/main.cac5572f.css.map",
+    "main.2c8b9141.js.map": "/static/js/main.2c8b9141.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a1dfc0d.css",
-    "static/js/main.bb3b8f5a.js"
+    "static/css/main.cac5572f.css",
+    "static/js/main.2c8b9141.js"
   ]
 }

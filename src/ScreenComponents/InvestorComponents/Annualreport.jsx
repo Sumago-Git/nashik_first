@@ -59,7 +59,7 @@ const AnnualReport = () => {
 
       {/* Mobile View */}
 
-      <section>
+      <section className='d-block d-md-none'>
         <Container fluid className='p-0 pt-5 pb-4 investorbg'>
           <h1 className='fw-bold '>Annual Reports</h1>
         </Container>

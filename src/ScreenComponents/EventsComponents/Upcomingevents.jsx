@@ -40,14 +40,14 @@ const Upcomingevents = () => {
 
         {eventsData.map((event) => (
           <React.Fragment key={event.id}>
-            <Container className='event '>
+            <Container className='event'>
               <Row>
                 <Col lg={4}></Col>
-                <Col lg={8} className='text-start coll '>
-                  <p className='upcomingtext1 mb-0 ms-3 '>Time Duration <span className='soontext d-none d-md-block'>COMING SOON</span></p>
-                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "420px" }}>05</Container>
-                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "470px" }}>55</Container>
-                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "520px" }}>00</Container>
+                <Col lg={8} className='text-start coll'>
+                  <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext d-none d-md-inline-block'>COMING SOON</span></p>
+                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "420px" }}>05</Container>
+                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "470px" }}>55</Container>
+                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "520px" }}>00</Container>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.timeDuration}</p>
                   <p className='upcomingtext1 mb-0 ms-3'>Area</p>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>
@@ -63,8 +63,10 @@ const Upcomingevents = () => {
                 </Col>
               </Row>
             </Container>
-            {/* Hide event image on mobile view using d-none and d-md-block */}
-            <img src={event.image} className='eventimg d-none d-md-block' alt="Event" />
+            {/* Show image on medium and larger screens, hide on smaller screens */}
+           <div className=' d-none d-md-block'>
+           <img src={event.image} className='eventimg' alt="Event" />
+           </div>
           </React.Fragment>
         ))}
       </Container>
