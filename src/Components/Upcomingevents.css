@@ -67,6 +67,19 @@
     .upcomingheadline{font-size: 30px;
     }
     .event{
-        /* width: 300px !important; */
+        width: 290px !important;
+         transform: skewX(0deg);
     }
+    
+    .upcomingtext1{
+        font-size: 20px;
+    }
+    .upcomingtext2{
+        font-size: 15px;
+    }
+    .coll{
+        transform: skewX(0deg);
+
+    }
+   
 }

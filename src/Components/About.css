@@ -140,7 +140,7 @@
 }
 
 .oppoimg {
-    height: 350px;
+    height: 50px;
     width: 370px;
     position: relative;
 }
@@ -148,8 +148,8 @@
 
 .oppoimgtext {
     position: absolute;
-    margin-top: -70px;
-    margin-left: -45px;
+    margin-top: 300px;
+    /* margin-left: -45px; */
     font-family: "Poppins";
     font-weight: 600;
 }
@@ -177,6 +177,10 @@
     }
     .oppoheadline{
         font-size: 28px;
+    }
+
+    .oppoimgtext{
+        margin-top: 160px;
     }
     .headline{
         font-size: 26px;

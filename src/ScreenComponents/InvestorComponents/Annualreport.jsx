@@ -38,7 +38,7 @@ const AnnualReport = () => {
         </Container>
         <div >
           <Container className='position-absolute start-50 translate-middle'>
-            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "5px solid red", zIndex: 1 }}>
+            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor:"#F96945", zIndex: 1 }}>
               {
                 reports.map((report, index) => {
                   return (
@@ -60,15 +60,15 @@ const AnnualReport = () => {
       {/* Mobile View */}
 
       <section>
-        <Container fluid className='p-0 pt-5 pb-4'>
+        <Container fluid className='p-0 pt-5 pb-4 investorbg'>
           <h1 className='fw-bold '>Annual Reports</h1>
         </Container>
-        <Container fluid className='p-0 py-5'>
+        <Container fluid className='p-0 py-5 investorbg'>
           <h1 className='fw-bold '></h1>
         </Container>
         <div >
           <Container className='position-absolute start-50 translate-middle'>
-            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "5px solid red", zIndex: 1 }}>
+            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor:"#F96945", zIndex: 1}}>
               {
                 reports.map((report, index) => {
                   return (

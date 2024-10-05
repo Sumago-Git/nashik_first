@@ -1,8 +1,8 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import upcomingbanner from "../../Assets/Assets/Pastevents/upcomingbanner.png"
-import "../../Components/Upcomingevents.css"
-import upcoming1 from "../../Assets/Assets/Upcomingevents/upcoming1.png"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import upcomingbanner from "../../Assets/Assets/Pastevents/upcomingbanner.png";
+import "../../Components/Upcomingevents.css";
+import upcoming1 from "../../Assets/Assets/Upcomingevents/upcoming1.png";
 
 const eventsData = [
   {
@@ -44,10 +44,10 @@ const Upcomingevents = () => {
               <Row>
                 <Col lg={4}></Col>
                 <Col lg={8} className='text-start coll '>
-                  <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext'>COMING SOON</span></p>
-                  <Container className='soonbox' style={{marginLeft:"420px"}}>05</Container>
-                  <Container className='soonbox'style={{marginLeft:"470px"}}>55</Container>
-                <Container className='soonbox' style={{marginLeft:"520px"}}>00</Container>
+                  <p className='upcomingtext1 mb-0 ms-3 '>Time Duration <span className='soontext d-none d-md-block'>COMING SOON</span></p>
+                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "420px" }}>05</Container>
+                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "470px" }}>55</Container>
+                  <Container className='soonbox d-none d-md-block' style={{ marginLeft: "520px" }}>00</Container>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.timeDuration}</p>
                   <p className='upcomingtext1 mb-0 ms-3'>Area</p>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>
@@ -60,17 +60,16 @@ const Upcomingevents = () => {
                       </React.Fragment>
                     ))}
                   </p>
-
-
                 </Col>
               </Row>
             </Container>
-            <img src={event.image} className='eventimg' alt="Event" />
+            {/* Hide event image on mobile view using d-none and d-md-block */}
+            <img src={event.image} className='eventimg d-none d-md-block' alt="Event" />
           </React.Fragment>
         ))}
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Upcomingevents
+export default Upcomingevents;

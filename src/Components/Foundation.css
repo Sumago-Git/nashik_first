@@ -67,3 +67,14 @@
         height: 600px !important;
     }
 }
+
+@media (min-width: 1280px) {
+    .fheadline{
+        font-size: 30px !important;
+    }
+    .group{
+        height: 600px !important;
+        /* width: 600px; */
+    }
+    
+}

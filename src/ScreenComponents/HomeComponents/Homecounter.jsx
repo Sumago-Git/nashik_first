@@ -110,16 +110,16 @@ const Homecounter = () => {
                 <div className="circle d-none d-md-block position-absolute top-50 start-100 translate-middle" style={{ width: "250px" }}></div>
               </div>
             </Col>
-            <Col xl={7} xxl={10} md={10} lg={10} className='mt-4 whitebox'>
+            <Col xl={7} xxl={10} md={10} lg={10} className='mt-4 whitebox '>
               <div>
-                <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3 whiteboxheadline '>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
+                <h2 className='text-start pt-4 pb-1 ms-4 ms-md-3  whiteboxheadline '>School / College / Organization <span style={{ color: '#F96945' }}>Training</span></h2>
                 <h6 className='text-start ms-4 ms-md-3 rto'>
                   <b>To increase awareness about Traffic Safety, we organize<br /> Road Safety Traffic Awareness Workshops free of cost.</b><br />
                 </h6>
                 <p className='text-start ms-4 ms-md-3 rto'>
-                  This programme is exclusively designed for school students<br />
-                  and adults, such as college students, employees working in<br /> various
-                  organizations, rickshaw drivers, bus drivers, and other<br /> adult groups.
+                  This programme is exclusively designed for school students
+                  and adults, such as college students, employees working in various
+                  organizations, rickshaw drivers, bus drivers, and other adult groups.
                 </p>
               </div>
               <Row className=" whiteboxbtn ms-lg-5 mt-lg-3 ">
@@ -129,7 +129,7 @@ const Homecounter = () => {
                   </div>
                 </Col>
                 <Col xs={10} sm={6} md={6} lg={7}>
-                  <div className='license pt-lg-2 pt-md-1 text-center mb-3' style={{ width: "320px" }}>
+                  <div className='license pt-lg-2 pt-md-1 text-center mt-4' style={{ width: "320px" }}>
                     <h5 className='mt-2'>Adults (College / Organization)</h5>
                   </div>
                 </Col>
