@@ -157,7 +157,7 @@ const Bookingpage = () => {
             </Row>
           </div>
           <div className='text-center'>
-            <button className='returnbutton p-lg-3 mt-2'>
+            <button className='returnbutton p-lg-2 mt-2'>
               Book Now
             </button>
           </div>

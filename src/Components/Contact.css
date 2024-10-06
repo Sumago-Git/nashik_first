@@ -2,12 +2,13 @@
     width: 100%;
     background-image: url("../Assets/Assets/ContactPage/Contacts.png");
     background-size: cover;
-    position: relative;
+    /* position: relative; */
+    height: 850px;
     
 }
 .contactbg2{
     width: 100%;
-    background-image: url("../Assets/Assets/ContactPage/Contacts2.png");
+    background-image: url("../Assets/Assets/ContactPage/contact2.png");
 }
 
 .contactheadline{
@@ -17,33 +18,53 @@
 }
 
 .contacttext{
-    font-family: 'Century Gothic Paneuropean', sans-serif;
-    text-align: start;
+    font-family: "Poppins";
+    font-size: 40px;
+    font-weight: 600;
+    color: #F96945;
+}
+
+.contactinput{
+    width: 330px;
+    border: 2px solid #F96945;
+    border-radius: 20px;
+}
+
+.submitbutton{
+    background-color: #F96945;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    width: 230px;
+    border: 0px;
+    color: white;
+    font-family: "Poppins";
 }
 
 .icons{
-    height:250px;
-    width: 260px;
+    height:190px;
+    width: 190px;
     margin-top: -50px;
-    position: relative;
+    /* position: relative; */
 }
 
 .icontext{
     font-weight: 800;
-    /* margin-top: -50px; */
-    position: absolute;
+    margin-top: -50px;
+    /* position: absolute; */
     font-size: 15px;
     font-family: 'Century Gothic Paneuropean', sans-serif;
     line-height: 1;
     word-spacing: 1px;
-    color: black;
+    color: white;
 }
 
 @media (max-width:768px) {
 
     .icontext{
-        margin-top: 0px;
-        color: white;
+        /* margin-top: 0px; */
+        margin-left: -130px;
+        color: black;
     }
     .icons{
         margin-left: -150px;
