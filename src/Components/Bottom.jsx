@@ -151,7 +151,7 @@ const Bottom = () => {
                   </Col>
                   <Col sm={10} xs={10} className='mt-3'>
                     <h5 className='text-start'>
-                      <Link to={link.path} onClick={() => window.scrollTo(0, 0)} className='text-decoration-none text-white'>
+                      <Link to={link.path} onClick={() => window.scrollTo(0, 0)} className='text-decoration-none  quicklinks'>
                         {link.name}
                       </Link>
                     </h5>
@@ -208,7 +208,7 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-5 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='copyright mt-lg-2 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
           <p className='p-0 m-0 copyright mt-0 p-0'>*This Website is updated in 2024 </p>
         </Container>
       </section>

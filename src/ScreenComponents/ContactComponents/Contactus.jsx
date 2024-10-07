@@ -10,23 +10,27 @@ import call from "../../Assets/Assets/ContactPage/call.png";
 import captcha from "../../Assets/Assets/ContactPage/captcha.png";
 
 const Contactus = () => {
-  // Array for contact icons and text
+  // Array for contact icons, text, and links
   const contactInfo = [
     {
       icon: whatsapp,
-      text: "+91 0000000000",
+      text: "+91 7796116555",
+      link: "tel:+917796116555", // Phone number click
     },
     {
       icon: mail,
       text: "secretary@nashikfirst.com",
+      link: "mailto:secretary@nashikfirst.com", // Email click
     },
     {
       icon: call,
-      text: "+91 253 2315966",
+      text: "+91 2532315966",
+      link: "tel:+912532315966", // Phone number click
     },
     {
       icon: location,
       text: "Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.",
+      link: "https://maps.google.com/?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Nashik", // Location click
     },
   ];
 
@@ -48,43 +52,45 @@ const Contactus = () => {
 
       {/* DESKTOP VIEW */}
       <Container fluid className='p-0 position-relative contactbg d-none d-md-block'>
-        <Row className='p-0 m-0'>
-          <Col lg={5} className="d-flex justify-content-center">
-            <Col lg={5} className='d-flex flex-column justify-content-center align-items-center ms-lg-5'>
+        <Row className='p-0 m-0 '>
+          <Col lg={5} className="justify-content-center mt-lg-5">
+            <Row className='mt-lg-5 ms-lg-5'>
               {contactInfo.map((contact, index) => (
-                <div key={index} className="d-flex flex-column align-items-center my-3">
-                  <img src={contact.icon} className='icons mb-2' />
-                  <p className='icontext text-center'>{contact.text}</p>
-                </div>
+                <Col xs={6} key={index} className=" flex-column justify-content-center align-items-center my-3 p-0 m-0">
+                  <div className=" flex-column align-items-center my-2">
+                    <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                      <img src={contact.icon} className="icons mb-2" alt="contact-icon" />
+                      <p className="icontext text-center">{contact.text}</p>
+                    </a>
+                  </div>
+                </Col>
               ))}
-            </Col>
+            </Row>
           </Col>
 
-          <Col lg={6}>
+          <Col lg={6} className='mb-5'>
             {/* Contact Form */}
-            <div className="card">
-              <div className="card-body">
-                <h5 className='contacttext'>Contact us</h5>
-                <Row>
-                  {formFields.map((field, index) => (
-                    <Col lg={6} key={index}>
-                      <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{field.label}</p>
-                      {field.type === "textarea" ? (
-                        <textarea className='contactinput p-3 m-0 mt-0 ms-lg-3' />
-                      ) : (
-                        <input type={field.type} className='contactinput p-3 m-0 mt-0 ms-lg-3' />
-                      )}
-                    </Col>
-                  ))}
-                  <Col lg={6}>
-                    <img src={captcha} className='w-50 mt-lg-3' />
-                    <textarea placeholder='Enter Captcha' className='contactinput p-3 m-0 mt-0 ms-lg-3 mt-lg-2' />
+            <div className="card-body">
+              <h5 className='contacttext mt-3'>Contact us</h5>
+              <Row>
+                {formFields.map((field, index) => (
+                  <Col lg={6} key={index}>
+                    <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{field.label}</p>
+                    {field.type === "textarea" ? (
+                      <textarea className='contactinput p-2 m-0 mt-0 ms-lg-3 w-100' />
+                    ) : (
+                      <input type={field.type} className='contactinput p-2 m-0 mt-0 ms-lg-3 w-100' />
+                    )}
                   </Col>
-                  <div className='text-center'>
-                    <button className='submitbutton p-lg-3 mt-2'>Submit</button>
-                  </div>
-                </Row>
-              </div>
+                ))}
+                <Col lg={6}>
+                  <img src={captcha} className='w-50 mt-lg-3' />
+                  <textarea placeholder='Enter Captcha' className='contactinput p-2 m-0 mt-0 ms-lg-3 mt-lg-2 w-100' />
+                </Col>
+                <div className='text-center'>
+                  <button className='submitbutton p-lg-3 mt-2'>Submit</button>
+                </div>
+              </Row>
             </div>
           </Col>
         </Row>
@@ -117,10 +123,12 @@ const Contactus = () => {
                   <Row className="justify-content-center ms-2">
                     {contactInfo.map((contact, index) => (
                       <Col key={index} xs={7} sm={7} className="d-flex flex-column align-items-center my-3">
-                        <div className="d-flex flex-column align-items-center my-2">
-                          <img src={contact.icon} className="icons mb-2" />
-                          <p className="icontext text-center">{contact.text}</p>
-                        </div>
+                        <a href={contact.link} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+                          <div className="d-flex flex-column align-items-center my-2">
+                            <img src={contact.icon} className="icons mb-2" alt="contact-icon" />
+                            <p className="icontext text-center" style={{textDecoration:"none"}}>{contact.text}</p>
+                          </div>
+                        </a>
                       </Col>
                     ))}
                   </Row>

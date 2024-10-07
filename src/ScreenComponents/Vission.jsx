@@ -55,7 +55,7 @@ const Vission = () => {
             </Col>
             <Col className='m-lg-0 mt-5 '>
               <p className='mtext text-middle  mt-lg-5 pt-lg-5 mt-5'> <span style={{ fontWeight: "800", color: "#F96945" }}>"Nashik First"</span>
-                “Nashik First“ is an active group of citizens working for improving the quality of the city and citizens of Nashik.</p>
+              is an active group of citizens working for improving the quality of the city and citizens of Nashik.</p>
             </Col>
           </Row>
         </Container>
