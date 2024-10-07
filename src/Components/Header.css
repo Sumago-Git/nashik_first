@@ -109,14 +109,13 @@
 }
 
 .followicon {
-    height: 60px;
-    width: 60px;
+    
+    height: 20px;
+    width: 20px;
+    color: black;
 
 }
 
-.followicon:hover {
-    color: blue;
-}
 
 .homecounterheadline {
     /* color: #F96945; */
