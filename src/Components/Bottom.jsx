@@ -198,7 +198,7 @@ const Bottom = () => {
                 {socialLinks1.map((link, index) => (
                   <Col lg={1} xs={2} key={index} className='p-0 mx-2'>
                     <a href={link.url} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                      <Card className="bg-white p-2 rounded-5 mt-1 mx-3" style={{ width: "fit-content" }}>
+                      <Card className="bg-white p-2 rounded-5 mt-1 mx-lg-3" style={{ width: "fit-content" }}>
                         <link.icon className='iconHover' onMouseEnter={() => handleHoverIcon(index)} />
                       </Card>
                       {/* <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} /> */}
