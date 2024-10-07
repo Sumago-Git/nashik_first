@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Components/Header.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Import Link
 import phone from '../Assets/Assets/Bottom/phone.png';
 import email from '../Assets/Assets/Bottom/email.png';
@@ -17,11 +17,45 @@ import phoneborder from "../Assets/Assets/Bottom/phoneborder.png";
 import emailborder from "../Assets/Assets/Bottom/emailborder.png";
 import locationborder from "../Assets/Assets/Bottom/locationborder.png"
 import axios from 'axios';
-
+import { FaFacebookF } from "react-icons/fa6";
+import { BsInstagram } from "react-icons/bs";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { BsTwitterX } from "react-icons/bs";
 const Bottom = () => {
   const [footerDate, setFooterDate] = useState("")
   const [socialLinks, setSocialLinks] = useState([])
 
+  const handleHoverIcon = (id) => {
+    console.log("id", id);
+    const elements = document.getElementsByClassName("iconHover"); // Get all elements with class 'iconHover'
+
+    // Loop through each element and add event listeners
+    Array.from(elements).forEach((element) => {
+      element.addEventListener("mouseover", () => {
+        // Change color on hover based on the id
+        switch (id) {
+          case 0:
+            element.style.color = "blue"; // Change color on hover
+            break;
+          case 1:
+            element.style.color = "orange"; // Change color on hover
+            break;
+          case 2:
+            element.style.color = "red"; // Change color on hover
+            break;
+          case 3:
+            element.style.color = "black"; // Change color on hover
+            break;
+          default:
+            element.style.color = "white"; // Reset color if id does not match
+        }
+      });
+
+      element.addEventListener("mouseout", () => {
+        element.style.color = "black"; // Reset color on mouse out
+      });
+    });
+  };
   useEffect(() => {
     axios
       .get("social-contact/get-socialcontacts")
@@ -62,10 +96,10 @@ const Bottom = () => {
   ];
 
   const socialLinks1 = [
-    { icon: facebook, url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
-    { icon: insta, url: 'https://www.instagram.com/nashikfirst/' },
-    { icon: youtube, url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
-    { icon: x, url: 'https://twitter.com/anfnashikfirst' },
+    { icon: FaFacebookF, onHover: "blue", url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
+    { icon: BsInstagram, onHover: "orange", url: 'https://www.instagram.com/nashikfirst/' },
+    { icon: AiOutlineYoutube, onHover: "red", url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
+    { icon: BsTwitterX, onHover: "black", url: 'https://twitter.com/anfnashikfirst' },
   ];
 
   const handleClick = (type, text) => {
@@ -162,9 +196,12 @@ const Bottom = () => {
                   <h5 className=' mt-2 ms-4'>Follow Us On</h5>
                 </Col>
                 {socialLinks1.map((link, index) => (
-                  <Col lg={2} xs={2} key={index} style={{ width: "70px" }} className='p-0'>
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                      <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} />
+                  <Col lg={1} xs={2} key={index} className='p-0 mx-2'>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                      <Card className="bg-white p-2 rounded-5 mt-1 mx-3" style={{ width: "fit-content" }}>
+                        <link.icon className='iconHover' onMouseEnter={() => handleHoverIcon(index)} />
+                      </Card>
+                      {/* <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} /> */}
                     </a>
                   </Col>
                 ))}
