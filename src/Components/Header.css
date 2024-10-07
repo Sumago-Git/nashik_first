@@ -89,9 +89,16 @@
 .bottomheadline {
     font-family: 'Century Gothic Paneuropean', sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 33px;
 }
 
+.quicklinks{
+    color: white;
+    font-size: 20px;
+}
+.quicklinks:hover{
+    font-size: 22px;
+}
 .loc {
     margin-top: 50px;
     margin-left: -200px;

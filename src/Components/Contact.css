@@ -3,7 +3,7 @@
     background-image: url("../Assets/Assets/ContactPage/Contacts.png");
     background-size: cover;
     /* position: relative; */
-    height: 850px;
+    /* height: 850px; */
     
 }
 .contactbg2{
@@ -42,8 +42,8 @@
 }
 
 .icons{
-    height:190px;
-    width: 190px;
+    height: 200px;
+    width: 200px;
     margin-top: -50px;
     /* position: relative; */
 }

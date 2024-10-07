@@ -52,12 +52,12 @@ const Contactus = () => {
 
       {/* DESKTOP VIEW */}
       <Container fluid className='p-0 position-relative contactbg d-none d-md-block'>
-        <Row className='p-0 m-0'>
-          <Col lg={5} className="d-flex justify-content-center">
-            <Row>
+        <Row className='p-0 m-0 '>
+          <Col lg={5} className="justify-content-center mt-lg-5">
+            <Row className='mt-lg-5 ms-lg-5'>
               {contactInfo.map((contact, index) => (
-                <Col xs={6} key={index} className="d-flex flex-column justify-content-center align-items-center my-3">
-                  <div className="d-flex flex-column align-items-center my-2">
+                <Col xs={6} key={index} className=" flex-column justify-content-center align-items-center my-3 p-0 m-0">
+                  <div className=" flex-column align-items-center my-2">
                     <a href={contact.link} target="_blank" rel="noopener noreferrer">
                       <img src={contact.icon} className="icons mb-2" alt="contact-icon" />
                       <p className="icontext text-center">{contact.text}</p>
@@ -68,7 +68,7 @@ const Contactus = () => {
             </Row>
           </Col>
 
-          <Col lg={6}>
+          <Col lg={6} className='mb-5'>
             {/* Contact Form */}
             <div className="card-body">
               <h5 className='contacttext mt-3'>Contact us</h5>
