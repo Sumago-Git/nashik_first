@@ -58,7 +58,7 @@ const Homecounter = () => {
                 </Card>
               </Col>
               <Col sm={5} md={5}>
-                <Card className='py-4 shadow-lg  mt-3 border-0' style={{ borderTopLeftRadius: "4rem", borderBottomRightRadius: "4rem" }}>
+                <Card className='py-4 shadow-lg  mt-3 mb-3 border-0' style={{ borderTopLeftRadius: "4rem", borderBottomRightRadius: "4rem" }}>
                   <h5 style={{ fontWeight: "700" }}>Children</h5>
                   <img src={child} className="w-50 mx-auto" alt="" />
                   <h2>1,35,935</h2>
@@ -69,9 +69,9 @@ const Homecounter = () => {
           </Col>
 
           <Col md={6} lg={6} sm={12} className='p-0'>
-            <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative'>
+            <Card className='py-lg-4 py-3 px-2 px-lg-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative'>
               <h4 style={{ fontWeight: 500 }}>RTO <span style={{ color: "#F96945" }}>Training</span></h4>
-              <h5 className='me-lg-5 pe-lg-3' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "30px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.</h5>
+              <h5 className='me-lg-5 pe-lg-3 me-1 pe-1' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "30px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.</h5>
               <p className='me-lg-5 pe-lg-5' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on Road Safety & Traffic Awareness Programme for two hours.</p>
               <Row className='d-flex justify-content-start '>
                 <Col md={4}>
@@ -90,7 +90,7 @@ const Homecounter = () => {
                   </Button>
                 </Col>
               </Row>
-              <img src={circle1} className='img-fluid position-absolute top-50 start-100' style={{ width: "200px", transform: "translate(-50%, -60%)" }} alt="circle1" />
+              <img src={circle1} className='img-fluid position-absolute top-50 start-100 d-none d-lg-block' style={{ width: "200px", transform: "translate(-50%, -60%)" }} alt="circle1" />
             </Card>
             <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 mt-lg-4 shadow-lg position-relative'>
               <h4 style={{ fontWeight: 500 }}>School / College / Organization <span style={{ color: "#F96945" }}>Trainings</span></h4>
@@ -108,7 +108,7 @@ const Homecounter = () => {
                   </Button>
                 </Col>
               </Row>
-              <img src={circle1} className='img-fluid position-absolute top-50 start-100' style={{ width: "200px", transform: "translate(-50%, -60%)" }} alt="circle1" />
+              <img src={circle1} className='img-fluid position-absolute top-50 start-100 d-none d-lg-block' style={{ width: "200px", transform: "translate(-50%, -60%)" }} alt="circle1" />
             </Card>
           </Col>
         </Row>
