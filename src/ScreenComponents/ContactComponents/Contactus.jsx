@@ -10,85 +10,111 @@ import call from "../../Assets/Assets/ContactPage/call.png";
 import captcha from "../../Assets/Assets/ContactPage/captcha.png";
 
 const Contactus = () => {
-  // Array for contact icons, text, and links
-  const contactInfo = [
-    {
-      icon: whatsapp,
-      text: "+91 7796116555",
-      link: "tel:+917796116555", // Phone number click
-    },
-    {
-      icon: mail,
-      text: "secretary@nashikfirst.com",
-      link: "mailto:secretary@nashikfirst.com", // Email click
-    },
-    {
-      icon: call,
-      text: "+91 2532315966",
-      link: "tel:+912532315966", // Phone number click
-    },
-    {
-      icon: location,
-      text: "Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik.",
-      link: "https://maps.google.com/?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Nashik", // Location click
-    },
-  ];
-
-  // Array for form fields
-  const formFields = [
-    { label: "First Name", type: "text" },
-    { label: "Email", type: "email" },
-    { label: "Contact", type: "text" },
-    { label: "Age", type: "number" },
-    { label: "Subject", type: "text" },
-    { label: "Profession", type: "text" },
-    { label: "Suggestions", type: "textarea" },
-  ];
-
   return (
     <>
       <img src={frame5} className='lghead d-none d-md-block' />
       <img src={img4} className='img4 d-block d-md-none' />
 
-      {/* DESKTOP VIEW */}
-      <Container fluid className='p-0 position-relative contactbg d-none d-md-block'>
+      <Container fluid className='p-0 position-relative contactbg d-none d-md-block '>
         <Row className='p-0 m-0 '>
-          <Col lg={5} className="justify-content-center mt-lg-5">
-            <Row className='mt-lg-5 ms-lg-5'>
-              {contactInfo.map((contact, index) => (
-                <Col xs={6} key={index} className=" flex-column justify-content-center align-items-center my-3 p-0 m-0">
-                  <div className=" flex-column align-items-center my-2">
-                    <a href={contact.link} target="_blank" rel="noopener noreferrer">
-                      <img src={contact.icon} className="icons mb-2" alt="contact-icon" />
-                      <p className="icontext text-center">{contact.text}</p>
-                    </a>
+          <Col lg={5} className="justify-content-center ">
+            <Container fluid className="justify-content-center align-items-center vh-100 ms-5 mt-5 pt-5">
+              <Row className="justify-content-center">
+                {/* WhatsApp Icon and Text */}
+                <Col lg={6} className="d-flex flex-column align-items-center my-3 mt-5">
+                  <div className="d-flex flex-column align-items-center">
+                    <img src={whatsapp} className="icons mb-2" alt="WhatsApp" />
+                    <p className="icontext">
+                      <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        +91 7796116555
+                      </a>
+                    </p>
                   </div>
                 </Col>
-              ))}
-            </Row>
-          </Col>
 
-          <Col lg={6} className='mb-5'>
-            {/* Contact Form */}
-            <div className="card-body">
-              <h5 className='contacttext mt-3'>Contact us</h5>
-              <Row>
-                {formFields.map((field, index) => (
-                  <Col lg={6} key={index}>
-                    <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{field.label}</p>
-                    {field.type === "textarea" ? (
-                      <textarea className='contactinput p-2 m-0 mt-0 ms-lg-3 w-100' />
-                    ) : (
-                      <input type={field.type} className='contactinput p-2 m-0 mt-0 ms-lg-3 w-100' />
-                    )}
-                  </Col>
-                ))}
-                <Col lg={6}>
-                  <img src={captcha} className='w-50 mt-lg-3' />
-                  <textarea placeholder='Enter Captcha' className='contactinput p-2 m-0 mt-0 ms-lg-3 mt-lg-2 w-100' />
+                {/* Phone Icon and Text */}
+                <Col lg={6} className="d-flex flex-column align-items-center my-3 mt-5">
+                  <div className="d-flex flex-column align-items-center">
+                    <img src={call} className="icons mb-2" alt="Phone" />
+                    <p className="icontext">
+                      <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        +91 2532315966
+                      </a>
+                    </p>
+                  </div>
                 </Col>
+
+                {/* Email Icon and Text */}
+                <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                  <div className="d-flex flex-column align-items-center">
+                    <img src={mail} className="icons mb-2" alt="Email" />
+                    <p className="icontext">
+                      <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        secretary@nashikfirst.com
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+
+                {/* Location Icon and Text */}
+                <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                  <div className="d-flex flex-column align-items-center">
+                    <img src={location} className="icons mb-2" alt="Location" />
+                    <p className="icontext text-center">
+                      <a href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        Survey No. 590/591, Motkari<br />
+                        Nagar, Near Nelson Hospital,<br />
+                        Behind Tupsakhare Lawns,<br />
+                        Near Mumbai Naka, Nashik.
+                      </a>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+
+          </Col>
+          <Col lg={6}>
+            <div className="card-body">
+              <h5 className="card-title contacttext mt-3">Contact us</h5>
+              <Row>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"First Name"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3 w-100' />
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Email"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Contact"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Age"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Subject"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Profession"}</p>
+                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={12}>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Suggestions"}</p>
+                  <textarea name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
+                </Col>
+                <Col lg={4}>
+                  <img src={captcha} className='w-50 mt-lg-3' />
+                  <input name='' placeholder='Enter Captcha' className='contactinput p-2  m-0 mt-0 ms-lg-3 mt-lg-2  w-100' />
+                </Col>
+
                 <div className='text-center'>
-                  <button className='submitbutton p-lg-3 mt-2'>Submit</button>
+                  <button className='submitbutton p-lg-2 mt-2'>
+                    Submit
+                  </button>
                 </div>
               </Row>
             </div>
@@ -101,42 +127,100 @@ const Contactus = () => {
         <Row>
           <div className="card">
             <div className="card-body">
-              <h5 className='contacttext'>Contact us</h5>
+              <h5 className="card-title contacttext">Contact us</h5>
               <Row>
-                {formFields.map((field, index) => (
-                  <Col key={index}>
-                    <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{field.label}</p>
-                    {field.type === "textarea" ? (
-                      <textarea className='contactinput p-3 m-0 mt-0 ms-lg-3' />
-                    ) : (
-                      <input type={field.type} className='contactinput p-3 m-0 mt-0 ms-lg-3' />
-                    )}
-                  </Col>
-                ))}
-
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"First Name"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Email"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Contact"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Age"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Subject"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Profession"}</p>
+                  <input name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
+                <Col>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Suggestions"}</p>
+                  <textarea name='' className='contactinput p-3  m-0 mt-0 ms-lg-3' />
+                </Col>
                 <Col>
                   <img src={captcha} className='w-50 mt-lg-3 mt-3' />
-                  <textarea placeholder='Enter Captcha' className='contactinput p-3 m-0 mt-0 ms-lg-3 mt-lg-2 mt-3' />
+                  <textarea name='' placeholder='Enter Captcha' className='contactinput p-3  m-0 mt-0 ms-lg-3 mt-lg-2 mt-3' />
                 </Col>
-
+                <div className='text-center '>
+                  <button className='submitbutton  mt-4 p-3'>
+                    Submit
+                  </button>
+                </div>
                 <Container fluid className="justify-content-center align-items-center vh-100 ms-5">
-                  <Row className="justify-content-center ms-2">
-                    {contactInfo.map((contact, index) => (
-                      <Col key={index} xs={7} sm={7} className="d-flex flex-column align-items-center my-3">
-                        <a href={contact.link} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
-                          <div className="d-flex flex-column align-items-center my-2">
-                            <img src={contact.icon} className="icons mb-2" alt="contact-icon" />
-                            <p className="icontext text-center" style={{textDecoration:"none"}}>{contact.text}</p>
-                          </div>
-                        </a>
-                      </Col>
-                    ))}
+                  <Row className="justify-content-center">
+                    {/* WhatsApp Icon and Text */}
+                    <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                      <div className="d-flex flex-column align-items-center">
+                        <img src={whatsapp} className="icons mb-2" alt="WhatsApp" />
+                        <p className="icontext">
+                          <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            +91 7796116555
+                          </a>
+                        </p>
+                      </div>
+                    </Col>
+
+                    {/* Phone Icon and Text */}
+                    <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                      <div className="d-flex flex-column align-items-center">
+                        <img src={call} className="icons mb-2" alt="Phone" />
+                        <p className="icontext">
+                          <a href="tel:+912532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            +91 2532315966
+                          </a>
+                        </p>
+                      </div>
+                    </Col>
+
+                    {/* Email Icon and Text */}
+                    <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                      <div className="d-flex flex-column align-items-center">
+                        <img src={mail} className="icons mb-2" alt="Email" />
+                        <p className="icontext">
+                          <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            secretary@nashikfirst.com
+                          </a>
+                        </p>
+                      </div>
+                    </Col>
+
+                    {/* Location Icon and Text */}
+                    <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                      <div className="d-flex flex-column align-items-center">
+                        <img src={location} className="icons mb-2" alt="Location" />
+                        <p className="icontext text-center">
+                          <a href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            Survey No. 590/591, Motkari<br />
+                            Nagar, Near Nelson Hospital,<br />
+                            Behind Tupsakhare Lawns,<br />
+                            Near Mumbai Naka, Nashik.
+                          </a>
+                        </p>
+                      </div>
+                    </Col>
                   </Row>
                 </Container>
 
-                <div className='text-center'>
-                  <button className='submitbutton mt-4 p-3'>Submit</button>
-                </div>
               </Row>
             </div>
           </div>
