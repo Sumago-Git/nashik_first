@@ -135,7 +135,7 @@
     background-image: url(../Assets/Assets/Home/pitch.png);
 }
 
-.train {
+/* .train {
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
     border-color: grey;
@@ -158,22 +158,22 @@
     border-color: grey;
     border-width: 1px;
     border-style: solid;
-}
+} */
 
-.whitebox {
+/* .whitebox {
     height: 320px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 8px 8px 40px 0px #00000040;
     border-bottom: 10px solid #F96945;
     position: relative;
-}
+} */
 
-.whiteboxheadline {
+/* .whiteboxheadline {
     font-size: 34px;
-}
+} */
 
-.license {
+/* .license {
     color: white;
     background-color: #F96945;
     border-radius: 50px;
@@ -181,8 +181,13 @@
     font-weight: 800;
     text-align: center;
     border: none;
-}
-
+} */
+ .homecounterlist{
+    font-family: 'Poppins';
+    font-size: 20px;
+    line-height: 1.5;
+    word-spacing: 6px;
+ }
 .rto {
     font-family: 'Poppins';
     font-size: 17px;
