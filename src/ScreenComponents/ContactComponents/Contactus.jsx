@@ -181,8 +181,8 @@ const validateForm = () => {
             </Container>
 
           </Col>
-          <Col lg={6}>
-            <div className="card-body">
+          <Col lg={6} className='ms-lg-5'>
+            <div className="card-body ">
               <h5 className="card-title contacttext mt-3">Contact us</h5>
               <form onSubmit={submitForm}>
                 <div className="row">
@@ -192,7 +192,7 @@ const validateForm = () => {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.firstName && <p className="text-start text-danger">{errors.firstName}</p>}
                   </div>
@@ -203,7 +203,7 @@ const validateForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.email && <p className="text-start text-danger">{errors.email}</p>}
                   </div>
@@ -214,7 +214,7 @@ const validateForm = () => {
                       name="contact"
                       value={formData.contact}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
                   </div>
@@ -225,7 +225,7 @@ const validateForm = () => {
                       name="age"
                       value={formData.age}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.age && <p className="text-start text-danger">{errors.age}</p>}
                   </div>
@@ -236,7 +236,7 @@ const validateForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
                   </div>
@@ -247,7 +247,7 @@ const validateForm = () => {
                       name="profession"
                       value={formData.profession}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
                   </div>
@@ -258,7 +258,7 @@ const validateForm = () => {
                       name="suggestions"
                       value={formData.suggestions}
                       onChange={handleChange}
-                      className="p-2 w-100"
+                      className="p-2 w-100 contactinput"
                     />
                     {errors.suggestions && <p className="text-danger">{errors.suggestions}</p>}
                   </div>
@@ -271,8 +271,8 @@ const validateForm = () => {
                     {errors.captchaToken && <p className="text-start text-danger">{errors.captchaToken}</p>}
                   </div>
 
-                  <div className="col-lg-12 text-center mt-4">
-                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                  <div className="col-lg-12 text-center mt-4 ">
+                    <button type="submit" className=" submitbutton" disabled={isSubmitting}>
                       {isSubmitting ? "Submitting..." : "Submit"}
                     </button>
                   </div>
