@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import frame5 from "../../Assets/Assets/MainBanner/Frame 5.png";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -8,8 +8,115 @@ import mail from "../../Assets/Assets/ContactPage/mail.png";
 import location from "../../Assets/Assets/ContactPage/location.png";
 import call from "../../Assets/Assets/ContactPage/call.png";
 import captcha from "../../Assets/Assets/ContactPage/captcha.png";
+import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { captchaKey } from '../../App';
 
 const Contactus = () => {
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    email: "",
+    contact: "",
+    age: "",
+    subject: "",
+    profession: "",
+    suggestions: "",
+    captchaToken: ""
+  });
+  console.log("formData", formData);
+  
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+const validateForm = () => {
+  let formErrors = {};
+
+  // First Name: Required, minimum length of 2 characters
+  if (!formData.firstName.trim()) {
+    formErrors.firstName = "First name is required.";
+  } else if (formData.firstName.length < 2) {
+    formErrors.firstName = "First name must be at least 2 characters.";
+  }
+
+  // Email: Required and must be a valid email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!formData.email.trim()) {
+    formErrors.email = "Email is required.";
+  } else if (!emailRegex.test(formData.email)) {
+    formErrors.email = "Invalid email format.";
+  }
+
+  // Contact: Required, must be a valid phone number format (10 digits)
+  const contactRegex = /^[0-9]{10}$/;
+  if (!formData.contact.trim()) {
+    formErrors.contact = "Contact is required.";
+  } else if (!contactRegex.test(formData.contact)) {
+    formErrors.contact = "Contact must be a valid 10-digit number.";
+  }
+
+  // Age: Required and must be a valid number (between 18 and 100)
+  if (!formData.age.trim()) {
+    formErrors.age = "Age is required.";
+  } else if (isNaN(formData.age) || formData.age < 18 || formData.age > 100) {
+    formErrors.age = "Age must be a number between 18 and 100.";
+  }
+
+  // Subject: Required, minimum length of 3 characters
+  if (!formData.subject.trim()) {
+    formErrors.subject = "Subject is required.";
+  } else if (formData.subject.length < 3) {
+    formErrors.subject = "Subject must be at least 3 characters long.";
+  }
+
+  // Profession: Required
+  if (!formData.profession.trim()) {
+    formErrors.profession = "Profession is required.";
+  }
+
+  // Suggestions: Optional, but if provided must be at least 10 characters
+  if (formData.suggestions && formData.suggestions.length < 10) {
+    formErrors.suggestions = "Suggestions must be at least 10 characters.";
+  }
+
+  // Google reCAPTCHA: Required
+  if (!formData.captchaToken) {
+    formErrors.captchaToken = "Please complete the reCAPTCHA.";
+  }
+
+  return formErrors;
+};
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Replace the URL with your API endpoint
+      const response = await axios.post('https://api.example.com/submit', formData);
+      alert('Form submitted successfully!');
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error submitting form", error);
+      alert("There was an error submitting the form.");
+      setIsSubmitting(false);
+    }
+  };
+  const handleRecaptchaChange = (token) => {
+    setFormData({ ...formData, captchaToken: token });
+  };
   return (
     <>
       <img src={frame5} className='lghead d-none d-md-block' />
@@ -77,46 +184,100 @@ const Contactus = () => {
           <Col lg={6}>
             <div className="card-body">
               <h5 className="card-title contacttext mt-3">Contact us</h5>
-              <Row>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"First Name"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3 w-100' />
-                </Col>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Email"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Contact"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Age"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Subject"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Profession"}</p>
-                  <input name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={12}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3 m-0'>{"Suggestions"}</p>
-                  <textarea name='' className='contactinput p-2  m-0 mt-0 ms-lg-3  w-100' />
-                </Col>
-                <Col lg={4}>
-                  <img src={captcha} className='w-50 mt-lg-3' />
-                  <input name='' placeholder='Enter Captcha' className='contactinput p-2  m-0 mt-0 ms-lg-3 mt-lg-2  w-100' />
-                </Col>
+              <form onSubmit={submitForm}>
+                <div className="row">
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">First Name</p>
+                    <input
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.firstName && <p className="text-start text-danger">{errors.firstName}</p>}
+                  </div>
 
-                <div className='text-center'>
-                  <button className='submitbutton p-lg-2 mt-2'>
-                    Submit
-                  </button>
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">Email</p>
+                    <input
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.email && <p className="text-start text-danger">{errors.email}</p>}
+                  </div>
+
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">Contact</p>
+                    <input
+                      name="contact"
+                      value={formData.contact}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
+                  </div>
+
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">Age</p>
+                    <input
+                      name="age"
+                      value={formData.age}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.age && <p className="text-start text-danger">{errors.age}</p>}
+                  </div>
+
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">Subject</p>
+                    <input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
+                  </div>
+
+                  <div className="col-lg-6">
+                    <p className="text-start mt-3">Profession</p>
+                    <input
+                      name="profession"
+                      value={formData.profession}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
+                  </div>
+
+                  <div className="col-lg-12">
+                    <p className="text-start mt-3">Suggestions</p>
+                    <textarea
+                      name="suggestions"
+                      value={formData.suggestions}
+                      onChange={handleChange}
+                      className="p-2 w-100"
+                    />
+                    {errors.suggestions && <p className="text-danger">{errors.suggestions}</p>}
+                  </div>
+
+                  <div className="col-lg-12 text-center mt-4">
+                    <ReCAPTCHA
+                      sitekey={captchaKey}
+                      onChange={handleRecaptchaChange}
+                    />
+                    {errors.captchaToken && <p className="text-start text-danger">{errors.captchaToken}</p>}
+                  </div>
+
+                  <div className="col-lg-12 text-center mt-4">
+                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit"}
+                    </button>
+                  </div>
                 </div>
-              </Row>
+              </form>
             </div>
           </Col>
         </Row>
