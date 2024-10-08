@@ -92,7 +92,7 @@ const Aboutbanner = () => {
 
             <Container fluid className=' me-0'>
                 <Row>
-                    <Col>
+                    <Col className='p-0'>
                         <img src={frame1} className='lghead d-none d-md-block w-100 ' alt="Banner" />
                         <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
                     </Col>
