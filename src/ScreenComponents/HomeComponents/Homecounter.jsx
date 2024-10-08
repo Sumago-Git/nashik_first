@@ -71,55 +71,55 @@ const Homecounter = () => {
         {/* white card */}
 
         <Container fluid>
-        <Row className='mt-lg-5'>
-          <Col md={6} lg={6} sm={12} className='p-0 d-flex flex-row-reverse'>
-            <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative w-75 '  style={{borderBottom:"10px rgb(255, 99, 71) solid"               }}>
-              <img src={counterimg1} />
-              <h4 style={{ fontWeight: 500 }}>RTO <span style={{ color: "#F96945" }}>Training</span></h4>
-              <h6 className='me-lg-5 pe-lg-3' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.</h6>
-              <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on Road Safety & Traffic Awareness Programme for two hours.</p>
-              <Row className='d-flex justify-content-start mb-lg-3 '>
-                <Col md={4}>
-                  <Button onClick={() => navigate("/training")} className=' border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, }}>
-                    Learning License
-                  </Button>
-                </Col>
-                <Col md={4} >
-                  <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, }}>
-                    Suspended License
-                  </Button>
-                </Col>
-                <Col md={4} >
-                  <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, }}>
-                    School bus driver
-                  </Button>
-                </Col>
-              </Row>
+          <Row className='mt-lg-5'>
+            <Col md={6} lg={6} sm={12} className='p-0 d-flex flex-row-reverse'>
+              <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative w-75 ' style={{ borderBottom: "10px rgb(255, 99, 71) solid" }}>
+                <img src={counterimg1} />
+                <h4 style={{ fontWeight: 500 }}>RTO <span style={{ color: "#F96945" }}>Training</span></h4>
+                <h6 className='me-lg-5 pe-lg-3' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.</h6>
+                <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on Road Safety & Traffic Awareness Programme for two hours.</p>
+                <Row className='d-flex justify-content-start  '>
+                  <Col md={4}>
+                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600,lineHeight:"1.2"  }}>
+                      Learning License
+                    </Button>
+                  </Col>
+                  <Col md={4} >
+                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600,lineHeight:"1.2"  }}>
+                      Suspended License
+                    </Button>
+                  </Col>
+                  <Col md={4} >
+                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600,lineHeight:"1.2"  }}>
+                      School bus driver
+                    </Button>
+                  </Col>
+                </Row>
 
-            </Card>
+              </Card>
 
-          </Col>
-          <Col md={6} lg={6} sm={12} className='p-0'>
-            <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative w-75 ms-lg-4 ' style={{borderBottom:"10px rgb(255, 99, 71) solid"}}>
-              <img src={counterimg2} />
-              <h4 style={{ fontWeight: 500 }}>School / College / Organization <span style={{ color: "#F96945" }}>Trainings</span></h4>
-              <h6 className='' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes Road Safety Traffic Awareness Workshops for free of cost.</h6>
-              <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
-              <Row className='d-flex justify-content-start mt-lg-3 '>
-                <Col md={4}>
-                  <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, }}>
-                    School Student
-                  </Button>
-                </Col>
-                <Col md={8} >
-                  <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, }}>
-                    Adult (College / Organisation)
-                  </Button>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-        </Row>
+            </Col>
+            <Col md={6} lg={6} sm={12} className='p-0'>
+              <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative w-75 ms-lg-4 ' style={{ borderBottom: "10px rgb(255, 99, 71) solid" }}>
+                <img src={counterimg2} />
+                <h4 style={{ fontWeight: 500 }}>School / College / Organization <span style={{ color: "#F96945" }}>Trainings</span></h4>
+                <h6 className='' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes Road Safety Traffic Awareness Workshops for free of cost.</h6>
+                <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
+                <Row className='d-flex justify-content-start  '>
+                  <Col md={4}>
+                    <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight:"1.2" }}>
+                      School Student
+                    </Button>
+                  </Col>
+                  <Col md={6} >
+                    <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight:"1.2" }}>
+                      Adult (College / Organisation)
+                    </Button>
+                  </Col>
+                </Row>
+              </Card>
+            </Col>
+          </Row>
 
         </Container>
       </Container>

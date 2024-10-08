@@ -26,7 +26,7 @@ const Directors = () => {
                 <div className='section mt-4 '>
                   <p className='sectiontext p-1'>{director.description}</p>
                 </div>
-                <div className='sectiontop text-center pb-5 '>
+                <div className='sectiontop text-center pb-5  '>
                   <p className='mt-3 drname mb-lg-1'>{director.name}</p>
                   <p className='drpost mb-lg-5'>{director.title}</p>
                 </div>

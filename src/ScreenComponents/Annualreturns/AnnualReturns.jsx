@@ -7,7 +7,9 @@ import investorMob from "../../Assets/Assets/Investor/investorMob.jpg";
 import { Card, Container } from 'react-bootstrap';
 import Banner from '../../Components/Banner';
 import axios from 'axios';
-
+import annualreturns1  from "../../Assets/Assets/Investor/annualreturns1.pdf";
+import annualreturn2  from "../../Assets/Assets/Investor/annualreturn2.pdf";
+import annualreturns3  from "../../Assets/Assets/Investor/annualreturns3.pdf";
 const AnnualReport = () => {
 
   useEffect(() => {
@@ -21,9 +23,9 @@ const AnnualReport = () => {
   }, [])
   // Array of annual report details
   const reports = [
-    { year: '2020 – 2021', link: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' },
-    { year: '2021 – 2022', link: "" },
-    { year: '2022 – 2023', link: 'https://www.nashikfirst.com/wp-content/uploads/2021/11/Copy-of-Annual-Return.pdf' }
+    { year: '2020 – 2021', link: annualreturns1},
+    { year: '2021 – 2022', link: annualreturn2 },
+    { year: '2022 – 2023', link: annualreturns3}
   ];
 
   return (
@@ -38,12 +40,12 @@ const AnnualReport = () => {
         </Container>
         <div >
           <Container className='position-absolute start-50 translate-middle'>
-            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor:"#F96945", zIndex: 1 }}>
+            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor: "#F96945", zIndex: 1 }}>
               {
                 reports.map((report, index) => {
                   return (
                     <>
-                      <a href={report.link} className='text-black my-2' key={index}>
+                      <a href={report.link} target='_blank' className='text-black my-2' key={index}>
                         <p className='returntext'>Annual Returns {report.year}</p>
                       </a>
                     </>
@@ -68,7 +70,7 @@ const AnnualReport = () => {
         </Container>
         <div >
           <Container className='position-absolute start-50 translate-middle'>
-            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor:"#F96945", zIndex: 1}}>
+            <Card className='p-5 rounded-4 bg-white border-top-0 border-end-0 border-start-0 shadow-lg mt-5' style={{ borderBottom: "10px solid ", borderColor: "#F96945", zIndex: 1 }}>
               {
                 reports.map((report, index) => {
                   return (
