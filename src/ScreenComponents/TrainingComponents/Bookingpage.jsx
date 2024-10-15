@@ -5,6 +5,7 @@ import "../../Components/Slotpage.css";
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { captchaKey } from '../../App';
 
 
 const Bookingpage = () => {
@@ -203,7 +204,7 @@ const Bookingpage = () => {
                 </Col>
                 <Col lg={12}>
                   <ReCAPTCHA
-                    sitekey="YOUR_SITE_KEY" // Replace with your Google reCAPTCHA site key
+                    sitekey={captchaKey} // Replace with your Google reCAPTCHA site key
                     onChange={handleCaptchaChange}
                     className='mt-3 ms-md-4'
                   />
