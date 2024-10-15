@@ -119,25 +119,23 @@ const Calendar = () => {
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
           </p>
 
-          <Container className='datetime p-3'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </Container>
+         
 
           <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
           <Row>
             <Col lg={4} className="p-0">
             <Nav.Item className="calendertabs" >
-              <Nav.Link eventKey="link-1" className="text-black ">RTO – Learner Driving License Holder Training</Nav.Link>
+              <Nav.Link eventKey="link-1" className="text-black ">RTO-Learner Driving License Holder Training</Nav.Link>
             </Nav.Item>
             </Col>
            <Col lg={4} className="p-0">
            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-2" className="text-black">RTO – Suspended Driving License Holders Training</Nav.Link>
+              <Nav.Link eventKey="link-2" className="text-black">RTO-Suspended Driving License Holder Training</Nav.Link>
             </Nav.Item>
            </Col>
            <Col lg={4} className="p-0">
            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-3" className="text-black">RTO – School Bus Driver Training</Nav.Link>
+              <Nav.Link eventKey="link-3" className="text-black">RTO-School Bus Driver Training</Nav.Link>
             </Nav.Item>
            </Col>
             <Col lg={4} className="p-0">
@@ -158,6 +156,9 @@ const Calendar = () => {
             </Row>        
           </Nav>
 
+          <Container className='datetime p-3 mt-lg-4'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </Container>
         </Container>
         <Container className="calender ">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">

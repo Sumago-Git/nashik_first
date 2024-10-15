@@ -161,10 +161,10 @@ const Bottom = () => {
             </Col>
 
             <Col sm={12} lg={4} className="mt-5">
-              <p className='text-start bottomheadline pb-3 ms-2'>Contact Details</p>
+              <p className='text-start bottomheadline pb-3 ms-3'>Contact Details</p>
               {contactDetails.map((detail, index) => (
                 <Row
-                  className={`align-items-center mt-2 ${detail.isAddress ? 'pt-0' : ''}`}
+                  className={`align-items-center mt-2 ms-3 ${detail.isAddress ? 'pt-0' : ''}`}
                   key={index}
                   onClick={() => handleClick(detail.type || (detail.isEmail && 'email') || (detail.isAddress && 'location'), detail.text)}
                   style={{ cursor: 'pointer' }}
@@ -172,12 +172,12 @@ const Bottom = () => {
                   <Col lg={1} xs={2} className='p-0 me-lg-3 border-2 ps-1'>
                     {/* <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} /> */}
                     <div class="rounded-circle footericon">
-                      <img src={detail.icon} className='mt-2' />
+                      <img src={detail.icon} className='mt-2 ' />
                     </div>
 
 
                   </Col>
-                  <Col lg={10} xs={10} className='p-0'>
+                  <Col lg={10} xs={10} className='p-0 '>
                     {detail.isAddress ? (
                       <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.text}</p>
                     ) : detail.isPhone ? (
@@ -196,7 +196,7 @@ const Bottom = () => {
                   <h5 className=' mt-2 ms-4'>Follow Us On</h5>
                 </Col>
                 {socialLinks1.map((link, index) => (
-                  <Col lg={1} xs={2} key={index} className='p-0 mx-2'>
+                  <Col lg={1} xs={2} key={index} className='p-0  ms-4'>
                     <a href={link.url} target="_blank" rel="noopener noreferrer" className='mt-3'>
                       <Card className="bg-white p-2 rounded-5 mt-1 mx-lg-3" style={{ width: "fit-content" }}>
                         <link.icon className='iconHover' onMouseEnter={() => handleHoverIcon(index)} />
@@ -204,12 +204,16 @@ const Bottom = () => {
                       {/* <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} /> */}
                     </a>
                   </Col>
+                
                 ))}
+               
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-2 m-0 p-0 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
-          <p className='p-0 m-0 copyright mt-0 p-0'>*This Website is updated in 2024 </p>
+          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='p-0 m-0 copyright mt-0 p-0 mt-4'>*This Website is updated in 2024 </p>
+          <p className='d-flex flex-row-reverse copyright me-lg-4 m-lg-0'> visitor count :- </p>
+          <p className='d-flex flex-row-reverse copyright me-lg-4'> 10000235 </p>
         </Container>
       </section>
     </>

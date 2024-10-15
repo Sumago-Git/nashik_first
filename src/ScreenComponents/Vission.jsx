@@ -62,7 +62,7 @@ const Vission = () => {
       <img src={divider} className='w-100' />
 
       <Container fluid className='p-0  '>
-        <Container fluid className='p-0 mbg'>
+        <Container fluid className='p-0 vbg'>
           <Row className='justify-content-center p-2 m-0 '>
             <Col lg={6} md={6} className=' pt-lg-3 d-none d-md-block  '>
               <div className='d-flex ms-lg-5'>
@@ -85,7 +85,7 @@ const Vission = () => {
               < text className='text me-lg-5 pe-lg-5 me-3  text-white'>Our Mission</text>
             </Col>
             <Col className='m-lg-0 mt-5 '>
-              <p className='mtext text-middle pt-lg-5 mt-5'> <span style={{ fontWeight: "800", color: "#F96945" }}>"Nashik First" </span>
+              <p className='mtext text-middle pt-lg-3 mt-5'> <span style={{ fontWeight: "800", color: "#F96945" }}>"Nashik First" </span>
                 is an active group of citizens working for improving the quality of the city and citizens of Nashik.</p>
             </Col>
           </Row>

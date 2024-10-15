@@ -58,11 +58,15 @@ fieldset:disabled .btn {
 
 .calendertabs{
     font-weight: 600;
+    font-size: 15px;
     /* border: 1px gray solid; */
     /* width: 185px; */
 }
 .calendertabs:hover{
-    /* background-color:coral; */
+   /* font-size: 15px; */
+   font-weight: 700;
+   color: red;
+   /* background-color: #FFA088; */
 }
 
 @media (max-width:768px) {

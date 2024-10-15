@@ -110,7 +110,7 @@
     font-family: 'Century Gothic Paneuropean', sans-serif;
     font-weight: 600;
     word-spacing: 2px;
-    line-height: 1.3;
+    line-height: 1.5;
     justify-content: center;
 }
 
@@ -140,15 +140,15 @@
 }
 
 .oppoimg {
-    height: 50px;
-    width: 370px;
+    /* height: 50px; */
+    width: 330px;
     position: relative;
 }
 
 
 .oppoimgtext {
     position: absolute;
-    margin-top: 300px;
+    margin-top: 270px;
     /* margin-left: -45px; */
     font-family: "Poppins";
     font-weight: 600;
@@ -197,5 +197,6 @@
      }
     .carouselitem{
         width: 100%;
+        height: 250px !important;
     }
 }

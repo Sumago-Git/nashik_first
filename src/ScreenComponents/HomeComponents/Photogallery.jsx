@@ -7,9 +7,10 @@ import photo1 from '../../Assets/Assets/Photogallery/photo1.png';
 import photo2 from '../../Assets/Assets/Photogallery/photo2.png';
 import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
 import '../../Components/Photogallery.css';
+import { Link } from 'react-router-dom';
 
 const Photogallery = () => {
- 
+
   const photos = [
     {
       src: photo1,
@@ -28,7 +29,7 @@ const Photogallery = () => {
   return (
     <>
       <Container fluid className='mt-lg-5 pt-4 text-center'>
-        <h1 style={{ fontWeight: '700', fontFamily:"'Century Gothic Paneuropean', sans-serif", fontSize:"40px" }}>
+        <h1 style={{ fontWeight: '700', fontFamily: "'Century Gothic Paneuropean', sans-serif", fontSize: "40px" }}>
           Photo <span style={{ color: '#F96945' }}> Gallery</span>
         </h1>
         <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto'>
@@ -45,6 +46,11 @@ const Photogallery = () => {
             </Col>
           ))}
         </Row>
+        <Col>
+          <Link to="events"> <button className='returnbutton p-lg-1 mt-2'>
+            View More
+          </button></Link>
+        </Col>
       </Container>
     </>
   );

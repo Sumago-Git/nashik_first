@@ -17,7 +17,7 @@ const Foundation = () => {
             <Col className='mt-4'>
               <p className=' mt-lg-3 mt-5 fpara1'><span style={{ color: "#c50c1c", fontWeight: "800" }}>Nashik</span> <span style={{ color: "#F96945", fontWeight: "800" }}> First</span>, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span>
                  <span style={{ fontWeight: "800" }}> Foundation (ANF) </span>is a group of people working for
-                <span>improving quality life of Citizens of Nashik.</span></p>
+                <span>improving quality of life of Citizens of Nashik.</span></p>
             </Col>
             <Col className=' fpara2 mt-4'>
               We are a group of people who act as a catalyst for the growth of the city 

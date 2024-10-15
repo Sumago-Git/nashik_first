@@ -90,9 +90,9 @@ const Homecounter = () => {
             <Col md={6} lg={5} sm={12} className='p-0 d-flex flex-row-reverse'>
               <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative  ' style={{ borderBottom: "10px rgb(255, 99, 71) solid" }}>
                 <img src={counterimg1} />
-                <h4 style={{ fontWeight: 500 }}>RTO <span style={{ color: "#F96945" }}>Training</span></h4>
-                <h6 className='me-lg-5 pe-lg-3' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.</h6>
-                <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on Road Safety & Traffic Awareness Programme for two hours.</p>
+                <h4 style={{ fontWeight: 700 }} className='mt-lg-3'>RTO Training </h4>
+                <h6 className='me-lg-5 pe-lg-3 mt-lg-2' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and <span style={{color:"#c50c1c"}}>Nashik</span> <span style={{color:"#ff6600"}}>First.</span></h6>
+                <p className='mt-lg-2' style={{ fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on <span style={{fontWeight:"bold"}}>Road Safety & Traffic Awareness Programme</span> for two hours.</p>
                 <Row className='d-flex justify-content-start  '>
                   <Col   >
                     <Button onClick={() => navigate("/training")} className=' border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
@@ -117,9 +117,9 @@ const Homecounter = () => {
             <Col md={6} lg={5} sm={12} className='p-0'>
               <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative  ms-lg-4 ' style={{ borderBottom: "10px rgb(255, 99, 71) solid" }}>
                 <img src={counterimg2} />
-                <h4 style={{ fontWeight: 500 }}>School / College / Organization <span style={{ color: "#F96945" }}>Trainings</span></h4>
-                <h6 className='' style={{ fontWeight: 700, fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes Road Safety Traffic Awareness Workshops for free of cost.</h6>
-                <p className='' style={{ fontWeight: 600, fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
+                <h4 style={{ fontWeight: 700 }} className='mt-lg-3'>School / College / Organization Trainings</h4>
+                <h6 className='mt-lg-2' style={{  fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes <span style={{fontWeight:"700"}}>Road Safety Traffic Awareness Workshops </span>for <span style={{color:"#993300", fontWeight:"bold"}}>free of cost.</span></h6>
+                <p className='pb-lg-4 mt-lg-2' style={{  fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                 <Row className='d-flex justify-content-start  '>
                   <Col >
                     <Button onClick={() => navigate("/training")} className=' p-lg-3 px-lg-5 border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>

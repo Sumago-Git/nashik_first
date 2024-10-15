@@ -14,7 +14,7 @@ const Achivements = () => {
     <>
       <Container fluid className='achivebg mt-4 p-4'>
         <text className='achiveheadline'>
-          Few of the Remarkable achievements are
+          Few Remarkable achievements
         </text>
         <Container fluid className='mt-lg-5 mt-4  pe-lg-5 '>
           <text>
