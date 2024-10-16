@@ -16,6 +16,16 @@ import ears2 from "../Assets/Assets/MainBanner/ears2.png"
 import head2 from "../Assets/Assets/MainBanner/head2.png"
 import speed2 from "../Assets/Assets/MainBanner/speed2.png"
 import speed from "../Assets/Assets/MainBanner/speed.jpg"
+import ants from "../Assets/Assets/MainBanner/ants.jpg"
+import ants2 from "../Assets/Assets/MainBanner/ants2.jpg"
+import drive from "../Assets/Assets/MainBanner/drive.jpg"
+import drive2 from "../Assets/Assets/MainBanner/drive2.jpg"
+import hands from "../Assets/Assets/MainBanner/hands.jpg"
+import hands2 from "../Assets/Assets/MainBanner/hands2.jpg"
+import nature from "../Assets/Assets/MainBanner/nature.jpg"
+import nature2 from "../Assets/Assets/MainBanner/nature2.jpg"
+import lanes from "../Assets/Assets/MainBanner/lanes.jpg"
+import lanes2 from "../Assets/Assets/MainBanner/lanes2.jpg"
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -57,6 +67,31 @@ const MainBanner = () => {
       <Carousel.Item>
       <img src={speed} className='lghead d-none d-md-block'/>
       <img src={speed2} className='img4 d-block d-md-none'/>
+        
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src={ants} className='lghead d-none d-md-block'/>
+      <img src={ants2} className='img4 d-block d-md-none'/>
+        
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src={drive} className='lghead d-none d-md-block'/>
+      <img src={drive2} className='img4 d-block d-md-none'/>
+        
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src={hands} className='lghead d-none d-md-block'/>
+      <img src={hands2} className='img4 d-block d-md-none'/>
+        
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src={nature} className='lghead d-none d-md-block'/>
+      <img src={nature2} className='img4 d-block d-md-none'/>
+        
+      </Carousel.Item>
+      <Carousel.Item>
+      <img src={lanes} className='lghead d-none d-md-block'/>
+      <img src={lanes2} className='img4 d-block d-md-none'/>
         
       </Carousel.Item>
     </Carousel>

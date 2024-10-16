@@ -148,7 +148,7 @@
 
 .oppoimgtext {
     position: absolute;
-    margin-top: 270px;
+    margin-top: 210px;
     /* margin-left: -45px; */
     font-family: "Poppins";
     font-weight: 600;
@@ -180,7 +180,7 @@
     }
 
     .oppoimgtext{
-        margin-top: 160px;
+        margin-top: 180px;
     }
     .headline{
         font-size: 26px;
