@@ -95,17 +95,17 @@ const Homecounter = () => {
                 <p className='mt-lg-2' style={{ fontSize: "1.02rem", fontFamily: "poppins", }}>In this initiative, the learning license holders (youth aged 18 to 25 yrs) will get permanent license only after undergoing Counselling & Training on <span style={{fontWeight:"bold"}}>Road Safety & Traffic Awareness Programme</span> for two hours.</p>
                 <Row className='d-flex justify-content-start  '>
                   <Col   >
-                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
+                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1" }}>
                       Learning License
                     </Button>
                   </Col>
                   <Col >
-                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
+                    <Button onClick={() => navigate("/training")} className=' border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1" }}>
                       Suspended License
                     </Button>
                   </Col>
                   <Col   >
-                    <Button onClick={() => navigate("/training")} className=' p-2  border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
+                    <Button onClick={() => navigate("/training")} className=' p-2  border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1" }}>
                       School bus driver
                     </Button>
                   </Col>
@@ -119,7 +119,7 @@ const Homecounter = () => {
                 <img src={counterimg2} />
                 <h4 style={{ fontWeight: 700 }} className='mt-lg-3'>School / College / Organization Trainings</h4>
                 <h6 className='mt-lg-2' style={{  fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes <span style={{fontWeight:"700"}}>Road Safety Traffic Awareness Workshops </span>for <span style={{color:"#993300", fontWeight:"bold"}}>free of cost.</span></h6>
-                <p className='pb-lg-4 mt-lg-2' style={{  fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
+                <p className='pb-lg-3 mt-lg-2' style={{  fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                 <Row className='d-flex justify-content-start  '>
                   <Col >
                     <Button onClick={() => navigate("/training")} className=' p-lg-3 px-lg-5 border-0 rounded-4' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
@@ -127,7 +127,7 @@ const Homecounter = () => {
                     </Button>
                   </Col>
                   <Col  >
-                    <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1.2rem", fontWeight: 600, lineHeight: "1.2" }}>
+                    <Button onClick={() => navigate("/training")} className='px-lg-5 border-0 rounded-4 ' style={{ backgroundColor: "#f96945", fontSize: "1rem", fontWeight: 600, lineHeight: "1.2" }}>
                       Adult (College / Organisation)
                     </Button>
                   </Col>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d338b0ce.css",
-    "main.js": "/static/js/main.c8c1b545.js",
+    "main.css": "/static/css/main.959930de.css",
+    "main.js": "/static/js/main.06d9ae67.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/lghead3.png": "/static/media/lghead3.ec0832d2b2b033a520ba.png",
     "static/media/lghead5.png": "/static/media/lghead5.87fdedd080f16250201e.png",
@@ -18,6 +18,7 @@
     "static/media/Frame 1.png": "/static/media/Frame 1.4af7f51307fbac2ec1a8.png",
     "static/media/Frame 3.png": "/static/media/Frame 3.dc83f44089be321077a0.png",
     "static/media/achive.png": "/static/media/achive.f707b60504504d52d891.png",
+    "static/media/hands.jpg": "/static/media/hands.ba03b9daea80108cfb22.jpg",
     "static/media/pastbanner.png": "/static/media/pastbanner.20ff4f03ba2ad5bb43b7.png",
     "static/media/investor.png": "/static/media/investor.dc56ccf4e562ee500d4e.png",
     "static/media/upcomingbanner.png": "/static/media/upcomingbanner.4abc13c332713fe3dffb.png",
@@ -25,11 +26,15 @@
     "static/media/annualreturn2.pdf": "/static/media/annualreturn2.2e91a5e3808abbbf1152.pdf",
     "static/media/annualreturns3.pdf": "/static/media/annualreturns3.2e91a5e3808abbbf1152.pdf",
     "static/media/annualreturns1.pdf": "/static/media/annualreturns1.756ef94129565ae46114.pdf",
+    "static/media/drive.jpg": "/static/media/drive.82a1e1df6bdc4cf01a1f.jpg",
     "static/media/city.png": "/static/media/city.2ef535adf1195410b029.png",
     "static/media/investorMob.jpg": "/static/media/investorMob.a3e52cfff7c1fb3dcb45.jpg",
     "static/media/annualreport2.pdf": "/static/media/annualreport2.d60dedc39067745ed618.pdf",
     "static/media/speed.jpg": "/static/media/speed.24c352d745aa1d471261.jpg",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
+    "static/media/ants.jpg": "/static/media/ants.d0cef0399c9ffcd47c8b.jpg",
+    "static/media/lanes.jpg": "/static/media/lanes.f43e80ec3f93e656797e.jpg",
+    "static/media/nature.jpg": "/static/media/nature.c1f4f06138584ef3cc31.jpg",
     "static/media/pain2.png": "/static/media/pain2.1d0303f4402bc12f3839.png",
     "static/media/annualreport1.pdf": "/static/media/annualreport1.e63b0b3e382a5f825a45.pdf",
     "static/media/bottombg.jpg": "/static/media/bottombg.ecd948d6c599837cb526.jpg",
@@ -77,6 +82,11 @@
     "static/media/don.png": "/static/media/don.167020a9d629d253c462.png",
     "static/media/bike.png": "/static/media/bike.5bfa180b651f01218cd3.png",
     "static/media/chat2.png": "/static/media/chat2.e01242dca5b3c15fbcb7.png",
+    "static/media/drive2.jpg": "/static/media/drive2.396b83ebd7969164fcbd.jpg",
+    "static/media/lanes2.jpg": "/static/media/lanes2.7b0baa12fddc20eed014.jpg",
+    "static/media/hands2.jpg": "/static/media/hands2.0d504f763d59f02af3a2.jpg",
+    "static/media/nature2.jpg": "/static/media/nature2.b3b3022ad0aee5fe0391.jpg",
+    "static/media/ants2.jpg": "/static/media/ants2.4b14bc5f2fbd7904d179.jpg",
     "static/media/captcha.png": "/static/media/captcha.b554720ed07c27cc73c9.png",
     "static/media/support3.png": "/static/media/support3.cf6d143abd6079f5636d.png",
     "static/media/Sumagologo.png": "/static/media/Sumagologo.7dc4f8c47c773ca1b560.png",
@@ -94,12 +104,12 @@
     "static/media/v2.png": "/static/media/v2.12de59b6e110b3e54192.png",
     "static/media/m2.png": "/static/media/m2.674d6794c3a031907bfb.png",
     "index.html": "/index.html",
-    "main.d338b0ce.css.map": "/static/css/main.d338b0ce.css.map",
-    "main.c8c1b545.js.map": "/static/js/main.c8c1b545.js.map",
+    "main.959930de.css.map": "/static/css/main.959930de.css.map",
+    "main.06d9ae67.js.map": "/static/js/main.06d9ae67.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d338b0ce.css",
-    "static/js/main.c8c1b545.js"
+    "static/css/main.959930de.css",
+    "static/js/main.06d9ae67.js"
   ]
 }
