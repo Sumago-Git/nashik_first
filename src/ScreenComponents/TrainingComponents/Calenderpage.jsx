@@ -125,12 +125,13 @@ const Calendar = () => {
           <Row>
             <Col lg={4} className="p-0">
             <Nav.Item className="calendertabs" >
-              <Nav.Link eventKey="link-1" className="text-black ">RTO-Learner Driving License Holder Training</Nav.Link>
+              <Nav.Link eventKey="link-1" className="text-black " style={{backgroundColor:"none"}}><button type="button" class="btn3d btn btn-default btn-lg calendertabs"><span class="glyphicon glyphicon-download-alt"></span> RTO-Suspended Driving License Holder Training</button>
+              </Nav.Link>
             </Nav.Item>
             </Col>
            <Col lg={4} className="p-0">
            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-2" className="text-black">RTO-Suspended Driving License Holder Training</Nav.Link>
+              <Nav.Link eventKey="link-2" className="text-black" style={{backgroundColor:"none"}}>RTO-Suspended Driving License Holder Training</Nav.Link>
             </Nav.Item>
            </Col>
            <Col lg={4} className="p-0">

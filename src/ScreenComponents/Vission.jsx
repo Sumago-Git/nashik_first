@@ -44,7 +44,7 @@ const Vission = () => {
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                   <img src={v4} className='missionimg mx-lg-3' />
-                  <p className='imgtext'>Econoically</p>
+                  <p className='imgtext'>Econoically Developed</p>
                 </div>
               </div>
             </Col>

@@ -59,7 +59,7 @@ fieldset:disabled .btn {
 .calendertabs{
     font-weight: 600;
     font-size: 10px;
-    background-color: none;
+    background-color: none !important;
     /* border: 1px gray solid; */
     /* width: 185px; */
 }
@@ -67,6 +67,8 @@ fieldset:disabled .btn {
    /* font-size: 15px; */
    font-weight: 700;
    color: red;
+   background-color: none !important;
+   border-color: none;
    /* background-color: #FFA088; */
 }
 
