@@ -94,6 +94,7 @@ const Contactus = () => {
     return formErrors;
   };
   const submitForm = async (e) => {
+    alert("Thank You..! We Will Connect With You Soon.")
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
