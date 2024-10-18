@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.959930de.css",
-    "main.js": "/static/js/main.758f5579.js",
+    "main.css": "/static/css/main.4ea1b96a.css",
+    "main.js": "/static/js/main.3d10c42c.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/lghead3.png": "/static/media/lghead3.ec0832d2b2b033a520ba.png",
     "static/media/lghead5.png": "/static/media/lghead5.87fdedd080f16250201e.png",
@@ -46,7 +46,6 @@
     "static/media/counterimg1.png": "/static/media/counterimg1.f45ea80a248ef3678ab1.png",
     "static/media/group.png": "/static/media/group.b8aa6ddc4c772bc4526a.png",
     "static/media/road1.jpg": "/static/media/road1.a9faf4b790cea9353991.jpg",
-    "static/media/road2.png": "/static/media/road2.026253b0edbe80bee16b.png",
     "static/media/event8.png": "/static/media/event8.7570d0b9c48252c2c416.png",
     "static/media/event9.png": "/static/media/event9.7570d0b9c48252c2c416.png",
     "static/media/event5.png": "/static/media/event5.7635255a368c96c63336.png",
@@ -65,6 +64,7 @@
     "static/media/chat.jpg": "/static/media/chat.bcb37ad38e2730ca6fe4.jpg",
     "static/media/addressing.png": "/static/media/addressing.5cbee7b8507c536e05a0.png",
     "static/media/photo3.png": "/static/media/photo3.d709867309a7acbae2c7.png",
+    "static/media/yt2.png": "/static/media/yt2.05e8602eb83536b83ab4.png",
     "static/media/social.png": "/static/media/social.4fd0a641078b1982e964.png",
     "static/media/health.png": "/static/media/health.8dc7c921dcb9719703a9.png",
     "static/media/education.png": "/static/media/education.e352d022324e31259223.png",
@@ -104,12 +104,12 @@
     "static/media/v2.png": "/static/media/v2.12de59b6e110b3e54192.png",
     "static/media/m2.png": "/static/media/m2.674d6794c3a031907bfb.png",
     "index.html": "/index.html",
-    "main.959930de.css.map": "/static/css/main.959930de.css.map",
-    "main.758f5579.js.map": "/static/js/main.758f5579.js.map",
+    "main.4ea1b96a.css.map": "/static/css/main.4ea1b96a.css.map",
+    "main.3d10c42c.js.map": "/static/js/main.3d10c42c.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.959930de.css",
-    "static/js/main.758f5579.js"
+    "static/css/main.4ea1b96a.css",
+    "static/js/main.3d10c42c.js"
   ]
 }

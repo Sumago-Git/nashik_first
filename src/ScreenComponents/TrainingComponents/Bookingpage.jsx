@@ -7,9 +7,7 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 
-
 const Bookingpage = () => {
-
   const [formData, setFormData] = useState({
     licenseNumber: '',
     firstName: '',
@@ -22,8 +20,6 @@ const Bookingpage = () => {
 
   const [errors, setErrors] = useState({});
   const [captchaValue, setCaptchaValue] = useState(null);
-
-
   const [slotTime, setSlotTime] = useState("")
   const location = useLocation()
 
@@ -57,29 +53,50 @@ const Bookingpage = () => {
   const handleCaptchaChange = (value) => {
     setCaptchaValue(value);
   };
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     try {
-      const response = await axios.post('YOUR_API_URL', formData);
+      const response = await axios.post('YOUR_API_URL', {
+        ...formData,
+        slotTime, // Include slotTime if needed
+      });
+
       console.log('Response:', response.data);
-      // Handle success (e.g., show a success message, reset the form, etc.)
+      // Show success message
+      alert('Booking successfully created!');
+
+      // Resetting the form
+      setFormData({
+        licenseNumber: '',
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        vehicleType: [],
+      });
+      setCaptchaValue(null); // Reset the captcha
+      setErrors({}); // Clear errors
+
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Handle error (e.g., show an error message)
+      // Handle error
+      if (error.response) {
+        alert(`Error: ${error.response.data.message || 'Something went wrong!'}`);
+      } else {
+        alert('Error: No response from server.');
+      }
     }
   };
+
   useEffect(() => {
-    if (location) {
+    if (location && location.state) {
       console.log("location.state", location.state.selectedDate);
       console.log("location.selectedTime", location.state.selectedTime);
-      setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`)
-
+      setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
     }
   }, [location])
 
@@ -206,9 +223,9 @@ const Bookingpage = () => {
                   <ReCAPTCHA
                     sitekey={captchaKey} // Replace with your Google reCAPTCHA site key
                     onChange={handleCaptchaChange}
-                    className='mt-3 ms-md-4'
+                     className='m-3'
                   />
-                  {errors.captcha && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.captcha}</p>}
+                  {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
                 </Col>
                 <div className='text-center'>
                   <button className='returnbutton p-lg-2 mt-4'>Book Now</button>
