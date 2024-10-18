@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import lghead from "../../Assets/Assets/MainBanner/lghead.png";
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { useLocation } from 'react-router-dom';

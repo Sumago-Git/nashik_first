@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import frame5 from "../../Assets/Assets/MainBanner/Frame 5.png";
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Contact.css";
@@ -119,7 +119,7 @@ const Contactus = () => {
   };
   return (
     <>
-      <img src={frame5} className='lghead d-none d-md-block' />
+      <img src={lghead} className='lghead d-none d-md-block' />
       <img src={img4} className='img4 d-block d-md-none' />
 
       <Container fluid className='p-0 position-relative contactbg  '>

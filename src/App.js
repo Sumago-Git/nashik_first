@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import AnnualReturn from "./ScreenComponents/Annualreturns/AnnualReturns";
 import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
+import Newsphoto from "./ScreenComponents/NewsComponent/Newsphoto";
 
 // export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
 export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy" // server
@@ -44,6 +45,7 @@ function App() {
         <Route path="/slotpage" element={<Slotpage/>}/>
         <Route path='/events' element={<Events/>}/>
         <Route path='upcomingevents' element={<Upcomingevents/>}/>
+        <Route path='news' element={<Newsphoto/>}/>
       </Routes>
       <Bottom/>
       </BrowserRouter>

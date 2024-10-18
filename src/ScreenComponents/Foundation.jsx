@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Components/Foundation.css'
-import group from '../Assets/Assets/Foundation/group.png';
+import group from '../Assets/Assets/Foundation/group.jpg';
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,7 +12,7 @@ const Foundation = () => {
       <Container fluid className='body text-start mt-lg-5 pb-lg-5'>
         <Row>
           <Col lg={6} className='mt-lg-5 pt-lg-5 mt-4 m-md-0  p-0 ms-1 '>
-            <text className='fheadline ms-lg-5' style={{ fontWeight: "650", color: "#c50c1c" }}>The Advantage
+            <text className='Fheadline ms-lg-5' style={{ fontWeight: "650", color: "#c50c1c" }}>The Advantage
               Nashik Foundation.</text>
             <Col className='mt-4'>
               <p className=' mt-lg-3 mt-5 fpara1'><span style={{ color: "#c50c1c", fontWeight: "800" }}>Nashik</span> <span style={{ color: "#F96945", fontWeight: "800" }}> First</span>, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span>
@@ -35,7 +35,7 @@ const Foundation = () => {
 
           <Col lg={5} className='mt-lg-5 pt-5 p-0 justify-content-end'>
 
-            <img src={group} className='group img-fluid ' />
+            <img src={group} className='group img-fluid  ms-lg-5 ' />
 
           </Col>
         </Row>

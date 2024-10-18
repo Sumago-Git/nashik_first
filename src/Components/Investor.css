@@ -12,9 +12,11 @@
 .returntext {
     font-family: "Poppins";
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 0.5;
 }
+
+
 
 @media (max-width:768px) {
     .inverstorheadline {

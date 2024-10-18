@@ -59,7 +59,7 @@ const Vission = () => {
         </Container>
       </Container>
 
-      <img src={divider} className='w-100' />
+      <img src={divider} className='w-100 h-100' />
 
       <Container fluid className='p-0  '>
         <Container fluid className='p-0 vbg'>

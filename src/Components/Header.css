@@ -6,20 +6,18 @@
 
 
 .navMenu {
-    font-size: 20px !important;
+    font-size: 25px !important;
     font-weight:600 !important ;
     
   }
-  .navMenu:hover {
-    /* font-size: 15px; */
-    font-weight: 800;
-    font-family: "Century Gothic Paneuropean", sans-serif;
-  }
+ .navMenu:hover{
+    color: #c50c1c !important;
+ }
 
 
 .logo2 {
     height: 70px;
-    width: 200px;
+    width: 160px;
     justify-content: start;
 }
 
@@ -69,6 +67,9 @@
 
     .navMenu {
         font-size: 25px;
+    }
+    .navMenu:hover{
+        color: #c50c1c !important;
     }
 
     .eventdrop {
@@ -135,53 +136,7 @@
     background-image: url(../Assets/Assets/Home/pitch.png);
 }
 
-/* .train {
-    border-top-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    border-color: grey;
-    border-width: 1px;
-    border-style: solid;
-}
 
-.lives {
-    border-top-right-radius: 60px;
-    border-bottom-left-radius: 60px;
-    border-color: grey;
-    border-width: 1px;
-    border-style: solid;
-
-}
-
-.childner {
-    border-top-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    border-color: grey;
-    border-width: 1px;
-    border-style: solid;
-} */
-
-/* .whitebox {
-    height: 320px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 8px 8px 40px 0px #00000040;
-    border-bottom: 10px solid #F96945;
-    position: relative;
-} */
-
-/* .whiteboxheadline {
-    font-size: 34px;
-} */
-
-/* .license {
-    color: white;
-    background-color: #F96945;
-    border-radius: 50px;
-    height: 60px;
-    font-weight: 800;
-    text-align: center;
-    border: none;
-} */
  .homecounterlist{
     font-family: 'Poppins';
     font-size: 20px;
@@ -213,7 +168,7 @@
 }
 
 .copyright {
-    font-size: 20px;
+    font-size: 15px;
     color: white;
 }
 
@@ -224,7 +179,7 @@
 }
 
 .event-dropdown .dropdown-toggle:hover{
-    font-weight: 600;
+   color: #c50c1c !important;
 }
 
 
@@ -233,7 +188,7 @@
     font-weight: 600;
 }
 .events:hover{
-    font-weight: 600 !important;
+  color: #c50c1c !important;
 }
 
 .whiteboxbtn {
@@ -246,38 +201,28 @@
 
 @media (min-width: 1280px) and (max-width: 1400px) {
     .navMenu {
-        font-size: 17px !important;
+        font-size: 19px !important;
         font-weight: 600 !important;
       }
-      .navMenu:hover {
-        font-size: 15px !important;
-        font-weight: 700 !important;
-        font-family: "Century Gothic Paneuropean", sans-serif;
+      .navMenu:hover{
+        color: #c50c1c !important;
       }
+     
       .event-dropdown .dropdown-toggle {
         color: black !important;
-        font-size: 16px !important;
+        font-size: 18px !important;
         font-weight: 600 !important;
     }
     
-    .event-dropdown .dropdown-toggle:hover{
+    /* .event-dropdown .dropdown-toggle:hover{
         font-weight: 700;
-    }
+    } */
     
     .events {
         font-size: 16px !important;
         font-weight: 600 !important;
     }
-    .events:hover{
+    /* .events:hover{
         font-weight: 700 !important;
-    }
+    } */
 }
-
-/* @media (max-width: 1280px) {
-    .navMenu{
-        font-size: 16px !important;
-    }
-    .event-dropdown .dropdown-toggle:hover{
-        font-size: 10px !important;
-    }
-} */

@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <Navbar expand="lg" className="p-0">
-        <Container>
+        <Container className='m-lg-0'>
           <Navbar.Brand href="/">
             <img src={logo1} className="logo1 w-sm-75 w-md-75 w-100 p-0" alt="Logo" />
           </Navbar.Brand>
@@ -71,26 +71,30 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link to="training" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
+                <Nav.Link to="training" as={Link} onClick={handleClose} className=" text-black navMenu">
                   Training
                 </Nav.Link>
-                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
-                  Traffic awareness video
+                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className=" text-black navMenu">
+                 Video
                 </Nav.Link>
-                <Nav.Link to="annualreport" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
+                <Nav.Link to="news" as={Link} onClick={handleClose} className=" text-black navMenu">
+                  News
+                </Nav.Link>
+                <Nav.Link to="annualreport" as={Link} onClick={handleClose} className=" text-black navMenu">
                   Annual Reports
                 </Nav.Link>
-                <Nav.Link to="annualreturn" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
+                <Nav.Link to="annualreturn" as={Link} onClick={handleClose} className=" text-black navMenu">
                   Annual Returns
                 </Nav.Link>
-                <Nav.Link to="contact" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
+                <Nav.Link to="contact" as={Link} onClick={handleClose} className=" text-black navMenu">
                   Contact
                 </Nav.Link>
+               
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
-        <img src={traffic} className="logo2 d-none d-md-block justify-content-start" alt="Logo" />
+        <img src={traffic} className="logo2 d-none d-md-block justify-content-start ms-lg-5" alt="Logo" />
       </Navbar>
     </>
   );
