@@ -141,8 +141,8 @@ const Bottom = () => {
                 loading="lazy"
               ></iframe>
                <div style={{fontWeight:"600", fontSize:"20px"}}>
-                <p className=' text-start  ms-lg-3 mt-lg-3 m-lg-0'> Visitor count :- </p>
-               <p className=' text-start  ms-lg-3 '> 10000235 </p>
+                <p className=' text-start  ms-lg-3 mt-lg-3 m-lg-0'> Visitor count :- 10000235 </p>
+               {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
                </div>
             </Col>
 
