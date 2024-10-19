@@ -9,27 +9,29 @@ import { captchaKey } from '../../App';
 
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
-    licenseNumber: '',
-    firstName: '',
-    middleName: '',
-    lastName: '',
+    learningNo: '',
+    fname: '',
+    mname: '',
+    lname: '',
     email: '',
     phone: '',
-    vehicleType: [],
+    vehicletype: [],
   });
 
   const [errors, setErrors] = useState({});
   const [captchaValue, setCaptchaValue] = useState(null);
   const [slotTime, setSlotTime] = useState("")
   const location = useLocation()
+  const [slotsession, setSlotSession] = useState("")
+  const [slotdate, setSlotDate] = useState("")
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.licenseNumber) newErrors.licenseNumber = 'License number is required';
-    if (!formData.firstName) newErrors.firstName = 'First name is required';
-    if (!formData.lastName) newErrors.lastName = 'Last name is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    if (!formData.phone) newErrors.phone = 'Phone is required';
+    if (!formData.learningNo) newErrors.learningNo = 'License number is required';
+    if (!formData.fname) newErrors.fname = 'First name is required';
+    if (!formData.lname) newErrors.lname = 'Last name is required';
+    if (!formData.email) newErrors.email = 'email is required';
+    if (!formData.phone) newErrors.phone = 'phone is required';
     if (!captchaValue) newErrors.captcha = 'Please complete the CAPTCHA';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -44,9 +46,9 @@ const Bookingpage = () => {
     const value = e.target.value;
     setFormData((prevState) => ({
       ...prevState,
-      vehicleType: prevState.vehicleType.includes(value)
-        ? prevState.vehicleType.filter((type) => type !== value)
-        : [...prevState.vehicleType, value],
+      vehicletype: prevState.vehicletype.includes(value)
+        ? prevState.vehicletype.filter((type) => type !== value)
+        : [...prevState.vehicletype, value],
     }));
   };
 
@@ -59,9 +61,10 @@ const Bookingpage = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post('YOUR_API_URL', {
+      const response = await axios.post('bookingform/create-bookingform', {
         ...formData,
-        slotTime, // Include slotTime if needed
+        slotsession,
+        slotdate // Include slotTime if needed
       });
 
       console.log('Response:', response.data);
@@ -70,13 +73,13 @@ const Bookingpage = () => {
 
       // Resetting the form
       setFormData({
-        licenseNumber: '',
-        firstName: '',
-        middleName: '',
-        lastName: '',
+        learningNo: '',
+        fname: '',
+        mname: '',
+        lname: '',
         email: '',
         phone: '',
-        vehicleType: [],
+        vehicletype: [],
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
@@ -95,6 +98,8 @@ const Bookingpage = () => {
   useEffect(() => {
     if (location && location.state) {
       console.log("location.state", location.state.selectedDate);
+      setSlotSession(location.state.selectedDate)
+      setSlotDate(location.state.selectedTime)
       console.log("location.selectedTime", location.state.selectedTime);
       setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
     }
@@ -134,30 +139,30 @@ const Bookingpage = () => {
                 <Col lg={6}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
                   <input
-                    name='licenseNumber'
-                    value={formData.licenseNumber}
+                    name='learningNo'
+                    value={formData.learningNo}
                     onChange={handleChange}
                     placeholder={"MH15/0012345/2021"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
-                  {errors.licenseNumber && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.licenseNumber}</p>}
+                  {errors.learningNo && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>}
                 </Col>
                 <Col lg={6}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"First Name*"}</p>
                   <input
-                    name='firstName'
-                    value={formData.firstName}
+                    name='fname'
+                    value={formData.fname}
                     onChange={handleChange}
                     placeholder={"First Name"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
-                  {errors.firstName && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.firstName}</p>}
+                  {errors.fname && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.fname}</p>}
                 </Col>
                 <Col lg={6}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Middle Name"}</p>
                   <input
-                    name='middleName'
-                    value={formData.middleName}
+                    name='mname'
+                    value={formData.mname}
                     onChange={handleChange}
                     placeholder={"Middle Name"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
@@ -166,32 +171,32 @@ const Bookingpage = () => {
                 <Col lg={6}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Last Name*"}</p>
                   <input
-                    name='lastName'
-                    value={formData.lastName}
+                    name='lname'
+                    value={formData.lname}
                     onChange={handleChange}
                     placeholder={"Last Name"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
-                  {errors.lastName && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.lastName}</p>}
+                  {errors.lname && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.lname}</p>}
                 </Col>
                 <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Email*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"email*"}</p>
                   <input
                     name='email'
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder={"Email"}
+                    placeholder={"email"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
                   {errors.email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.email}</p>}
                 </Col>
                 <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Phone*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"phone*"}</p>
                   <input
                     name='phone'
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder={"Phone"}
+                    placeholder={"phone"}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
                   {errors.phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.phone}</p>}
@@ -207,7 +212,7 @@ const Bookingpage = () => {
                               type="checkbox"
                               className="radiobtn mt-1"
                               value={type}
-                              checked={formData.vehicleType.includes(type)}
+                              checked={formData.vehicletype.includes(type)}
                               onChange={handleCheckboxChange}
                             />
                           </Col>
@@ -223,7 +228,7 @@ const Bookingpage = () => {
                   <ReCAPTCHA
                     sitekey={captchaKey} // Replace with your Google reCAPTCHA site key
                     onChange={handleCaptchaChange}
-                     className='m-3'
+                    className='m-3'
                   />
                   {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
                 </Col>
