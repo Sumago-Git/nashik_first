@@ -24,53 +24,17 @@ const Youtube = () => {
           
           {/* Video 1 */}
           <Col xs={12} md={6} className='mb-4'>
-            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-              {!video1Loaded ? (
-                <img
-                src={yt1}
-                alt="Custom Thumbnail"
-                style={{ width: '100%', cursor: 'pointer' }}
-                onClick={loadVideo1}
-              />
-              ) : (
-                <iframe
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  src="https://www.youtube.com/embed/RmJXd5fviBA?autoplay=1"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              )}
-            </div>
+          <iframe className='w-100 rounded-3' style={{height:"250px"}}  src="https://www.youtube.com/embed/0j3X0OaHZro" title="Nashik First" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </Col>
           
           {/* Video 2 */}
           <Col xs={12} md={6} className='mb-4'>
-            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-              {!video2Loaded ? (
-                <img
-                src={yt2}
-                alt="Custom Thumbnail"
-                style={{ width: '100%', cursor: 'pointer', width:"100%", height:"300px" }}
-                onClick={loadVideo2}
-              />
-              ) : (
-                <iframe
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  src="https://www.youtube.com/embed/vmFT7ial_pM?autoplay=1"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              )}
-            </div>
+          <iframe className='w-100 rounded-3' style={{height:"250px"}} src="https://www.youtube.com/embed/vmFT7ial_pM?si=i3FjXT_G2EJu5adj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </Col>
 
           <Col className='pb-4'>
             <a href='https://www.youtube.com/@nashikfirst4058' target="_blank" rel="noopener noreferrer">
-              <button className='returnbutton p-lg-3 mt-2'>
+              <button className='returnbutton py-1'>
                 View More
               </button>
             </a>
