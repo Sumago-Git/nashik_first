@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.31696389.css",
-    "main.js": "/static/js/main.74af1aeb.js",
+    "main.css": "/static/css/main.0fa1e9ee.css",
+    "main.js": "/static/js/main.9ee567f2.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/ears2.png": "/static/media/ears2.18e764517d2f0719441a.png",
     "static/media/speed2.png": "/static/media/speed2.135391d4caa8f6107bad.png",
@@ -19,10 +19,10 @@
     "static/media/annualreturns1.pdf": "/static/media/annualreturns1.756ef94129565ae46114.pdf",
     "static/media/drive.jpg": "/static/media/drive.82a1e1df6bdc4cf01a1f.jpg",
     "static/media/city.png": "/static/media/city.17cd2fccea366bdc675d.png",
+    "static/media/road1.png": "/static/media/road1.3a95942dfff251a54dfc.png",
     "static/media/investorMob.jpg": "/static/media/investorMob.a3e52cfff7c1fb3dcb45.jpg",
     "static/media/annualreport2.pdf": "/static/media/annualreport2.d60dedc39067745ed618.pdf",
     "static/media/speed.jpg": "/static/media/speed.24c352d745aa1d471261.jpg",
-    "static/media/road1.png": "/static/media/road1.56367942d84f3f4b83ac.png",
     "static/media/banner.png": "/static/media/banner.527cd8397e71c06098a1.png",
     "static/media/ants.jpg": "/static/media/ants.d0cef0399c9ffcd47c8b.jpg",
     "static/media/lanes.jpg": "/static/media/lanes.f43e80ec3f93e656797e.jpg",
@@ -31,6 +31,7 @@
     "static/media/annualreport1.pdf": "/static/media/annualreport1.e63b0b3e382a5f825a45.pdf",
     "static/media/bottombg.jpg": "/static/media/bottombg.ecd948d6c599837cb526.jpg",
     "static/media/ears.jpg": "/static/media/ears.498713bd6bd6bedfbbe2.jpg",
+    "static/media/road2.png": "/static/media/road2.0e759cccee09fb2cbb06.png",
     "static/media/counterimg1.png": "/static/media/counterimg1.ba34a58a8a9396b23fa9.png",
     "static/media/pain.jpg": "/static/media/pain.95eb3b5323711704702e.jpg",
     "static/media/homecounter2a.png": "/static/media/homecounter2a.37e9a9fca759ef10d136.png",
@@ -43,10 +44,11 @@
     "static/media/upcoming1.png": "/static/media/upcoming1.4784e8e6ae1c8f2845e2.png",
     "static/media/event2.png": "/static/media/event2.10e36662ee4fc86fc1b0.png",
     "static/media/event4.png": "/static/media/event4.8f59de23a33c2f8f5595.png",
+    "static/media/group.png": "/static/media/group.38f5a1c87500c12f9265.png",
     "static/media/event3.png": "/static/media/event3.11dcebc79e2caf889151.png",
+    "static/media/divider.png": "/static/media/divider.a72882206adfef1db4db.png",
     "static/media/head2.png": "/static/media/head2.c9add017384bc6090f6d.png",
     "static/media/video.png": "/static/media/video.991fc30ac7ee3d016ab4.png",
-    "static/media/divider.png": "/static/media/divider.0a2e9d824b6b6b667a90.png",
     "static/media/yt1.png": "/static/media/yt1.a758e9c23680685de7a7.png",
     "static/media/photo1.png": "/static/media/photo1.79e808d4cb32a6d87615.png",
     "static/media/circle1.png": "/static/media/circle1.7213f3f04359b047995f.png",
@@ -54,7 +56,6 @@
     "static/media/chat.jpg": "/static/media/chat.bcb37ad38e2730ca6fe4.jpg",
     "static/media/addressing.png": "/static/media/addressing.5cbee7b8507c536e05a0.png",
     "static/media/photo3.png": "/static/media/photo3.d709867309a7acbae2c7.png",
-    "static/media/group.jpg": "/static/media/group.96f50134695b0b922803.jpg",
     "static/media/yt2.png": "/static/media/yt2.05e8602eb83536b83ab4.png",
     "static/media/social.png": "/static/media/social.4fd0a641078b1982e964.png",
     "static/media/health.png": "/static/media/health.8dc7c921dcb9719703a9.png",
@@ -95,12 +96,12 @@
     "static/media/v2.png": "/static/media/v2.12de59b6e110b3e54192.png",
     "static/media/m2.png": "/static/media/m2.674d6794c3a031907bfb.png",
     "index.html": "/index.html",
-    "main.31696389.css.map": "/static/css/main.31696389.css.map",
-    "main.74af1aeb.js.map": "/static/js/main.74af1aeb.js.map",
+    "main.0fa1e9ee.css.map": "/static/css/main.0fa1e9ee.css.map",
+    "main.9ee567f2.js.map": "/static/js/main.9ee567f2.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31696389.css",
-    "static/js/main.74af1aeb.js"
+    "static/css/main.0fa1e9ee.css",
+    "static/js/main.9ee567f2.js"
   ]
 }

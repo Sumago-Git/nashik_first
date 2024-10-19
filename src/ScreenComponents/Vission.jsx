@@ -25,7 +25,7 @@ const Vission = () => {
 
         <Container fluid className=' vbg '>
           <Row className='justify-content-center '>
-            <Col lg={6} className='mt-lg-3 mt-xl-5 '>
+            <Col lg={6} className='mt-lg-3 mt-xl-5 mt-5'>
               < text className='text  text-white  '>Our Vision</text>
             </Col>
             <Col lg={6} md={6} className='mt-lg-3 mt-xl-4 d-none d-md-block  position-relative '>
@@ -48,8 +48,8 @@ const Vission = () => {
                 </div>
               </div>
             </Col>
-            <Col >
-              <p className='vtext text-middle position-absolute bottom-0 pb-sm-4 pb-lg-5 pb-xl-3' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe,
+            <Col className='d-flex  justify-content-center'>
+              <p className='vtext text-middle  position-absolute bottom-0 pb-4 pb-lg-5 pb-xl-3 p-2' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe,
                 Economically developed</span> & Well planned having
                 world class infrastructure and well connected with
                 major cities of India by 2035.</p>
@@ -81,11 +81,11 @@ const Vission = () => {
               </div>
             </Col>
 
-            <Col lg={6} className='mt-lg-3 mt-xl-5 '>
+            <Col lg={6} className='mt-lg-3 mt-xl-5 mt-5  '>
               < text className='text  text-white'>Our Mission</text>
             </Col>
             <Col className='d-flex  justify-content-center'>
-              <p className='mtext text-middle position-absolute bottom-0 pb-sm-4 pb-lg-5 pb-xl-5 '> <span style={{ fontWeight: "800", color: "#F96945" }}>"Nashik First" </span>
+              <p className='mtext text-middle position-absolute bottom-0 pb-5 pb-lg-5 pb-xl-5 p-2'> <span style={{ fontWeight: "800", color: "#F96945" }}>"Nashik First" </span>
                 is an active group of citizens working for improving the quality of the city and citizens of Nashik.</p>
             </Col>
           </Row>
