@@ -1,5 +1,5 @@
 import React from 'react';
-import frame1 from "../../Assets/Assets/MainBanner/Frame 1.png";
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
 import { Container, Carousel, Row, Col } from 'react-bootstrap';
 import '../../Components/About.css';
@@ -93,7 +93,7 @@ const Aboutbanner = () => {
             <Container fluid className=' me-0'>
                 <Row>
                     <Col className='p-0'>
-                        <img src={frame1} className='lghead d-none d-md-block w-100 ' alt="Banner" />
+                        <img src={lghead} className='lghead d-none d-md-block w-100 ' alt="Banner" />
                         <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
                     </Col>
                 </Row>

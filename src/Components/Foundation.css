@@ -3,23 +3,27 @@
 
 }
 
-.fheadline {
-    font-size: 40px !important;
+.Fheadline
+ {
+    font-size: 37px !important;
     font-family: 'Century Gothic Paneuropean', sans-serif;
 
 }
 
 @media (max-width: 576px) {
-    .fheadline {
+    .Fheadline
+     {
         font-size: 30px !important;
         text-align: start;
         /* margin: 15px !important; */
+        line-height: 1.1 !important;
     }
 
     .fpara1 {
         /* font-size: 8px !important; */
-        margin: 0px !important;
+        margin-top: 20px !important;
         text-align: start;
+        margin: 0px !important;
     }
 
     .fpara2 {
@@ -51,7 +55,8 @@
 }
 
 @media (min-width:1920px) {
-    .fheadline {
+    .Fheadline
+     {
         font-size: 50px !important;
     }
 
@@ -69,8 +74,9 @@
 }
 
 @media (min-width: 1280px) {
-    .fheadline{
-        font-size: 30px !important;
+    .Fheadline
+    {
+        /* font-size: 30px !important; */
     }
     .group{
         height: 600px !important;

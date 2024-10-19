@@ -4,15 +4,15 @@ import '../../Components/About.css';
 
 const Directors = () => {
   const directors = [
-    { name: 'Abhay Kulkarni', title: 'Chairman', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Vinita Dharkar', title: 'Vice Chairperson', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Devendra Bapat', title: 'Managing Director', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Milind Jambotkar', title: 'General Secretary', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Narendra Saboo', title: 'Treasurer', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Jitendra Shirke', title: 'Director', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Pramod Lad', title: 'Director', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Suresh Patel', title: 'Director', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' },
-    { name: 'Sanjay Deshmukh', title: 'Director', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever.' }
+    { name: 'Abhay Kulkarni', title: 'Chairman', description:'Photos' },
+    { name: 'Vinita Dharkar', title: 'Vice Chairperson', description:'Photos' },
+    { name: 'Devendra Bapat', title: 'Managing Director', description:'Photos' },
+    { name: 'Milind Jambotkar', title: 'General Secretary', description:'Photos' },
+    { name: 'Narendra Saboo', title: 'Treasurer', description:'Photos' },
+    { name: 'Jitendra Shirke', title: 'Director', description:'Photos' },
+    { name: 'Pramod Lad', title: 'Director', description:'Photos' },
+    { name: 'Suresh Patel', title: 'Director', description:'Photos' },
+    { name: 'Sanjay Deshmukh', title: 'Director', description:'Photos' }
   ];
 
   return (

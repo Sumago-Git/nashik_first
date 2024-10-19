@@ -7,8 +7,18 @@
     width: 100%;
     height: 350px;
     position: relative;
-    background-image: url("../Assets/Assets/Vission/road1.jpg");
+    background-image: url("../Assets/Assets/Vission/road1.png");
     background-size: cover;
+    background-position: center;
+}
+
+.mbg {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background-image: url("../Assets/Assets/Vission/road2.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .vtext {
@@ -21,22 +31,11 @@
 
 }
 
-.mbg {
-    width: 100%;
-    height: 370px;
-    position: relative;
-    background-image: url("../Assets/Assets/Vission/road1.jpg");
-    background-size:cover;
-}
 
 @media (max-width:576px) {
     .vbg {
         background-repeat: no-repeat;
     }
-    .mbg{
-        background-repeat: no-repeat;
-    }
-
     .vtext {
         font-size: 15px !important;
         text-align: start;

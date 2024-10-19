@@ -140,6 +140,10 @@ const Bottom = () => {
                 style={{ width: '100%', height: '250px', borderRadius: '9px' }}
                 loading="lazy"
               ></iframe>
+               <div style={{fontWeight:"600", fontSize:"20px"}}>
+                <p className=' text-start  ms-lg-3 mt-lg-3 m-lg-0'> Visitor count :- 10000235 </p>
+               {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
+               </div>
             </Col>
 
             <Col sm={6} lg={3} className='mt-5 '>
@@ -210,10 +214,9 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright Nashik First : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright <span style={{fontSize:"20px"}}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
           <p className='p-0 m-0 copyright mt-0 p-0 mt-4'>*This Website is updated in 2024 </p>
-          <p className='d-flex flex-row-reverse copyright me-lg-4 m-lg-0'> visitor count :- </p>
-          <p className='d-flex flex-row-reverse copyright me-lg-4'> 10000235 </p>
+         
         </Container>
       </section>
     </>

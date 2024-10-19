@@ -3,7 +3,7 @@ import '../../Components/Video.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import video from '../../Assets/Assets/VideoPage/video.png';
-import frame3 from "../../Assets/Assets/MainBanner/Frame 3.png"
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 
 const AwarnessVideo = () => {
@@ -11,7 +11,7 @@ const AwarnessVideo = () => {
 
   return (
     <>
-      <img src={frame3} className='lghead d-none d-md-block' />
+      <img src={lghead} className='lghead d-none d-md-block' />
       <img src={img4} className='img4 d-block d-md-none' />
       {/* <Container fluid className='videobg pb-5'>
         <h1 className='pt-5  videoheadline'>Traffic Awareness Video</h1>

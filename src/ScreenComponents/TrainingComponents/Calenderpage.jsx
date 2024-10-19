@@ -3,7 +3,7 @@ import { Container, Table, Col,Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
-import frame2 from "../../Assets/Assets/MainBanner/Frame 2.png"
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
 import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
@@ -101,7 +101,7 @@ const Calendar = () => {
   return (
     <>
       <Container fluid className='m-0 p-0'>
-        <img src={frame2} className='lghead d-none d-md-block' />
+        <img src={lghead} className='lghead d-none d-md-block' />
         <img src={img4} className='img4 d-block d-md-none' />
       </Container>
 
