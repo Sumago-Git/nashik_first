@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <Navbar expand="lg" className="p-0">
-        <Container className='m-lg-0'>
+        <Container fluid className='m-lg-0'>
           <Navbar.Brand href="/">
             <img src={logo1} className="logo1 w-sm-75 w-md-75 w-100 p-0" alt="Logo" />
           </Navbar.Brand>
@@ -45,7 +45,7 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="mx-auto mt-lg-4 ">
-                <Nav.Link to="about" as={Link} onClick={handleClose} className="mx-lg-1 text-black navMenu">
+                <Nav.Link to="about" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2 text-black navMenu">
                   About Us
                 </Nav.Link>
                 
@@ -53,7 +53,7 @@ const Header = () => {
                 <NavDropdown
                   title="Events"
                   id="basic-nav-dropdown"
-                  className="event-dropdown"
+                  className="event-dropdown mx-xl-1 mx-xxl-2 "
                   show={dropdownOpen} // Control the dropdown open state
                   onMouseEnter={handleDropdownMouseEnter} // Show on hover
                   onMouseLeave={handleDropdownMouseLeave} // Hide on leave
@@ -71,22 +71,22 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link to="training" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="training" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2  text-black navMenu">
                   Training
                 </Nav.Link>
-                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2  text-black navMenu">
                  Video
                 </Nav.Link>
-                <Nav.Link to="news" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="news" as={Link} onClick={handleClose} className="  mx-xl-1 mx-xxl-2 text-black navMenu">
                   News
                 </Nav.Link>
-                <Nav.Link to="annualreport" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="annualreport" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2  text-black navMenu">
                   Annual Reports
                 </Nav.Link>
-                <Nav.Link to="annualreturn" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="annualreturn" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2  text-black navMenu">
                   Annual Returns
                 </Nav.Link>
-                <Nav.Link to="contact" as={Link} onClick={handleClose} className=" text-black navMenu">
+                <Nav.Link to="contact" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2 text-black navMenu">
                   Contact
                 </Nav.Link>
                
@@ -94,7 +94,7 @@ const Header = () => {
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
-        <img src={traffic} className="logo2 d-none d-md-block justify-content-start ms-lg-5" alt="Logo" />
+        <img src={traffic} className="logo2 d-none d-md-block " alt="Logo" />
       </Navbar>
     </>
   );
