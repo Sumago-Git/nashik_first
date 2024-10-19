@@ -59,10 +59,10 @@ const Vission = () => {
         </Container>
       </Container>
 
-      <img src={divider} className='w-100 h-100' />
+     <div> <img src={divider} className='img-fluid p-0 w-100' /></div>
 
       <Container fluid className='p-0  '>
-        <Container fluid className='p-0 vbg'>
+        <Container fluid className='p-0 mbg'>
           <Row className='justify-content-center p-2 m-0 '>
             <Col lg={6} md={6} className=' pt-lg-3 d-none d-md-block  '>
               <div className='d-flex ms-lg-5'>
