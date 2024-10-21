@@ -115,19 +115,19 @@ const Homecounter = () => {
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
-                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 w-100'> Learning License </Button>
+                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 py-xl-3 w-100'> Learning License </Button>
                       </Col>
                       <Col sm={12}>
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
-                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 w-100'> Suspended License </Button>
+                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 py-xxl-3 w-100'> Suspended License </Button>
                       </Col>
                       <Col sm={12}>
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
-                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 w-100'> School Bus Driver </Button>
+                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 py-xxl-3 w-100'> School Bus Driver </Button>
                       </Col>
                     </Row>
 
@@ -144,12 +144,12 @@ const Homecounter = () => {
                     <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
-                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2'> School Students </Button>
+                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 py-xxl-3'> School Students </Button>
                     <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
                     }
-                    } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2'> Adult (College / Organization) </Button>
+                    } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-0 rounded-5 border-0 py-2 py-xxl-3'> Adult (College / Organization) </Button>
                   </Card.Footer>
 
                   <Card.Footer className="p-0 bg-transparent py-3 d-flex justify-content-center d-block d-md-none">
