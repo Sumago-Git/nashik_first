@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Table, Col,Row } from "react-bootstrap";
+import { Container, Table, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
@@ -119,42 +119,53 @@ const Calendar = () => {
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
           </p>
 
-         
+
 
           <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
-          <Row>
-            <Col lg={4} className="p-0">
-            <Nav.Item className="calendertabs" >
-              <Nav.Link eventKey="link-1" className="text-black " style={{backgroundColor:"none"}}><button type="button" class="btn3d btn btn-default btn-lg calendertabs"><span class="glyphicon glyphicon-download-alt"></span> RTO-Suspended Driving License Holder Training</button>
-              </Nav.Link>
-            </Nav.Item>
-            </Col>
-           <Col lg={4} className="p-0">
-           <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-2" className="text-black" style={{backgroundColor:"none"}}>RTO-Suspended Driving License Holder Training</Nav.Link>
-            </Nav.Item>
-           </Col>
-           <Col lg={4} className="p-0">
-           <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-3" className="text-black">RTO-School Bus Driver Training</Nav.Link>
-            </Nav.Item>
-           </Col>
-            <Col lg={4} className="p-0">
-            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-4" className="text-black">School Students Training</Nav.Link>
-            </Nav.Item>
-            </Col>
-            <Col lg={4} className="p-0">
-            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-5" className="text-black">College/Organization Training – Group</Nav.Link>
-            </Nav.Item>
-            </Col>
-            <Col lg={4} className="p-0">
-            <Nav.Item className="calendertabs">
-              <Nav.Link eventKey="link-6" className="text-black">College/Organization Training – Individual</Nav.Link>
-            </Nav.Item> 
-            </Col>   
-            </Row>        
+            <Row>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs" >
+                  <Nav.Link eventKey="link-1" className="text-black " style={{ backgroundColor: "none" }}>
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs">
+                  <Nav.Link eventKey="link-2" className="text-black" style={{ backgroundColor: "none" }}>
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs">
+                  <Nav.Link eventKey="link-3" className="text-black">
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>RTO – Training for School Bus Driver</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs">
+                  <Nav.Link eventKey="link-4" className="text-black">
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>School Students Training – Group</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs">
+                  <Nav.Link eventKey="link-5" className="text-black">
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College/Organization Training – Group</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+              <Col md={4} className="p-0">
+                <Nav.Item className="calendertabs">
+                  <Nav.Link eventKey="link-6" className="text-black">
+                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College / Organization Training – Individual</button>
+                  </Nav.Link>
+                </Nav.Item>
+              </Col>
+            </Row>
           </Nav>
 
           <Container className='datetime p-3 mt-lg-4'>

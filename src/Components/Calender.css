@@ -1,111 +1,115 @@
 .calender {
-    height: 750px;
-    width: 1000px;
-    box-shadow: 12px 13px 120px 0px #00000040;
-    border-radius: 50px;
-    background-color: white;
+  height: 750px;
+  width: 1000px;
+  box-shadow: 12px 13px 120px 0px #00000040;
+  border-radius: 50px;
+  background-color: white;
 }
 
 .calenderheadline {
-    font-family: 'Century Gothic Paneuropean', sans-serif;
-    font-size: 40px;
-    font-weight: 800 !important;
+  font-family: "Century Gothic Paneuropean", sans-serif;
+  font-size: 40px;
+  font-weight: 800 !important;
 }
 
 .btn {
-    border: 0px;
-    background: none;
-    outline: none;
+  border: 0px;
+  background: none;
+  outline: none;
 }
 
 .arrowimg {
-    margin-top: -20px;
-    border: 0px;
-    outline: none;
+  margin-top: -20px;
+  border: 0px;
+  outline: none;
 }
 
 .datebox {
-    height: 110px;
-    width: 130px !important;
-    border: 2px solid grey;
-    margin-left: -20px;
+  height: 110px;
+  width: 130px !important;
+  border: 2px solid grey;
+  margin-left: -20px;
 }
 
 .holidaybox {
-    background: #FFE2DB;
-    color: #C50E22;
-    font-size: 25px;
-    font-weight: 600;
-    font-family: "Poppins";
+  background: #ffe2db;
+  color: #c50e22;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Poppins";
 }
 
 .availablebox {
-    background: #DBFFE3;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: "Poppins";
-
+  background: #dbffe3;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Poppins";
 }
 
 .btn:disabled,
 fieldset:disabled .btn {
-    border-color: floralwhite !important;
+  border-color: floralwhite !important;
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    border-color: floralwhite !important;
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  border-color: floralwhite !important;
 }
 
-.calendertabs{
-    font-weight: 600;
-    font-size: 10px;
-    background-color: none !important;
-    /* border: 1px gray solid; */
-    /* width: 185px; */
+.calendertabs {
+  font-weight: 600;
+  font-size: 10px;
+  background-color: none !important;
+  /* border: 1px gray solid; */
+  /* width: 185px; */
 }
-.calendertabs:hover{
-   /* font-size: 15px; */
-   font-weight: 700;
-   color: red;
-   background-color: none !important;
-   border-color: none;
-   /* background-color: #FFA088; */
-}
-
-@media (max-width:768px) {
-
-    .calenderheadline{
-        font-size: 25px;
-    }
-    
+.calendertabs:hover {
+  /* font-size: 15px; */
+  font-weight: 700;
+  color: red;
+  background-color: none !important;
+  border-color: none;
+  /* background-color: #FFA088; */
 }
 
+@media (max-width: 768px) {
+  .calenderheadline {
+    font-size: 25px;
+  }
+}
 
 .btn3d.btn-default {
-    color: #666666;
-    box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0, 0, 0, .2);
-    background-color: #f9f9f9;
-  }
+  color: #666666;
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+    0 8px 0 0 #bebebe, 0 8px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
 
-  .btn3d.btn-default:active,
+.btn3d.btn-default:active,
 .btn3d.btn-default.active {
   color: #666666;
-  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 1px 3px 1px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
 }
 
 .btn3d {
-    position: relative;
-    top: -6px;
-    border: 0;
-    transition: all 40ms linear;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-  }
-
-  .btn3d:active:focus,
+  position: relative;
+  top: -6px;
+  border: 0;
+  transition: all 40ms linear;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.btn3d:hover {
+  color: rgb(247 130 59) !important;
+}
+.btn3d:active:focus,
 .btn3d:focus:hover,
 .btn3d:focus {
   -moz-outline-style: none;
@@ -115,4 +119,17 @@ fieldset:disabled .btn {
 .btn3d:active,
 .btn3d.active {
   top: 2px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  /* color: var(--bs-nav-tabs-link-active-color); */
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  isolation: isolate;
+  border: none !important;
 }
