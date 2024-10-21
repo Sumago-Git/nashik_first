@@ -18,29 +18,31 @@ const Youtube = () => {
 
   return (
     <>
-      <Container className='mt-lg-5'>
-        
-        <Row className="mx-auto">
-          
-          {/* Video 1 */}
-          <Col xs={12} md={6} className='mb-4'>
-          <iframe className='w-100 rounded-3' style={{height:"250px"}}  src="https://www.youtube.com/embed/0j3X0OaHZro" title="Nashik First" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </Col>
-          
-          {/* Video 2 */}
-          <Col xs={12} md={6} className='mb-4'>
-          <iframe className='w-100 rounded-3' style={{height:"250px"}} src="https://www.youtube.com/embed/vmFT7ial_pM?si=i3FjXT_G2EJu5adj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </Col>
+      <section className='mt-5 mt-lg-0'>
+        <Container className='mt-lg-5'>
 
-          <Col className='pb-4'>
-            <a href='https://www.youtube.com/@nashikfirst4058' target="_blank" rel="noopener noreferrer">
-              <button className='returnbutton py-1'>
-                View More
-              </button>
-            </a>
-          </Col>
-        </Row>
-      </Container>
+          <Row className="mx-auto">
+
+            {/* Video 1 */}
+            <Col xs={12} md={6} className='mb-4'>
+              <iframe className='w-100 rounded-3' style={{ height: "250px" }} src="https://www.youtube.com/embed/0j3X0OaHZro" title="Nashik First" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </Col>
+
+            {/* Video 2 */}
+            <Col xs={12} md={6} className='mb-4'>
+              <iframe className='w-100 rounded-3' style={{ height: "250px" }} src="https://www.youtube.com/embed/vmFT7ial_pM?si=i3FjXT_G2EJu5adj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </Col>
+
+            <Col className='pb-4'>
+              <a href='https://www.youtube.com/@nashikfirst4058' target="_blank" rel="noopener noreferrer">
+                <button className='returnbutton py-1'>
+                  View More
+                </button>
+              </a>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 };
