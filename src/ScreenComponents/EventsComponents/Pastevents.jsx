@@ -28,7 +28,7 @@ const Pastevents = () => {
       </Container>
 
       <Container fluid className='trainingeventbg pb-lg-5'>
-        <p className='trainingeventheadline mt-5 pt-5 text-center'>Special Training Event</p>
+        <p className='trainingeventheadline mt-5 pt-5 text-center'>Special Event</p>
         <Row className='mx-5'>
           {specialEvents.map((event, index) => (
             <Col xs={12} sm={6} md={4} key={index} className='mb-2'> {/* Reduced the margin-bottom */}

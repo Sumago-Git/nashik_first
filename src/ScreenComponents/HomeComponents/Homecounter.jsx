@@ -42,7 +42,7 @@ const Homecounter = () => {
                   <Card className="py-4 shadow-lg mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
                     <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
                     <img src={lives} className="w-50 mx-auto" alt="" />
-                    <h3 className="pb-2">2,71,062</h3>
+                    <h3 className="pb-sm-2 pb-lg-0">2,71,062</h3>
                   </Card>
                 </Col>
 
