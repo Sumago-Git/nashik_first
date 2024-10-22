@@ -143,7 +143,7 @@ const Homecounter = () => {
                 <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-lg-0'>
                   <img src={homecounterimg2a} alt="homecounterimg2a" />
                   <h3 className='countHeading my-3'> <strong> School / College / Organization Trainings </strong></h3>
-                  <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness Workshops</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
+                  <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
                   <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                   <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 d-flex text-center d-none d-md-block">
                     <Button onClick={() => {
@@ -210,7 +210,7 @@ const Homecounter = () => {
             <Card className='py-4 px-4 shadow-lg text-start border-top-0 border-end-0 border-start-0 shadow-lg position-relative  ms-lg-4 ' style={{ borderBottom: "10px rgb(255, 99, 71) solid" }}>
             <img src={homecounterimg2a} />
             <h4 style={{ fontWeight: 700 }} className='mt-lg-3'>School / College / Organization Trainings</h4>
-            <h6 className='mt-lg-2' style={{  fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes <span style={{fontWeight:"700"}}>Road Safety Traffic Awareness Workshops </span>for <span style={{color:"#993300", fontWeight:"bold"}}>free of cost.</span></h6>
+            <h6 className='mt-lg-2' style={{  fontFamily: "poppins", lineHeight: "20px" }}>To increase awareness about Traffic Safety, we organizes <span style={{fontWeight:"700"}}>Road Safety Traffic Awareness programs </span>for <span style={{color:"#993300", fontWeight:"bold"}}>free of cost.</span></h6>
             <p className='pb-lg-3 mt-lg-2' style={{  fontSize: "1.02rem", fontFamily: "poppins", }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
             <Row className='d-flex justify-content-start  '>
             <Col >
