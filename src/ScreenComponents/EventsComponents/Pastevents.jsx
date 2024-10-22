@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Container, Row, Col, Modal } from 'react-bootstrap'
 import pastbanner from "../../Assets/Assets/Pastevents/pastbanner.png"
 import "../../Components/Pastevents.css"
 import event1 from "../../Assets/Assets/Pastevents/event1.png";
@@ -21,6 +21,12 @@ const eventGallery = [
 ];
 
 const Pastevents = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <Container fluid className='p-0'>
@@ -42,9 +48,18 @@ const Pastevents = () => {
         <p className='trainingeventheadline mt-lg-5 pt-5  text-center'>Event Gallery</p>
         <Row className='mx-5 p-0'>
           {eventGallery.map((event, index) => (
-            <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
-              <img src={event} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
-            </Col>
+            <>
+              <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
+                <img src={event} onClick={handleShow} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
+              </Col>
+              <Modal size="lg" show={show} onHide={handleClose}>
+
+                <Modal.Body>
+                  <img src={event} className=' img-fluid' alt={`Event Gallery ${index + 1}`} />
+                </Modal.Body>
+
+              </Modal>
+            </>
           ))}
         </Row>
       </Container>
