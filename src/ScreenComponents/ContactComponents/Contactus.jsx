@@ -278,9 +278,11 @@ const Contactus = () => {
                       className="p-2 w-100 contactinput outline-none "
                     >
                       <option value="" className='outline-none'>Select a subject</option>
-                      <option value="Connectivity (Intra City / Inter City)" className='outline-none'>Connectivity (Intra City / Inter City)</option>
-                      <option value="Traffic" className='outline-none'>Traffic</option>
-                      <option value="Training" className='outline-none'>Training</option>
+                      <option value="Roads (Intra-city and Intercity) Connectivity" className='outline-none'>Roads (Intra-city and Intercity) Connectivity</option>
+                      <option value="Smooth & Disciplined City Traffic" className='outline-none'>Smooth & Disciplined City Traffic</option>
+                      <option value="Industry and New Investments" className='outline-none'>Industry and New Investments</option>
+                      <option value="Education" className='outline-none'>Education
+                    </option>
                     </select>
                     {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
                   </div>
