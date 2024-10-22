@@ -119,7 +119,9 @@ const Calendar = () => {
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
           </p>
 
-
+          <Container className='datetime p-3 mt-lg-4'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </Container>
 
           <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
             <Row>
@@ -168,9 +170,7 @@ const Calendar = () => {
             </Row>
           </Nav>
 
-          <Container className='datetime p-3 mt-lg-4'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </Container>
+          
         </Container>
         <Container className="calender ">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
