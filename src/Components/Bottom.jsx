@@ -16,6 +16,7 @@ import whatsappborder from "../Assets/Assets/Bottom/whatsappborder.png"
 import phoneborder from "../Assets/Assets/Bottom/phoneborder.png";
 import emailborder from "../Assets/Assets/Bottom/emailborder.png";
 import locationborder from "../Assets/Assets/Bottom/locationborder.png"
+import wappChat from "../Assets/Assets/Home/wapImg.gif"
 import axios from 'axios';
 import { FaFacebookF } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
@@ -88,7 +89,7 @@ const Bottom = () => {
   return (
     <>
       <section className='bottombg'>
-        <Container fluid className='pb-5'>
+        <Container fluid className='pb-2'>
           <Row className='loc'>
             <Col lg={5}>
               <p className='text-start bottomheadline ms-4 loc'>LOCATION</p>
@@ -195,10 +196,17 @@ const Bottom = () => {
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright <span style={{ fontSize: "20px" }}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
-          <p className='p-0 m-0 copyright mt-0 p-0 mt-4'>*This Website is updated in 2024 </p>
+          <p className='copyright mt-lg-2 m-0 p-0 mt-1 '>© {footerDate} Copyright <span style={{ fontSize: "20px" }}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='p-0 m-0 copyright mt-0 p-0 mt-1'>*This Website is updated in 2024 </p>
 
         </Container>
+        <div className="">
+        <div className="d-flex justify-content-end">
+          <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?" target="_blank">
+            <img src={wappChat} alt="Whatsapp" className="m-4 wappIcons" style={{ zIndex: "1", width: "5%", position: "fixed", bottom: "1rem", right: "0" }} />
+          </a>
+        </div>
+      </div >
       </section>
     </>
   );
