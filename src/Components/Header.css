@@ -168,15 +168,18 @@
   color: black !important;
   font-size: 20px;
   font-weight: 600;
+  background-color: none;
 }
 
 .event-dropdown .dropdown-toggle:hover {
   color: #c50c1c !important;
+  /* background-color: none; */
 }
 
 .events {
   font-size: 20px;
   font-weight: 600;
+  background-color: none !important;
 }
 .events:hover {
   color: #c50c1c !important;
@@ -185,6 +188,7 @@
 .whiteboxbtn {
   margin: 1px;
 }
+
 
 @media (min-width: 1280px) and (max-width: 1400px) {
   .navMenu {
@@ -241,4 +245,10 @@
 .iconHover4:hover {
   background-color: black;
   color: #fff;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: transparent !important;
+  color: inherit !important;
 }
