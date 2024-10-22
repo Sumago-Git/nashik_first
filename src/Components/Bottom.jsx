@@ -108,7 +108,7 @@ const Bottom = () => {
 
             </Col>
 
-            <Col sm={6} lg={3} className='mt-5 '>
+            <Col sm={6} lg={3} md={6} className='mt-5 '>
               <p className='text-start bottomheadline pb-3 ms-3'>Quick Links</p>
               {quickLinks.map((link, index) => (
                 <Row key={index}>
@@ -126,7 +126,7 @@ const Bottom = () => {
               ))}
             </Col>
 
-            <Col sm={12} lg={4} className="mt-5">
+            <Col sm={12} lg={4} md={6} className="mt-5">
               <p className='text-start bottomheadline pb-3 ms-3'>Contact Details</p>
               {contactDetails.map((detail, index) => (
                 <Row
@@ -161,15 +161,15 @@ const Bottom = () => {
             </Col>
           </Row>
           <Row>
-            <Col md={8}>
+            <Col md={6} lg={8}>
               <div style={{ fontWeight: "600", fontSize: "20px",color:"white" }}>
-                <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0'> Visitor count :- 10000235 </p>
+                <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count :- 10000235 </p>
                 {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
               </div>
             </Col>
-            <Col md={4}>
+            <Col md={6} lg={4}>
               <Row className="mt-0 pb-0 mt-lg-3 ">
-              <Col lg={4} className='text-start p-0 w-25 ms-lg-4'>
+              <Col lg={4}  className='text-start p-0 w-25 ms-lg-4'>
                 <h5 className=' mt-2  text-white'>Follow Us On</h5>
               </Col>
               <Col lg={1} xs={2} className='p-0  mx-lg-3 ms-lg-5'>

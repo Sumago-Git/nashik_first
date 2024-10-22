@@ -129,7 +129,7 @@ const Contactus = () => {
             <Container fluid className="justify-content-center align-items-center vh-100 ms-5 mt-5 pt-5">
               <Row className="justify-content-center">
                 {/* WhatsApp Icon and Text */}
-                <Col lg={6} className="d-flex flex-column align-items-center my-3 mt-5">
+                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -144,7 +144,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Phone Icon and Text */}
-                <Col lg={6} className="d-flex flex-column align-items-center my-3 mt-5">
+                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -159,7 +159,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Email Icon and Text */}
-                <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -174,7 +174,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Location Icon and Text */}
-                <Col lg={6} className="d-flex flex-column align-items-center my-3">
+                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a
@@ -208,7 +208,7 @@ const Contactus = () => {
 
 
           </Col>
-          <Col lg={6} className='ms-lg-5'>
+          <Col lg={6} md={6} className='ms-lg-5'>
             <div className="card-body ">
               <h5 className="card-title contacttext mt-3">Contact us</h5>
               <form onSubmit={submitForm}>

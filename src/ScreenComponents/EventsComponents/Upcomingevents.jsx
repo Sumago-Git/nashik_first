@@ -42,12 +42,12 @@ const Upcomingevents = () => {
           <React.Fragment key={event.id}>
             <Container className='event'>
               <Row>
-                <Col lg={4}></Col>
-                <Col lg={8} className='text-start coll'>
-                  <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext d-none d-md-inline-block'>COMING SOON</span></p>
-                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "420px" }}>05</Container>
-                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "470px" }}>55</Container>
-                  <Container className='soonbox d-none d-md-inline-block' style={{ marginLeft: "520px" }}>00</Container>
+                <Col lg={4} md={4}></Col>
+                <Col lg={8} md={7} className='text-start coll'>
+                  <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext d-none d-lg-inline-block'>COMING SOON</span></p>
+                  <Container className='soonbox d-none d-lg-inline-block' style={{ marginLeft: "420px" }}>05</Container>
+                  <Container className='soonbox d-none d-lg-inline-block' style={{ marginLeft: "470px" }}>55</Container>
+                  <Container className='soonbox d-none d-lg-inline-block' style={{ marginLeft: "520px" }}>00</Container>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.timeDuration}</p>
                   <p className='upcomingtext1 mb-0 ms-3'>Area</p>
                   <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>

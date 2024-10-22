@@ -47,7 +47,7 @@ const AnnualReport = () => {
                 {
                   reports.map((report, index) => {
                     return (
-                      <Col lg={4} md={3} sm={4} xs={5} className="d-flex justify-content-center mb-4" key={index}>
+                      <Col lg={4} md={4} sm={4} xs={5} className="d-flex justify-content-center mb-4" key={index}>
                         <a href={report.link} target="_blank" rel="noopener noreferrer" className='text-black my-2 d-flex flex-column align-items-center'>
                           <img src={pdfimg} className='img-fluid h-100 w-50' alt="PDF icon" />
                           <p className='returntext mb-0 text-center'> {report.year}</p>

@@ -61,11 +61,11 @@ const Slotpage = () => {
 
                     <h1 className='daydate mt-5'>{slotDate}</h1>
 
-                    <Container className='mt-lg-5'>
+                    <Container className='mt-md-5'>
                         <Row>
                             {sessions.map((session, index) =>
                             (
-                                <Col key={index} lg={6} sm={12} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                <Col key={index} lg={6} sm={12} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
                                     <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-lg-3'>
                                         {session.time} - {session.session}
                                     </Container></button>
@@ -73,7 +73,7 @@ const Slotpage = () => {
                             )
                             )
                             }
-                            <Col lg={12} className='mt-lg-5 pt-lg-3 pb-5 mb-lg-2 mt-4'>
+                            <Col lg={12} className='mt-md-5 pt-lg-3 pb-5 mb-lg-2 mt-4'>
                                 <Link to='/training'><button className='returnbutton p-lg-3'>
                                     Return
                                 </button></Link>

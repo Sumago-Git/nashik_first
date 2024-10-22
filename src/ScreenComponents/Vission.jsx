@@ -25,10 +25,10 @@ const Vission = () => {
 
         <Container fluid className=' vbg '>
           <Row className='justify-content-center '>
-            <Col md={6} className='mt-md-3 mt-xl-5 mt-5'>
+            <Col md={4} lg={6} className='mt-md-5 mt-xl-5 mt-5'>
               < text className='text  text-white  '>Our Vision</text>
             </Col>
-            <Col md={6}  className='mt-md-3 mt-xl-4 d-none d-md-block  position-relative '>
+            <Col md={8} lg={6} className='mt-md-3 mt-xl-4 d-none d-md-block  position-relative '>
               <div className='d-flex '>
                 <div className='d-flex flex-column align-items-center  mx-xl-3'>
                   <img src={v1} className='missionimg ' />
@@ -64,9 +64,9 @@ const Vission = () => {
       <Container fluid className=' p-0'>
         <Container fluid className=' mbg'>
           <Row className='justify-content-center  '>
-            <Col md={6} className=' mt-md-3 mt-xl-3 d-none d-md-block  '>
+            <Col md={7} lg={6} className=' mt-md-2 mt-xl-3 d-none d-md-block  '>
               <div className='d-flex  justify-content-center'>
-                <div className='d-flex flex-column align-items-center mx-md-2 mx-xl-3'>
+                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-3'>
                   <img src={m1} className='missionimg  ' />
                   <p className='imgtext'>Quality of life</p>
                 </div>
@@ -81,7 +81,7 @@ const Vission = () => {
               </div>
             </Col>
 
-            <Col md={6} className='mt-md-3 mt-xl-5 mt-5  '>
+            <Col md={5} lg={6} className='mt-md-5 mt-xl-5 mt-5  '>
               < text className='text  text-white'>Our Mission</text>
             </Col>
             <Col className='d-flex  justify-content-center'>

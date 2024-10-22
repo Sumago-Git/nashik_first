@@ -27,7 +27,7 @@
 .city {
     height: 400px;
     width: 632px;
-    position: absolute;
+    /* position: absolute; */
     /* margin-top: -420px; */
     /* margin-left: 676px; */
 }

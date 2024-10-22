@@ -40,7 +40,9 @@ const Header = () => {
           >
             <Offcanvas.Header closeButton className="p-0">
               <Offcanvas.Title id="offcanvasNavbarLabel">
-                <img src={logo1} className="logo1 p-0" alt="Logo" />
+                <Navbar.Brand href="/">
+                  <img src={logo1} className="logo1 w-sm-75 w-md-75 w-100 p-0" alt="Logo" />
+                </Navbar.Brand>
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -48,7 +50,7 @@ const Header = () => {
                 <Nav.Link to="about" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2 text-black navMenu">
                   About Us
                 </Nav.Link>
-                
+
                 {/* Hoverable Dropdown */}
                 <NavDropdown
                   title="Events"
@@ -75,7 +77,7 @@ const Header = () => {
                   Training
                 </Nav.Link>
                 <Nav.Link to="awarnessvideo" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2  text-black navMenu">
-                 Video
+                  Video
                 </Nav.Link>
                 <Nav.Link to="news" as={Link} onClick={handleClose} className="  mx-xl-1 mx-xxl-2 text-black navMenu">
                   News
@@ -89,12 +91,12 @@ const Header = () => {
                 <Nav.Link to="contact" as={Link} onClick={handleClose} className=" mx-xl-1 mx-xxl-2 text-black navMenu">
                   Contact
                 </Nav.Link>
-               
+
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
-        <img src={traffic} className="logo2 d-none d-md-block " alt="Logo" />
+        <img src={traffic} className="logo2 d-none d-lg-block " alt="Logo" />
       </Navbar>
     </>
   );

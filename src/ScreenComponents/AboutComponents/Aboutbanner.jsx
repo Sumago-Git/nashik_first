@@ -100,22 +100,22 @@ const Aboutbanner = () => {
             </Container>
             <Container fluid className='backgrnd mt-4 '>
                 <Row >
-                    <Col lg={6} sm={12} className='mx-auto '>
+                    <Col md={12} lg={6} sm={12} className='mx-auto '>
                         <Carousel className=' w-100 h-75 caru'>
                             {carouselItems.map((item, index) => (
                                 <Carousel.Item key={index} className='carouselitem'>
-                                    <p className='text-start ms-lg-4 ms-md-0 headline pt-lg-5 w-sm-100 ms-3'>
+                                    <p className='text-start ms-md-4 ms-md-0 headline pt-md-5 w-sm-100 ms-3'>
                                         {item.headline}
                                     </p>
-                                    <p className='text-start ms-lg-4 headlinetext pb-5 m-lg-0 w-sm-100 ms-3'>
+                                    <p className='text-start ms-md-4 headlinetext pb-5 m-md-0 w-sm-100 ms-3'>
                                         {item.subtext}
                                     </p>
                                 </Carousel.Item>
                             ))}
                         </Carousel>
                     </Col>
-                    <Col lg={6}>
-                        <img src={city} className='city d-none d-md-block img-fluid p-0' alt="City" />
+                    <Col md={12} lg={6}>
+                        <img src={city} className='city d-none d-md-block img-fluid p-0 mb-md-4 ' alt="City" />
                     </Col>
                 </Row>
             </Container>

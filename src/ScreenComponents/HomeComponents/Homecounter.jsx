@@ -24,7 +24,7 @@ const Homecounter = () => {
       <Container fluid className='pitch mt-4 pb-5'>
         <Container>
           <Row>
-            <Col md={5}  sm={12}>
+            <Col md={12} lg={5} sm={12}>
               <Row className="justify-content-center mt-3">
                 {/* First Card */}
                 <Col xs={6} sm={5} md={5} className="h-50">
@@ -66,7 +66,7 @@ const Homecounter = () => {
               </Row>
             </Col>
 
-            <Col md={5} className="mt-md-5 mt-5">
+            <Col md={12} lg={5} className="mt-md-5 mt-5">
               <ul className="homecounterlist text-start md-ms-0 md-ps-0 mt-md-4">
                 <li className='mb-md-3'>
                   Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}>Traffic Training Sessions for School & College students</span> and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span>
@@ -88,7 +88,7 @@ const Homecounter = () => {
 
           <Container fluid>
             <Row className='justify-content-center'>
-              <Col md={5} sm={11}>
+              <Col md={6} lg={5} sm={11}>
                 <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-md-0'>
                   <img src={counterimg1} alt="counterimg1" />
                   <h3 className='countHeading my-3'> <strong> RTO Training </strong></h3>
@@ -139,7 +139,7 @@ const Homecounter = () => {
                   </Card.Footer>
                 </Card>
               </Col>
-              <Col md={5}  sm={11}>
+              <Col md={6} lg={5} sm={11}>
                 <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-md-0'>
                   <img src={homecounterimg2a} alt="homecounterimg2a" />
                   <h3 className='countHeading my-3'> <strong> School / College / Organization Trainings </strong></h3>
@@ -159,7 +159,7 @@ const Homecounter = () => {
 
                   <Card.Footer className="p-0 bg-transparent py-3 d-flex justify-content-center d-block d-md-none">
                     <Row className='justify-content-center'>
-                      <Col sm={12} >
+                      <Col sm={12}  >
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
