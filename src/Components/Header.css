@@ -81,6 +81,10 @@
   .whiteboxbtn {
     justify-content: center;
   }
+  .wappIcons{
+    width: 20% !important;
+  }
+  
 }
 
 .bottomheadline {
@@ -188,7 +192,9 @@
 .whiteboxbtn {
   margin: 1px;
 }
-
+.wappIcons{
+  width: 5%;
+}
 
 @media (min-width: 1280px) and (max-width: 1400px) {
   .navMenu {
