@@ -1,7 +1,8 @@
 import React from 'react'
 // import '../Components/Header.css'
-import lghead from '../Assets/Assets/MainBanner/lghead.jpg';
-import img4 from "../Assets/Assets/MainBanner/img4.jpg";
+// import lghead from '../Assets/Assets/MainBanner/lghead.jpg';
+import lghead from '../Assets/Assets/Home/traffic_education_img.jpg';
+import img4 from "../Assets/Assets/Home/traffic_education_mob.png";
 import pain from "../Assets/Assets/MainBanner/pain.jpg"
 import chat from "../Assets/Assets/MainBanner/chat.jpg"
 import ears from "../Assets/Assets/MainBanner/ears.jpg"

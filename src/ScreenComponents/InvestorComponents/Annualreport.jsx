@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import "../../Components/Investor.css";
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
-import investor from "../../Assets/Assets/Investor/investor.png";
-import investorMob from "../../Assets/Assets/Investor/investorMob.jpg";
+import investor from "../../Assets/Assets/Home/reports.jpg";
+import investorMob from "../../Assets/Assets/Home/reportMob.jpg";
 import { Card, Container, Col, Row } from 'react-bootstrap';
 import Banner from '../../Components/Banner';
 import axios from 'axios';

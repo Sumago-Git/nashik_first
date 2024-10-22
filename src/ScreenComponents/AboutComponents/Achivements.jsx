@@ -27,6 +27,10 @@ const Achivements = () => {
               <li className='mb-lg-2'>Various innovative <span style={{ fontWeight: "800" }}>Traffic Awareness Campaigns</span> conducted every year during<span style={{ fontWeight: "800" }}> Road Safety Week.</span></li>
               <li className='mb-lg-2'>Our efforts to start the two flyovers of Thane-Bhiwandi bypass on National Highway no. 3. to improve the connectivity of <span style={{ fontWeight: "800" }}>Nashik and Mumbai</span> were successful.<span style={{ fontWeight: "800" }}> Mumbai Metropolitan Region Development Authority (MMRDA)</span> opened both the flyovers for the public which was pending since years.</li>
               <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>Aika Na Nashikkar :</span> Another succesfull road safety<span style={{ fontWeight: "800" }}> awareness campaign</span> which was launched in two parts.</li>
+              <li className='mb-lg-2'><span style={{ fontWeight: "800" }}></span>Member of District Road Safety Committee, Nashik.</li>
+              <li className='mb-lg-2'><span style={{ fontWeight: "800" }}></span>Member of Regional Transport Authority, Nashik.</li>
+              <li className='mb-lg-2'><span style={{ fontWeight: "800" }}></span>Member of Traffic Planning Cell, NMC, Nashik.</li>
+
             </ul>
           </text>
         </Container>
