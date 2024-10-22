@@ -23,34 +23,31 @@ const Youtube = () => {
 
           {/* Video 1 */}
           <Col xs={12} md={6} className='mb-4'>
-            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-
-              <iframe src="https://www.youtube.com/embed/vmFT7ial_pM?si=5uIAVgRzK2KB4cth"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                className='w-100'
-                style={{ height: "250px" }}>
-              </iframe>
-
-            </div>
+          <iframe
+              className="w-100 rounded-3"
+              style={{ height: "250px" }}
+              src="https://www.youtube.com/embed/GCQnntHWj5s?si=orzUJ3jia6vl6Saz"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </Col>
 
           {/* Video 2 */}
           <Col xs={12} md={6} className='mb-4'>
-            <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+            <iframe
+              className="w-100 rounded-3"
+              style={{ height: "250px" }}
+              src="https://www.youtube.com/embed/GCQnntHWj5s?si=orzUJ3jia6vl6Saz"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
 
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/GCQnntHWj5s?si=1436175hz8suUCDv"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                className='w-100'
-                style={{ height: "250px" }}>
-              </iframe>
-
-            </div>
           </Col>
 
           <Col className='pb-4'>
