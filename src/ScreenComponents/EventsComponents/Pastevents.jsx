@@ -52,7 +52,7 @@ const Pastevents = () => {
               <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
                 <img src={event} onClick={handleShow} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
               </Col>
-              <Modal show={show} onHide={handleClose}>
+              <Modal size="lg" show={show} onHide={handleClose}>
 
                 <Modal.Body>
                   <img src={event} className=' img-fluid' alt={`Event Gallery ${index + 1}`} />
