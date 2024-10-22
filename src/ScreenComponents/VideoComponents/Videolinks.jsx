@@ -25,8 +25,8 @@ const Youtube = () => {
           <Col xs={12} md={6} className='mb-4'>
           <iframe
               className="w-100 rounded-3"
-              style={{ height: "250px" }}
-              src="https://www.youtube.com/embed/GCQnntHWj5s?si=orzUJ3jia6vl6Saz"
+              style={{ height: "280px" }}
+              src="https://youtube.com/embed/RmJXd5fviBA?si=fr_USawDTQrd7jmd"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -39,7 +39,7 @@ const Youtube = () => {
           <Col xs={12} md={6} className='mb-4'>
             <iframe
               className="w-100 rounded-3"
-              style={{ height: "250px" }}
+              style={{ height: "280px" }}
               src="https://www.youtube.com/embed/GCQnntHWj5s?si=orzUJ3jia6vl6Saz"
               title="YouTube video player"
               frameBorder="0"

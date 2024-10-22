@@ -10,10 +10,11 @@
 
 }
 
-@media (max-width: 576px) {
+
+@media (max-width: 900px) {
     .Fheadline
      {
-        font-size: 30px !important;
+        font-size: 35px !important;
         text-align: start;
         /* margin: 15px !important; */
         line-height: 1.1 !important;

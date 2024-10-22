@@ -30,19 +30,19 @@ const Vission = () => {
             </Col>
             <Col md={6}  className='mt-md-3 mt-xl-4 d-none d-md-block  position-relative '>
               <div className='d-flex '>
-                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-3'>
+                <div className='d-flex flex-column align-items-center  mx-xl-3'>
                   <img src={v1} className='missionimg ' />
                   <p className='imgtext'>Clean</p>
                 </div>
-                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-3'>
+                <div className='d-flex flex-column align-items-center  mx-xl-3'>
                   <img src={v2} className='missionimg' />
                   <p className='imgtext'>Green</p>
                 </div>
-                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-3'>
+                <div className='d-flex flex-column align-items-center  mx-xl-3'>
                   <img src={v3} className='missionimg' />
                   <p className='imgtext'>Safe</p>
                 </div>
-                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-2'>
+                <div className='d-flex flex-column align-items-center  mx-xl-2'>
                   <img src={v4} className='missionimg' />
                   <p className='imgtext'>Econoically Developed</p>
                 </div>
@@ -64,9 +64,9 @@ const Vission = () => {
       <Container fluid className=' p-0'>
         <Container fluid className=' mbg'>
           <Row className='justify-content-center  '>
-            <Col md={6}className=' mt-md-3 mt-xl-3 d-none d-md-block  '>
+            <Col md={6} className=' mt-md-3 mt-xl-3 d-none d-md-block  '>
               <div className='d-flex  justify-content-center'>
-                <div className='d-flex flex-column align-items-center mx-md-3 mx-xl-3'>
+                <div className='d-flex flex-column align-items-center mx-md-2 mx-xl-3'>
                   <img src={m1} className='missionimg  ' />
                   <p className='imgtext'>Quality of life</p>
                 </div>

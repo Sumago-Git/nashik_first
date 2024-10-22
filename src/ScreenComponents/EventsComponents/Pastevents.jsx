@@ -13,20 +13,25 @@ import event8 from "../../Assets/Assets/Pastevents/event8.png"
 import event9 from "../../Assets/Assets/Pastevents/event9.png"
 
 const specialEvents = [
-  event1, event2, event3
+  event8, event2, event3
 ];
 
 const eventGallery = [
-  event4, event5, event6, event7, event8, event9
+  event4, event5, event6, event7, event1, event9
 ];
 
 const Pastevents = () => {
 
   const [show, setShow] = useState(false);
+  const [id, setId] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleShowFunc = (id) =>{
+    handleShow()
+    setId(id)
+  }
   return (
     <>
       <Container fluid className='p-0'>
@@ -38,7 +43,7 @@ const Pastevents = () => {
         <Row className='mx-5'>
           {specialEvents.map((event, index) => (
             <Col xs={12} sm={6} md={4} key={index} className='mb-2'> {/* Reduced the margin-bottom */}
-              <img src={event} className='events img-fluid' alt={`Event ${index + 1}`} />
+              <img src={event} className='events img-fluid' alt={` Event ${index + 1}`} />
             </Col>
           ))}
         </Row>
@@ -50,17 +55,15 @@ const Pastevents = () => {
           {eventGallery.map((event, index) => (
             <>
               <Col xs={12} sm={6} md={4} key={index} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
-                <img src={event} onClick={handleShow} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
+                <img src={event} onClick={()=>handleShowFunc(index)} className='events img-fluid' alt={`Event Gallery ${index + 1}`} />
               </Col>
-              <Modal size="lg" show={show} onHide={handleClose}>
-
-                <Modal.Body>
-                  <img src={event} className=' img-fluid' alt={`Event Gallery ${index + 1}`} />
-                </Modal.Body>
-
-              </Modal>
             </>
           ))}
+              <Modal size="md" show={show} onHide={handleClose}>
+                <Modal.Body>
+                  <img src={eventGallery[id]} className=' img-fluid' alt={`Event Gallery `} />
+                </Modal.Body>
+              </Modal>
         </Row>
       </Container>
     </>

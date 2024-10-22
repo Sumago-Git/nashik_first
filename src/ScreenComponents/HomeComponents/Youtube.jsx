@@ -28,7 +28,7 @@ const Youtube = () => {
               {/* <iframe  src="https://www.youtube.com/embed/0j3X0OaHZro" title="Nashik First" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
               <iframe
                 className='w-100 rounded-3'
-                style={{ height: "250px" }}
+                style={{ height: "280px" }}
                 src="https://www.youtube.com/embed/0j3X0OaHZro?si=t2WYHPkpWYBFX8vJ"
                 title="YouTube video player"
                 frameBorder="0"
@@ -43,7 +43,7 @@ const Youtube = () => {
               {/* <iframe className='w-100 rounded-3' style={{ height: "250px" }} src="https://www.youtube.com/embed/vmFT7ial_pM?si=i3FjXT_G2EJu5adj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
               <iframe
                 className='w-100 rounded-3'
-                style={{ height: "250px" }}
+                style={{ height: "280px" }}
                 src="https://www.youtube.com/embed/WpJFmvsVRW4?si=PrUTE-V6c8E2ZAh0"
                 title="YouTube video player"
                 frameBorder="0"
