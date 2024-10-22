@@ -55,7 +55,7 @@ const Bottom = () => {
     { name: 'About us', path: '/about' },
     { name: 'Events', path: '/events' },
     { name: 'Training', path: '/training' },
-    { name: 'Traffic Awareness Video', path: '/awarnessvideo' }
+    { name: ' Video', path: '/awarnessvideo' }
   ];
 
   const contactDetails = [
@@ -106,7 +106,7 @@ const Bottom = () => {
                 loading="lazy"
               ></iframe>
               <div style={{ fontWeight: "600", fontSize: "20px" }}>
-                <p className=' text-start  ms-lg-3 mt-lg-3 m-lg-0'> Visitor count :- 10000235 </p>
+                <p className=' text-start  ms-lg-3 mt-lg-4 m-lg-0'> Visitor count :- 10000235 </p>
                 {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
               </div>
             </Col>
@@ -164,30 +164,30 @@ const Bottom = () => {
                 <Col lg={4} className='text-start p-0'>
                   <h5 className=' mt-2 ms-4'>Follow Us On</h5>
                 </Col>
-                <Col lg={1} xs={2} className='p-0  ms-4'>
+                <Col lg={1} xs={2} className='p-0  ms-4 ms-lg-0'>
                   <a href={"https://www.facebook.com/Nashikfirsttrafficpark/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover1" style={{ width: "fit-content" }}>
+                    <Card className=" p-2 rounded-5 mt-1  iconHover1" style={{ width: "fit-content" }}>
                       <FaFacebookF />
                     </Card>
                   </a>
                 </Col>
                 <Col lg={1} xs={2} className='p-0  ms-4'>
                   <a href={"https://www.instagram.com/nashikfirst/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover2" style={{ width: "fit-content" }}>
+                    <Card className=" p-2 rounded-5 mt-1  iconHover2" style={{ width: "fit-content" }}>
                       <BsInstagram />
                     </Card>
                   </a>
                 </Col>
                 <Col lg={1} xs={2} className='p-0  ms-4'>
                   <a href={"https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover3" style={{ width: "fit-content" }}>
+                    <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
                       <AiOutlineYoutube />
                     </Card>
                   </a>
                 </Col>
                 <Col lg={1} xs={2} className='p-0  ms-4'>
                   <a href={"https://twitter.com/anfnashikfirst"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover4" style={{ width: "fit-content" }}>
+                    <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
                       <BsTwitterX />
                     </Card>
                   </a>
