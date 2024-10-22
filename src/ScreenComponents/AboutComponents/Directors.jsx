@@ -4,21 +4,21 @@ import '../../Components/About.css';
 
 const Directors = () => {
   const directors = [
-    { name: 'Abhay Kulkarni', title: 'Chairman', description:'Photos' },
-    { name: 'Vinita Dharkar', title: 'Vice Chairperson', description:'Photos' },
-    { name: 'Devendra Bapat', title: 'Managing Director', description:'Photos' },
-    { name: 'Milind Jambotkar', title: 'General Secretary', description:'Photos' },
-    { name: 'Narendra Saboo', title: 'Treasurer', description:'Photos' },
-    { name: 'Jitendra Shirke', title: 'Director', description:'Photos' },
-    { name: 'Pramod Lad', title: 'Director', description:'Photos' },
-    { name: 'Suresh Patel', title: 'Director', description:'Photos' },
-    { name: 'Sanjay Deshmukh', title: 'Director', description:'Photos' }
+    { name: 'Abhay Kulkarni', title: 'Chairman', description: 'Photos' },
+    { name: 'Vinita Dharkar', title: 'Vice Chairperson', description: 'Photos' },
+    { name: 'Devendra Bapat', title: 'Managing Director', description: 'Photos' },
+    { name: 'Milind Jambotkar', title: 'General Secretary', description: 'Photos' },
+    { name: 'Narendra Saboo', title: 'Treasurer', description: 'Photos' },
+    { name: 'Jitendra Shirke', title: 'Director', description: 'Photos' },
+    { name: 'Pramod Lad', title: 'Director', description: 'Photos' },
+    { name: 'Suresh Patel', title: 'Director', description: 'Photos' },
+    { name: 'Sanjay Deshmukh', title: 'Director', description: 'Photos' }
   ];
 
   return (
     <>
       <Container fluid className='directorbg mt-lg-5 pt-lg-5 p-0'>
-        <h2 className='drheadline lg-text-center '>Directors of Advantage Nashik Foundation</h2>
+        <h2 className='drheadline lg-text-center '>Directors of <span style={{ color: "#ee7f37" }}>Advantage Nashik Foundation</span></h2>
         <Container className='mt-4 pb-lg-5'>
           <Row className=' mx-lg-5 '>
             {directors.map((director, index) => (

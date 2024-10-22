@@ -222,6 +222,23 @@
 }
 .textCard {
   font-family: Poppins !important;
-  font-size: 17px !important;
+  font-size: 16px !important;
   line-height: 26px !important;
+}
+
+.iconHover1:hover {
+  background-color: blue;
+  color: #fff;
+}
+.iconHover2:hover {
+  background-color: orange;
+  color: #fff;
+}
+.iconHover3:hover {
+  background-color: red;
+  color: #fff;
+}
+.iconHover4:hover {
+  background-color: black;
+  color: #fff;
 }

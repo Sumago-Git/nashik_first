@@ -25,37 +25,6 @@ const Bottom = () => {
   const [footerDate, setFooterDate] = useState("")
   const [socialLinks, setSocialLinks] = useState([])
 
-  const handleHoverIcon = (id) => {
-    console.log("id", id);
-    const elements = document.getElementsByClassName("iconHover"); // Get all elements with class 'iconHover'
-
-    // Loop through each element and add event listeners
-    Array.from(elements).forEach((element) => {
-      element.addEventListener("mouseover", () => {
-        // Change color on hover based on the id
-        switch (id) {
-          case 0:
-            element.style.color = "blue"; // Change color on hover
-            break;
-          case 1:
-            element.style.color = "orange"; // Change color on hover
-            break;
-          case 2:
-            element.style.color = "red"; // Change color on hover
-            break;
-          case 3:
-            element.style.color = "black"; // Change color on hover
-            break;
-          default:
-            element.style.color = "white"; // Reset color if id does not match
-        }
-      });
-
-      element.addEventListener("mouseout", () => {
-        element.style.color = "black"; // Reset color on mouse out
-      });
-    });
-  };
   useEffect(() => {
     axios
       .get("social-contact/get-socialcontacts")
@@ -95,12 +64,7 @@ const Bottom = () => {
     { icon: locationborder, text: 'Survey No. 590/591, Motkari Nagar, Near Nelson Hospital, Behind Tupsakhare Lawns, Near Mumbai Naka, Nashik. ', isAddress: true },
   ];
 
-  const socialLinks1 = [
-    { icon: FaFacebookF, onHover: "blue", url: 'https://www.facebook.com/Nashikfirsttrafficpark/' },
-    { icon: BsInstagram, onHover: "orange", url: 'https://www.instagram.com/nashikfirst/' },
-    { icon: AiOutlineYoutube, onHover: "red", url: 'https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw' },
-    { icon: BsTwitterX, onHover: "black", url: 'https://twitter.com/anfnashikfirst' },
-  ];
+
 
   const handleClick = (type, text) => {
     switch (type) {
@@ -140,10 +104,10 @@ const Bottom = () => {
                 style={{ width: '100%', height: '250px', borderRadius: '9px' }}
                 loading="lazy"
               ></iframe>
-               <div style={{fontWeight:"600", fontSize:"20px"}}>
+              <div style={{ fontWeight: "600", fontSize: "20px" }}>
                 <p className=' text-start  ms-lg-3 mt-lg-3 m-lg-0'> Visitor count :- 10000235 </p>
-               {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
-               </div>
+                {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
+              </div>
             </Col>
 
             <Col sm={6} lg={3} className='mt-5 '>
@@ -199,24 +163,41 @@ const Bottom = () => {
                 <Col lg={4} className='text-start p-0'>
                   <h5 className=' mt-2 ms-4'>Follow Us On</h5>
                 </Col>
-                {socialLinks1.map((link, index) => (
-                  <Col lg={1} xs={2} key={index} className='p-0  ms-4'>
-                    <a href={link.url} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                      <Card className="bg-white p-2 rounded-5 mt-1 mx-lg-3" style={{ width: "fit-content" }}>
-                        <link.icon className='iconHover' onMouseEnter={() => handleHoverIcon(index)} />
-                      </Card>
-                      {/* <img src={link.icon} className='followicon' alt={`Social Icon ${index}`} /> */}
-                    </a>
-                  </Col>
-                
-                ))}
-               
+                <Col lg={1} xs={2} className='p-0  ms-4'>
+                  <a href={"https://www.facebook.com/Nashikfirsttrafficpark/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover1" style={{ width: "fit-content" }}>
+                      <FaFacebookF />
+                    </Card>
+                  </a>
+                </Col>
+                <Col lg={1} xs={2} className='p-0  ms-4'>
+                  <a href={"https://www.instagram.com/nashikfirst/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover2" style={{ width: "fit-content" }}>
+                      <BsInstagram />
+                    </Card>
+                  </a>
+                </Col>
+                <Col lg={1} xs={2} className='p-0  ms-4'>
+                  <a href={"https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw"} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover3" style={{ width: "fit-content" }}>
+                      <AiOutlineYoutube />
+                    </Card>
+                  </a>
+                </Col>
+                <Col lg={1} xs={2} className='p-0  ms-4'>
+                  <a href={"https://twitter.com/anfnashikfirst"} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                    <Card className=" p-2 rounded-5 mt-1 mx-lg-3 iconHover4" style={{ width: "fit-content" }}>
+                      <BsTwitterX />
+                    </Card>
+                  </a>
+                </Col>
+
               </Row>
             </Col>
           </Row>
-          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright <span style={{fontSize:"20px"}}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
+          <p className='copyright mt-lg-2 m-0 p-0 mt-4 '>© {footerDate} Copyright <span style={{ fontSize: "20px" }}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
           <p className='p-0 m-0 copyright mt-0 p-0 mt-4'>*This Website is updated in 2024 </p>
-         
+
         </Container>
       </section>
     </>

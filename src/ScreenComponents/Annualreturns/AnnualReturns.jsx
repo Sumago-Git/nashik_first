@@ -9,7 +9,7 @@ import Banner from '../../Components/Banner';
 import axios from 'axios';
 import annualreturns1 from "../../Assets/Assets/Investor/annualreturns1.pdf";
 import annualreturn2 from "../../Assets/Assets/Investor/annualreturn2.pdf";
-import annualreturns3 from "../../Assets/Assets/Investor/annualreturns3.pdf";
+import annualreturns3 from "../../Assets/Assets/Investor/Annual-Return_22-23 (1).pdf";
 import pdfimg from "../../Assets/Assets/Investor/pdfimg.png"
 const AnnualReport = () => {
 

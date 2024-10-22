@@ -40,7 +40,7 @@
 
 .drheadline {
     font-family: "Poppins";
-    font-size: 50px;
+    font-size: 36px;
     font-weight: 600;
 }
 
@@ -81,7 +81,7 @@
     width: 280px;
     margin-left: 1rem;
     margin-top: -14rem;
-    background-color:#c50c1c;
+    background-color:#ee7f37;
     position: absolute;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;

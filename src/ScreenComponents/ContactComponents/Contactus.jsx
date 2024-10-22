@@ -225,6 +225,16 @@ const Contactus = () => {
                   </div>
 
                   <div className="col-lg-6">
+                    <p className="text-start mt-3">Age</p>
+                    <input
+                      name="age"
+                      value={formData.age}
+                      onChange={handleChange}
+                      className="p-2 w-100 contactinput"
+                    />
+                    {errors.age && <p className="text-start text-danger">{errors.age}</p>}
+                  </div>
+                  <div className="col-lg-6">
                     <p className="text-start mt-3">Email</p>
                     <input
                       name="email"
@@ -246,17 +256,19 @@ const Contactus = () => {
                     {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
                   </div>
 
+
+
+
                   <div className="col-lg-6">
-                    <p className="text-start mt-3">Age</p>
+                    <p className="text-start mt-3">Profession</p>
                     <input
-                      name="age"
-                      value={formData.age}
+                      name="profession"
+                      value={formData.profession}
                       onChange={handleChange}
                       className="p-2 w-100 contactinput"
                     />
-                    {errors.age && <p className="text-start text-danger">{errors.age}</p>}
+                    {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
                   </div>
-
                   <div className="col-lg-6">
                     <p className="text-start mt-3">Subject</p>
                     <select
@@ -271,18 +283,6 @@ const Contactus = () => {
                       <option value="Training" className='outline-none'>Training</option>
                     </select>
                     {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
-                  </div>
-
-
-                  <div className="col-lg-6">
-                    <p className="text-start mt-3">Profession</p>
-                    <input
-                      name="profession"
-                      value={formData.profession}
-                      onChange={handleChange}
-                      className="p-2 w-100 contactinput"
-                    />
-                    {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
                   </div>
 
                   <div className="col-lg-12">

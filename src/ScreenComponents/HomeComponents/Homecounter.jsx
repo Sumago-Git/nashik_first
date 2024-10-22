@@ -94,6 +94,7 @@ const Homecounter = () => {
                   <h3 className='countHeading my-3'> <strong> RTO Training </strong></h3>
                   <p className='textCard'><strong>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and <span style={{ color: "#c50c1c" }}>Nashik</span><span style={{ color: "#ff6600" }}> First.</span></strong></p>
                   <p className='textCard' style={{ textAlign: "left" }}>In this initiative, the learning license holders (<em>youth aged 18 to 25 yrs</em>) will get permanent license only after undergoing Counselling &amp; Training on <strong>Road Safety &amp; Traffic Awareness Programme</strong> for two hours.</p>
+
                   <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 text-center d-none d-md-block">
 
                     <Button onClick={() => {
@@ -142,8 +143,8 @@ const Homecounter = () => {
                 <Card className='p-4 text-start border-0 shadow mb-3 mb-lg-0'>
                   <img src={counterimg1} alt="counterimg1" />
                   <h3 className='countHeading my-3'> <strong> School / College / Organization Trainings </strong></h3>
-                  <p className='textCard'><strong>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and <span style={{ color: "#c50c1c" }}>Nashik</span><span style={{ color: "#ff6600" }}> First.</span></strong></p>
-                  <p className='textCard' style={{ textAlign: "left" }}>In this initiative, the learning license holders (<em>youth aged 18 to 25 yrs</em>) will get permanent license only after undergoing Counselling &amp; Training on <strong>Road Safety &amp; Traffic Awareness Programme</strong> for two hours.</p>
+                  <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness Workshops</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
+                  <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                   <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 d-flex text-center d-none d-md-block">
                     <Button onClick={() => {
                       navigate("/training")
