@@ -38,23 +38,23 @@ const Achivements = () => {
 
       <Container fluid className='mt-5 me-0 p-3' >
         <Row className='ps-0 justify-content-center'>
-          <Col lg={2} md={6}>
+          <Col lg={2} md={6} sm={6}>
             <img src={training} className='listimg ms-lg-3' />
             <p className='ms-lg-4 ms-5 mt-3 ps-3 listimgtext'>Traffic Training Sessions for School & College students</p>
           </Col>
-          <Col lg={2} md={6} className='ms-0 ps-lg-5'>
+          <Col lg={2} md={6} sm={6} className='ms-0 ps-lg-5'>
             <img src={addressing} className='listimg ms-lg-3' />
             <p className='ms-lg-2 ms-5 mt-3 listimgtext'> Addressing the Traffic Condition & problems</p>
           </Col>
-          <Col lg={2} md={6} className='me-0 ps-lg-5'>
+          <Col lg={2} md={6} sm={6} className='me-0 ps-lg-5'>
             <img src={don} className='listimg ms-lg-5' />
             <p className='ms-5 ps-5 pe-3 mt-3 listimgtext'> DON (Dost Of Nashik) awareness among youth.</p>
           </Col>
-          <Col lg={3} md={6} className='ms-lg-5'>
+          <Col lg={3} md={6} sm={6} className='ms-lg-5'>
             <img src={hub} className='listimg ms-lg-5' />
             <p className='ms-4 mt-3 listimgtext text-end'> Knowledge Hub</p>
           </Col>
-          <Col lg={2} md={6} className='ms-0'>
+          <Col lg={2} md={6} sm={6} className='ms-0'>
             <img src={bike} className='listimg ms-lg-0' />
             <p className='ms-lg-3 ms-5 mt-3 listimgtext'>Aika Na Nashikkar</p>
           </Col>

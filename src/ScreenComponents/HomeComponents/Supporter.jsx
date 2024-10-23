@@ -30,7 +30,7 @@ const Supporter = () => {
         <Container fluid className='pb-4'>
           <Row className='justify-content-center p-3'>
             {supportersData.map((supporter, index) => (
-              <Col xs={6} sm={4} md={3} lg={3} className='mb-3 mt-lg-4' key={index}>
+              <Col xs={6} sm={3} md={3} lg={3} className='mb-3 mt-lg-4' key={index}>
                 <img src={supporter} className='trademark img-fluid ' alt={`Supporter ${index + 1}`} />
               </Col>
             ))}

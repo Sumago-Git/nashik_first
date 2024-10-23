@@ -65,7 +65,7 @@ const Slotpage = () => {
                         <Row>
                             {sessions.map((session, index) =>
                             (
-                                <Col key={index} lg={6} sm={12} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
                                     <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` } })} className='w-100' style={{ border: "0px" }}> <Container className='session p-lg-3'>
                                         {session.time} - {session.session}
                                     </Container></button>

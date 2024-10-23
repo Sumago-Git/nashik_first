@@ -136,8 +136,8 @@ const Bookingpage = () => {
             <p className='detailtext text-black text-start ms-lg-4 mb-4'>{slotTime}</p>
             <form onSubmit={handleSubmit}>
               <Row className='justify-content-center'>
-                <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
+                <Col lg={6} md={7} sm={12}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Learning License Number*"}</p>
                   <input
                     name='learningNo'
                     value={formData.learningNo}
@@ -148,7 +148,7 @@ const Bookingpage = () => {
                   {errors.learningNo && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>}
                 </Col>
                 <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"First Name*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"First Name*"}</p>
                   <input
                     name='fname'
                     value={formData.fname}
@@ -159,7 +159,7 @@ const Bookingpage = () => {
                   {errors.fname && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.fname}</p>}
                 </Col>
                 <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Middle Name"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Middle Name"}</p>
                   <input
                     name='mname'
                     value={formData.mname}
@@ -169,7 +169,7 @@ const Bookingpage = () => {
                   />
                 </Col>
                 <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Last Name*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Last Name*"}</p>
                   <input
                     name='lname'
                     value={formData.lname}
@@ -180,7 +180,7 @@ const Bookingpage = () => {
                   {errors.lname && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.lname}</p>}
                 </Col>
                 <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"email*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"email*"}</p>
                   <input
                     name='email'
                     value={formData.email}
@@ -191,7 +191,7 @@ const Bookingpage = () => {
                   {errors.email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.email}</p>}
                 </Col>
                 <Col lg={6} md={7}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"phone*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"phone*"}</p>
                   <input
                     name='phone'
                     value={formData.phone}
@@ -202,7 +202,7 @@ const Bookingpage = () => {
                   {errors.phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.phone}</p>}
                 </Col>
                 <Col lg={12} md={12}>
-                  <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehicle type*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Vehicle type*"}</p>
                   <Row>
                     {['2 Wheelers', '3/5 Wheelers', '4 Wheelers Heavy', '4 Wheelers Light'].map((type) => (
                       <Col xs={6} key={type}>

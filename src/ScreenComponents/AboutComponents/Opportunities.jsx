@@ -24,10 +24,10 @@ const Opportunities = () => {
                 <Container>
                     <Row className='mt-lg-2 justify-content-center mx-5'>
                         {opportunitiesData.map((item, index) => (
-                            <Col lg={3} md={6} sm={12} className='d-flex flex-column align-items-center text-center' key={index}>
+                            <Col lg={3} md={6} sm={6} className='d-flex flex-column align-items-center text-center' key={index}>
                                 {/* <div className="d-flex flex-column align-items-center"> */}
                                     <img src={item.imgSrc} className='oppoimg img-fluid ' alt={item.text} />
-                                    <p className='oppoimgtext' style={{ whiteSpace: 'pre-wrap' }}>{item.text}</p>
+                                    <p className='oppoimgtext mt-sm-5' style={{ whiteSpace: 'pre-wrap' }}>{item.text}</p>
                                 {/* </div> */}
                             </Col>
                         ))}

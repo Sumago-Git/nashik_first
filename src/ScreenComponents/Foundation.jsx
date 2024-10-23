@@ -31,7 +31,7 @@ const Foundation = () => {
             </div>
           </Col>
 
-          <Col md={5} className='p-0 justify-content-end'>
+          <Col md={5} sm={12} className='p-0 justify-content-end'>
 
             <img src={group} className='group img-fluid flex-end mx-xxl-auto p-3 p-md-0' />
 

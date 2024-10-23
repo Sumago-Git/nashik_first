@@ -34,7 +34,7 @@ const Newsphoto = () => {
             <h1 style={{ fontWeight: '700', fontFamily: "'Century Gothic Paneuropean', sans-serif", fontSize: "40px" }} className='mt-lg-4'>
              News
             </h1>
-            <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto'>
+            <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto justify-content-center'>
                 {photos.map((photo, index) => (
                     <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
                         <Card className='photo h-100 '>
