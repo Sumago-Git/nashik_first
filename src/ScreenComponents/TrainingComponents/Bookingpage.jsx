@@ -135,7 +135,7 @@ const Bookingpage = () => {
             <p className='bookingdate text-black text-start ms-lg-4'>{"Booking Date"}</p>
             <p className='detailtext text-black text-start ms-lg-4 mb-4'>{slotTime}</p>
             <form onSubmit={handleSubmit}>
-              <Row>
+              <Row className='justify-content-center'>
                 <Col lg={6} md={7}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Learning License Number*"}</p>
                   <input

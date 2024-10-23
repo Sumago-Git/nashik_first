@@ -1,6 +1,6 @@
 import React from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
-import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
 import { Container, Carousel, Row, Col } from 'react-bootstrap';
 import '../../Components/About.css';
 import city from '../../Assets/Assets/Aboutpage/city.png';

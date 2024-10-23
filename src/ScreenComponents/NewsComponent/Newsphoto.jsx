@@ -1,6 +1,6 @@
 import React from 'react'
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
-import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import photo1 from '../../Assets/Assets/Photogallery/photo1.png';
 import photo2 from '../../Assets/Assets/Photogallery/photo2.png';
 import photo3 from '../../Assets/Assets/Photogallery/photo3.png';

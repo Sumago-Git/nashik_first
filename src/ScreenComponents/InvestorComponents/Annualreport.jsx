@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import "../../Components/Investor.css";
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
-import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import investor from "../../Assets/Assets/Home/reports.jpg";
 import investorMob from "../../Assets/Assets/Home/reportMob.jpg";
 import { Card, Container, Col, Row } from 'react-bootstrap';

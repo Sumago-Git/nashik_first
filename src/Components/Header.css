@@ -6,8 +6,9 @@
 
 .navMenu {
   font-size: 20px !important;
-  font-weight: 600 !important ;
+  font-weight: 600 !important;
 }
+
 .navMenu:hover {
   color: #c50c1c !important;
 }
@@ -64,6 +65,7 @@
   .navMenu {
     font-size: 25px;
   }
+
   .navMenu:hover {
     color: #c50c1c !important;
   }
@@ -81,10 +83,11 @@
   .whiteboxbtn {
     justify-content: center;
   }
-  .wappIcons{
+
+  .wappIcons {
     width: 20% !important;
   }
-  
+
 }
 
 .bottomheadline {
@@ -97,9 +100,11 @@
   color: white;
   font-size: 20px;
 }
+
 .quicklinks:hover {
   font-size: 22px;
 }
+
 .loc {
   margin-top: 50px;
   margin-left: -200px;
@@ -139,6 +144,7 @@
   line-height: 1.5;
   word-spacing: 6px;
 }
+
 .rto {
   font-family: "Poppins";
   font-size: 17px;
@@ -185,6 +191,7 @@
   font-weight: 600;
   background-color: none !important;
 }
+
 .events:hover {
   color: #c50c1c !important;
 }
@@ -192,7 +199,8 @@
 .whiteboxbtn {
   margin: 1px;
 }
-.wappIcons{
+
+.wappIcons {
   width: 5%;
 }
 
@@ -201,6 +209,7 @@
     font-size: 19px !important;
     font-weight: 600 !important;
   }
+
   .navMenu:hover {
     color: #c50c1c !important;
   }
@@ -210,15 +219,18 @@
     font-size: 19px !important;
     font-weight: 600 !important;
   }
+
   .events {
     font-size: 16px !important;
     font-weight: 600 !important;
   }
 }
+
 @media (min-width: 1600px) and (max-width: 1920px) {
   .navMenu {
     font-size: 23px !important;
   }
+
   .event-dropdown .dropdown-toggle {
     font-size: 22px !important;
   }
@@ -230,6 +242,7 @@
   font-size: 22px;
   line-height: 24px;
 }
+
 .textCard {
   font-family: Poppins !important;
   font-size: 16px !important;
@@ -240,14 +253,21 @@
   background-color: blue;
   color: #fff;
 }
+
 .iconHover2:hover {
-  background-color: orange;
+  /* background-color: orange;*/
   color: #fff;
+  background: #833ab4;
+  background: linear-gradient(to right,
+      #833ab4, #fd1d1d, #fcb045);
+
 }
+
 .iconHover3:hover {
   background-color: red;
   color: #fff;
 }
+
 .iconHover4:hover {
   background-color: black;
   color: #fff;

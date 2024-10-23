@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
-import img4 from "../../Assets/Assets/MainBanner/img4.jpg";
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Contact.css";
 import whatsapp from "../../Assets/Assets/ContactPage/whatsapp.png";
@@ -125,11 +125,11 @@ const Contactus = () => {
 
       <Container fluid className='p-0 position-relative contactbg  '>
         <Row className='p-0 m-0 justify-content-center'>
-          <Col lg={5} className="justify-content-center ">
-            <Container fluid className="justify-content-center align-items-center vh-lg-100  mt-5 pt-5">
+          <Col lg={5}   className="justify-content-center ">
+            <Container fluid className="justify-content-center align-items-center vh-lg-100  mt-lg-5 pt-lg-5">
               <Row className="justify-content-center">
                 {/* WhatsApp Icon and Text */}
-                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3 mt-5">
+                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -144,7 +144,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Phone Icon and Text */}
-                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3 mt-5">
+                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -159,7 +159,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Email Icon and Text */}
-                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3">
+                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -174,7 +174,7 @@ const Contactus = () => {
                 </Col>
 
                 {/* Location Icon and Text */}
-                <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3">
+                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
                   <div className="d-flex flex-column align-items-center">
                     {/* Make image clickable */}
                     <a
@@ -193,11 +193,8 @@ const Contactus = () => {
                         style={{ textDecoration: 'none', color: 'inherit' }}
                       >
                         Survey No. 590/591, Motkari
-                        <br />
                         Nagar, Near Nelson Hospital,
-                        <br />
                         Behind Tupsakhare Lawns,
-                        <br />
                         Near Mumbai Naka, Nashik.
                       </a>
                     </p>
@@ -208,12 +205,12 @@ const Contactus = () => {
 
 
           </Col>
-          <Col lg={6} md={6}>
+          <Col lg={6} md={12}>
             <div className="card-body ">
-              <h5 className="card-title contacttext mt-3">Contact us</h5>
+              <h5 className="card-title contacttext mt-lg-3">Contact us</h5>
               <form onSubmit={submitForm}>
                 <div className="row">
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Full Name</p>
                     <input
                       name="firstName"
@@ -224,7 +221,7 @@ const Contactus = () => {
                     {errors.firstName && <p className="text-start text-danger">{errors.firstName}</p>}
                   </div>
 
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Age</p>
                     <input
                       name="age"
@@ -234,7 +231,7 @@ const Contactus = () => {
                     />
                     {errors.age && <p className="text-start text-danger">{errors.age}</p>}
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Email</p>
                     <input
                       name="email"
@@ -245,7 +242,7 @@ const Contactus = () => {
                     {errors.email && <p className="text-start text-danger">{errors.email}</p>}
                   </div>
 
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Mobile Number</p>
                     <input
                       name="contact"
@@ -255,7 +252,7 @@ const Contactus = () => {
                     />
                     {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Profession</p>
                     <input
                       name="profession"
@@ -265,7 +262,7 @@ const Contactus = () => {
                     />
                     {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 col-md-6">
                     <p className="text-start mt-3">Subject</p>
                     <select
                       name="subject"
@@ -294,7 +291,7 @@ const Contactus = () => {
                     {errors.suggestions && <p className="text-danger">{errors.suggestions}</p>}
                   </div>
 
-                  <div className="col-lg-12 text-center mt-4">
+                  <div className="col-lg-12 col-md-12 text-center mt-4">
                     <ReCAPTCHA
                       sitekey={captchaKey}
                       onChange={handleRecaptchaChange}

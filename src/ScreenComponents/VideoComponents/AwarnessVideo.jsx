@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import video from '../../Assets/Assets/VideoPage/video.png';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
-import img4 from "../../Assets/Assets/MainBanner/img4.jpg"
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 
 const AwarnessVideo = () => {
   const title = 'Nashik First Traffic';

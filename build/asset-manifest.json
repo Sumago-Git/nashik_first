@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.daabd289.css",
-    "main.js": "/static/js/main.ffb66e34.js",
+    "main.css": "/static/css/main.ddf3fbef.css",
+    "main.js": "/static/js/main.f55ef534.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/traffic_education_mob.png": "/static/media/traffic_education_mob.7b92465109a91f728202.png",
     "static/media/ears2.png": "/static/media/ears2.18e764517d2f0719441a.png",
@@ -101,12 +101,12 @@
     "static/media/v2.png": "/static/media/v2.12de59b6e110b3e54192.png",
     "static/media/m2.png": "/static/media/m2.674d6794c3a031907bfb.png",
     "index.html": "/index.html",
-    "main.daabd289.css.map": "/static/css/main.daabd289.css.map",
-    "main.ffb66e34.js.map": "/static/js/main.ffb66e34.js.map",
+    "main.ddf3fbef.css.map": "/static/css/main.ddf3fbef.css.map",
+    "main.f55ef534.js.map": "/static/js/main.f55ef534.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.daabd289.css",
-    "static/js/main.ffb66e34.js"
+    "static/css/main.ddf3fbef.css",
+    "static/js/main.f55ef534.js"
   ]
 }
