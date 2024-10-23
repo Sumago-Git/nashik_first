@@ -36,7 +36,7 @@ const Newsphoto = () => {
             </h1>
             <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto'>
                 {photos.map((photo, index) => (
-                    <Col xs={12} sm={6} md={4} lg={4} className='mb-4' key={index}>
+                    <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
                         <Card className='photo h-100 '>
                             <img src={photo.src} className='picture img-fluid' alt={`Photo ${index + 1}`} />
                             {/* <Card.Body>

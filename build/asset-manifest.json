@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddf3fbef.css",
-    "main.js": "/static/js/main.f55ef534.js",
+    "main.css": "/static/css/main.8a4e2204.css",
+    "main.js": "/static/js/main.29e92e72.js",
     "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
     "static/media/traffic_education_mob.png": "/static/media/traffic_education_mob.7b92465109a91f728202.png",
     "static/media/ears2.png": "/static/media/ears2.18e764517d2f0719441a.png",
@@ -71,7 +71,6 @@
     "static/media/photo2.png": "/static/media/photo2.358dc84621b9739cd70d.png",
     "static/media/training.png": "/static/media/training.811e2f6cd88d70b06e70.png",
     "static/media/hub.png": "/static/media/hub.63dd9836a943a6733537.png",
-    "static/media/img4.jpg": "/static/media/img4.c414e3449d1bfcf9392c.jpg",
     "static/media/whatsapp.png": "/static/media/whatsapp.ee33b68c9ac2fb84ac6f.png",
     "static/media/location.png": "/static/media/location.39ab82fa50d487ffebb8.png",
     "static/media/mail.png": "/static/media/mail.071867b7bc89bd9c301d.png",
@@ -101,12 +100,12 @@
     "static/media/v2.png": "/static/media/v2.12de59b6e110b3e54192.png",
     "static/media/m2.png": "/static/media/m2.674d6794c3a031907bfb.png",
     "index.html": "/index.html",
-    "main.ddf3fbef.css.map": "/static/css/main.ddf3fbef.css.map",
-    "main.f55ef534.js.map": "/static/js/main.f55ef534.js.map",
+    "main.8a4e2204.css.map": "/static/css/main.8a4e2204.css.map",
+    "main.29e92e72.js.map": "/static/js/main.29e92e72.js.map",
     "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddf3fbef.css",
-    "static/js/main.f55ef534.js"
+    "static/css/main.8a4e2204.css",
+    "static/js/main.29e92e72.js"
   ]
 }
