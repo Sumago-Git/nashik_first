@@ -11,21 +11,31 @@
 .event {
     background-color: white;
     height: 260px;
-    width: 900px !important;
-    transform: skewX(165deg);
+    width: 870px !important;
+    /* transform: skew(165deg ); */
+    transform: skew(165deg,0deg);
     box-shadow: 4px 4px 4px 0px #00000040;
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
     margin-top: 80px;
+  
 }
 
 .eventimg {
-    position: absolute;
+    /* position: absolute; */
     height: 300px;
     width: 350px;
-    margin-top: -280px;
-    margin-left: -500px;
+    transform: skewX(194deg);
+    /* margin-top: -280px;*/
+    margin-left: -35px; 
 
+}
+@media (min-width:820px) {
+    .eventimg{
+        height: 300px;
+        width: 300px;
+    }
+    
 }
 
 .upcomingtext1 {

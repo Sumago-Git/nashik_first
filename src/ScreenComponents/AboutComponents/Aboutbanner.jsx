@@ -115,7 +115,7 @@ const Aboutbanner = () => {
                         </Carousel>
                     </Col>
                     <Col md={12} lg={6}>
-                        <img src={city} className='city d-none d-md-block img-fluid p-0 mb-md-4 ' alt="City" />
+                        <img src={city} className='city d-none d-md-block img-fluid p-0 mb-md-4 ps-md-5 ms-md-5 ' alt="City" />
                     </Col>
                 </Row>
             </Container>

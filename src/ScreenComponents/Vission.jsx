@@ -49,7 +49,7 @@ const Vission = () => {
               </div>
             </Col>
             <Col className='d-flex  justify-content-center'>
-              <p className='vtext text-middle  position-absolute bottom-0 pb-4 pb-md-5 pb-xl-3 p-2' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe,
+              <p className='vtext text-middle  position-absolute bottom-0 pb-4 pb-lg-5 pb-xl-3 p-2' >Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe,
                 Economically developed</span> & Well planned having
                 world class infrastructure and well connected with
                 major cities of India by 2035.</p>

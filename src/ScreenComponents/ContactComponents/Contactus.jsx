@@ -124,9 +124,9 @@ const Contactus = () => {
       <img src={img4} className='img4 d-block d-md-none' />
 
       <Container fluid className='p-0 position-relative contactbg  '>
-        <Row className='p-0 m-0 '>
+        <Row className='p-0 m-0 justify-content-center'>
           <Col lg={5} className="justify-content-center ">
-            <Container fluid className="justify-content-center align-items-center vh-100 ms-5 mt-5 pt-5">
+            <Container fluid className="justify-content-center align-items-center vh-lg-100  mt-5 pt-5">
               <Row className="justify-content-center">
                 {/* WhatsApp Icon and Text */}
                 <Col lg={6} md={5} className="d-flex flex-column align-items-center my-3 mt-5">
@@ -208,7 +208,7 @@ const Contactus = () => {
 
 
           </Col>
-          <Col lg={6} md={6} className='ms-lg-5'>
+          <Col lg={6} md={6}>
             <div className="card-body ">
               <h5 className="card-title contacttext mt-3">Contact us</h5>
               <form onSubmit={submitForm}>
@@ -255,10 +255,6 @@ const Contactus = () => {
                     />
                     {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
                   </div>
-
-
-
-
                   <div className="col-lg-6">
                     <p className="text-start mt-3">Profession</p>
                     <input
@@ -306,7 +302,7 @@ const Contactus = () => {
                     {errors.captchaToken && <p className="text-start text-danger">{errors.captchaToken}</p>}
                   </div>
 
-                  <div className="col-lg-12 text-center mt-4 ">
+                  <div className="col-lg-12 text-center mt-4 mb-4 ">
                     <button type="submit" className=" submitbutton" disabled={isSubmitting}>
                       {isSubmitting ? "Submitting..." : "Submit"}
                     </button>

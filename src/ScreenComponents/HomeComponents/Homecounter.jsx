@@ -95,7 +95,7 @@ const Homecounter = () => {
                   <p className='textCard'><strong>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and <span style={{ color: "#c50c1c" }}>Nashik</span><span style={{ color: "#ff6600" }}> First.</span></strong></p>
                   <p className='textCard' style={{ textAlign: "left" }}>In this initiative, the learning license holders (<em>youth aged 18 to 25 yrs</em>) will get permanent license only after undergoing Counselling &amp; Training on <strong>Road Safety &amp; Traffic Awareness Programme</strong> for two hours.</p>
 
-                  <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 text-center d-none d-md-block">
+                  <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-3 my-lg-0 text-center d-none d-md-block">
 
                     <Button onClick={() => {
                       navigate("/training")
@@ -110,25 +110,25 @@ const Homecounter = () => {
                     <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
-                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 '> School Bus Driver </Button>
+                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-1 rounded-5 border-0 py-2 py-xxl-3 '> School Bus Driver </Button>
 
                   </Card.Footer>
 
                   <Card.Footer className="p-0 bg-transparent py-3 d-flex justify-content-center d-block d-md-none">
                     <Row className='justify-content-center'>
-                      <Col sm={12} >
+                      <Col sm={12} lg={4} md={4}>
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
                         }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xl-3 w-100'> Learning License </Button>
                       </Col>
-                      <Col sm={12}>
+                      <Col sm={12} lg={4} md={4}>
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
                         }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 w-100'> Suspended License </Button>
                       </Col>
-                      <Col sm={12}>
+                      <Col sm={12} lg={4} md={4}>
                         <Button onClick={() => {
                           navigate("/training")
                           window.scroll(0, 0)
@@ -145,16 +145,24 @@ const Homecounter = () => {
                   <h3 className='countHeading my-3'> <strong> School / College / Organization Trainings </strong></h3>
                   <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
                   <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
-                  <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 d-flex text-center d-none d-md-block">
-                    <Button onClick={() => {
+                  <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-1 my-lg-0 d-flex text-center d-none d-md-block">
+                   <Row>
+                   <Col lg={6} md={5}>
+                   <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
-                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students </Button>
+                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students
+                    </Button>
+                   </Col>
+                    <Col lg={6} md={7}>
                     <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
                     }
-                    } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> Adult (College / Organization) </Button>
+                    } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> Adult (College / Organization)
+                    </Button>
+                    </Col>
+                   </Row>
                   </Card.Footer>
 
                   <Card.Footer className="p-0 bg-transparent py-3 d-flex justify-content-center d-block d-md-none">

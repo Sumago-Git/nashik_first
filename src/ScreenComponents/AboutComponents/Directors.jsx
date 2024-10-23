@@ -19,7 +19,7 @@ const Directors = () => {
     <>
       <Container fluid className='directorbg mt-lg-5 pt-lg-5 p-0'>
         <h2 className='drheadline lg-text-center '>Directors of <span style={{ color: "#ee7f37" }}>Advantage Nashik Foundation</span></h2>
-        <Container className='mt-4 pb-lg-5'>
+        <Container className='mt-4 pb-lg-5 mt-md-5'>
           <Row className=' mx-lg-5 justify-content-center'>
             {directors.map((director, index) => (
               <Col lg={4} md={6} sm={12} className='mb-5' key={index}>
@@ -27,7 +27,7 @@ const Directors = () => {
                   <p className='sectiontext p-1'>{director.description}</p>
                 </div>
                 <div className='sectiontop text-center pb-5'>
-                  <p className='mt-3 drname mb-lg-1'>{director.name}</p>
+                  <p className='mt-3 drname mb-md-1'>{director.name}</p>
                   <p className='drpost mb-lg-5'>{director.title}</p>
                 </div>
               </Col>

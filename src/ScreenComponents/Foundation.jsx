@@ -12,7 +12,7 @@ const Foundation = () => {
       <Container fluid className='body text-start py-5  '>
         <Row className='d-flex align-items-center'>
           <Col md={7} className=''>
-            <text className='Fheadline ms-md-5 ' style={{ fontWeight: "650", color: "#c50c1c", lineHeight: "2.5" }}>The Advantage
+            <text className='Fheadline ms-lg-5 ' style={{ fontWeight: "650", color: "#c50c1c", lineHeight: "2.5" }}>The Advantage
               Nashik Foundation.</text>
             <p className='fpara1 pt-3 pt-md-0'><span style={{ color: "#c50c1c", fontWeight: "800" }}>Nashik</span> <span style={{ color: "#F96945", fontWeight: "800" }}> First</span>, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span>
               <span style={{ fontWeight: "800" }}> Foundation (ANF) </span>is a group of people working for

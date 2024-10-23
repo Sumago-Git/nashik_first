@@ -40,9 +40,13 @@ const Upcomingevents = () => {
 
         {eventsData.map((event) => (
           <React.Fragment key={event.id}>
-            <Container className='event'>
-              <Row>
-                <Col lg={4} md={4}></Col>
+            <Container className='event '>
+              <Row >
+                <Col lg={4} md={5}>
+                  <div className=' d-none d-md-block '>
+                    <img src={event.image} className='eventimg pb-lg-4 pb-md-4' alt="Event" />
+                  </div>
+                </Col>
                 <Col lg={8} md={7} className='text-start coll'>
                   <p className='upcomingtext1 mb-0 ms-3'>Time Duration <span className='soontext d-none d-lg-inline-block'>COMING SOON</span></p>
                   <Container className='soonbox d-none d-lg-inline-block' style={{ marginLeft: "420px" }}>05</Container>
@@ -64,9 +68,7 @@ const Upcomingevents = () => {
               </Row>
             </Container>
             {/* Show image on medium and larger screens, hide on smaller screens */}
-           <div className=' d-none d-md-block'>
-           <img src={event.image} className='eventimg' alt="Event" />
-           </div>
+
           </React.Fragment>
         ))}
       </Container>

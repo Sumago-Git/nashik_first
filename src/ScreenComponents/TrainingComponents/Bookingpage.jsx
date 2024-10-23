@@ -129,7 +129,7 @@ const Bookingpage = () => {
           </Container>
         </Container>
 
-        <Container className='bookingdetails mt-5 pt-4 pb-3'>
+        <Container className='bookingdetails mt-5 pt-4 pb-3 '>
           <h1 className='bookingheadline mt-3 mx-auto'>Please fill in your details</h1>
           <div className='form-group mb-4'>
             <p className='bookingdate text-black text-start ms-lg-4'>{"Booking Date"}</p>
@@ -201,7 +201,7 @@ const Bookingpage = () => {
                   />
                   {errors.phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.phone}</p>}
                 </Col>
-                <Col >
+                <Col lg={12} md={12}>
                   <p className='bookingdate text-black text-start ms-lg-4 mt-3'>{"Vehicle type*"}</p>
                   <Row>
                     {['2 Wheelers', '3/5 Wheelers', '4 Wheelers Heavy', '4 Wheelers Light'].map((type) => (
