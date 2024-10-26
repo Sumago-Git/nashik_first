@@ -106,9 +106,9 @@ fieldset:disabled .btn {
   margin-left: 2px;
   margin-right: 2px;
 }
-.btn3d:hover {
+/* .btn3d:hover {
   color: rgb(247 130 59) !important;
-}
+} */
 .btn3d:active:focus,
 .btn3d:focus:hover,
 .btn3d:focus {
@@ -132,4 +132,9 @@ fieldset:disabled .btn {
 .nav-tabs .nav-link:hover {
   isolation: isolate;
   border: none !important;
+}
+
+
+.tabsbtn {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }

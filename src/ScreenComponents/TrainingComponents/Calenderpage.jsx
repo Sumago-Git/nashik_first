@@ -7,6 +7,7 @@ import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
 import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 
 // Define static event data with text
 const eventData = [
@@ -88,7 +89,7 @@ const Calendar = () => {
     if (day) {
       const clickedDate = new Date(currentYear, currentMonth, day);
       // Redirect to another page and pass the date as state
-      navigate("/slotpage", { state: { selectedDate: clickedDate } });
+      navigate("/slotpage", { state: { selectedDate: clickedDate ,category : selectedButton} });
     }
   };
 
@@ -96,6 +97,14 @@ const Calendar = () => {
   const isPastDate = (day) => {
     const dateToCheck = new Date(currentYear, currentMonth, day);
     return dateToCheck < today.setHours(0, 0, 0, 0); // Disable all past dates before today
+  };
+
+  const [selectedButton, setSelectedButton] = useState(1);
+  
+  const handleButtonClick = (buttonNumber,btncategory) => {
+    setSelectedButton(btncategory );
+    console.log(selectedButton);
+    
   };
 
   return (
@@ -128,49 +137,92 @@ const Calendar = () => {
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs" >
                   <Nav.Link eventKey="link-1" className="text-black " style={{ backgroundColor: "none" }}>
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training</button> */}
+
+                    <Button
+                      variant={selectedButton === 1 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn"
+                      onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                    >
+                      RTO – Learner Driving License Holder Training
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs">
                   <Nav.Link eventKey="link-2" className="text-black" style={{ backgroundColor: "none" }}>
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button> */}
+                    <Button
+                      variant={selectedButton === 2 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn"
+                      onClick={() => handleButtonClick(2 ,"RTO – Suspended Driving License Holders Training")}
+                    >
+                      RTO – Suspended Driving License Holders Training
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs">
                   <Nav.Link eventKey="link-3" className="text-black">
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>RTO – Training for School Bus Driver</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>RTO – Training for School Bus Driver</button> */}
+                    <Button
+                      variant={selectedButton === 3 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn"
+                      onClick={() => handleButtonClick(3 , "RTO – Training for School Bus Driver")}
+                    >
+                      RTO – Training for School Bus Driver
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs">
                   <Nav.Link eventKey="link-4" className="text-black">
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>School Students Training – Group</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span>School Students Training – Group</button> */}
+                    <Button
+                      variant={selectedButton === 4 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn"
+                      onClick={() => handleButtonClick(4 , "School Students Training – Group")}
+                    >
+                      School Students Training – Group
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs">
                   <Nav.Link eventKey="link-5" className="text-black">
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College/Organization Training – Group</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College/Organization Training – Group</button> */}
+                    <Button
+                      variant={selectedButton === 5 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn"
+                      onClick={() => handleButtonClick(5 , "College/Organization Training – Group")}
+                    >
+                      College/Organization Training – Group
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
               <Col md={4} className="p-0">
                 <Nav.Item className="calendertabs">
                   <Nav.Link eventKey="link-6" className="text-black">
-                    <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College / Organization Training – Individual</button>
+                    {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> College / Organization Training – Individual</button> */}
+                    <Button
+                      variant={selectedButton === 6 ? "success" : "#ffefeb"}
+                      className="me-2 w-100 p-3 tabsbtn mb-3"
+                      onClick={() => handleButtonClick(6 , "College / Organization Training – Individual")}
+                    >
+                      College / Organization Training – Individual
+                    </Button>
                   </Nav.Link>
                 </Nav.Item>
               </Col>
             </Row>
           </Nav>
 
-          
+
         </Container>
         <Container className="calender ">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
