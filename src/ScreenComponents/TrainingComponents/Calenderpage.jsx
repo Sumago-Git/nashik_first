@@ -89,7 +89,7 @@ const Calendar = () => {
     if (day) {
       const clickedDate = new Date(currentYear, currentMonth, day);
       // Redirect to another page and pass the date as state
-      navigate("/slotpage", { state: { selectedDate: clickedDate ,category : selectedButton} });
+      navigate("/slotpage", { state: { selectedDate: clickedDate, category: selectedButton } });
     }
   };
 
@@ -99,12 +99,19 @@ const Calendar = () => {
     return dateToCheck < today.setHours(0, 0, 0, 0); // Disable all past dates before today
   };
 
-  const [selectedButton, setSelectedButton] = useState(1);
-  
-  const handleButtonClick = (buttonNumber,btncategory) => {
-    setSelectedButton(btncategory );
-    console.log(selectedButton);
-    
+  // const [selectedButton, setSelectedButton] = useState(1);
+
+  // const handleButtonClick = (buttonNumber,btncategory) => {
+  //   setSelectedButton(btncategory );
+  //   console.log(selectedButton);
+
+  // };
+  const [selectedButton, setSelectedButton] = useState(1 );
+
+  const handleButtonClick = (buttonNumber, btncategory) => {
+    setSelectedButton(buttonNumber, btncategory);
+    console.log("Selected Button:", buttonNumber); // Display button number in console
+    console.log("Selected category:", btncategory);
   };
 
   return (
@@ -140,12 +147,16 @@ const Calendar = () => {
                     {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training</button> */}
 
                     <Button
-                      variant={selectedButton === 1 ? "success" : "#ffefeb"}
+                      // variant={selectedButton === 1 ? "success" : "#ffefeb"}
+                      variant={selectedButton === 1 ? "success" : "#ffefeb"}  
                       className="me-2 w-100 p-3 tabsbtn"
-                      onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                      // onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                      // onClick={() => handleButtonClick(1)}
+                      onClick={() => handleButtonClick(1 ,"RTO – Learner Driving License Holder Training")}
                     >
                       RTO – Learner Driving License Holder Training
                     </Button>
+                    
                   </Nav.Link>
                 </Nav.Item>
               </Col>
@@ -154,9 +165,9 @@ const Calendar = () => {
                   <Nav.Link eventKey="link-2" className="text-black" style={{ backgroundColor: "none" }}>
                     {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button> */}
                     <Button
-                      variant={selectedButton === 2 ? "success" : "#ffefeb"}
+                      variant={selectedButton === 2 ? "success" : "#ffff"}
                       className="me-2 w-100 p-3 tabsbtn"
-                      onClick={() => handleButtonClick(2 ,"RTO – Suspended Driving License Holders Training")}
+                      onClick={() => handleButtonClick(2, "RTO – Suspended Driving License Holders Training")}
                     >
                       RTO – Suspended Driving License Holders Training
                     </Button>
@@ -170,7 +181,7 @@ const Calendar = () => {
                     <Button
                       variant={selectedButton === 3 ? "success" : "#ffefeb"}
                       className="me-2 w-100 p-3 tabsbtn"
-                      onClick={() => handleButtonClick(3 , "RTO – Training for School Bus Driver")}
+                      onClick={() => handleButtonClick(3, "RTO – Training for School Bus Driver")}
                     >
                       RTO – Training for School Bus Driver
                     </Button>
@@ -184,7 +195,7 @@ const Calendar = () => {
                     <Button
                       variant={selectedButton === 4 ? "success" : "#ffefeb"}
                       className="me-2 w-100 p-3 tabsbtn"
-                      onClick={() => handleButtonClick(4 , "School Students Training – Group")}
+                      onClick={() => handleButtonClick(4, "School Students Training – Group")}
                     >
                       School Students Training – Group
                     </Button>
@@ -198,7 +209,7 @@ const Calendar = () => {
                     <Button
                       variant={selectedButton === 5 ? "success" : "#ffefeb"}
                       className="me-2 w-100 p-3 tabsbtn"
-                      onClick={() => handleButtonClick(5 , "College/Organization Training – Group")}
+                      onClick={() => handleButtonClick(5, "College/Organization Training – Group")}
                     >
                       College/Organization Training – Group
                     </Button>
@@ -212,7 +223,7 @@ const Calendar = () => {
                     <Button
                       variant={selectedButton === 6 ? "success" : "#ffefeb"}
                       className="me-2 w-100 p-3 tabsbtn mb-3"
-                      onClick={() => handleButtonClick(6 , "College / Organization Training – Individual")}
+                      onClick={() => handleButtonClick(6, "College / Organization Training – Individual")}
                     >
                       College / Organization Training – Individual
                     </Button>
