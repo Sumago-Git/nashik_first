@@ -31,13 +31,16 @@ const Bookingpage = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.learningNo) newErrors.learningNo = 'License number is required';
-    if (!formData.fname) newErrors.fname = 'First name is required';
-    if (!formData.mname) newErrors.mname = 'Middle name is required';
-    if (!formData.lname) newErrors.lname = 'Last name is required';
-    if (!formData.email) newErrors.email = 'email is required';
-    if (!formData.phone) newErrors.phone = 'phone is required';
-    if (!formData.excel) newErrors.excel = 'Please upload an Excel file.';
+    if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
+      if (!formData.excel) newErrors.excel = 'Please upload an Excel file.';
+    } else {
+      if (!formData.learningNo) newErrors.learningNo = 'License number is required';
+      if (!formData.fname) newErrors.fname = 'First name is required';
+      if (!formData.mname) newErrors.mname = 'Middle name is required';
+      if (!formData.lname) newErrors.lname = 'Last name is required';
+      if (!formData.email) newErrors.email = 'email is required';
+      if (!formData.phone) newErrors.phone = 'phone is required';
+    }
     if (!captchaValue) newErrors.captcha = 'Please complete the CAPTCHA';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -45,13 +48,13 @@ const Bookingpage = () => {
 
   const handleChange = (e) => {
     const { name, files } = e.target;
-
+  
     if (name === 'excel') {
       const file = files[0];
       if (file) {
         const validExtensions = ['xls', 'xlsx'];
         const fileExtension = file.name.split('.').pop().toLowerCase();
-
+  
         // Check if the uploaded file is an Excel file
         if (!validExtensions.includes(fileExtension)) {
           alert('Only Excel files are accepted.'); // Alert for invalid file type
@@ -62,7 +65,7 @@ const Bookingpage = () => {
           setFormData((prev) => ({ ...prev, excel: '' })); // Clear the file input
           return;
         }
-
+  
         // If valid, set the file
         setErrors((prev) => ({ ...prev, excel: '' })); // Clear error if valid
         setFormData((prev) => ({ ...prev, [name]: file })); // Set the file
@@ -88,19 +91,44 @@ const Bookingpage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("formData", formData);
+    alert("clicked")
     if (!validate()) return;
-
+  
     try {
-      const response = await axios.post('bookingform/create-bookingform', {
-        ...formData,
-        slotsession,
-        slotdate // Include slotTime if needed
+      // Create a new FormData instance
+      const data = new FormData();
+  
+      // Append all form fields to the FormData instance
+      data.append('learningNo', formData.learningNo);
+      data.append('fname', formData.fname);
+      data.append('mname', formData.mname);
+      data.append('lname', formData.lname);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('category', category);
+      data.append('slotsession', slotsession);
+      data.append('slotdate', slotdate);
+  
+      // Append the Excel file if it exists
+      if (formData.excel) {
+        data.append('file', formData.excel);
+      }
+  
+      // Append the vehicle types as a comma-separated string
+      data.append('vehicletype', formData.vehicletype.join(','));
+  
+      // Make the axios request with FormData
+      const response = await axios.post('bookingform/create-bookingform', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
-
+  
       console.log('Response:', response.data);
       // Show success message
       alert('Booking successfully created!');
-
+  
       // Resetting the form
       setFormData({
         learningNo: '',
@@ -114,7 +142,7 @@ const Bookingpage = () => {
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-
+  
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error
@@ -298,7 +326,7 @@ const Bookingpage = () => {
                     {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
                   </Col>
                   <div className='text-center'>
-                    <button className='returnbutton p-lg-2 mt-4'>Book Now</button>
+                    <button type='submit' className='returnbutton p-lg-2 mt-4'>Book Now</button>
                   </div>
                 </Row>
               </form>
