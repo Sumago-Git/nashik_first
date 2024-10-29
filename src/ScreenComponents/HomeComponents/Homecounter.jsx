@@ -147,14 +147,14 @@ const Homecounter = () => {
                   <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                   <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-1 my-lg-0 d-flex text-center d-none d-md-block">
                    <Row>
-                   <Col lg={6} md={5}>
+                   <Col lg={5} md={5}>
                    <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
                     }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students
                     </Button>
                    </Col>
-                    <Col lg={6} md={7}>
+                    <Col lg={7} md={7}>
                     <Button onClick={() => {
                       navigate("/training")
                       window.scroll(0, 0)
