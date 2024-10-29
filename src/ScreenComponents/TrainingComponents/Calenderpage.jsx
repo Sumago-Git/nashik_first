@@ -676,6 +676,21 @@ const Calendar = () => {
     return new Date(year, month, 1).getDay();
   };
 
+  const specialDates = [
+    { day: 15, label: "Holiday", color: "#ecc2c2", bgColor: "#742929" },
+    { day: 18, label: "Closed", color: "red", bgColor: "#ffd4d4" },
+    { day: 22, label: "Available", color: "green", bgColor: "#d4ffd4" },
+  ];
+
+  // Function to get the label and styling details for a specific day
+  const getSpecialDateDetails = (day) => {
+    return specialDates.find((special) => special.day === day) || {};
+  };
+
+
+
+
+
   const changeMonth = (direction) => {
     setCurrentDate(prevDate => {
       const newDate = new Date(prevDate);
@@ -738,7 +753,7 @@ const Calendar = () => {
   };
 
   const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
-  const [btno , setbrno] = useState(1,"RTO – Learner Driving License Holder Training");
+  const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
 
   const handleButtonClick = (buttonNumber, btncategory) => {
     setSelectedButton(btncategory);
@@ -749,7 +764,7 @@ const Calendar = () => {
 
   };
 
-  
+
   // Compare date to check if it is in the past
   const isPastDate = (day) => {
     const dateToCheck = new Date(currentYear, currentMonth, day);
@@ -818,7 +833,7 @@ const Calendar = () => {
                       onClick={() => handleButtonClick(2, "RTO – Suspended Driving License Holders Training")}
                       aria-label="College / Organization Training – Individual Option 1"
                     >
-                      <span className="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training
+                      <span className="glyphicon glyphicon-download-alt"></span>RTO – Suspended Driving License Holders Training
                     </button>
 
                   </Nav.Link>
@@ -911,17 +926,18 @@ const Calendar = () => {
 
 
         </Container>
-        <Container className="calender ">
+
+
+        {/* <Container className="calender">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
-            {/* Disable the left arrow if the user is on the current month */}
             <button
               className="btn ms-1"
               onClick={() => changeMonth('prev')}
-              disabled={isCurrentMonth} // Disable if current month is being displayed
+              disabled={isCurrentMonth}
             >
               <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
             </button>
-            <h3 className="calenderheadline mx-4 mt-4">
+            <h3 className="calendarheadline mx-4 mt-4">
               {monthNames[currentMonth]} {currentYear}
             </h3>
             <button
@@ -950,42 +966,131 @@ const Calendar = () => {
               </thead>
               <tbody>
                 {weeks.map((week, weekIndex) => (
-                  <tr
-                    key={weekIndex}
-                    style={{ cursor: 'default' }} // Prevent pointer cursor
-                  >
+                  <tr key={weekIndex} style={{ cursor: 'default' }}>
                     {week.map((day, dayIndex) => {
                       const date = day && new Date(currentYear, currentMonth, day);
-                      const eventText = date && getEventText(date);
-                      const disabled = day && isPastDate(day); // Check if day is in the past
+                      const isDisabled = day && isPastDate(day);
+                      const dateLabel = day ? getSpecialDateLabel(day) : null;
 
                       return (
                         <td
                           key={dayIndex}
-                          onMouseEnter={() => day && !disabled && setHoveredDay(day)}
-                          onMouseLeave={() => day && !disabled && setHoveredDay(null)}
-                          onClick={() => !disabled && handleDateClick(day)} // Handle date click only if it's not disabled
+                          onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
+                          onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
+                          onClick={() => !isDisabled && handleDateClick(day)}
                           style={{
                             height: "100px",
                             textAlign: "end",
-                            verticalAlign: "middle", // Center the text vertically
-                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (disabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
-                            color: day && (day.isNextMonth ? "#ccc" : disabled ? "#999" : "black"),
-                            pointerEvents: day && (disabled ? "none" : "auto"), // Disable interaction for past days
-                            transition: 'background-color 0.3s', // Smooth transition for background color change
+                            verticalAlign: "middle",
+                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
+                            color: day && (day.isNextMonth ? "#ccc" : isDisabled ? "#999" : "black"),
+                            pointerEvents: day && (isDisabled ? "none" : "auto"),
+                            transition: 'background-color 0.3s',
                             fontFamily: "Poppins",
                             fontWeight: "600",
-
                           }}
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
-                          {eventText && (
-                            <div style={{ fontSize: '12px', marginTop: '5px' }}>
-                              {eventText}
+
+                         
+                          {dateLabel && (
+                            <div style={{ fontSize: '10px', marginTop: '5px' }}>
+                              {dateLabel}
                             </div>
                           )}
                         </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Container>
+        </Container> */}
 
+        <Container className="calender">
+          <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
+            <button
+              className="btn ms-1"
+              onClick={() => changeMonth('prev')}
+              disabled={isCurrentMonth}
+            >
+              <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
+            </button>
+            <h3 className="calendarheadline mx-4 mt-4">
+              {monthNames[currentMonth]} {currentYear}
+            </h3>
+            <button
+              className="btn ms-1"
+              onClick={() => changeMonth('next')}
+            >
+              <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
+            </button>
+          </Col>
+
+          <Container className="mt-4">
+            <Table
+              bordered
+              responsive
+              style={{
+                tableLayout: 'fixed',
+                borderCollapse: 'collapse',
+              }}
+            >
+              <thead>
+                <tr className="text-start">
+                  {daysOfWeek.map((day) => (
+                    <th key={day}>{day}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {weeks.map((week, weekIndex) => (
+                  <tr key={weekIndex} style={{ cursor: 'default' }}>
+                    {week.map((day, dayIndex) => {
+                      const date = day && new Date(currentYear, currentMonth, day);
+                      const isDisabled = day && isPastDate(day);
+                      const { label: dateLabel, color: textColor, bgColor } = getSpecialDateDetails(day);
+
+                      return (
+                        <td
+                          key={dayIndex}
+                          onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
+                          onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
+                          onClick={() => !isDisabled && handleDateClick(day)}
+                          style={{
+                            height: "100px",
+                            textAlign: "end",
+                            verticalAlign: "middle",
+                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
+                            color: day && (day.isNextMonth ? "#ccc" : isDisabled ? "#999" : "black"),
+                            pointerEvents: day && (isDisabled ? "none" : "auto"),
+                            transition: 'color 0.3s',
+                            fontFamily: "Poppins",
+                            fontWeight: "600",
+                          }}
+                        >
+                          {day && (day.isNextMonth ? day.day : day || "")}
+                          <br/>
+
+                          {/* Display pill label for specific dates only if the date is not disabled */}
+                          {dateLabel && !isDisabled && (
+                            <div
+                              style={{
+                                fontSize: '10px',
+                                marginTop: '5px',
+                                color: textColor,
+                                backgroundColor: bgColor,
+                                padding: '3px 8px',
+                                borderRadius: '15px',
+                                display: 'inline-block',
+                                fontWeight: 'bold',
+                              }}
+                            >
+                              {dateLabel}
+                            </div>
+                          )}
+                        </td>
                       );
                     })}
                   </tr>
