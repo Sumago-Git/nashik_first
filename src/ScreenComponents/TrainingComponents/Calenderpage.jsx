@@ -1030,7 +1030,6 @@ const Calendar = () => {
 
           <Container className="mt-4">
             <Table
-              bordered
               responsive
               style={{
                 tableLayout: 'fixed',
@@ -1040,7 +1039,17 @@ const Calendar = () => {
               <thead>
                 <tr className="text-start">
                   {daysOfWeek.map((day) => (
-                    <th key={day}>{day}</th>
+                    <th
+                      key={day}
+                      style={{
+                        borderLeft: '1px solid #ddd',
+                        borderRight: '1px solid #ddd',
+                        padding: '10px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {day}
+                    </th>
                   ))}
                 </tr>
               </thead>
@@ -1048,7 +1057,6 @@ const Calendar = () => {
                 {weeks.map((week, weekIndex) => (
                   <tr key={weekIndex} style={{ cursor: 'default' }}>
                     {week.map((day, dayIndex) => {
-                      const date = day && new Date(currentYear, currentMonth, day);
                       const isDisabled = day && isPastDate(day);
                       const { label: dateLabel, color: textColor, bgColor } = getSpecialDateDetails(day);
 
@@ -1062,6 +1070,7 @@ const Calendar = () => {
                             height: "100px",
                             textAlign: "end",
                             verticalAlign: "middle",
+                            borderRight: "1px solid #ddd", // Vertical line
                             backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
                             color: day && (day.isNextMonth ? "#ccc" : isDisabled ? "#999" : "black"),
                             pointerEvents: day && (isDisabled ? "none" : "auto"),
@@ -1071,9 +1080,7 @@ const Calendar = () => {
                           }}
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
-                          <br/>
-
-                          {/* Display pill label for specific dates only if the date is not disabled */}
+                          <br />
                           {dateLabel && !isDisabled && (
                             <div
                               style={{
@@ -1099,6 +1106,7 @@ const Calendar = () => {
             </Table>
           </Container>
         </Container>
+
       </Container>
     </>
   );
