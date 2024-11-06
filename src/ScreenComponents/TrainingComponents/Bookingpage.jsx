@@ -48,13 +48,13 @@ const Bookingpage = () => {
 
   const handleChange = (e) => {
     const { name, files } = e.target;
-  
+
     if (name === 'excel') {
       const file = files[0];
       if (file) {
         const validExtensions = ['xls', 'xlsx'];
         const fileExtension = file.name.split('.').pop().toLowerCase();
-  
+
         // Check if the uploaded file is an Excel file
         if (!validExtensions.includes(fileExtension)) {
           alert('Only Excel files are accepted.'); // Alert for invalid file type
@@ -65,7 +65,7 @@ const Bookingpage = () => {
           setFormData((prev) => ({ ...prev, excel: '' })); // Clear the file input
           return;
         }
-  
+
         // If valid, set the file
         setErrors((prev) => ({ ...prev, excel: '' })); // Clear error if valid
         setFormData((prev) => ({ ...prev, [name]: file })); // Set the file
@@ -92,13 +92,13 @@ const Bookingpage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("formData", formData);
-    alert("clicked")
+
     if (!validate()) return;
-  
+
     try {
       // Create a new FormData instance
       const data = new FormData();
-  
+
       // Append all form fields to the FormData instance
       data.append('learningNo', formData.learningNo);
       data.append('fname', formData.fname);
@@ -109,26 +109,26 @@ const Bookingpage = () => {
       data.append('category', category);
       data.append('slotsession', slotsession);
       data.append('slotdate', slotdate);
-  
+
       // Append the Excel file if it exists
       if (formData.excel) {
         data.append('file', formData.excel);
       }
-  
+
       // Append the vehicle types as a comma-separated string
       data.append('vehicletype', formData.vehicletype.join(','));
-  
-      // Make the axios request with FormData
-      const response = await axios.post('bookingform/create-bookingform', data, {
+
+      // Make the axios request to the combined endpoint
+      const response = await axios.post('http://127.0.0.1:8000/bookingform/create-uploadOrAddBookingForm', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
+
       console.log('Response:', response.data);
       // Show success message
       alert('Booking successfully created!');
-  
+
       // Resetting the form
       setFormData({
         learningNo: '',
@@ -142,7 +142,7 @@ const Bookingpage = () => {
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-  
+
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error
@@ -153,6 +153,7 @@ const Bookingpage = () => {
       }
     }
   };
+
 
   useEffect(() => {
     if (location && location.state) {
