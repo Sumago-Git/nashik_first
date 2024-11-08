@@ -18,27 +18,46 @@ import emailborder from "../Assets/Assets/Bottom/emailborder.png";
 import locationborder from "../Assets/Assets/Bottom/locationborder.png"
 import wappChat from "../Assets/Assets/Home/wapImg.gif"
 import axios from 'axios';
-import { FaFacebookF } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
+import { MdOutlineMarkEmailRead } from 'react-icons/md';
 const Bottom = () => {
   const [footerDate, setFooterDate] = useState("")
   const [socialLinks, setSocialLinks] = useState([])
 
-  useEffect(() => {
-    axios
-      .get("social-contact/get-socialcontacts")
-      .then((response) => {
-        if (response.data) {
-          console.log("response", response.data);
-        } else {
-          // setSocialLinks(response.data.);
-        }
+  const [getdata, setdata] = useState([]);
+  const [contact_details, setcontact_details] = useState([]);
+
+  const followus = () => {
+    axios.get('social-contact/get-socialcontacts')
+      .then((res) => {
+        setdata(res.data.responseData)
       })
-      .catch((error) => {
-        console.error("There was an error fetching the data!", error);
-      });
+      .catch((err) => {
+        console.log(err);
+
+      })
+
+
+  }
+
+  const getcontact_details = () => {
+    axios.get('contact-detail/get-contactdetails')
+      .then((res) => {
+        setcontact_details(res.data.responseData)
+      })
+      .catch((err) => {
+        console.log(err);
+
+      })
+  }
+
+  useEffect(() => {
+    getcontact_details();
+    followus();
+
   }, [])
   useEffect(() => {
     // Create a new Date object
@@ -126,6 +145,7 @@ const Bottom = () => {
               ))}
             </Col>
 
+
             <Col sm={12} lg={4} md={6} className="mt-5">
               <p className='text-start bottomheadline pb-3 ms-3'>Contact Details</p>
               {contactDetails.map((detail, index) => (
@@ -136,7 +156,7 @@ const Bottom = () => {
                   style={{ cursor: 'pointer' }}
                 >
                   <Col lg={1} xs={2} className='p-0 me-lg-3 border-2 ps-1'>
-                    {/* <img src={detail.icon} alt="Icon" className={`footericon ${detail.isAddress ? 'mb-5' : ''}`} /> */}
+
                     <div class="rounded-circle footericon">
                       <img src={detail.icon} className='mt-2 ' />
                     </div>
@@ -144,8 +164,10 @@ const Bottom = () => {
 
                   </Col>
                   <Col lg={10} xs={10} className='p-0 '>
-                    {detail.isAddress ? (
-                      <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.text}</p>
+                    
+                  
+                    {contact_details.isAddress ? (
+                      <p className="text-start" style={{ fontSize: "19px", fontWeight: "600" }}>{detail.whatsapp}</p>
                     ) : detail.isPhone ? (
                       <h5 className="text-start ms-0 p-0">{detail.text}</h5>
                     ) : detail.isEmail ? (
@@ -162,44 +184,61 @@ const Bottom = () => {
           </Row>
           <Row>
             <Col md={6} lg={8}>
-              <div style={{ fontWeight: "600", fontSize: "20px",color:"white" }}>
+              <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
                 <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count :- 10000235 </p>
                 {/* <p className=' text-start  ms-lg-3 '>  </p>. */}
               </div>
             </Col>
             <Col md={6} lg={4}>
               <Row className="mt-0 pb-0 mt-lg-3 ">
-              <Col lg={4}  className='text-start p-0 w-25 ms-lg-4'>
-                <h5 className=' mt-2  text-white'>Follow Us On</h5>
-              </Col>
-              <Col lg={1} xs={2} className='p-0  mx-lg-3 ms-lg-5'>
-                <a href={"https://www.facebook.com/Nashikfirsttrafficpark/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                  <Card className=" p-2 rounded-5 mt-1  iconHover1" style={{ width: "fit-content" }}>
-                    <FaFacebookF />
-                  </Card>
-                </a>
-              </Col>
-              <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
-                <a href={"https://www.instagram.com/nashikfirst/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                  <Card className=" p-2 rounded-5 mt-1  iconHover2" style={{ width: "fit-content" }}>
-                    <BsInstagram />
-                  </Card>
-                </a>
-              </Col>
-              <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
-                <a href={"https://www.youtube.com/channel/UC4AHC6DgEBtIFZ74PxPoQqw"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                  <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
-                    <AiOutlineYoutube />
-                  </Card>
-                </a>
-              </Col>
-              <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
-                <a href={"https://twitter.com/anfnashikfirst"} target="_blank" rel="noopener noreferrer" className='mt-3'>
-                  <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
-                    <BsTwitterX />
-                  </Card>
-                </a>
-              </Col>
+                <Col lg={4} className='text-start p-0 w-25 ms-lg-4'>
+                  <h5 className=' mt-2  text-white'>Follow Us On</h5>
+                </Col>
+                {
+                  getdata.map((a) => {
+                    return (
+                      <>
+                        <Col lg={1} xs={2} className='p-0  mx-lg-3 ms-lg-5'>
+                          <a href={a.facebook} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                            <Card className=" p-2 rounded-5 mt-1  iconHover1" style={{ width: "fit-content" }}>
+                              <FaFacebookF />
+                            </Card>
+                          </a>
+                        </Col>
+                        <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
+                          <a href={a.instagram} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                            <Card className=" p-2 rounded-5 mt-1  iconHover2" style={{ width: "fit-content" }}>
+                              <BsInstagram />
+                            </Card>
+                          </a>
+                        </Col>
+                        <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
+                          <a href={a.email} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                            <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
+                              <MdOutlineMarkEmailRead />
+                            </Card>
+                          </a>
+                        </Col>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
+                          <a href={a.whatsapp} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                            <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
+                              <FaWhatsapp />
+                            </Card>
+                          </a>
+                        </Col>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
+                          <a href={a.linkedin} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                            <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
+                              <FaLinkedin />
+                            </Card>
+                          </a>
+                        </Col>
+                      </>
+                    )
+                  })
+                }
+
+
 
               </Row>
             </Col>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import circle1 from "../../Assets/Assets/Homecounter/circle1.png"
 import training from '../../Assets/Assets/Homecounter/training.png';
@@ -12,12 +12,29 @@ import { useNavigate } from "react-router-dom";
 import { DiJavascript } from 'react-icons/di';
 import counterimg1 from "../../Assets/Assets/Homecounter/counterimg1.png"
 import homecounterimg2a from "../../Assets/Assets/Homecounter/homecounter2a.png"
+import axios from 'axios';
 
 
 const Homecounter = () => {
 
+  const [getdata, setdata] = useState([]);
+
   const navigate = useNavigate();
 
+  const counter = () => {
+    axios.get('counter/get-homecounter')
+      .then((res) => {
+        setdata(res.data.responseData)
+
+      })
+      .catch((err) => {
+        console.log(err);
+
+      })
+  }
+  useEffect(() => {
+    counter();
+  }, [])
   return (
     <>
       <h1 className='mt-md-5 homecounterheadline '> What makes us <span style={{ color: "#F96945" }}>special?</span></h1>
@@ -26,8 +43,47 @@ const Homecounter = () => {
           <Row>
             <Col md={12} lg={5} sm={12}>
               <Row className="justify-content-center mt-3">
-                {/* First Card */}
-                <Col xs={6} sm={5} md={5} className="h-50">
+                {
+                  getdata.map((a) => {
+                    return (
+                      <>
+                        <Col xs={6} sm={5} md={5} className="h-50">
+                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
+                            <h5 style={{ fontWeight: "700" }} className="text-white">
+                              Training<br /> Sessions
+                            </h5>
+                            <img src={trining_imparted} className="w-50 mx-auto" alt="" />
+                            <h3 className="text-white">{a.training_imparted}</h3>
+                          </Card>
+                        </Col>
+                        <Col xs={6} sm={5} md={5} className="h-50">
+                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                            <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
+                            <img src={lives} className="w-50 mx-auto" alt="" />
+                            <h3 className="">{a.lives_changed}</h3>
+                          </Card>
+                        </Col>
+                        <Col xs={6} sm={5} md={5} className="h-50">
+                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                            <h5 style={{ fontWeight: "700" }}>Adult</h5>
+                            <img src={adult} className="w-50 mx-auto" alt="" />
+                            <h3>{a.children}</h3>
+                          </Card>
+                        </Col>
+
+                        <Col xs={6} sm={5} md={5} className="h-50">
+                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
+                            <h5 style={{ fontWeight: "700" }}>Children</h5>
+                            <img src={child} className="w-50 mx-auto" alt="" />
+                            <h3>{a.adult}</h3>
+                          </Card>
+                        </Col>
+                      </>
+                    )
+                  })
+                }
+
+                {/* <Col xs={6} sm={5} md={5} className="h-50">
                   <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
                     <h5 style={{ fontWeight: "700" }} className="text-white">
                       Training<br /> Sessions
@@ -37,7 +93,7 @@ const Homecounter = () => {
                   </Card>
                 </Col>
 
-                {/* Second Card */}
+                
                 <Col xs={6} sm={5} md={5} className="h-50">
                   <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
                     <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
@@ -46,7 +102,7 @@ const Homecounter = () => {
                   </Card>
                 </Col>
 
-                {/* Third Card */}
+                
                 <Col xs={6} sm={5} md={5} className="h-50">
                   <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
                     <h5 style={{ fontWeight: "700" }}>Adult</h5>
@@ -55,14 +111,13 @@ const Homecounter = () => {
                   </Card>
                 </Col>
 
-                {/* Fourth Card */}
                 <Col xs={6} sm={5} md={5} className="h-50">
                   <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
                     <h5 style={{ fontWeight: "700" }}>Children</h5>
                     <img src={child} className="w-50 mx-auto" alt="" />
                     <h3>1,35,935</h3>
                   </Card>
-                </Col>
+                </Col> */}
               </Row>
             </Col>
 
@@ -146,23 +201,23 @@ const Homecounter = () => {
                   <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
                   <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                   <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-1 my-lg-0 d-flex text-center d-none d-md-block">
-                   <Row>
-                   <Col lg={5} md={5}>
-                   <Button onClick={() => {
-                      navigate("/training")
-                      window.scroll(0, 0)
-                    }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students
-                    </Button>
-                   </Col>
-                    <Col lg={7} md={7}>
-                    <Button onClick={() => {
-                      navigate("/training")
-                      window.scroll(0, 0)
-                    }
-                    } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> Adult (College / Organization)
-                    </Button>
-                    </Col>
-                   </Row>
+                    <Row>
+                      <Col lg={5} md={5}>
+                        <Button onClick={() => {
+                          navigate("/training")
+                          window.scroll(0, 0)
+                        }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students
+                        </Button>
+                      </Col>
+                      <Col lg={7} md={7}>
+                        <Button onClick={() => {
+                          navigate("/training")
+                          window.scroll(0, 0)
+                        }
+                        } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> Adult (College / Organization)
+                        </Button>
+                      </Col>
+                    </Row>
                   </Card.Footer>
 
                   <Card.Footer className="p-0 bg-transparent py-3 d-flex justify-content-center d-block d-md-none">
