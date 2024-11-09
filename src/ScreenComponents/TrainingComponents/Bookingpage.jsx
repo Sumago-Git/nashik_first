@@ -119,7 +119,7 @@ const Bookingpage = () => {
       data.append('vehicletype', formData.vehicletype.join(','));
 
       // Make the axios request to the combined endpoint
-      const response = await axios.post('http://127.0.0.1:8000/bookingform/create-uploadOrAddBookingForm', data, {
+      const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -158,8 +158,8 @@ const Bookingpage = () => {
   useEffect(() => {
     if (location && location.state) {
       console.log("location state : ", location.state);
-      setSlotSession(location.state.selectedDate)
-      setSlotDate(location.state.selectedTime)
+      setSlotSession(location.state.selectedTime)
+      setSlotDate(location.state.selectedDate)
       // console.log("location.selectedTime", location.state.selectedTime);
       setCategory(location.state.category || ""); // Assume category comes from the location state
       setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
