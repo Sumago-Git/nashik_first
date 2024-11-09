@@ -5,6 +5,9 @@ import "../../Components/Upcomingevents.css";
 import upcoming1 from "../../Assets/Assets/Upcomingevents/upcoming1.png";
 import axios from 'axios';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const eventsData = [
   {
     id: 1,
@@ -47,6 +50,12 @@ const Upcomingevents = () => {
   useEffect(() => {
     getdata();
   }, [])
+
+  
+  useEffect(()=>{
+    Aos.init();
+  },[])
+
 
   return (
     <>
@@ -102,7 +111,7 @@ const Upcomingevents = () => {
             <Container className='event '>
               <Row >
                 <Col lg={4} md={5}>
-                  <div className=' d-none d-md-block '>
+                  <div className=' d-none d-md-block ' data-aos="fade-right">
                     <img src={event.img} className='eventimg pb-lg-4 pb-md-4' alt={event.area} />
                   </div>
                 </Col>

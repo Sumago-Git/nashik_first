@@ -12,6 +12,9 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Contactus = () => {
 
 
@@ -29,7 +32,9 @@ const Contactus = () => {
 
   useEffect(() => {
     contactdetails_here();
+    Aos.init();
   }, [])
+
 
 
 
@@ -152,76 +157,64 @@ const Contactus = () => {
               contactDetail_get.map((a) => {
                 return (
                   <>
-                    <Container fluid className="justify-content-center align-items-center vh-lg-100  mt-lg-5 pt-lg-5">
-                      <Row className="justify-content-center">
-                        {/* WhatsApp Icon and Text */}
-                        <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                          <div className="d-flex flex-column align-items-center">
-                            {/* Make image clickable */}
+                    <Container fluid>
+                      <Row>
+                        <Col lg={6} md={6} sm={12} >
+                          <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={whatsapp} alt="WhatsApp" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
                             <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
-                              <img src={whatsapp} className="icons mb-2" alt="WhatsApp" />
+                              +91 {a.whatsapp}
                             </a>
-                            <p className="icontext">
-                              <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                {a.whatsapp}
-                              </a>
-                            </p>
-                          </div>
-                        </Col>
+                          </p>
 
-                        {/* Phone Icon and Text */}
-                        <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                          <div className="d-flex flex-column align-items-center">
-                            {/* Make image clickable */}
+                        </Col>
+                        <Col lg={6} md={6} sm={12}>
+                          <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={call} alt="Phone" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
                             <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
-                              <img src={call} className="icons mb-2" alt="Phone" />
+                              +91 {a.phone}
                             </a>
-                            <p className="icontext">
-                              <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
-                               {a.phone}
-                              </a>
-                            </p>
-                          </div>
+                          </p>
                         </Col>
 
-                        {/* Email Icon and Text */}
-                        <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                          <div className="d-flex flex-column align-items-center">
-                            {/* Make image clickable */}
+
+                        <Col lg={6} md={6} sm={12}>
+                          <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={mail} alt="Email" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
                             <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
-                              <img src={mail} className="icons mb-2" alt="Email" />
+                              {a.email}
                             </a>
-                            <p className="icontext">
-                              <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                {a.email}
-                              </a>
-                            </p>
-                          </div>
+                          </p>
                         </Col>
 
-                        {/* Location Icon and Text */}
-                        <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                          <div className="d-flex flex-column align-items-center">
-                            {/* Make image clickable */}
+                        <Col lg={6} md={6} sm={12}>
+                          <a
+                            href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', color: 'inherit' }}
+                            className='w-100'
+                            data-aos="zoom-in-up"
+                          >
+                            <img src={location} alt="Location" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center  ml-1">
                             <a
                               href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
                               target="_blank"
                               rel="noopener noreferrer"
                               style={{ textDecoration: 'none', color: 'inherit' }}
                             >
-                              <img src={location} className="icons mb-2" alt="Location" />
+                              {a.address}
                             </a>
-                            <p className="icontext text-center">
-                              <a
-                                href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: 'none', color: 'inherit' }}
-                              >
-                                {a.address}
-                              </a>
-                            </p>
-                          </div>
+                          </p>
+
                         </Col>
                       </Row>
                     </Container>

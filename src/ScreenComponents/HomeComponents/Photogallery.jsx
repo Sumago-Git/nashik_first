@@ -9,10 +9,16 @@ import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
 import '../../Components/Photogallery.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Photogallery = () => {
 
   const [getdata , setdata] = useState([]);
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
 
   
 
@@ -42,7 +48,7 @@ const Photogallery = () => {
         <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto'>
           {getdata.map((photo, index) => (
             <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
-              <Card className='photo h-100 pb-4'>
+              <Card className='photo h-100 pb-4' data-aos="fade-up" data-aos-anchor-placement="center-bottom"data-aos-duration="2000">
                 <img src={photo.img} className='picture img-fluid' alt={`Photo ${index + 1}`} />
                 <Card.Body>
                   <Card.Text className='mt-3 cardtext text-start'>

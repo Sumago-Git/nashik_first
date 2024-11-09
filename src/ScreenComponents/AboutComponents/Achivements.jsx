@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
@@ -9,7 +9,14 @@ import hub from '../../Assets/Assets/Aboutpage/hub.png'
 import bike from '../../Assets/Assets/Aboutpage/bike.png'
 import "../../Components/About.css"
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Achivements = () => {
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
   return (
     <>
       <Container fluid className='achivebg mt-4 p-4'>
@@ -38,23 +45,23 @@ const Achivements = () => {
 
       <Container fluid className='mt-5 me-0 p-3' >
         <Row className='ps-0 justify-content-center'>
-          <Col lg={2} md={6} sm={6}>
+          <Col lg={2} md={6} sm={6} data-aos="fade-down">
             <img src={training} className='listimg ms-lg-3' />
             <p className='ms-lg-4 ms-5 mt-3 ps-3 listimgtext'>Traffic Training Sessions for School & College students</p>
           </Col>
-          <Col lg={2} md={6} sm={6} className='ms-0 ps-lg-5'>
+          <Col lg={2} md={6} sm={6} className='ms-0 ps-lg-5' data-aos="fade-down">
             <img src={addressing} className='listimg ms-lg-3' />
             <p className='ms-lg-2 ms-5 mt-3 listimgtext'> Addressing the Traffic Condition & problems</p>
           </Col>
-          <Col lg={2} md={6} sm={6} className='me-0 ps-lg-5'>
+          <Col lg={2} md={6} sm={6} className='me-0 ps-lg-5' data-aos="fade-down">
             <img src={don} className='listimg ms-lg-5' />
             <p className='ms-5 ps-5 pe-3 mt-3 listimgtext'> DON (Dost Of Nashik) awareness among youth.</p>
           </Col>
-          <Col lg={3} md={6} sm={6} className='ms-lg-5'>
+          <Col lg={3} md={6} sm={6} className='ms-lg-5' data-aos="fade-down">
             <img src={hub} className='listimg ms-lg-5' />
             <p className='ms-4 mt-3 listimgtext text-end'> Knowledge Hub</p>
           </Col>
-          <Col lg={2} md={6} sm={6} className='ms-0'>
+          <Col lg={2} md={6} sm={6} className='ms-0' data-aos="fade-down">
             <img src={bike} className='listimg ms-lg-0' />
             <p className='ms-lg-3 ms-5 mt-3 listimgtext'>Aika Na Nashikkar</p>
           </Col>

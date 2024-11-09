@@ -7,6 +7,10 @@ import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
 import { Col, Container, Row, Card } from 'react-bootstrap'
 import axios from 'axios';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
+
 const Newsphoto = () => {
 
     const[getdata , setdata] = useState([]);
@@ -23,7 +27,10 @@ const Newsphoto = () => {
     }
     useEffect(()=>{
         fetdata();
+        Aos.init();
     },[])
+
+   
     const photos = [
         {
             src: photo1,
@@ -54,7 +61,7 @@ const Newsphoto = () => {
             <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto justify-content-center'>
                 {getdata.map((a, index) => (
                     <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
-                        <Card className='photo h-100 border-0'>
+                        <Card className='photo h-100 border-0 w-100'data-aos="zoom-in-down">
                             <img src={a.img} className='picture img-fluid' alt={`Photo ${index + 1}`} />
                             <Card.Body>
                                 <Card.Text className='mt-3 cardtext text-start'>

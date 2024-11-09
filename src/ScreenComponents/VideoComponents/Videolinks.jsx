@@ -4,6 +4,9 @@ import '../../Components/Youtube.css';
 import yt1 from "../../Assets/Assets/Youtube/yt1.png"
 import axios from 'axios';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Youtube = () => {
 
 
@@ -22,8 +25,11 @@ const Youtube = () => {
   }
   useEffect(() => {
     fetchdata();
+    Aos.init();
   }, [])
 
+  
+ 
  
 
   return (
@@ -35,7 +41,7 @@ const Youtube = () => {
             getdata.map((a) => {
               return (
                 <>
-                  <Col xs={12} md={6} className='mb-4'>
+                  <Col xs={12} md={6} className='mb-4' data-aos="fade-up">
                     <iframe
                       className="w-100 rounded-3"
                       style={{ height: "280px" }}

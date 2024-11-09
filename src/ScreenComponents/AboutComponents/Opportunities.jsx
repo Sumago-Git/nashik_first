@@ -8,6 +8,10 @@ import industry from "../../Assets/Assets/Aboutpage/industry.png";
 import education from "../../Assets/Assets/Aboutpage/education.png";
 import axios from 'axios';
 
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const opportunitiesData = [
     // { imgSrc: health, text: "Health" },
     { imgSrc: road, text: "Roads (Intra-city\nand Intercity) Connectivity" },
@@ -34,7 +38,10 @@ const Opportunities = () => {
 
     useEffect(() => {
         getdata_here();
+        Aos.init();
     }, [])
+
+
     return (
         <>
             <Container fluid className='oppobg mt-lg-5 pb-lg-5 pt-lg-4'>
@@ -44,11 +51,9 @@ const Opportunities = () => {
                         {getdata.map((item, index) => (
                             <>
 
-                                <Col lg={3} md={6} sm={6} className='d-flex flex-column align-items-center text-center'>
-
+                                <Col lg={3} md={6} sm={6} className='d-flex flex-column align-items-center text-center' data-aos="fade-down">
                                     <img src={item.img} className='oppoimg img-fluid  ' alt={item.title} />
-                                    <p className='oppoimgtext  ' style={{ whiteSpace: 'pre-wrap' }}>{item.title}</p>
-
+                                    <p className='oppoimgtext pt-3 ' style={{ whiteSpace: 'pre-wrap' }}>{item.title}</p>
                                 </Col>
                             </>
 

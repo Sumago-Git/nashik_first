@@ -9,15 +9,15 @@ const Slotpage = () => {
     const [slotDate, setSlotDate] = useState("")
     const location = useLocation()
     const navigate = useNavigate(); // Get the navigate function from useNavigate hook
-    const [category , setcategory] = useState("");
+    const [category, setcategory] = useState("");
 
     // useEffect(() => {
     //     window.scrollTo(0, 0)
     // }, [])
-    
+
     useEffect(() => {
-        if (location ) {
-            console.log("location state : "  , location.state);
+        if (location) {
+            console.log("location state : ", location.state);
             setcategory(location.state.category)
 
             const date = new Date(location.state.selectedDate);
@@ -70,11 +70,35 @@ const Slotpage = () => {
                         <Row>
                             {sessions.map((session, index) =>
                             (
+                                // <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                //     <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` , category : category} })} className='w-100' style={{ border: "0px" }} > <Container className='session p-lg-3'>
+                                //         {session.time} - {session.session}
+                                //     </Container></button>
+                                // </Col>
                                 <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
-                                    <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` , category : category} })} className='w-100' style={{ border: "0px" }}> <Container className='session p-lg-3'>
-                                        {session.time} - {session.session}
-                                    </Container></button>
+                                    <button
+                                        onClick={() => {
+                                            navigate("/bookingpage", {
+                                                state: {
+                                                    selectedDate: slotDate,
+                                                    selectedTime: `${session.time}-${session.session}`,
+                                                    category: category
+                                                }
+                                            });
+                                            // Ensure window scrolls to top after navigation
+                                            // For slightly offset positioning if desired
+                                            setTimeout(() => window.scrollTo(0, 0), 0);
+
+                                        }}
+                                        className='w-100'
+                                        style={{ border: "0px" }}
+                                    >
+                                        <Container className='session p-lg-3'>
+                                            {session.time} - {session.session}
+                                        </Container>
+                                    </button>
                                 </Col>
+
                             )
                             )
                             }

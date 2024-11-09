@@ -13,6 +13,10 @@ import event8 from "../../Assets/Assets/Pastevents/event8.png"
 import event9 from "../../Assets/Assets/Pastevents/event9.png"
 import axios from 'axios';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
+
 const specialEvents = [
   event8, event2, event3
 ];
@@ -36,6 +40,10 @@ const Pastevents = () => {
     handleShow()
     setId(id)
   }
+
+  useEffect(()=>{
+    Aos.init();
+  },[])
 
   const getdata = () => {
     axios.get('PostEvents/get-PostEvents')
@@ -79,18 +87,13 @@ const Pastevents = () => {
             pastgetdata.map((a) => {
               return (
                 <>
-                  <Col xs={12} sm={6} md={4} className='mb-2'>
+                  <Col xs={12} sm={6} md={4} className='mb-2' data-aos="fade-up" >
                     <img src={a.img} className='events img-fluid' alt={a.title} />
                   </Col>
                 </>
               )
             })
           }
-          {/* {specialEvents.map((event, index) => (
-            <Col xs={12} sm={6} md={4} key={index} className='mb-2'> 
-              <img src={event} className='events img-fluid' alt={` Event ${index + 1}`} />
-            </Col>
-          ))} */}
         </Row>
       </Container>
 

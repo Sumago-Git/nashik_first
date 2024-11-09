@@ -747,6 +747,7 @@ const Calendar = () => {
   const handleDateClick = (day) => {
     if (day) {
       const clickedDate = new Date(currentYear, currentMonth, day);
+      window.scrollTo(0, 0);
       // Redirect to another page and pass the date as state
       navigate("/slotpage", { state: { selectedDate: clickedDate, category: selectedButton } });
     }
