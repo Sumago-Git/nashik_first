@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
 import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import photo1 from '../../Assets/Assets/Photogallery/photo1.png';
 import photo2 from '../../Assets/Assets/Photogallery/photo2.png';
 import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
 import { Col, Container, Row, Card } from 'react-bootstrap'
+import axios from 'axios';
 
 const Newsphoto = () => {
+
+    const[getdata , setdata] = useState([]);
+
+    const fetdata = () => {
+        axios.get('news/get-news')
+            .then((res) => {
+                setdata(res.data.responseData)
+            })
+            .catch((err) => {
+                console.log(err);
+                
+            })
+    }
+    useEffect(()=>{
+        fetdata();
+    },[])
     const photos = [
         {
             src: photo1,
-            text: 'Successful completion of training programme for 2,00,000 Citizens'
+            text: ' '
         },
         {
             src: photo2,
@@ -35,15 +52,15 @@ const Newsphoto = () => {
              News
             </h1>
             <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto justify-content-center'>
-                {photos.map((photo, index) => (
+                {getdata.map((a, index) => (
                     <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
-                        <Card className='photo h-100 '>
-                            <img src={photo.src} className='picture img-fluid' alt={`Photo ${index + 1}`} />
-                            {/* <Card.Body>
-                  <Card.Text className='mt-3 cardtext text-start'>
-                    {photo.text}
-                  </Card.Text>
-                </Card.Body> */}
+                        <Card className='photo h-100 border-0'>
+                            <img src={a.img} className='picture img-fluid' alt={`Photo ${index + 1}`} />
+                            <Card.Body>
+                                <Card.Text className='mt-3 cardtext text-start'>
+                                    {a.title}
+                                </Card.Text>
+                            </Card.Body>
                         </Card>
                     </Col>
                 ))}
