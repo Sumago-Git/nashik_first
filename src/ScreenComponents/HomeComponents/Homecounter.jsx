@@ -14,8 +14,13 @@ import counterimg1 from "../../Assets/Assets/Homecounter/counterimg1.png"
 import homecounterimg2a from "../../Assets/Assets/Homecounter/homecounter2a.png"
 import axios from 'axios';
 
+import CountUp from 'react-countup'
+import ScrollTrigger from 'react-scroll-trigger';
+
 
 const Homecounter = () => {
+
+  const [counterOn, setCounterOn] = useState(false);
 
   const [getdata, setdata] = useState([]);
 
@@ -38,52 +43,58 @@ const Homecounter = () => {
   return (
     <>
       <h1 className='mt-md-5 homecounterheadline '> What makes us <span style={{ color: "#F96945" }}>special?</span></h1>
+
       <Container fluid className='pitch mt-4 pb-5'>
-        <Container>
-          <Row>
-            <Col md={12} lg={5} sm={12}>
-              <Row className="justify-content-center mt-3">
-                {
-                  getdata.map((a) => {
-                    return (
-                      <>
-                        <Col xs={6} sm={5} md={5} className="h-50">
-                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
-                            <h5 style={{ fontWeight: "700" }} className="text-white">
-                              Training<br /> Sessions
-                            </h5>
-                            <img src={trining_imparted} className="w-50 mx-auto" alt="" />
-                            <h3 className="text-white">{a.training_imparted}</h3>
-                          </Card>
-                        </Col>
-                        <Col xs={6} sm={5} md={5} className="h-50">
-                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
-                            <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
-                            <img src={lives} className="w-50 mx-auto" alt="" />
-                            <h3 className="">{a.lives_changed}</h3>
-                          </Card>
-                        </Col>
-                        <Col xs={6} sm={5} md={5} className="h-50">
-                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
-                            <h5 style={{ fontWeight: "700" }}>Adult</h5>
-                            <img src={adult} className="w-50 mx-auto" alt="" />
-                            <h3>{a.children}</h3>
-                          </Card>
-                        </Col>
+        <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+          <Container>
+            <Row>
+              <Col md={12} lg={5} sm={12}>
+                <Row className="justify-content-center mt-3">
+                  {
+                    getdata.map((a) => {
+                      return (
+                        <>
+                          <Col xs={6} sm={5} md={5} className="h-50">
+                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
+                              <h5 style={{ fontWeight: "700" }} className="text-white">
+                                Training<br /> Sessions
+                              </h5>
+                              <img src={trining_imparted} className="w-50 mx-auto" alt="" />
+                              {/* <h3 className="text-white">{a.training_imparted}</h3> */}
+                              <h3>{counterOn && <CountUp start={0} end={a.training_imparted} duration={2} delay={0}/>}</h3>
+                            </Card>
+                          </Col>
+                          <Col xs={6} sm={5} md={5} className="h-50">
+                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                              <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
+                              <img src={lives} className="w-50 mx-auto" alt="" />
+                              {/* <h3 className="">{a.lives_changed}</h3> */}
+                              <h3>{counterOn && <CountUp start={0} end={a.lives_changed} duration={2} delay={0}/>}</h3>
+                            </Card>
+                          </Col>
+                          <Col xs={6} sm={5} md={5} className="h-50">
+                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                              <h5 style={{ fontWeight: "700" }}>Adult</h5>
+                              <img src={adult} className="w-50 mx-auto" alt="" />
+                              {/* <h3>{a.children}</h3> */}
+                              <h3>{counterOn && <CountUp start={0} end={a.children} duration={2} delay={0}/>}</h3>
+                            </Card>
+                          </Col>
 
-                        <Col xs={6} sm={5} md={5} className="h-50">
-                          <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
-                            <h5 style={{ fontWeight: "700" }}>Children</h5>
-                            <img src={child} className="w-50 mx-auto" alt="" />
-                            <h3>{a.adult}</h3>
-                          </Card>
-                        </Col>
-                      </>
-                    )
-                  })
-                }
+                          <Col xs={6} sm={5} md={5} className="h-50">
+                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
+                              <h5 style={{ fontWeight: "700" }}>Children</h5>
+                              <img src={child} className="w-50 mx-auto" alt="" />
+                              {/* <h3>{a.adult}</h3> */}
+                              <h3>{counterOn && <CountUp start={0} end={a.adult} duration={2} delay={0}/>}</h3>
+                            </Card>
+                          </Col>
+                        </>
+                      )
+                    })
+                  }
 
-                {/* <Col xs={6} sm={5} md={5} className="h-50">
+                  {/* <Col xs={6} sm={5} md={5} className="h-50">
                   <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
                     <h5 style={{ fontWeight: "700" }} className="text-white">
                       Training<br /> Sessions
@@ -118,24 +129,25 @@ const Homecounter = () => {
                     <h3>1,35,935</h3>
                   </Card>
                 </Col> */}
-              </Row>
-            </Col>
+                </Row>
+              </Col>
 
-            <Col md={12} lg={5} className="mt-md-5 mt-5">
-              <ul className="homecounterlist text-start md-ms-0 md-ps-0 mt-md-4">
-                <li className='mb-md-3'>
-                  Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}>Traffic Training Sessions for School & College students</span> and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span>
-                </li>
-                <li className='mb-md-3'>
-                  <span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.
-                </li>
-                <li className='mb-md-3'>
-                  <span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
+              <Col md={12} lg={5} className="mt-md-5 mt-5">
+                <ul className="homecounterlist text-start md-ms-0 md-ps-0 mt-md-4">
+                  <li className='mb-md-3'>
+                    Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}>Traffic Training Sessions for School & College students</span> and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span>
+                  </li>
+                  <li className='mb-md-3'>
+                    <span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.
+                  </li>
+                  <li className='mb-md-3'>
+                    <span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span>
+                  </li>
+                </ul>
+              </Col>
+            </Row>
+          </Container>
+        </ScrollTrigger>
 
 
         {/* white card */}

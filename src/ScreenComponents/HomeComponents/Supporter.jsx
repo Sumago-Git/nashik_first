@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
 import { Container, Spinner, Alert } from 'react-bootstrap';
 import banner from '../../Assets/Assets/Supporters/banner.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Components/Supporters.css';
 import axios from 'axios';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Supporter = () => {
   const [thanksto_brands, setthanksto_brands] = useState([]);
@@ -30,6 +33,35 @@ const Supporter = () => {
     getdata();
   }, []);
 
+  // Slider settings
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4, // Number of items to show per slide
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Container fluid className='mt-lg-5 pt-4'>
@@ -47,35 +79,37 @@ const Supporter = () => {
             Thanks <span style={{ color: '#F96945' }}> To...</span>
           </p>
 
-          <Container fluid className='pb-4'>
-            {/* Show loading spinner while data is fetching */}
+          <Container fluid className='pb-4 p-4'>
             {loading ? (
               <div className="text-center">
                 <Spinner animation="border" variant="primary" />
               </div>
             ) : error ? (
-              // Show error message if there was an issue fetching data
               <Alert variant="danger">
                 {error}
               </Alert>
             ) : (
-              // Display supporter images if data is available
-              <Row className='justify-content-center p-3'>
+              <Slider {...sliderSettings} >
                 {thanksto_brands.map((supporter, index) => (
-                  <Col xs={6} sm={3} md={3} lg={3} className='mb-3 mt-lg-4' key={index}>
-                    <img src={supporter.img} className='trademark img-fluid' alt={supporter.title} />
-                  </Col>
+                  <div key={index}>
+                    <img
+                      src={supporter.img}
+                      className='trademark img-fluid'
+                      alt={supporter.title}
+                      style={{ width: '100%', padding: '10px' }}
+                    />
+                  </div>
                 ))}
-              </Row>
+              </Slider>
             )}
           </Container>
         </Container>
       )}
 
-      {/* Show a message if no data is found */}
       {thanksto_brands.length === 0 && !loading && !error && (
-        <></>
-        
+        <Container className="text-center mt-5">
+          <p>No supporters available at the moment.</p>
+        </Container>
       )}
     </>
   );

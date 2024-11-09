@@ -54,7 +54,7 @@ const Photogallery = () => {
           ))}
         </Row>
         <Col>
-          <Link to="events"> <button className='returnbutton p-lg-1 mt-2'>
+          <Link to="events"> <button className='returnbutton p-lg-1 mt-2' onClick={() => window.scrollTo(0, 0)}>
             View More
           </button></Link>
         </Col>
