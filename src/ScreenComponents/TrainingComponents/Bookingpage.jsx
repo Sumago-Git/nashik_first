@@ -119,7 +119,7 @@ const Bookingpage = () => {
       data.append('vehicletype', formData.vehicletype.join(','));
 
       // Make the axios request to the combined endpoint
-      const response = await axios.post('http://127.0.0.1:8000/bookingform/create-uploadOrAddBookingForm', data, {
+      const response = await axios.post('https://nashikfirst.backend.sumagodemo.com/bookingform/create-uploadOrAddBookingForm', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

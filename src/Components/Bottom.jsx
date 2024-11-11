@@ -26,30 +26,30 @@ const Bottom = () => {
   const [footerDate, setFooterDate] = useState("")
   const [socialLinks, setSocialLinks] = useState([])
 
-  useEffect(() => {
-    axios
-      .get("social-contact/get-socialcontacts")
-      .then((response) => {
-        if (response.data) {
-          console.log("response", response.data);
-        } else {
-          // setSocialLinks(response.data.);
-        }
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the data!", error);
-      });
-  }, [])
-  useEffect(() => {
-    // Create a new Date object
-    const currentDate = new Date();
+  // useEffect(() => {
+  //   axios
+  //     .get("social-contact/get-socialcontacts")
+  //     .then((response) => {
+  //       if (response.data) {
+  //         // console.log("response", response.data);
+  //       } else {
+  //         // setSocialLinks(response.data.);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       // console.error("There was an error fetching the data!", error);
+  //     });
+  // }, [])
+  // useEffect(() => {
+  //   // Create a new Date object
+  //   const currentDate = new Date();
 
-    // Get the current year
-    const currentYear = currentDate.getFullYear();
-    setFooterDate(currentYear)
-    // Log or use the current year
-    console.log("Current year:", currentYear);
-  }, [])
+  //   // Get the current year
+  //   const currentYear = currentDate.getFullYear();
+  //   setFooterDate(currentYear)
+  //   // Log or use the current year
+  //   console.log("Current year:", currentYear);
+  // }, [])
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About us', path: '/about' },
