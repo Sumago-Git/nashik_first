@@ -296,7 +296,7 @@ const Bookingpage = () => {
                     <Form.Control
                       type="file"
                       name='excel'
-                      accept=".xls,.xlsx" // Allow only Excel file types
+                      accept=".xls,.xlsx" 
                       onChange={handleChange}
                     />
                     {errors.excel && <p className='text-start ms-md-1 mt-1 text-danger'>{errors.excel}</p>}
@@ -428,16 +428,6 @@ const Bookingpage = () => {
           )}
 
 
-          {/* {category === "School Students Training – Group" && 
-          <div>
-            <Form>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label className='text-start'>Upload Xcel</Form.Label>
-                <Form.Control type="file" placeholder="name@example.com" />
-              </Form.Group>
-            </Form>
-          </div>
-          } */}
 
 
         </Container>

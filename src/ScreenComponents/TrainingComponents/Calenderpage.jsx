@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useSyncExternalStore } from "react";
 import { Container, Table, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
@@ -105,7 +102,7 @@ const Calendar = () => {
   const handleDateClick = (day) => {
     if (day) {
       const clickedDate = new Date(currentYear, currentMonth, day);
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 700);
       // Redirect to another page and pass the date as state
       navigate("/slotpage", { state: { selectedDate: clickedDate, category: selectedButton } });
     }
@@ -119,6 +116,8 @@ const Calendar = () => {
     setbrno(buttonNumber);
     // console.log(selectedButton);
     console.log("selected button : ", buttonNumber);
+    console.log("Category : ",btncategory);
+    
     // alert(`Selected button: ${btncategory}`);
 
   };
@@ -145,7 +144,7 @@ const Calendar = () => {
 
         <Container>
 
-          <p className='slotheadline text-start mt-3 pt-5'>
+          <p className='slotheadline text-start mt-0 pt-4 '>
             <div className='datetime p-3 text-center'>
               Click on the calendar date & time slot, then fill out the form below to schedule your training.
             </div>
@@ -275,23 +274,20 @@ const Calendar = () => {
               </Row>
             </Nav>
 
+            <br />
 
 
-            Road Safety & Traffic Awareness programme jointly <br />
-            organized by RTO, Nashik and Nashik First.
+             Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First. 
+           
           </p>
           <p className='slotpagepara text-start'>
             This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
             It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
             Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
-          </p>
-
-
-
-
-
-
+          </p> 
+        
         </Container>
 
 

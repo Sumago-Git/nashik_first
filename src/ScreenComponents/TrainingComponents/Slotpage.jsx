@@ -78,6 +78,7 @@ const Slotpage = () => {
                                 <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
                                     <button
                                         onClick={() => {
+                                            
                                             navigate("/bookingpage", {
                                                 state: {
                                                     selectedDate: slotDate,
@@ -87,7 +88,7 @@ const Slotpage = () => {
                                             });
                                             // Ensure window scrolls to top after navigation
                                             // For slightly offset positioning if desired
-                                            setTimeout(() => window.scrollTo(0, 0), 0);
+                                            setTimeout(() => window.scrollTo(0, 750));
 
                                         }}
                                         className='w-100'

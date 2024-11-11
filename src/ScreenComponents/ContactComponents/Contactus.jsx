@@ -132,12 +132,12 @@ const Contactus = () => {
     try {
       // Replace the URL with your API endpoint
       const response = await axios.post('contactform/create-contactform', formData);
-      alert('Form submitted successfully!');
+      // alert('Form submitted successfully!');
       setIsSubmitting(false);
       setFormData("")
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("There was an error submitting the form.");
+      // alert("There was an error submitting the form.");
       setIsSubmitting(false);
     }
 
@@ -170,7 +170,8 @@ const Contactus = () => {
                           </a>
                           <p className="icontext text-center ml-1">
                             <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
-                              +91 {a.whatsapp}
+                              {/* +91 {a.whatsapp} */}
+                              +91 7796116555
                             </a>
                           </p>
 
@@ -181,7 +182,8 @@ const Contactus = () => {
                           </a>
                           <p className="icontext text-center ml-1">
                             <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
-                              +91 {a.phone}
+                              {/* +91 {a.phone} */}
+                              +91 2532315966
                             </a>
                           </p>
                         </Col>

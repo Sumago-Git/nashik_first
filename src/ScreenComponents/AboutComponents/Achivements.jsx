@@ -26,7 +26,7 @@ const Achivements = () => {
         <Container fluid className='mt-lg-5 mt-4  pe-lg-5 '>
           <text>
             <ul className='listtext text-start pb-lg-4 ms-lg-4'>
-              <li className='mb-lg-2' >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students</span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
+              <li className='mb-lg-2' >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students </span>and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span></li>
               <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.</li>
               <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span></li>
               <li className='mb-lg-2'>A well appreciated creative campaign <span style={{ fontWeight: "800" }}>DON (Dost Of Nashik)</span> to create traffic rule <span style={{ fontWeight: "800" }}>awareness among youth.</span></li>

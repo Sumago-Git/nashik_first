@@ -18,7 +18,7 @@ import emailborder from "../Assets/Assets/Bottom/emailborder.png";
 import locationborder from "../Assets/Assets/Bottom/locationborder.png"
 import wappChat from "../Assets/Assets/Home/wapImg.gif"
 import axios from 'axios';
-import { FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
@@ -186,7 +186,7 @@ const Bottom = () => {
             <Col md={6} lg={8}>
               <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
                 <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="https://www.hitwebcounter.com" target="_blank">
-                <img src="https://hitwebcounter.com/counter/counter.php?page=17281775&style=0025&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>   </p>
+                  <img src="https://hitwebcounter.com/counter/counter.php?page=17281775&style=0025&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
               </div>
             </Col>
             <Col md={6} lg={4}>
@@ -213,14 +213,14 @@ const Bottom = () => {
                           </a>
                         </Col>
                         <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
-                          <a href={a.email} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                          <a href={a.whatsapp} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
-                              <MdOutlineMarkEmailRead />
+                              <FaYoutube />
                             </Card>
                           </a>
                         </Col>
                         <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
-                          <a href={a.whatsapp} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                          <a href={a.linkedin} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
                               {/* <FaWhatsapp /> */}
                               <FaXTwitter />
