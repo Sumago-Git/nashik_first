@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Components/Supporters.css';
 import axios from 'axios';
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Supporter = () => {
@@ -33,30 +33,32 @@ const Supporter = () => {
     getdata();
   }, []);
 
-  // Slider settings
+  // Slider settings with conditions based on the number of images
   const sliderSettings = {
-    dots: true,
-    infinite: true,
+    dots: thanksto_brands.length > 4, // Show dots if more than 4 images
+    infinite: thanksto_brands.length > 4, // Infinite scroll if more than 4 images
     speed: 500,
-    slidesToShow: 4, // Number of items to show per slide
+    slidesToShow: Math.min(thanksto_brands.length, 4), // Show up to 4 images at once
     slidesToScroll: 1,
+    autoplay: thanksto_brands.length > 4, // Auto slide if more than 4 images
+    autoplaySpeed: 3000, // Slide interval in milliseconds (e.g., 3000ms for 3 seconds)
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: Math.min(thanksto_brands.length, 3), // Show up to 3 images at 1024px width
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: Math.min(thanksto_brands.length, 2), // Show up to 2 images at 768px width
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 image at 480px width
         },
       },
     ],
