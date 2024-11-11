@@ -18,6 +18,13 @@ const Bookingpage = () => {
     phone: '',
     excel: '',
     vehicletype: [],
+    institution_name: "",
+    institution_email: "",
+    institution_phone: "",
+    hm_principal_manager_name: "",
+    hm_principal_manager_mobile: "",
+    coordinator_mobile: "",
+    coordinator_name: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -109,6 +116,13 @@ const Bookingpage = () => {
       data.append('category', category);
       data.append('slotsession', slotsession);
       data.append('slotdate', slotdate);
+      data.append('institution_name', formData.institution_name);
+      data.append('institution_email', formData.institution_email);
+      data.append('institution_phone', formData.institution_phone);
+      data.append('hm_principal_manager_name', formData.hm_principal_manager_name);
+      data.append('hm_principal_manager_mobile', formData.hm_principal_manager_mobile);
+      data.append('coordinator_mobile', formData.coordinator_mobile);
+      data.append('coordinator_name', formData.coordinator_name);
 
       // Append the Excel file if it exists
       if (formData.excel) {
@@ -119,7 +133,7 @@ const Bookingpage = () => {
       data.append('vehicletype', formData.vehicletype.join(','));
 
       // Make the axios request to the combined endpoint
-      const response = await axios.post('https://nashikfirst.backend.sumagodemo.com/bookingform/create-uploadOrAddBookingForm', data, {
+      const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -158,8 +172,8 @@ const Bookingpage = () => {
   useEffect(() => {
     if (location && location.state) {
       console.log("location state : ", location.state);
-      setSlotSession(location.state.selectedDate)
-      setSlotDate(location.state.selectedTime)
+      setSlotSession(location.state.selectedTime)
+      setSlotDate(location.state.selectedDate)
       // console.log("location.selectedTime", location.state.selectedTime);
       setCategory(location.state.category || ""); // Assume category comes from the location state
       setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
@@ -197,32 +211,111 @@ const Bookingpage = () => {
         <Container className='bookingdetails mt-5 pt-4 pb-3 '>
           <h1 className='bookingheadline mt-3 mx-auto'>Please fill in your details</h1>
           {category === "School Students Training – Group" || category === "College/Organization Training – Group" ? (
-            <Form onSubmit={handleSubmit}>
-              <Col lg={6} className='mb-3'>
-                <Form.Group controlId="uploadExcel">
-                  <p className='text-black text-start ms-lg-1 ms-sm-3 mt-3'>{"Upload Excel: "}</p>
-                  <Form.Control
-                    type="file"
-                    name='excel'
-                    accept=".xls,.xlsx" // Allow only Excel file types
+            <form onSubmit={handleSubmit}>
+              <Row className=''>
+                <Col lg={6} md={7} sm={12}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Institution Name*"}</p>
+                  <input
+                    name='institution_name'
+                    value={formData.institution_name}
                     onChange={handleChange}
+                    placeholder={"Institution Name"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
-                  {errors.excel && <p className='text-start ms-md-1 mt-1 text-danger'>{errors.excel}</p>}
-                </Form.Group>
-              </Col>
+                  {errors.institution_name && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.institution_name}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Institution Email*"}</p>
+                  <input
+                    name='institution_email'
+                    value={formData.institution_email}
+                    onChange={handleChange}
+                    placeholder={"Institution Email"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.institution_email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.institution_email}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Institution Phone*"}</p>
+                  <input
+                    name='institution_phone'
+                    value={formData.institution_phone}
+                    onChange={handleChange}
+                    placeholder={"Institution Phone"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.institution_phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.institution_phone}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Principal/Manager Name*"}</p>
+                  <input
+                    name='hm_principal_manager_name'
+                    value={formData.hm_principal_manager_name}
+                    onChange={handleChange}
+                    placeholder={"Principal/Manager Name"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.hm_principal_manager_name && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.hm_principal_manager_name}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Principal/Manager Mobile*"}</p>
+                  <input
+                    name='hm_principal_manager_mobile'
+                    value={formData.hm_principal_manager_mobile}
+                    onChange={handleChange}
+                    placeholder={"Principal/Manager Mobile"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.hm_principal_manager_mobile && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.hm_principal_manager_mobile}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Coordinator Name*"}</p>
+                  <input
+                    name='coordinator_name'
+                    value={formData.coordinator_name}
+                    onChange={handleChange}
+                    placeholder={"Cordinator Name"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.coordinator_name && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.coordinator_name}</p>}
+                </Col>
+                <Col lg={6}>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Cordinator Mobile*"}</p>
+                  <input
+                    name='coordinator_mobile'
+                    value={formData.coordinator_mobile}
+                    onChange={handleChange}
+                    placeholder={"Cordinator Mobile"}
+                    className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                  />
+                  {errors.coordinator_mobile && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.coordinator_mobile}</p>}
+                </Col>
+                <Col lg={7} className='mb-3'>
+                  <Form.Group controlId="uploadExcel">
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Upload Excel*"}</p>
+                    <Form.Control
+                      type="file"
+                      name='excel'
+                      accept=".xls,.xlsx" 
+                      onChange={handleChange}
+                    />
+                    {errors.excel && <p className='text-start ms-md-1 mt-1 text-danger'>{errors.excel}</p>}
+                  </Form.Group>
+                </Col>
 
-              <Col lg={6} className='mb-3'>
-                <ReCAPTCHA
-                  sitekey={captchaKey} // Replace with your Google reCAPTCHA site key
-                  onChange={handleCaptchaChange}
-                />
-                {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
-              </Col>
+                <Col lg={6} className='mb-3'>
+                  <ReCAPTCHA
+                    sitekey={captchaKey} // Replace with your Google reCAPTCHA site key
+                    onChange={handleCaptchaChange}
+                  />
+                  {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
+                </Col>
 
-              <div className='text-center'>
-                <button className='returnbutton p-lg-2 mt-4' type='submit'>Book Now</button>
-              </div>
-            </Form>
+                <div className='text-center'>
+                  <button className='returnbutton p-lg-2 mt-4' type='submit'>Book Now</button>
+                </div>
+              </Row>
+            </form>
           ) : (
             <div className='form-group mb-4'>
               <p className='bookingdate text-black text-start ms-lg-4'>{"Booking Date"}</p>
@@ -335,16 +428,6 @@ const Bookingpage = () => {
           )}
 
 
-          {/* {category === "School Students Training – Group" && 
-          <div>
-            <Form>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label className='text-start'>Upload Xcel</Form.Label>
-                <Form.Control type="file" placeholder="name@example.com" />
-              </Form.Group>
-            </Form>
-          </div>
-          } */}
 
 
         </Container>

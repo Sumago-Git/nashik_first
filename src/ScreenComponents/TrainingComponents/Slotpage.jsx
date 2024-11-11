@@ -4,20 +4,20 @@ import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-
+import axios from 'axios';
 const Slotpage = () => {
     const [slotDate, setSlotDate] = useState("")
     const location = useLocation()
     const navigate = useNavigate(); // Get the navigate function from useNavigate hook
-    const [category , setcategory] = useState("");
+    const [category, setcategory] = useState("");
 
     // useEffect(() => {
     //     window.scrollTo(0, 0)
     // }, [])
-    
+
     useEffect(() => {
-        if (location ) {
-            console.log("location state : "  , location.state);
+        if (location) {
+            console.log("location state : ", location.state);
             setcategory(location.state.category)
 
             const date = new Date(location.state.selectedDate);
@@ -32,11 +32,28 @@ const Slotpage = () => {
     }, [location])
 
 
+    const [sessions, setsessions] = useState([]);
 
-    const sessions = [
-        { time: "10:30 A.M.", session: "Session 1" },
-        { time: "03:30 P.M.", session: "Session 2" }
-    ];
+    const getdata_here = () => {
+        axios.get('/Sessionslot/sessionslots/category/RTO – Suspended Driving License Holders Training')
+            .then((res) => {
+                setsessions(res.data.responseData);
+                console.log(res.data.responseData);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    useEffect(() => {
+        getdata_here();
+
+    }, [])
+
+    // const sessions = [
+    //     { time: "10:30 A.M.", session: "Session 1" },
+    //     { time: "03:30 P.M.", session: "Session 2" }
+    // ];
 
 
 
@@ -70,11 +87,36 @@ const Slotpage = () => {
                         <Row>
                             {sessions.map((session, index) =>
                             (
+                                // <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                //     <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` , category : category} })} className='w-100' style={{ border: "0px" }} > <Container className='session p-lg-3'>
+                                //         {session.time} - {session.session}
+                                //     </Container></button>
+                                // </Col>
                                 <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
-                                    <button onClick={() => navigate("/bookingpage", { state: { selectedDate: slotDate, selectedTime: `${session.time}-${session.session}` , category : category} })} className='w-100' style={{ border: "0px" }}> <Container className='session p-lg-3'>
-                                        {session.time} - {session.session}
-                                    </Container></button>
+                                    <button
+                                        onClick={() => {
+
+                                            navigate("/bookingpage", {
+                                                state: {
+                                                    selectedDate: slotDate,
+                                                    selectedTime: `${session.time}-${session.session}`,
+                                                    category: category
+                                                }
+                                            });
+                                            // Ensure window scrolls to top after navigation
+                                            // For slightly offset positioning if desired
+                                            setTimeout(() => window.scrollTo(0, 750));
+
+                                        }}
+                                        className='w-100'
+                                        style={{ border: "0px" }}
+                                    >
+                                        <Container className='session p-lg-3'>
+                                            {session.time} - {session.title}
+                                        </Container>
+                                    </button>
                                 </Col>
+
                             )
                             )
                             }

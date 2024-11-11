@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Components/Foundation.css'
 import group from '../Assets/Assets/Foundation/group.png';
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Foundation = () => {
+  useEffect(()=>{
+    Aos.init();
+  },[])
   return (
     <>
       <Container fluid className='body text-start py-5  '>
         <Row className='d-flex align-items-center'>
-          <Col md={7} className=''>
+          <Col md={7} className=''  data-aos="fade-down" data-aos-duration="1000">
             <text className='Fheadline ms-lg-5 ' style={{ fontWeight: "650", color: "#c50c1c", lineHeight: "2.5" }}>The Advantage
               Nashik Foundation.</text>
             <p className='fpara1 pt-3 pt-md-0'><span style={{ color: "#c50c1c", fontWeight: "800" }}>Nashik</span> <span style={{ color: "#F96945", fontWeight: "800" }}> First</span>, an initiative of <span style={{ fontWeight: "800" }}>Advantage Nashik</span>
@@ -31,7 +35,7 @@ const Foundation = () => {
             </div>
           </Col>
 
-          <Col md={5} sm={12} className='p-0 justify-content-end'>
+          <Col md={5} sm={12} className='p-0 justify-content-end' data-aos="fade-up" data-aos-duration="2000">
 
             <img src={group} className='group img-fluid flex-end mx-xxl-auto p-3 p-md-0' />
 

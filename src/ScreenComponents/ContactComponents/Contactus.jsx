@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -12,7 +12,31 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Contactus = () => {
+
+
+  const [contactDetail_get, setcontactdetails] = useState([])
+
+  const contactdetails_here = () => {
+    axios.get('contact-detail/get-contactdetails')
+      .then((res) => {
+        setcontactdetails(res.data.responseData)
+        console.log("Getdata Here : ", res.data.responseData);
+
+      })
+      .catch((err) => console.log(err))
+  }
+
+  useEffect(() => {
+    contactdetails_here();
+    Aos.init();
+  }, [])
+
+
+
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -103,105 +127,110 @@ const Contactus = () => {
     }
 
     setIsSubmitting(true);
+    
 
     try {
       // Replace the URL with your API endpoint
-      const response = await axios.post('https://api.example.com/submit', formData);
-      alert('Form submitted successfully!');
+      const response = await axios.post('contactform/create-contactform', formData);
+      // alert('Form submitted successfully!');
       setIsSubmitting(false);
+      setFormData("")
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("There was an error submitting the form.");
+      // alert("There was an error submitting the form.");
       setIsSubmitting(false);
     }
+
+   
+    
   };
   const handleRecaptchaChange = (token) => {
     setFormData({ ...formData, captchaToken: token });
   };
+
+
   return (
     <>
       <img src={lghead} className='lghead d-none d-md-block' />
       <img src={img4} className='img4 d-block d-md-none' />
 
+
       <Container fluid className='p-0 position-relative contactbg  '>
         <Row className='p-0 m-0 justify-content-center'>
-          <Col lg={5}   className="justify-content-center ">
-            <Container fluid className="justify-content-center align-items-center vh-lg-100  mt-lg-5 pt-lg-5">
-              <Row className="justify-content-center">
-                {/* WhatsApp Icon and Text */}
-                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                  <div className="d-flex flex-column align-items-center">
-                    {/* Make image clickable */}
-                    <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <img src={whatsapp} className="icons mb-2" alt="WhatsApp" />
-                    </a>
-                    <p className="icontext">
-                      <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        +91 7796116555
-                      </a>
-                    </p>
-                  </div>
-                </Col>
+          <Col lg={5} className="justify-content-center ">
+            {
+              contactDetail_get.map((a) => {
+                return (
+                  <>
+                    <Container fluid>
+                      <Row>
+                        <Col lg={6} md={6} sm={12} >
+                          <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={whatsapp} alt="WhatsApp" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
+                            <a href="tel:+91 7796116555" style={{ textDecoration: 'none', color: 'inherit' }}>
+                              {/* +91 {a.whatsapp} */}
+                              +91 7796116555
+                            </a>
+                          </p>
 
-                {/* Phone Icon and Text */}
-                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                  <div className="d-flex flex-column align-items-center">
-                    {/* Make image clickable */}
-                    <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <img src={call} className="icons mb-2" alt="Phone" />
-                    </a>
-                    <p className="icontext">
-                      <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        +91 2532315966
-                      </a>
-                    </p>
-                  </div>
-                </Col>
+                        </Col>
+                        <Col lg={6} md={6} sm={12}>
+                          <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={call} alt="Phone" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
+                            <a href="tel:+91 2532315966" style={{ textDecoration: 'none', color: 'inherit' }}>
+                              {/* +91 {a.phone} */}
+                              +91 2532315966
+                            </a>
+                          </p>
+                        </Col>
 
-                {/* Email Icon and Text */}
-                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                  <div className="d-flex flex-column align-items-center">
-                    {/* Make image clickable */}
-                    <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <img src={mail} className="icons mb-2" alt="Email" />
-                    </a>
-                    <p className="icontext">
-                      <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        secretary@nashikfirst.com
-                      </a>
-                    </p>
-                  </div>
-                </Col>
 
-                {/* Location Icon and Text */}
-                <Col lg={6} md={3} sm={12} className="d-flex flex-column align-items-center my-3 mt-5">
-                  <div className="d-flex flex-column align-items-center">
-                    {/* Make image clickable */}
-                    <a
-                      href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: 'none', color: 'inherit' }}
-                    >
-                      <img src={location} className="icons mb-2" alt="Location" />
-                    </a>
-                    <p className="icontext text-center">
-                      <a
-                        href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ textDecoration: 'none', color: 'inherit' }}
-                      >
-                        Survey No. 590/591, Motkari
-                        Nagar, Near Nelson Hospital,
-                        Behind Tupsakhare Lawns,
-                        Near Mumbai Naka, Nashik.
-                      </a>
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
+                        <Col lg={6} md={6} sm={12}>
+                          <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }} className='w-100' data-aos="zoom-in-up">
+                            <img src={mail} alt="Email" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center ml-1">
+                            <a href="mailto:secretary@nashikfirst.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+                              {a.email}
+                            </a>
+                          </p>
+                        </Col>
+
+                        <Col lg={6} md={6} sm={12}>
+                          <a
+                            href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', color: 'inherit' }}
+                            className='w-100'
+                            data-aos="zoom-in-up"
+                          >
+                            <img src={location} alt="Location" height={'250px'} />
+                          </a>
+                          <p className="icontext text-center  ml-1">
+                            <a
+                              href="https://www.google.com/maps?q=Survey+No.+590/591,+Motkari+Nagar,+Near+Nelson+Hospital,+Behind+Tupsakhare+Lawns,+Near+Mumbai+Naka,+Nashik"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: 'none', color: 'inherit' }}
+                            >
+                              {a.address}
+                            </a>
+                          </p>
+
+                        </Col>
+                      </Row>
+                    </Container>
+                  </>
+                )
+              })
+            }
+
+
 
 
           </Col>
@@ -275,7 +304,7 @@ const Contactus = () => {
                       <option value="Smooth & Disciplined City Traffic" className='outline-none'>Smooth & Disciplined City Traffic</option>
                       <option value="Industry and New Investments" className='outline-none'>Industry and New Investments</option>
                       <option value="Education" className='outline-none'>Education
-                    </option>
+                      </option>
                     </select>
                     {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
                   </div>

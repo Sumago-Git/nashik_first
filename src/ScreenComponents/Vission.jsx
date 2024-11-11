@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -14,6 +14,8 @@ import m3 from "../Assets/Assets/Vission/m3.png";
 import divider from "../Assets/Assets/Vission/divider.png"
 
 const Vission = () => {
+
+
   return (
     <>
       <Container fluid className='mt-md-5 mt-5 p-0'>
@@ -25,8 +27,8 @@ const Vission = () => {
 
         <Container fluid className=' vbg '>
           <Row className='justify-content-center '>
-            <Col md={4} lg={6} className='mt-md-5 mt-xl-5 mt-5'>
-              < text className='text  text-white  '>Our Vision </text>
+            <Col md={4} lg={6} className='mt-md-5 mt-xl-5 mt-5' >
+              < text className='text  text-white  ' >Our Vision </text>
             </Col>
             <Col md={8} lg={6} className='mt-md-3 mt-xl-4 d-none d-md-block  position-relative '>
               <div className='d-flex '>
@@ -54,12 +56,14 @@ const Vission = () => {
                 world class infrastructure and well connected with
                 major cities of India by 2035.</p>
             </Col> */}
-            <Col className='d-flex  justify-content-center mt-5'>
+            <Col className='d-flex justify-content-center mt-5'>
               <p className='text-white vtext pb-4 pb-lg-5 pb-xl-3 p-2 mt-sm-2 mt-5'>Nashik city will be <span style={{ fontWeight: "800" }}>Clean, Green, Safe,
                 Economically developed</span> & Well planned having
                 world class infrastructure and well connected with
                 major cities of India by 2035.</p>
             </Col>
+            
+
           </Row>
 
         </Container>
@@ -87,7 +91,7 @@ const Vission = () => {
               </div>
             </Col>
 
-            <Col md={5} lg={6} className='mt-md-5 mt-xl-5 mt-5  '>
+            <Col md={5} lg={6} className='mt-md-5 mt-xl-5 mt-5  ' >
               < text className='text  text-white'>Our Mission</text>
             </Col>
             {/* <Col className='d-flex  justify-content-center'>

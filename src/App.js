@@ -21,13 +21,15 @@ import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
 import Newsphoto from "./ScreenComponents/NewsComponent/Newsphoto";
 
 export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
-// export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy" // server
+ //export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy" // server
+
 function App() {
 
-  useEffect(() => {
-    console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
-    axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
-  }, [])
+  // useEffect(() => {
+  //   console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
+    
+  // }, [])
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
   return (
     <div className="App">
 
