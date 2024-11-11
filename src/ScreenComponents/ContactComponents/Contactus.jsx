@@ -127,17 +127,22 @@ const Contactus = () => {
     }
 
     setIsSubmitting(true);
+    
 
     try {
       // Replace the URL with your API endpoint
-      const response = await axios.post('https://api.example.com/submit', formData);
+      const response = await axios.post('contactform/create-contactform', formData);
       alert('Form submitted successfully!');
       setIsSubmitting(false);
+      setFormData("")
     } catch (error) {
       console.error("Error submitting form", error);
       alert("There was an error submitting the form.");
       setIsSubmitting(false);
     }
+
+   
+    
   };
   const handleRecaptchaChange = (token) => {
     setFormData({ ...formData, captchaToken: token });

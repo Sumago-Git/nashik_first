@@ -278,3 +278,8 @@
   background-color: transparent !important;
   color: inherit !important;
 }
+
+/* Style for dropdown items on hover */
+.event-dropdown .dropdown-item:hover {
+  color: rgb(181, 46, 46) !important;
+}
