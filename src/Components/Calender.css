@@ -161,3 +161,10 @@ fieldset:disabled .btn {
 .custom-button:hover {
   background-color: #f0f0f0; /* Light grey on hover */
 }
+
+
+.holiday-text {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+}
