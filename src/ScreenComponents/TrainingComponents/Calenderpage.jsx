@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useSyncExternalStore } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Table, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
@@ -8,7 +8,6 @@ import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
 import axios from "axios";
-
 // Define static event data with text
 const eventData = [
   { date: '2024-09-05', text: 'Holiday' },
@@ -21,6 +20,7 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate(); // Get the navigate function from useNavigate hook
+  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
 
   const [getdata , setdata] = useState([]);
 
@@ -45,11 +45,29 @@ const Calendar = () => {
     return new Date(year, month, 1).getDay();
   };
 
-  const specialDates = [
-    { day: 15, label: "Holiday", color: "#ecc2c2", bgColor: "#742929" },
-    { day: 18, label: "Closed", color: "red", bgColor: "#ffd4d4" },
-    { day: 22, label: "Available", color: "green", bgColor: "#d4ffd4" },
-  ];
+  const [specialDates, setspecialDates] = useState([]);
+ 
+  const getdata_here = () => {
+    axios.get(`http://127.0.0.1:8000/Sessionslot/sessionslots/category/${selectedButton}`)
+      .then((res) => {
+        setspecialDates(res.data.responseData);
+        console.log(res.data.responseData);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  useEffect(() => {
+    getdata_here();
+
+  }, [])
+
+  // const specialDates = [
+  //   { day: 15, label: "Holiday", color: "#ecc2c2", bgColor: "#742929" },
+  //   { day: 18, label: "Closed", color: "red", bgColor: "#ffd4d4" },
+  //   { day: 22, label: "Available", color: "green", bgColor: "#d4ffd4" },
+  // ];
 
   // Function to get the label and styling details for a specific day
   const getSpecialDateDetails = (day) => {
@@ -122,7 +140,6 @@ const Calendar = () => {
     }
   };
 
-  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
   const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
 
   const handleButtonClick = (buttonNumber, btncategory) => {
@@ -130,8 +147,8 @@ const Calendar = () => {
     setbrno(buttonNumber);
     // console.log(selectedButton);
     console.log("selected button : ", buttonNumber);
-    console.log("Category : ",btncategory);
-    
+    console.log("Category : ", btncategory);
+
     // alert(`Selected button: ${btncategory}`);
 
   };
@@ -291,17 +308,17 @@ const Calendar = () => {
             <br />
 
 
-             Road Safety & Traffic Awareness programme jointly <br />
-            organized by RTO, Nashik and Nashik First. 
-           
+            Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First.
+
           </p>
           <p className='slotpagepara text-start'>
             This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
             It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
             Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
-          </p> 
-        
+          </p>
+
         </Container>
 
 
