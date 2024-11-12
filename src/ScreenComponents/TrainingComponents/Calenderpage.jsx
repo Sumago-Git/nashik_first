@@ -1,4 +1,4 @@
-import React, { useState, useSyncExternalStore } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import { Container, Table, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
@@ -7,6 +7,7 @@ import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
 import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
 import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
+import axios from "axios";
 
 // Define static event data with text
 const eventData = [
@@ -20,6 +21,19 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate(); // Get the navigate function from useNavigate hook
+
+  const [getdata , setdata] = useState([]);
+
+  useEffect(()=> {
+    axios.get('holiday/get-holidays')
+      .then((res) => {
+        setdata(res.data.responseData)
+      })
+      .catch((err) => {
+        setdata(err)
+      })
+  },[])
+
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
