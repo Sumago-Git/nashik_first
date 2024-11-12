@@ -55,7 +55,12 @@ const Slotpage = () => {
                 slotdate: formattedDate,
                 category: category
             }
-            axios.post(`Sessionslot/sessionslots`, data).then((result) => {
+            axios.post(`Sessionslot/sessionslots`, data, {
+                headers: {
+                    "Content-Type": "application/json",
+                    // Add any additional headers if required
+                }
+            }).then((result) => {
                 console.log("result", result.data.responseData);
                 setSessions(result.data.responseData)
             }).catch((err) => {
