@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Container, Table, Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import React, { useEffect, useState } from "react";
+import { Container, Table, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
-import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
-import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
 import "../../Components/Calender.css";
-import Nav from 'react-bootstrap/Nav';
 import axios from "axios";
 
-// Define static event data with text
+// Event data for sample holidays
 const eventData = [
   { date: '2024-09-05', text: 'Holiday' },
   { date: '2024-09-15', text: 'Available' },
   { date: '2024-09-25', text: 'Meeting' },
-  // Add more event data here
 ];
 
 const Calendar = () => {
@@ -22,7 +20,6 @@ const Calendar = () => {
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
   const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
-  const [getdata, setdata] = useState([]);
   const [specialDates, setspecialDates] = useState([]);
 
   useEffect(() => {
@@ -34,7 +31,8 @@ const Calendar = () => {
           month: new Date(holiday.holiday_date).getMonth(),
           label: 'Holiday',
           color: 'red',
-          bgColor: '#ffd4d4'
+          bgColor: '#ffd4d4',
+          isHoliday: true, // Mark this as a holiday
         }));
         setspecialDates(holidayData);
       })
@@ -46,7 +44,7 @@ const Calendar = () => {
   }, []);
 
   const getdata_here = () => {
-    axios.get(`http://127.0.0.1:8000/Sessionslot/sessionslots/category/${selectedButton}`)
+    axios.get(`/Sessionslot/sessionslots/category/${selectedButton}`)
       .then((res) => {
         setspecialDates(prevDates => [
           ...prevDates,
@@ -55,7 +53,8 @@ const Calendar = () => {
             month: new Date(slot.date).getMonth(),
             label: slot.label,
             color: 'green',
-            bgColor: '#d4ffd4'
+            bgColor: '#d4ffd4',
+            isHoliday: false, // Mark this as not a holiday
           }))
         ]);
       })
@@ -66,13 +65,8 @@ const Calendar = () => {
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  const getDaysInMonth = (month, year) => {
-    return new Date(year, month + 1, 0).getDate();
-  };
-
-  const getFirstDayOfMonth = (month, year) => {
-    return new Date(year, month, 1).getDay();
-  };
+  const getDaysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
+  const getFirstDayOfMonth = (month, year) => new Date(year, month, 1).getDay();
 
   const getSpecialDateDetails = (day, month) => {
     return specialDates.find((special) => special.day === day && special.month === month) || {};
@@ -81,11 +75,7 @@ const Calendar = () => {
   const changeMonth = (direction) => {
     setCurrentDate(prevDate => {
       const newDate = new Date(prevDate);
-      if (direction === 'prev') {
-        newDate.setMonth(newDate.getMonth() - 1);
-      } else if (direction === 'next') {
-        newDate.setMonth(newDate.getMonth() + 1);
-      }
+      newDate.setMonth(newDate.getMonth() + (direction === 'prev' ? -1 : 1));
       return newDate;
     });
   };
@@ -96,15 +86,16 @@ const Calendar = () => {
   const daysArray = Array.from({ length: daysInMonth }, (_, index) => index + 1);
   const startingDay = getFirstDayOfMonth(currentMonth, currentYear);
   const firstWeek = Array(startingDay).fill(null).concat(daysArray.slice(0, 7 - startingDay));
+  
   const chunkArray = (arr, size) => {
     const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
+    for (let i = 0; i < arr.length; i += size) result.push(arr.slice(i, i + size));
     return result;
   };
+
   const weeks = chunkArray(daysArray.slice(7 - startingDay), 7);
   weeks.unshift(firstWeek);
+  
   const lastWeek = weeks[weeks.length - 1];
   const remainingCells = 7 - lastWeek.length;
   const nextMonthDays = Array.from({ length: remainingCells }, (_, index) => index + 1);
@@ -176,7 +167,7 @@ const Calendar = () => {
                   <tr key={weekIndex} style={{ cursor: 'default' }}>
                     {week.map((day, dayIndex) => {
                       const isDisabled = day && isPastDate(day);
-                      const { label: dateLabel, color: textColor, bgColor } = getSpecialDateDetails(day, currentMonth);
+                      const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
 
                       return (
                         <td
@@ -189,9 +180,9 @@ const Calendar = () => {
                             textAlign: "end",
                             verticalAlign: "middle",
                             borderRight: "1px solid #ddd",
-                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
-                            color: day && (day.isNextMonth ? "#ccc" : isDisabled ? "#999" : "black"),
-                            pointerEvents: day && (isDisabled ? "none" : "auto"),
+                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled || isHoliday ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
+                            color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
+                            pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
                             transition: 'color 0.3s',
                             fontFamily: "Poppins",
                             fontWeight: "600",
@@ -199,7 +190,7 @@ const Calendar = () => {
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
-                          {dateLabel && !isDisabled && (
+                          {dateLabel && (
                             <div style={{
                               fontSize: '10px',
                               marginTop: '5px',
