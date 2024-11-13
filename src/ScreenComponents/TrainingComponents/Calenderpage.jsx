@@ -21,70 +21,83 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
+  const [selectedButton, setSelectedButton] = useState("RTO – Suspended Driving License Holders Training");
   const [specialDates, setspecialDates] = useState([]);
-  const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
+  const [btno, setbrno] = useState(1, "RTO – Suspended Driving License Holders Training");
   useEffect(() => {
-    // Fetch holidays and session slots on component mount
-    axios.get('holiday/get-holidays')
-      .then((res) => {
-        const holidayData = res.data.responseData.map(holiday => ({
-          day: new Date(holiday.holiday_date).getDate(),
-          month: new Date(holiday.holiday_date).getMonth(),
-          label: 'Holiday',
-          color: 'red',
-          bgColor: '#ffd4d4',
-          isHoliday: true, // Mark this as a holiday
-        }));
-        setspecialDates(holidayData);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+
 
     getdata_here();
   }, []);
 
-  useEffect(() => {
-    // Fetch holidays and session slots on component mount
-    axios.get('holiday/get-holidays')
-      .then((res) => {
-        const holidayData = res.data.responseData.map(holiday => ({
-          day: new Date(holiday.holiday_date).getDate(),
-          month: new Date(holiday.holiday_date).getMonth(),
-          label: 'Holiday',
-          color: 'red',
-          bgColor: '#ffd4d4',
-          isHoliday: true, // Mark this as a holiday
-        }));
-        setspecialDates(holidayData);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  const [isMobile, setIsMobile] = useState(false);
 
-    getdata_here();
+  // Function to handle window resizing and set mobile state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // If window width is less than or equal to 768px, it's mobile
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener to track window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   // Fetch holidays and session slots on component mount
+  //   axios.get('holiday/get-holidays')
+  //     .then((res) => {
+  //       const holidayData = res.data.responseData.map(holiday => ({
+  //         day: new Date(holiday.holiday_date).getDate(),
+  //         month: new Date(holiday.holiday_date).getMonth(),
+  //         label: 'Holiday',
+  //         color: 'red',
+  //         bgColor: '#ffd4d4',
+  //         isHoliday: true, // Mark this as a holiday
+  //       }));
+  //       setspecialDates(holidayData);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+
+  //   getdata_here();
+  // }, []);
 
   const getdata_here = () => {
-    axios.get(`/Sessionslot/sessionslots/category/${selectedButton}`)
+    axios.post('/Sessionslot/getAvailableslotslots', {
+      year: currentYear.toString(),
+      month: (currentMonth + 1).toString(), // Month is 0-indexed, so we add 1
+      category: selectedButton,
+    })
       .then((res) => {
-        setspecialDates(prevDates => [
-          ...prevDates,
-          ...res.data.responseData.map(slot => ({
-            day: new Date(slot.date).getDate(),
-            month: new Date(slot.date).getMonth(),
-            label: slot.label,
-            color: 'green',
-            bgColor: '#d4ffd4',
-            isHoliday: false, // Mark this as not a holiday
-          }))
-        ]);
+        const slotData = res.data.data.map(slot => ({
+          day: slot.day,
+          status: slot.status, // "available", "Holiday", "closed"
+          totalCapacity: slot.totalCapacity,
+          totalAvailableSeats: slot.totalAvailableSeats,
+          label: slot.status === "available" ? "Available" : slot.status === "Holiday" ? "Holiday" : "Closed",
+          color: slot.status === "available" ? "green" : "red", // green for available, red for closed or holiday
+          bgColor: slot.status === "available" ? "#d4ffd4" : "#ffd4d4", // Light green for available, light red for holidays/closed
+          isHoliday: slot.status === "Holiday", // Mark as holiday
+        }));
+
+        setspecialDates(slotData);
       })
       .catch((err) => {
         console.error(err);
       });
   };
+
+
+
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -109,7 +122,7 @@ const Calendar = () => {
   const daysArray = Array.from({ length: daysInMonth }, (_, index) => index + 1);
   const startingDay = getFirstDayOfMonth(currentMonth, currentYear);
   const firstWeek = Array(startingDay).fill(null).concat(daysArray.slice(0, 7 - startingDay));
-  
+
   const chunkArray = (arr, size) => {
     const result = [];
     for (let i = 0; i < arr.length; i += size) result.push(arr.slice(i, i + size));
@@ -118,7 +131,7 @@ const Calendar = () => {
 
   const weeks = chunkArray(daysArray.slice(7 - startingDay), 7);
   weeks.unshift(firstWeek);
-  
+
   const lastWeek = weeks[weeks.length - 1];
   const remainingCells = 7 - lastWeek.length;
   const nextMonthDays = Array.from({ length: remainingCells }, (_, index) => index + 1);
@@ -150,8 +163,8 @@ const Calendar = () => {
     setbrno(buttonNumber);
     // console.log(selectedButton);
     console.log("selected button : ", buttonNumber);
-    console.log("Category : ",btncategory);
-    
+    console.log("Category : ", btncategory);
+    getdata_here();
     // alert(`Selected button: ${btncategory}`);
 
   };
@@ -165,16 +178,18 @@ const Calendar = () => {
 
 
       <Container fluid className="slotbg pb-5 mb-4">
-         <Container>
-
+        <Container>
           <p className='slotheadline text-start mt-0 pt-4 '>
-            
+          <div className='datetime p-3 text-center'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </div>
+
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
               <Row>
                 <Col md={4} className="p-0">
                   <Nav.Item className="calendertabs" >
                     <Nav.Link eventKey="link-1" className="text-black " style={{ backgroundColor: "none" }}>
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(1 , "RTO – Learner Driving License Holder Training")}><span class="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training</button> */}
+                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(1 , "RTO – Suspended Driving License Holders Training")}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button> */}
                       <button
                         type="button"
                         className={`btn3d btn w-100 calendertabs custom-button ${btno === 1 ? 'selected' : ''}`}
@@ -182,10 +197,10 @@ const Calendar = () => {
                           backgroundColor: btno === 1 ? '#feeeea' : 'white', // Set selected background color
                           color: btno === 1 ? 'orange' : 'black' // Set text color based on selection
                         }}
-                        onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                        onClick={() => handleButtonClick(1, "RTO – Suspended Driving License Holders Training")}
                         aria-label="College / Organization Training – Individual Option 1"
                       >
-                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training
+                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training
                       </button>
                     </Nav.Link>
                   </Nav.Item>
@@ -298,20 +313,18 @@ const Calendar = () => {
             <br />
 
 
-             Road Safety & Traffic Awareness programme jointly <br />
-            organized by RTO, Nashik and Nashik First. 
-           
+            Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First.
+
           </p>
           <p className='slotpagepara text-start'>
             This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
             It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
             Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
-          </p> 
-        
-        <div className='datetime p-3 text-center'>
-              Click on the calendar date & time slot, then fill out the form below to schedule your training.
-            </div>
+          </p>
+
+
         </Container>
 
         <Container className="calender">
@@ -366,21 +379,22 @@ const Calendar = () => {
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
-                          {dateLabel && (
+                          {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && (
                             <div style={{
                               fontSize: '10px',
                               marginTop: '5px',
-                              color: textColor,
-                              backgroundColor: bgColor,
+                              color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
+                              backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
                               padding: '3px 8px',
                               borderRadius: '15px',
                               display: 'inline-block',
                               fontWeight: 'bold',
                             }}>
-                              {dateLabel}
+                              {specialDates.find((date) => date.day === day)?.label}
                             </div>
                           )}
                         </td>
+
                       );
                     })}
                   </tr>

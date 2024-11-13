@@ -101,6 +101,17 @@ const Bookingpage = () => {
     console.log("formData", formData);
 
     if (!validate()) return;
+    let value = slotdate
+    const parts = value.split(' '); // Split the string by space
+    const dateParts = parts[1].split('/'); // Split the date part (e.g., "27/11/2024") by "/"
+
+    // Extract day, month, and year
+    const day = dateParts[0];
+    const month = dateParts[1];
+    const year = dateParts[2];
+
+    // Format to YYYY-MM-DD
+    const formattedDate = `${month}/${day}/${year}`;
 
     try {
       // Create a new FormData instance
@@ -292,11 +303,11 @@ const Bookingpage = () => {
                 </Col>
                 <Col lg={7} className='mb-3'>
                   <Form.Group controlId="uploadExcel">
-                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Upload Excel*"}</p>
+                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Upload Excel*"}</p>
                     <Form.Control
                       type="file"
                       name='excel'
-                      accept=".xls,.xlsx" 
+                      accept=".xls,.xlsx"
                       onChange={handleChange}
                     />
                     {errors.excel && <p className='text-start ms-md-1 mt-1 text-danger'>{errors.excel}</p>}

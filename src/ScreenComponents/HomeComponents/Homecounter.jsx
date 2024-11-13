@@ -172,7 +172,7 @@ const Homecounter = () => {
 
                       <Button onClick={() => {
                         navigate("/training")
-                        window.scroll(0, 0)
+                        window.scroll(0, 600)
                       }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 '> Learning License </Button>
 
                       <Button onClick={() => {
