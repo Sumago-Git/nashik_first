@@ -21,12 +21,10 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("RTO – Suspended Driving License Holders Training");
+  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
   const [specialDates, setspecialDates] = useState([]);
-  const [btno, setbrno] = useState(1, "RTO – Suspended Driving License Holders Training");
+  const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
   useEffect(() => {
-
-
     getdata_here();
   }, []);
 
