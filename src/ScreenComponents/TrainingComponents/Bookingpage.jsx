@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
@@ -26,7 +26,7 @@ const Bookingpage = () => {
     coordinator_mobile: "",
     coordinator_name: ""
   });
-
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [captchaValue, setCaptchaValue] = useState(null);
   const [slotTime, setSlotTime] = useState("")
@@ -126,7 +126,7 @@ const Bookingpage = () => {
       data.append('phone', formData.phone);
       data.append('category', category);
       data.append('slotsession', slotsession);
-      data.append('slotdate', slotdate);
+      data.append('slotdate', formattedDate);
       data.append('institution_name', formData.institution_name);
       data.append('institution_email', formData.institution_email);
       data.append('institution_phone', formData.institution_phone);
@@ -167,7 +167,7 @@ const Bookingpage = () => {
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-
+      navigate('/training')
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error
@@ -183,7 +183,8 @@ const Bookingpage = () => {
   useEffect(() => {
     if (location && location.state) {
       console.log("location state : ", location.state);
-      setSlotSession(location.state.selectedTime)
+      const selectedSession = location.state.selectedTime.split('-')[1];
+      setSlotSession(selectedSession)
       setSlotDate(location.state.selectedDate)
       // console.log("location.selectedTime", location.state.selectedTime);
       setCategory(location.state.category || ""); // Assume category comes from the location state
