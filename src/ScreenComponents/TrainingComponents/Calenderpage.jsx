@@ -30,6 +30,47 @@ const Calendar = () => {
     getdata_here();
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Function to handle window resizing and set mobile state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // If window width is less than or equal to 768px, it's mobile
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener to track window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   // Fetch holidays and session slots on component mount
+  //   axios.get('holiday/get-holidays')
+  //     .then((res) => {
+  //       const holidayData = res.data.responseData.map(holiday => ({
+  //         day: new Date(holiday.holiday_date).getDate(),
+  //         month: new Date(holiday.holiday_date).getMonth(),
+  //         label: 'Holiday',
+  //         color: 'red',
+  //         bgColor: '#ffd4d4',
+  //         isHoliday: true, // Mark this as a holiday
+  //       }));
+  //       setspecialDates(holidayData);
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+
+  //   getdata_here();
+  // }, []);
+
   const getdata_here = () => {
     axios.post('/Sessionslot/getAvailableslotslots', {
       year: currentYear.toString(),

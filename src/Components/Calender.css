@@ -168,3 +168,26 @@ fieldset:disabled .btn {
   font-weight: bold;
   font-size: 12px;
 }
+
+
+/* Hide the full date label and show only the first letter on mobile */
+@media (max-width: 768px) {
+  .date-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 15px;
+    background-color: #f0f0f0; /* Example background */
+    color: #333; /* Example text color */
+  }
+
+  .date-label span {
+    display: inline-block;
+    font-size: 10px;
+  }
+
+  .date-label span::after {
+    content: attr(data-first-letter);
+  }
+}
