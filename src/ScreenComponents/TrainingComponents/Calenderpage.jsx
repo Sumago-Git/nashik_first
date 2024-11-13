@@ -21,12 +21,10 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("RTO – Suspended Driving License Holders Training");
+  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
   const [specialDates, setspecialDates] = useState([]);
-  const [btno, setbrno] = useState(1, "RTO – Suspended Driving License Holders Training");
+  const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
   useEffect(() => {
-
-
     getdata_here();
   }, []);
 
@@ -179,11 +177,11 @@ const Calendar = () => {
 
       <Container fluid className="slotbg pb-5 mb-4">
         <Container>
-
           <p className='slotheadline text-start mt-0 pt-4 '>
-            <div className='datetime p-3 text-center'>
-              Click on the calendar date & time slot, then fill out the form below to schedule your training.
-            </div>
+          <div className='datetime p-3 text-center'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </div>
+
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
               <Row>
                 <Col md={4} className="p-0">
@@ -197,10 +195,10 @@ const Calendar = () => {
                           backgroundColor: btno === 1 ? '#feeeea' : 'white', // Set selected background color
                           color: btno === 1 ? 'orange' : 'black' // Set text color based on selection
                         }}
-                        onClick={() => handleButtonClick(1, "RTO – Suspended Driving License Holders Training")}
-                        aria-label="College / Organization Training – Individual Option 1"
+                        onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                        aria-label="RTO – Learner Driving License Holder Training"
                       >
-                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training
+                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training
                       </button>
                     </Nav.Link>
                   </Nav.Item>
@@ -324,8 +322,8 @@ const Calendar = () => {
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
           </p>
 
-        </Container>
 
+        </Container>
 
         <Container className="calender">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
