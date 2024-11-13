@@ -168,9 +168,7 @@ const Calendar = () => {
          <Container>
 
           <p className='slotheadline text-start mt-0 pt-4 '>
-            <div className='datetime p-3 text-center'>
-              Click on the calendar date & time slot, then fill out the form below to schedule your training.
-            </div>
+            
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
               <Row>
                 <Col md={4} className="p-0">
@@ -311,8 +309,10 @@ const Calendar = () => {
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
           </p> 
         
+        <div className='datetime p-3 text-center'>
+              Click on the calendar date & time slot, then fill out the form below to schedule your training.
+            </div>
         </Container>
-
 
         <Container className="calender">
           <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
