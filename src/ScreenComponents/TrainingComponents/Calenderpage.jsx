@@ -387,20 +387,17 @@ const Calendar = () => {
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
                           {dateLabel && (
-                            <div
-                              style={{
-                                fontSize: '10px',
-                                marginTop: '5px',
-                                color: textColor,
-                                backgroundColor: bgColor,
-                                padding: '3px 8px',
-                                borderRadius: '15px',
-                                display: 'inline-block',
-                                fontWeight: 'bold',
-                              }}
-                            >
-                              {/* On mobile, show only 'H', otherwise show the full dateLabel */}
-                              {isMobile ? "H" : dateLabel}
+                            <div style={{
+                              fontSize: '10px',
+                              marginTop: '5px',
+                              color: textColor,
+                              backgroundColor: bgColor,
+                              padding: '3px 8px',
+                              borderRadius: '15px',
+                              display: 'inline-block',
+                              fontWeight: 'bold',
+                            }}>
+                              {dateLabel}
                             </div>
                           )}
                         </td>
