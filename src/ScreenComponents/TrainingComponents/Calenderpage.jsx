@@ -197,10 +197,10 @@ const Calendar = () => {
                           backgroundColor: btno === 1 ? '#feeeea' : 'white', // Set selected background color
                           color: btno === 1 ? 'orange' : 'black' // Set text color based on selection
                         }}
-                        onClick={() => handleButtonClick(1, "RTO – Suspended Driving License Holders Training")}
-                        aria-label="College / Organization Training – Individual Option 1"
+                        onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
+                        aria-label="RTO – Learner Driving License Holder Training"
                       >
-                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training
+                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training
                       </button>
                     </Nav.Link>
                   </Nav.Item>
