@@ -45,6 +45,26 @@ const Calendar = () => {
     getdata_here();
   }, []);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Function to handle window resizing and set mobile state
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // If window width is less than or equal to 768px, it's mobile
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener to track window resizing
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   // useEffect(() => {
   //   // Fetch holidays and session slots on component mount
   //   axios.get('holiday/get-holidays')
@@ -109,7 +129,7 @@ const Calendar = () => {
   const daysArray = Array.from({ length: daysInMonth }, (_, index) => index + 1);
   const startingDay = getFirstDayOfMonth(currentMonth, currentYear);
   const firstWeek = Array(startingDay).fill(null).concat(daysArray.slice(0, 7 - startingDay));
-  
+
   const chunkArray = (arr, size) => {
     const result = [];
     for (let i = 0; i < arr.length; i += size) result.push(arr.slice(i, i + size));
@@ -118,7 +138,7 @@ const Calendar = () => {
 
   const weeks = chunkArray(daysArray.slice(7 - startingDay), 7);
   weeks.unshift(firstWeek);
-  
+
   const lastWeek = weeks[weeks.length - 1];
   const remainingCells = 7 - lastWeek.length;
   const nextMonthDays = Array.from({ length: remainingCells }, (_, index) => index + 1);
@@ -150,8 +170,8 @@ const Calendar = () => {
     setbrno(buttonNumber);
     // console.log(selectedButton);
     console.log("selected button : ", buttonNumber);
-    console.log("Category : ",btncategory);
-    
+    console.log("Category : ", btncategory);
+
     // alert(`Selected button: ${btncategory}`);
 
   };
@@ -165,7 +185,7 @@ const Calendar = () => {
 
 
       <Container fluid className="slotbg pb-5 mb-4">
-         <Container>
+        <Container>
 
           <p className='slotheadline text-start mt-0 pt-4 '>
             <div className='datetime p-3 text-center'>
@@ -300,17 +320,17 @@ const Calendar = () => {
             <br />
 
 
-             Road Safety & Traffic Awareness programme jointly <br />
-            organized by RTO, Nashik and Nashik First. 
-           
+            Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First.
+
           </p>
           <p className='slotpagepara text-start'>
             This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
             It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
             Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
-          </p> 
-        
+          </p>
+
         </Container>
 
 
@@ -367,17 +387,20 @@ const Calendar = () => {
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
                           {dateLabel && (
-                            <div style={{
-                              fontSize: '10px',
-                              marginTop: '5px',
-                              color: textColor,
-                              backgroundColor: bgColor,
-                              padding: '3px 8px',
-                              borderRadius: '15px',
-                              display: 'inline-block',
-                              fontWeight: 'bold',
-                            }}>
-                              {dateLabel}
+                            <div
+                              style={{
+                                fontSize: '10px',
+                                marginTop: '5px',
+                                color: textColor,
+                                backgroundColor: bgColor,
+                                padding: '3px 8px',
+                                borderRadius: '15px',
+                                display: 'inline-block',
+                                fontWeight: 'bold',
+                              }}
+                            >
+                              {/* On mobile, show only 'H', otherwise show the full dateLabel */}
+                              {isMobile ? "H" : dateLabel}
                             </div>
                           )}
                         </td>
