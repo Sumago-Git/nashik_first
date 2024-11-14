@@ -141,3 +141,27 @@
 
 
 
+.custom-placeholder {
+    letter-spacing: 1px;
+    
+  }
+
+  /* Add this CSS in your stylesheet */
+@keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .input-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black; /* You can change the color of the cursor */
+    animation: typing 2s steps(30) 1s 1 normal both; /* Adjust the timing and steps for the effect */
+  }
+  
+
