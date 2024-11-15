@@ -24,6 +24,8 @@ const Calendar = () => {
   const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
+  const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
+
   useEffect(() => {
     getdata_here();
   }, []);
@@ -48,51 +50,37 @@ const Calendar = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   // Fetch holidays and session slots on component mount
-  //   axios.get('holiday/get-holidays')
-  //     .then((res) => {
-  //       const holidayData = res.data.responseData.map(holiday => ({
-  //         day: new Date(holiday.holiday_date).getDate(),
-  //         month: new Date(holiday.holiday_date).getMonth(),
-  //         label: 'Holiday',
-  //         color: 'red',
-  //         bgColor: '#ffd4d4',
-  //         isHoliday: true, // Mark this as a holiday
-  //       }));
-  //       setspecialDates(holidayData);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-
-  //   getdata_here();
-  // }, []);
-
-  const getdata_here = () => {
+  const getdata_here = ({ category = selectedButton, buttonNumber = btno } = {}) => {
     axios.post('/Sessionslot/getAvailableslotslots', {
       year: currentYear.toString(),
-      month: (currentMonth + 1).toString(), // Month is 0-indexed, so we add 1
-      category: selectedButton,
+      month: (currentMonth + 1).toString(),
+      category,
     })
       .then((res) => {
-        const slotData = res.data.data.map(slot => ({
+        const slotData = res.data.data.reduce((acc, slot) => {
+          // Add the status of each date to the dateStatuses state
+          acc[slot.day] = slot.status;
+          return acc;
+        }, {});
+
+        setDateStatuses(slotData);
+        setspecialDates(res.data.data.map(slot => ({
           day: slot.day,
-          status: slot.status, // "available", "Holiday", "closed"
+          status: slot.status,
           totalCapacity: slot.totalCapacity,
           totalAvailableSeats: slot.totalAvailableSeats,
           label: slot.status === "available" ? "Available" : slot.status === "Holiday" ? "Holiday" : "Closed",
-          color: slot.status === "available" ? "green" : "red", // green for available, red for closed or holiday
-          bgColor: slot.status === "available" ? "#d4ffd4" : "#ffd4d4", // Light green for available, light red for holidays/closed
-          isHoliday: slot.status === "Holiday", // Mark as holiday
-        }));
-
-        setspecialDates(slotData);
+          color: slot.status === "Holiday" ? "#ff0000" : (slot.status === "available" ? "green" : "red"),
+          bgColor: slot.status === "Holiday" ? "#ea7777" : (slot.status === "available" ? "#d4ffd4" : "#ffd4d4"),
+          isHoliday: slot.status === "Holiday",
+        })));
       })
       .catch((err) => {
         console.error(err);
       });
   };
+
+
 
 
 
@@ -144,7 +132,7 @@ const Calendar = () => {
   const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
 
   const handleDateClick = (day) => {
-    if (day) {
+    if (dateStatuses[day] === "available") { // Only handle click if the status is "Available"
       const clickedDate = new Date(currentYear, currentMonth, day);
       window.scrollTo(0, 700);
       navigate("/slotpage", { state: { selectedDate: clickedDate, category: selectedButton } });
@@ -155,17 +143,27 @@ const Calendar = () => {
     const dateToCheck = new Date(currentYear, currentMonth, day);
     return dateToCheck < today.setHours(0, 0, 0, 0);
   };
-
   const handleButtonClick = (buttonNumber, btncategory) => {
     setSelectedButton(btncategory);
     setbrno(buttonNumber);
-    // console.log(selectedButton);
-    console.log("selected button : ", buttonNumber);
-    console.log("Category : ", btncategory);
-    getdata_here();
-    // alert(`Selected button: ${btncategory}`);
 
+
+    getdata_here({
+      category: btncategory,
+      buttonNumber,
+    });
   };
+
+
+
+  const tabsData = [
+    { id: 1, label: "RTO – Learner Driving License Holder Training" },
+    { id: 2, label: "RTO – Suspended Driving License Holders Training" },
+    { id: 3, label: "RTO – Training for School Bus Driver" },
+    { id: 4, label: "School Students Training – Group" },
+    { id: 5, label: "College/Organization Training – Group" },
+    { id: 6, label: "College / Organization Training – Individual" }
+  ];
   return (
     <>
       <Container fluid className='m-0 p-0'>
@@ -178,133 +176,31 @@ const Calendar = () => {
       <Container fluid className="slotbg pb-5 mb-4">
         <Container>
           <p className='slotheadline text-start mt-0 pt-4 '>
-          <div className='datetime p-3 text-center'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </div>
-
-            <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto ">
+            <div className='datetime p-3 text-center'>
+              Click on the calendar date & time slot, then fill out the form below to schedule your training.
+            </div>
+            <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs" >
-                    <Nav.Link eventKey="link-1" className="text-black " style={{ backgroundColor: "none" }}>
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(1 , "RTO – Suspended Driving License Holders Training")}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button> */}
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 1 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 1 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 1 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(1, "RTO – Learner Driving License Holder Training")}
-                        aria-label="RTO – Learner Driving License Holder Training"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Learner Driving License Holder Training
-                      </button>
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs">
-                    <Nav.Link eventKey="link-2" className="text-black" style={{ backgroundColor: "none" }}>
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(2, "RTO – Suspended Driving License Holders Training")}><span class="glyphicon glyphicon-download-alt"></span> RTO – Suspended Driving License Holders Training</button> */}
-
-
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 2 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 2 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 2 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(2, "RTO – Suspended Driving License Holders Training")}
-                        aria-label="College / Organization Training – Individual Option 1"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span>RTO – Suspended Driving License Holders Training
-                      </button>
-
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs">
-                    <Nav.Link eventKey="link-3" className="text-black">
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(3, "RTO – Training for School Bus Driver")}  ><span class="glyphicon glyphicon-download-alt"></span>RTO – Training for School Bus Driver</button> */}
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 3 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 3 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 3 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(3, "RTO – Training for School Bus Driver")}
-                        aria-label="College / Organization Training – Individual Option 1"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span> RTO – Training for School Bus Driver
-                      </button>
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs">
-                    <Nav.Link eventKey="link-4" className="text-black">
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(4, "School Students Training – Group")}  ><span class="glyphicon glyphicon-download-alt"></span>School Students Training – Group</button> */}
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 4 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 4 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 4 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(4, "School Students Training – Group")}
-                        aria-label="College / Organization Training – Individual Option 1"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span> School Students Training – Group
-                      </button>
-
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs">
-                    <Nav.Link eventKey="link-5" className="text-black">
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(5, "College/Organization Training – Group")}  ><span class="glyphicon glyphicon-download-alt"></span> College/Organization Training – Group</button> */}
-
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 5 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 5 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 5 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(5, "College/Organization Training – Group")}
-                        aria-label="College / Organization Training – Individual Option 1"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span> College/Organization Training – Group
-                      </button>
-
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-                <Col md={4} className="p-0">
-                  <Nav.Item className="calendertabs">
-                    <Nav.Link eventKey="link-6" className="text-black">
-                      {/* <button type="button" className="btn3d btn btn-default w-100 calendertabs" style={{ minHeight: "70px" }} onClick={() => handleButtonClick(6, "College / Organization Training – Individual")}  ><span class="glyphicon glyphicon-download-alt"></span> College / Organization Training – Individual</button> */}
-
-                      <button
-                        type="button"
-                        className={`btn3d btn w-100 calendertabs custom-button ${btno === 6 ? 'selected' : ''}`}
-                        style={{
-                          backgroundColor: btno === 6 ? '#feeeea' : 'white', // Set selected background color
-                          color: btno === 6 ? 'orange' : 'black' // Set text color based on selection
-                        }}
-                        onClick={() => handleButtonClick(6, "College / Organization Training – Individual")}
-                        aria-label="College / Organization Training – Individual Option 1"
-                      >
-                        <span className="glyphicon glyphicon-download-alt"></span> College / Organization Training – Individual
-                      </button>
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
+                {tabsData.map((tab) => (
+                  <Col md={4} className="p-0" key={tab.id}>
+                    <Nav.Item className="calendertabs">
+                      <Nav.Link eventKey={`link-${tab.id}`} className="text-black">
+                        <button
+                          type="button"
+                          className={`btn3d btn w-100 calendertabs custom-button ${btno === tab.id ? 'selected' : ''}`}
+                          style={{
+                            backgroundColor: btno === tab.id ? '#feeeea' : 'white', // Set selected background color
+                            color: btno === tab.id ? 'orange' : 'black' // Set text color based on selection
+                          }}
+                          onClick={() => handleButtonClick(tab.id, tab.label)}
+                          aria-label={tab.label}
+                        >
+                          <span className="glyphicon glyphicon-download-alt"></span> {tab.label}
+                        </button>
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Col>
+                ))}
               </Row>
             </Nav>
 
@@ -355,6 +251,7 @@ const Calendar = () => {
                     {week.map((day, dayIndex) => {
                       const isDisabled = day && isPastDate(day);
                       const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
+                      const isAvailable = dateStatuses[day] === "available"; // Check status from state
 
                       return (
                         <td
@@ -367,8 +264,24 @@ const Calendar = () => {
                             textAlign: "end",
                             verticalAlign: "middle",
                             borderRight: "1px solid #ddd",
-                            backgroundColor: day && (day.isNextMonth ? "#f0f0f0" : (isDisabled || isHoliday ? "#f9f9f9" : (day === hoveredDay ? "#e0e0e0" : "white"))),
-                            color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
+                            backgroundColor: day
+                              ? day.isNextMonth
+                                ? "#f0f0f0" // Next month's dates (light gray)
+                                : isDisabled
+                                  ? "#f9f9f9" // Disabled (past dates or holidays)
+                                  : dateStatuses[day] === "available"
+                                    ? "#d4ffd4" // Green for available
+                                    : dateStatuses[day] === "Holiday"
+                                      ? "#ea7777" // Light blue for holiday
+                                      : "#ffd4d4" // Red for closed or other statuses
+                              : "white",
+                            color: day
+                              ? day.isNextMonth
+                                ? "#ccc" // Light color for next month's dates
+                                : isDisabled || dateStatuses[day] === "Holiday"
+                                  ? "#999" // Gray for disabled or holiday
+                                  : "black"
+                              : "black", color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
                             pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
                             transition: 'color 0.3s',
                             fontFamily: "Poppins",
@@ -377,7 +290,7 @@ const Calendar = () => {
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
-                          {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && (
+                          {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
                             <div style={{
                               fontSize: '10px',
                               marginTop: '5px',
@@ -391,6 +304,7 @@ const Calendar = () => {
                               {specialDates.find((date) => date.day === day)?.label}
                             </div>
                           )}
+
                         </td>
 
                       );

@@ -55,7 +55,7 @@ const Slotpage = () => {
                 slotdate: formattedDate,
                 category: category
             }
-            axios.post(`Sessionslot/sessionslots`, data, {
+            axios.post(`/Sessionslot/get-getSessionbySessionslot`, data, {
                 headers: {
                     "Content-Type": "application/json",
                     // Add any additional headers if required
@@ -129,23 +129,30 @@ const Slotpage = () => {
                                         let formattedTime = `${hours}:${minutes} ${period}`;
                                         console.log("formattedTime", formattedTime);
                                         console.log("session.title", session.title);
+                                        const isAvailable = session.available_seats > 0;
 
+                                        const buttonStyle = {
+                                     border: "0px",
+                                            cursor: isAvailable ? 'pointer' : 'not-allowed',
+                                            opacity: isAvailable ? 1 : 0.5, // Make the button slightly transparent when unavailable
+                                        };
                                         return (
                                             <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
                                                 <button
                                                     onClick={() => {
+                                                        if (isAvailable) {
                                                         navigate("/bookingpage", {
                                                             state: {
                                                                 selectedDate: slotDate,
                                                                 selectedTime: `${formattedTime}-${session.title}`,
                                                                 category: category
                                                             }
-                                                        });
+                                                        });}
                                                         // Ensure window scrolls to top after navigation
                                                         setTimeout(() => window.scrollTo(0, 790), 0);
                                                     }}
                                                     className='w-100'
-                                                    style={{ border: "0px" }}
+                                                    style={buttonStyle}
                                                 >
                                                     <Container className='session p-lg-3'>
                                                         {formattedTime} - {session.title}
