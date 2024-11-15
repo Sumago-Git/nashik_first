@@ -255,12 +255,9 @@
 }
 
 .iconHover2:hover {
-  /* background-color: orange;*/
   color: #fff;
-  background: #833ab4;
-  background: linear-gradient(to right,
-      #833ab4, #fd1d1d, #fcb045);
-
+  /* background: #833ab4; */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .iconHover3:hover {
@@ -282,4 +279,7 @@
 /* Style for dropdown items on hover */
 .event-dropdown .dropdown-item:hover {
   color: rgb(181, 46, 46) !important;
+}
+a:hover {
+  color: #f17e3f;
 }

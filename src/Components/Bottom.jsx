@@ -185,13 +185,13 @@ const Bottom = () => {
           <Row>
             <Col md={6} lg={8}>
               <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
-                <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="https://www.hitwebcounter.com" target="_blank">
+                <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="#" target="_blank">
                   <img src="https://hitwebcounter.com/counter/counter.php?page=17281775&style=0025&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
               </div>
             </Col>
             <Col md={6} lg={4}>
               <Row className="mt-0 pb-0 mt-lg-3 ">
-                <Col lg={4} className='text-start p-0 w-25 ms-lg-4'>
+                <Col lg={4} className='text-start p-0 ms-lg-4' style={{ width: "30%" }}>
                   <h5 className=' mt-2  text-white'>Follow Us On</h5>
                 </Col>
                 {
@@ -252,6 +252,13 @@ const Bottom = () => {
           <div className="d-flex justify-content-end">
             <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?" target="_blank">
               <img src={wappChat} alt="Whatsapp" className="m-4 wappIcons" style={{ zIndex: "1", position: "fixed", bottom: "1rem", right: "0" }} />
+            </a>
+          </div>
+        </div >
+        <div className="">
+          <div className="d-flex justify-content-end">
+            <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?" target="_blank">
+              <img src={wappChat} alt="Whatsapp" className="m-4 wappIcons" style={{ zIndex: "1", position: "fixed", bottom: "6rem", right: "0" }} />
             </a>
           </div>
         </div >

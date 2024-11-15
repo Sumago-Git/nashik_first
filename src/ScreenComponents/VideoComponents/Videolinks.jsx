@@ -15,8 +15,8 @@ const Youtube = () => {
   const fetchdata = () => {
     axios.get('Videos/get-Videos')
       .then((res) => {
-        setdata(res.data.responseData)
-        console.log(res.data.responseData);
+        let data = [...res.data.responseData].reverse()
+        setdata(data)
       })
       .catch((err) => {
         console.log(err);
