@@ -36,6 +36,10 @@ const Bookingpage = () => {
   const [excel, setexcel] = useState("")
   const [category, setCategory] = useState(""); // Add a state for category
 
+  const [formData1, setFormData1] = useState({ learningNo: '' });
+
+
+
   const validate = () => {
     const newErrors = {};
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
@@ -80,7 +84,26 @@ const Bookingpage = () => {
     } else {
       setFormData((prev) => ({ ...prev, [name]: e.target.value }));
     }
+
+    let value = e.target.value.toUpperCase(); // Ensure uppercase for consistency
+    value = formatLicenseNumber(value);
+    setFormData1({ ...formData1, learningNo: value });
   };
+
+  const formatLicenseNumber = (value) => {
+    // Remove all non-alphanumeric characters
+    value = value.replace(/[^A-Z0-9]/g, '');
+
+    // Insert slashes after the fourth and eleventh characters if applicable
+    if (value.length > 4 && value.length <= 11) {
+      value = `${value.slice(0, 4)}/${value.slice(4)}`;
+    } else if (value.length > 11) {
+      value = `${value.slice(0, 4)}/${value.slice(4, 11)}/${value.slice(11, 15)}`;
+    }
+
+    return value;
+  };
+
 
   const handleCheckboxChange = (e) => {
     const value = e.target.value;
@@ -191,6 +214,29 @@ const Bookingpage = () => {
       setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
     }
   }, [location])
+
+  const handleLicenseInputChange = (e) => {
+    let input = e.target.value.toUpperCase(); // Ensure all letters are uppercase (optional)
+
+    // Remove any characters that are not alphanumeric or slashes
+    input = input.replace(/[^A-Za-z0-9]/g, '');
+
+    // Format input to add slashes after the 4th and 10th characters
+    if (input.length > 4 && input.length <= 10) {
+      input = input.slice(0, 4) + '/' + input.slice(4);
+    } else if (input.length > 12) {
+      input = input.slice(0, 4) + '/' + input.slice(4, 10) + '/' + input.slice(10, 14);
+    }
+
+    // Limit to 14 characters (including slashes)
+    input = input.slice(0, 14);
+
+    // Update the form data
+    setFormData({
+      ...formData,
+      learningNo: input,
+    });
+  };
 
 
 
@@ -335,15 +381,23 @@ const Bookingpage = () => {
               <form onSubmit={handleSubmit}>
                 <Row className='justify-content-center'>
                   <Col lg={6} md={7} sm={12}>
-                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Learning License Number*"}</p>
+                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>
+                      {"Learning License Number*"}
+                    </p>
                     <input
                       name='learningNo'
                       value={formData.learningNo}
-                      onChange={handleChange}
-                      placeholder={"MH15/0012345/2021"}
-                      className='dateinput p-3 m-0 mt-0 ms-lg-3'
+                      onChange={(e) => handleLicenseInputChange(e)}
+                      onMouseEnter={(e) => e.target.placeholder = "----/----/----"}
+                      onMouseLeave={(e) => e.target.placeholder = "MH15/0012/3456"}
+                      placeholder="MH15/0012/3456"
+                      className='dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder'
                     />
-                    {errors.learningNo && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>}
+                    {errors.learningNo && (
+                      <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>
+                    )}
+
+
                   </Col>
                   <Col lg={6} md={7}>
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"First Name*"}</p>

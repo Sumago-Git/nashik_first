@@ -149,7 +149,7 @@ const Slotpage = () => {
                                                             }
                                                         });}
                                                         // Ensure window scrolls to top after navigation
-                                                        setTimeout(() => window.scrollTo(0, 0), 0);
+                                                        setTimeout(() => window.scrollTo(0, 790), 0);
                                                     }}
                                                     className='w-100'
                                                     style={buttonStyle}
