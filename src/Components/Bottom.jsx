@@ -32,7 +32,7 @@ const Bottom = () => {
   const [contact_details, setcontact_details] = useState([]);
 
   const followus = () => {
-    axios.get('social-contact/get-socialcontacts')
+    axios.get('social-contact/socialcontacts')
       .then((res) => {
         setdata(res.data.responseData)
       })
@@ -214,14 +214,14 @@ const Bottom = () => {
                           </a>
                         </Col>
                         <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
-                          <a href={a.whatsapp} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                          <a href={a.youtube} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
                               <FaYoutube />
                             </Card>
                           </a>
                         </Col>
                         <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
-                          <a href={a.linkedin} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                          <a href={a.twitter} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
                               {/* <FaWhatsapp /> */}
                               <FaXTwitter />
