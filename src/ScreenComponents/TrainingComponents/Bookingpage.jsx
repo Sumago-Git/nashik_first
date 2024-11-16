@@ -17,7 +17,7 @@ const Bookingpage = () => {
     email: '',
     phone: '',
     excel: '',
-    vehicletype: [],
+    // vehicletype: [],
     institution_name: "",
     institution_email: "",
     institution_phone: "",
@@ -47,7 +47,7 @@ const Bookingpage = () => {
     } else {
       if (!formData.learningNo) newErrors.learningNo = 'License number is required';
       if (!formData.fname) newErrors.fname = 'First name is required';
-      if (!formData.mname) newErrors.mname = 'Middle name is required';
+      // if (!formData.mname) newErrors.mname = 'Middle name is required';
       if (!formData.lname) newErrors.lname = 'Last name is required';
       if (!formData.email) newErrors.email = 'email is required';
       if (!formData.phone) newErrors.phone = 'phone is required';
@@ -164,7 +164,7 @@ const Bookingpage = () => {
       }
 
       // Append the vehicle types as a comma-separated string
-      data.append('vehicletype', formData.vehicletype.join(','));
+      // data.append('vehicletype', formData.vehicletype.join(','));
 
       // Make the axios request to the combined endpoint
       const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
@@ -186,7 +186,7 @@ const Bookingpage = () => {
         email: '',
         phone: '',
         excel: '',
-        vehicletype: [],
+        // vehicletype: [],
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
@@ -396,8 +396,6 @@ const Bookingpage = () => {
                     {errors.learningNo && (
                       <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>
                     )}
-
-
                   </Col>
                   <Col lg={6} md={7}>
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"First Name*"}</p>
@@ -454,7 +452,7 @@ const Bookingpage = () => {
                     />
                     {errors.phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.phone}</p>}
                   </Col>
-                  <Col lg={12} md={12}>
+                  {/* <Col lg={12} md={12}>
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Vehicle type*"}</p>
                     <Row>
                       {['2 Wheelers', '3/5 Wheelers', '4 Wheelers Heavy', '4 Wheelers Light'].map((type) => (
@@ -476,7 +474,7 @@ const Bookingpage = () => {
                         </Col>
                       ))}
                     </Row>
-                  </Col>
+                  </Col> */}
                   <Col lg={12}>
                     <ReCAPTCHA
                       sitekey={captchaKey} // Replace with your Google reCAPTCHA site key

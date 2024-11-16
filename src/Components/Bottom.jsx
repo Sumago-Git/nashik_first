@@ -249,7 +249,7 @@ const Bottom = () => {
           <p className='p-0 m-0 copyright mt-0 p-0 mt-1'>*This Website is updated in 2024 </p>
 
         </Container>
-        <div className="">
+        {/* <div className="">
           <div className="d-flex justify-content-end">
             <style>
               {`
@@ -277,16 +277,16 @@ const Bottom = () => {
                 }}
               />
             </a>
-          </div>
+          </div> */}
 
-        </div >
-        <div className="">
+        {/* </div > */}
+        {/* <div className="">
           <div className="d-flex justify-content-end">
             <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?" target="_blank">
               <img src={wappChat} alt="Whatsapp" className="m-4 wappIcons" style={{ zIndex: "1", position: "fixed", bottom: "1rem", right: "0" }} />
             </a>
           </div>
-        </div >
+        </div > */}
       </section>
     </>
   );

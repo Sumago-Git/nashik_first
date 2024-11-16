@@ -19,43 +19,40 @@ import axios from "axios";
 import AnnualReturn from "./ScreenComponents/Annualreturns/AnnualReturns";
 import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
 import Newsphoto from "./ScreenComponents/NewsComponent/Newsphoto";
+import Movingicon from "./Components/Movingicon";
 
 // export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
- export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy" // server
+export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
 
 function App() {
-
   // useEffect(() => {
   //   console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
-    
+
   // }, [])
-  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
   return (
     <div className="App">
-
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/awarnessvideo' element={<Video />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/annualreport' element={<AnnualReport />} />
-          <Route path='/annualreturn' element={<AnnualReturn />} />
-          <Route path='/training' element={<Training />} />
-          <Route path='/bookingpage' element={<Bookingpage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/awarnessvideo" element={<Video />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/annualreport" element={<AnnualReport />} />
+          <Route path="/annualreturn" element={<AnnualReturn />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/bookingpage" element={<Bookingpage />} />
           <Route path="/slotpage" element={<Slotpage />} />
-          <Route path='/events' element={<Events />} />
-          <Route path='upcomingevents' element={<Upcomingevents />} />
-          <Route path='news' element={<Newsphoto />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="upcomingevents" element={<Upcomingevents />} />
+          <Route path="news" element={<Newsphoto />} />
         </Routes>
+        <Movingicon />
         <Bottom />
       </BrowserRouter>
-
-
-
     </div>
-  )
+  );
 }
 
 export default App;
