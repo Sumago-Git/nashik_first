@@ -49,7 +49,9 @@ const Calendar = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+  useEffect(() => {
+    getdata_here();
+  }, [currentDate]);
   const getdata_here = ({ category = selectedButton, buttonNumber = btno } = {}) => {
     axios.post('/Sessionslot/getAvailableslotslots', {
       year: currentYear.toString(),
