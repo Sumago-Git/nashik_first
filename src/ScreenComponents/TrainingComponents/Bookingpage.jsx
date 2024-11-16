@@ -138,6 +138,8 @@ const Bookingpage = () => {
 
     try {
       // Create a new FormData instance
+      const sessionSlotId = localStorage.getItem('slotsid');
+
       const data = new FormData();
 
       // Append all form fields to the FormData instance
@@ -157,6 +159,7 @@ const Bookingpage = () => {
       data.append('hm_principal_manager_mobile', formData.hm_principal_manager_mobile);
       data.append('coordinator_mobile', formData.coordinator_mobile);
       data.append('coordinator_name', formData.coordinator_name);
+      data.append('sessionSlotId', sessionSlotId);
 
       // Append the Excel file if it exists
       if (formData.excel) {
