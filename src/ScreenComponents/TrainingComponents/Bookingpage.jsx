@@ -8,6 +8,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 import Form from 'react-bootstrap/Form';
 import excelFile from "../../Assets/Assets/Excel/BookingForm_Records.xlsx"
+import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
@@ -95,96 +96,156 @@ const Bookingpage = () => {
     const licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
 
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
-        // Validate for group training category
-        if (!formData.excel) {
-            newErrors.excel = 'Please upload an Excel file.';
-        }
-        if (!formData.institution_name) {
-            newErrors.institution_name = 'Institution name is required';
-        } else if (!nameRegex.test(formData.institution_name)) {
-            newErrors.institution_name = 'Institution name should only contain letters and spaces';
-        }
-        if (!formData.institution_email) {
-            newErrors.institution_email = 'Institution email is required';
-        } else if (!emailRegex.test(formData.institution_email)) {
-            newErrors.institution_email = 'Please enter a valid institution email address';
-        }
-        if (!formData.institution_phone) {
-            newErrors.institution_phone = 'Institution phone is required';
-        } else if (!landlineRegex.test(formData.institution_phone)) {
-            newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
-        }
+      // Validate for group training category
+      if (!formData.excel) {
+        newErrors.excel = 'Please upload an Excel file.';
+      }
+      if (!formData.institution_name) {
+        newErrors.institution_name = 'Institution name is required';
+      } else if (!nameRegex.test(formData.institution_name)) {
+        newErrors.institution_name = 'Institution name should only contain letters and spaces';
+      }
+      if (!formData.institution_email) {
+        newErrors.institution_email = 'Institution email is required';
+      } else if (!emailRegex.test(formData.institution_email)) {
+        newErrors.institution_email = 'Please enter a valid institution email address';
+      }
+      if (!formData.institution_phone) {
+        newErrors.institution_phone = 'Institution phone is required';
+      } else if (!landlineRegex.test(formData.institution_phone)) {
+        newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
+      }
     } else {
-        // Validate for individual training
-        if (!formData.learningNo) {
-            newErrors.learningNo = 'Learning license number is required';
-        } else if (!licenseRegex.test(formData.learningNo)) {
-            newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0012/3456)';
-        }
+      // Validate for individual training
+      if (!formData.learningNo) {
+        newErrors.learningNo = 'Learning license number is required';
+      } else if (!licenseRegex.test(formData.learningNo)) {
+        newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0012/3456)';
+      }
 
-        if (!formData.fname) {
-            newErrors.fname = 'First name is required';
-        } else if (!nameRegex.test(formData.fname)) {
-            newErrors.fname = 'First name should only contain letters';
-        }
+      if (!formData.fname) {
+        newErrors.fname = 'First name is required';
+      } else if (!nameRegex.test(formData.fname)) {
+        newErrors.fname = 'First name should only contain letters';
+      }
 
-        if (!formData.lname) {
-            newErrors.lname = 'Last name is required';
-        } else if (!nameRegex.test(formData.lname)) {
-            newErrors.lname = 'Last name should only contain letters';
-        }
+      if (!formData.lname) {
+        newErrors.lname = 'Last name is required';
+      } else if (!nameRegex.test(formData.lname)) {
+        newErrors.lname = 'Last name should only contain letters';
+      }
 
-        if (!formData.email) {
-            newErrors.email = 'Email is required';
-        } else if (!emailRegex.test(formData.email)) {
-            newErrors.email = 'Please enter a valid email address';
-        }
+      if (!formData.email) {
+        newErrors.email = 'Email is required';
+      } else if (!emailRegex.test(formData.email)) {
+        newErrors.email = 'Please enter a valid email address';
+      }
 
-        if (!formData.phone) {
-            newErrors.phone = 'Phone is required';
-        } else if (!phoneRegex.test(formData.phone)) {
-            newErrors.phone = 'Phone number must be a valid 10-digit number';
-        }
+      if (!formData.phone) {
+        newErrors.phone = 'Phone is required';
+      } else if (!phoneRegex.test(formData.phone)) {
+        newErrors.phone = 'Phone number must be a valid 10-digit number';
+      }
     }
 
     // Validate the ReCAPTCHA
     if (!captchaValue) {
-        newErrors.captcha = 'Please complete the CAPTCHA';
+      newErrors.captcha = 'Please complete the CAPTCHA';
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-};
+  };
+
+  // const handleChange = (e) => {
+  //   const { name, files } = e.target;
+
+  //   if (name === 'excel') {
+  //     const file = files[0];
+  //     if (file) {
+  //       const validExtensions = ['xls', 'xlsx'];
+  //       const fileExtension = file.name.split('.').pop().toLowerCase();
+
+  //       // Check if the uploaded file is an Excel file
+  //       if (!validExtensions.includes(fileExtension)) {
+  //         alert('Only Excel files are accepted.'); // Alert for invalid file type
+  //         setErrors((prev) => ({
+  //           ...prev,
+  //           excel: 'Please upload an Excel file.',
+  //         }));
+  //         setFormData((prev) => ({ ...prev, excel: '' })); // Clear the file input
+  //         return;
+  //       }
+
+  //       // If valid, set the file
+  //       setErrors((prev) => ({ ...prev, excel: '' })); // Clear error if valid
+  //       setFormData((prev) => ({ ...prev, [name]: file })); // Set the file
+  //     }
+  //   } else {
+  //     setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+  //   }
+  // };
+
+
+
+  const requiredExcelColumns = ["learningNo", "fname", "mname", "lname", "email", "phone"];
 
   const handleChange = (e) => {
     const { name, files } = e.target;
 
     if (name === 'excel') {
       const file = files[0];
-      if (file) {
-        const validExtensions = ['xls', 'xlsx'];
-        const fileExtension = file.name.split('.').pop().toLowerCase();
 
-        // Check if the uploaded file is an Excel file
-        if (!validExtensions.includes(fileExtension)) {
-          alert('Only Excel files are accepted.'); // Alert for invalid file type
-          setErrors((prev) => ({
-            ...prev,
-            excel: 'Please upload an Excel file.',
-          }));
-          setFormData((prev) => ({ ...prev, excel: '' })); // Clear the file input
+      const allowedExtensions = /(\.xls|\.xlsx)$/i;
+      if (file && !allowedExtensions.exec(file.name)) {
+        alert("Please upload a valid Excel file (.xls or .xlsx)");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const data = new Uint8Array(event.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+
+        // Get headers and validate columns
+        const headers = XLSX.utils.sheet_to_json(sheet, { header: 1 })[0];
+        const isValidColumns = requiredExcelColumns.every(column => headers.includes(column));
+
+        if (!isValidColumns) {
+          alert("The uploaded Excel file does not match the required structure. Please check the column names.");
+          e.target.value = ""; 
           return;
         }
 
-        // If valid, set the file
-        setErrors((prev) => ({ ...prev, excel: '' })); // Clear error if valid
-        setFormData((prev) => ({ ...prev, [name]: file })); // Set the file
-      }
+        // Count rows and validate the number of entries
+        const rows = XLSX.utils.sheet_to_json(sheet);
+        const rowCount = rows.length;
+
+        if (rowCount <= 30 || rowCount >= 70) {
+          alert("The number of entries in the Excel file should be greater than 30 and less than 70.");
+          e.target.value = ""; 
+          return;
+        }
+
+        // If both column structure and row count are valid, set the file in formData
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: file,
+        }));
+      };
+
+      reader.readAsArrayBuffer(file);
     } else {
-      setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+      // Handle other fields
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: e.target.value,
+      }));
     }
   };
-
 
   const handleCaptchaChange = (value) => {
     setCaptchaValue(value);
