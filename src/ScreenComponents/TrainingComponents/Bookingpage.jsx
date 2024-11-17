@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 import Form from 'react-bootstrap/Form';
-
+import excelFile from "../../Assets/Assets/Excel/BookingForm_Records.xlsx"
+import { MdOutlineFileDownload } from "react-icons/md";
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
     learningNo: '',
@@ -42,20 +43,49 @@ const Bookingpage = () => {
 
   const validate = () => {
     const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
+    const phoneRegex = /^[0-9]{10}$/; // Adjust this pattern based on your requirements
+    const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/;
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
-      if (!formData.excel) newErrors.excel = 'Please upload an Excel file.';
+      if (!formData.excel) {
+        newErrors.excel = 'Please upload an Excel file.';
+      }
+      // Add validation for institution phone number
+      if (!formData.institution_phone) {
+        newErrors.institution_phone = 'Institution phone is required';
+      } else if (!landlineRegex.test(formData.institution_phone)) {
+        newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
+      }
     } else {
-      if (!formData.learningNo) newErrors.learningNo = 'License number is required';
-      if (!formData.fname) newErrors.fname = 'First name is required';
-      // if (!formData.mname) newErrors.mname = 'Middle name is required';
-      if (!formData.lname) newErrors.lname = 'Last name is required';
-      if (!formData.email) newErrors.email = 'email is required';
-      if (!formData.phone) newErrors.phone = 'phone is required';
+      if (!formData.learningNo) {
+        newErrors.learningNo = 'License number is required';
+      }
+      if (!formData.fname) {
+        newErrors.fname = 'First name is required';
+      }
+      if (!formData.lname) {
+        newErrors.lname = 'Last name is required';
+      }
+      if (!formData.email) {
+        newErrors.email = 'Email is required';
+      } else if (!emailRegex.test(formData.email)) {
+        newErrors.email = 'Please enter a valid email address';
+      }
+      if (!formData.phone) {
+        newErrors.phone = 'Phone is required';
+      } else if (!phoneRegex.test(formData.phone)) {
+        newErrors.phone = 'Phone number must be a valid 10-digit number';
+      }
     }
-    if (!captchaValue) newErrors.captcha = 'Please complete the CAPTCHA';
+
+    if (!captchaValue) {
+      newErrors.captcha = 'Please complete the CAPTCHA';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
 
   const handleChange = (e) => {
     const { name, files } = e.target;
@@ -238,6 +268,18 @@ const Bookingpage = () => {
     });
   };
 
+  const handleDownload = () => {
+    // Assuming you have the Excel file's URL
+    const excelFileUrl = excelFile;
+
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = excelFileUrl;
+    link.download = 'your-excel-file.xlsx'; // Specify the file name for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up
+  };
 
 
   return (
@@ -294,12 +336,12 @@ const Bookingpage = () => {
                   {errors.institution_email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.institution_email}</p>}
                 </Col>
                 <Col lg={6}>
-                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Institution Phone*"}</p>
+                  <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Institution Landline No.*"}</p>
                   <input
                     name='institution_phone'
                     value={formData.institution_phone}
                     onChange={handleChange}
-                    placeholder={"Institution Phone"}
+                    placeholder={"Institution Landline No."}
                     className='dateinput p-3 m-0 mt-0 ms-lg-3'
                   />
                   {errors.institution_phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.institution_phone}</p>}
@@ -337,8 +379,9 @@ const Bookingpage = () => {
                   />
                   {errors.coordinator_name && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.coordinator_name}</p>}
                 </Col>
-                <Col lg={6}>
+                <Col lg={6} >
                   <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Cordinator Mobile*"}</p>
+
                   <input
                     name='coordinator_mobile'
                     value={formData.coordinator_mobile}
@@ -350,7 +393,9 @@ const Bookingpage = () => {
                 </Col>
                 <Col lg={7} className='mb-3'>
                   <Form.Group controlId="uploadExcel">
-                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Upload Excel*"}</p>
+                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Upload Excel*"} <Button className='rounded-5 border-0' title="Download the sample Excel sheet, enter your details, and reupload it here." style={{ background: "#ee8042" }} onClick={handleDownload}>
+                      Download Excel <MdOutlineFileDownload size={20} />
+                    </Button></p>
                     <Form.Control
                       type="file"
                       name='excel'
@@ -431,7 +476,7 @@ const Bookingpage = () => {
                     {errors.lname && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.lname}</p>}
                   </Col>
                   <Col lg={6} md={7}>
-                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"email*"}</p>
+                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Email*"}</p>
                     <input
                       name='email'
                       value={formData.email}
@@ -442,7 +487,7 @@ const Bookingpage = () => {
                     {errors.email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.email}</p>}
                   </Col>
                   <Col lg={6} md={7}>
-                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"phone*"}</p>
+                    <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Phone*"}</p>
                     <input
                       name='phone'
                       value={formData.phone}
