@@ -20,9 +20,10 @@ import AnnualReturn from "./ScreenComponents/Annualreturns/AnnualReturns";
 import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
 import Newsphoto from "./ScreenComponents/NewsComponent/Newsphoto";
 import Movingicon from "./Components/Movingicon";
+import Bookingpage2 from "./ScreenComponents/TrainingComponents/Bookingpage2";
 
-export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
-// export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
+// export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
+export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
 
 function App() {
   // useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/annualreturn" element={<AnnualReturn />} />
           <Route path="/training" element={<Training />} />
           <Route path="/bookingpage" element={<Bookingpage />} />
+          <Route path="/bookingpage2" element={<Bookingpage2/>} />
           <Route path="/slotpage" element={<Slotpage />} />
           <Route path="/events" element={<Events />} />
           <Route path="upcomingevents" element={<Upcomingevents />} />

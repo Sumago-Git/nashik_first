@@ -10,6 +10,7 @@ import Nav from 'react-bootstrap/Nav';
 import axios from "axios";
 
 
+
 // Event data for sample holidays
 const eventData = [
   { date: '2024-09-05', text: 'Holiday' },
@@ -145,17 +146,24 @@ const Calendar = () => {
     const dateToCheck = new Date(currentYear, currentMonth, day);
     return dateToCheck < today.setHours(0, 0, 0, 0);
   };
+
   const handleButtonClick = (buttonNumber, btncategory) => {
+
+
     setSelectedButton(btncategory);
     setbrno(buttonNumber);
 
-
-    getdata_here({
-      category: btncategory,
-      buttonNumber,
-    });
+    // Check if the category matches
+    if (btncategory === "College / Organization Training – Individual") {
+      // Navigate to the desired page
+      navigate('/bookingpage2'); // Replace with your target route
+    } else {
+      getdata_here({
+        category: btncategory,
+        buttonNumber,
+      });
+    }
   };
-
 
 
   const tabsData = [
@@ -184,7 +192,7 @@ const Calendar = () => {
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
                 {tabsData.map((tab) => (
-                  <Col md={4} className="p-0" key={tab.id}>
+                  <Col md={4} className="p-0" key={tab.id}  onClick={() => handleButtonClick(tab.id, tab.label)}>
                     <Nav.Item className="calendertabs">
                       <Nav.Link eventKey={`link-${tab.id}`} className="text-black">
                         <button
@@ -194,7 +202,7 @@ const Calendar = () => {
                             backgroundColor: btno === tab.id ? '#feeeea' : 'white', // Set selected background color
                             color: btno === tab.id ? 'orange' : 'black' // Set text color based on selection
                           }}
-                          onClick={() => handleButtonClick(tab.id, tab.label)}
+                         
                           aria-label={tab.label}
                         >
                           <span className="glyphicon glyphicon-download-alt"></span> {tab.label}
