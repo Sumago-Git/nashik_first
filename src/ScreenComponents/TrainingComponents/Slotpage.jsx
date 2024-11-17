@@ -132,7 +132,7 @@ const Slotpage = () => {
                                         const isAvailable = session.available_seats > 0;
 
                                         const buttonStyle = {
-                                     border: "0px",
+                                            border: "0px",
                                             cursor: isAvailable ? 'pointer' : 'not-allowed',
                                             opacity: isAvailable ? 1 : 0.5, // Make the button slightly transparent when unavailable
                                         };
@@ -141,13 +141,15 @@ const Slotpage = () => {
                                                 <button
                                                     onClick={() => {
                                                         if (isAvailable) {
-                                                        navigate("/bookingpage", {
-                                                            state: {
-                                                                selectedDate: slotDate,
-                                                                selectedTime: `${formattedTime}-${session.title}`,
-                                                                category: category
-                                                            }
-                                                        });}
+                                                            localStorage.setItem('slotsid', session.id)
+                                                            navigate("/bookingpage", {
+                                                                state: {
+                                                                    selectedDate: slotDate,
+                                                                    selectedTime: `${formattedTime}-${session.title}`,
+                                                                    category: category
+                                                                }
+                                                            });
+                                                        }
                                                         // Ensure window scrolls to top after navigation
                                                         setTimeout(() => window.scrollTo(0, 790), 0);
                                                     }}
@@ -155,7 +157,7 @@ const Slotpage = () => {
                                                     style={buttonStyle}
                                                 >
                                                     <Container className='session p-lg-3'>
-                                                        {formattedTime} - {session.title}
+                                                        {formattedTime} - {session.title}{session.id}
                                                     </Container>
                                                 </button>
                                             </Col>
