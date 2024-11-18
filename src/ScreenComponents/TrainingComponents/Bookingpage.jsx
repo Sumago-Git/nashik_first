@@ -7,7 +7,7 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 import Form from 'react-bootstrap/Form';
-import excelFile from "../../Assets/Assets/Excel/BookingForm_Records.xlsx"
+import excelFile from "../../Assets/Assets/Excel/your-excel-file.xlsx"
 import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
 const Bookingpage = () => {
