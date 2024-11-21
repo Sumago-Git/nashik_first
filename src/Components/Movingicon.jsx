@@ -17,7 +17,7 @@ const Movingicon = () => {
       </a> */}
       <a href={`tel:+91 7796116555`} className="iconz phone">
         <FaPhoneAlt className="iconz phone"/>
-        <span className="tooltip">+91 7796116555</span>
+        {/* <span className="tooltip">+91 7796116555</span> */}
       </a>
     </div>
   );

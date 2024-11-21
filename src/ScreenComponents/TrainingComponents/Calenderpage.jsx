@@ -12,17 +12,13 @@ import axios from "axios";
 
 
 // Event data for sample holidays
-const eventData = [
-  { date: '2024-09-05', text: 'Holiday' },
-  { date: '2024-09-15', text: 'Available' },
-  { date: '2024-09-25', text: 'Meeting' },
-];
+
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
+  const [selectedButton, setSelectedButton] = useState("");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState(1, "RTO – Learner Driving License Holder Training");
   const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
