@@ -448,6 +448,7 @@ const Bookingpage = () => {
                   <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Principal/Manager Mobile*"}</p>
                   <input
                     name='hm_principal_manager_mobile'
+                    maxlength="10"
                     value={formData.hm_principal_manager_mobile}
                     onChange={handleChange}
                     placeholder={"Principal/Manager Mobile"}
@@ -471,6 +472,7 @@ const Bookingpage = () => {
 
                   <input
                     name='coordinator_mobile'
+                    maxlength="10"
                     value={formData.coordinator_mobile}
                     onChange={handleChange}
                     placeholder={"Cordinator Mobile"}
@@ -586,6 +588,7 @@ const Bookingpage = () => {
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>{"Phone*"}</p>
                     <input
                       name='phone'
+                      maxlength="10"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder={"phone"}
