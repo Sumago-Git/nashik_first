@@ -41,6 +41,77 @@ const Bookingpage = () => {
 
 
 
+  // const validate = () => {
+  //   const newErrors = {};
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
+  //   const phoneRegex = /^[0-9]{10}$/; // 10-digit phone number regex
+  //   const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/; // Landline number regex
+  //   const nameRegex = /^[A-Za-z\s]+$/; // Only letters and spaces for name fields
+  //   const licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
+
+  //   if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
+  //     // Validate for group training category
+  //     if (!formData.excel) {
+  //       newErrors.excel = 'Please upload an Excel file.';
+  //     }
+  //     if (!formData.institution_name) {
+  //       newErrors.institution_name = 'Institution name is required';
+  //     } else if (!nameRegex.test(formData.institution_name)) {
+  //       newErrors.institution_name = 'Institution name should only contain letters and spaces';
+  //     }
+  //     if (!formData.institution_email) {
+  //       newErrors.institution_email = 'Institution email is required';
+  //     } else if (!emailRegex.test(formData.institution_email)) {
+  //       newErrors.institution_email = 'Please enter a valid institution email address';
+  //     }
+  //     if (!formData.institution_phone) {
+  //       newErrors.institution_phone = 'Institution phone is required';
+  //     } else if (!landlineRegex.test(formData.institution_phone)) {
+  //       newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
+  //     }
+  //   } else {
+  //     // Validate for individual training
+  //     if (!formData.learningNo) {
+  //       newErrors.learningNo = 'Learning license number is required';
+  //     } else if (!licenseRegex.test(formData.learningNo)) {
+  //       newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0012/3456)';
+  //     }
+
+  //     if (!formData.fname) {
+  //       newErrors.fname = 'First name is required';
+  //     } else if (!nameRegex.test(formData.fname)) {
+  //       newErrors.fname = 'First name should only contain letters';
+  //     }
+
+  //     if (!formData.lname) {
+  //       newErrors.lname = 'Last name is required';
+  //     } else if (!nameRegex.test(formData.lname)) {
+  //       newErrors.lname = 'Last name should only contain letters';
+  //     }
+
+  //     if (!formData.email) {
+  //       newErrors.email = 'Email is required';
+  //     } else if (!emailRegex.test(formData.email)) {
+  //       newErrors.email = 'Please enter a valid email address';
+  //     }
+
+  //     if (!formData.phone) {
+  //       newErrors.phone = 'Phone is required';
+  //     } else if (!phoneRegex.test(formData.phone)) {
+  //       newErrors.phone = 'Phone number must be a valid 10-digit number';
+  //     }
+  //   }
+
+  //   // Validate the ReCAPTCHA
+  //   if (!captchaValue) {
+  //     newErrors.captcha = 'Please complete the CAPTCHA';
+  //   }
+
+  //   setErrors(newErrors);
+  //   return Object.keys(newErrors).length === 0;
+  // };
+
+
   const validate = () => {
     const newErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
@@ -48,7 +119,9 @@ const Bookingpage = () => {
     const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/; // Landline number regex
     const nameRegex = /^[A-Za-z\s]+$/; // Only letters and spaces for name fields
     const licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
-
+    const charOnlyRegex = /^[A-Za-z]+$/; // Only letters, no spaces or special characters
+    const numberOnlyRegex = /^\d+$/; // Only numbers
+  
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
       // Validate for group training category
       if (!formData.excel) {
@@ -74,45 +147,43 @@ const Bookingpage = () => {
       if (!formData.learningNo) {
         newErrors.learningNo = 'Learning license number is required';
       } else if (!licenseRegex.test(formData.learningNo)) {
-        newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0012/3456)';
+        newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0123456/3456)';
       }
-
+  
       if (!formData.fname) {
         newErrors.fname = 'First name is required';
-      } else if (!nameRegex.test(formData.fname)) {
+      } else if (!charOnlyRegex.test(formData.fname)) {
         newErrors.fname = 'First name should only contain letters';
       }
-
+  
       if (!formData.lname) {
         newErrors.lname = 'Last name is required';
-      } else if (!nameRegex.test(formData.lname)) {
+      } else if (!charOnlyRegex.test(formData.lname)) {
         newErrors.lname = 'Last name should only contain letters';
       }
-
+  
       if (!formData.email) {
         newErrors.email = 'Email is required';
       } else if (!emailRegex.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address';
       }
-
+  
       if (!formData.phone) {
         newErrors.phone = 'Phone is required';
       } else if (!phoneRegex.test(formData.phone)) {
         newErrors.phone = 'Phone number must be a valid 10-digit number';
       }
     }
-
+  
     // Validate the ReCAPTCHA
     if (!captchaValue) {
       newErrors.captcha = 'Please complete the CAPTCHA';
     }
-
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-
-
+  
 
   const requiredExcelColumns = ["fname", "mname", "lname", "email", "phone"];
 
