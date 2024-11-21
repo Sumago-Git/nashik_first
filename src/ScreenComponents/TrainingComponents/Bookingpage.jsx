@@ -10,9 +10,10 @@ import Form from 'react-bootstrap/Form';
 import excelFile from "../../Assets/Assets/Excel/BookingForm_Records.xlsx"
 import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
+import InputMask from 'react-input-mask';
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
-    learningNo: '',
+    learningNo: '____/_______/____',
     fname: '',
     mname: '',
     lname: '',
@@ -216,7 +217,7 @@ const Bookingpage = () => {
 
         if (!isValidColumns) {
           alert("The uploaded Excel file does not match the required structure. Please check the column names.");
-          e.target.value = ""; 
+          e.target.value = "";
           return;
         }
 
@@ -226,7 +227,7 @@ const Bookingpage = () => {
 
         if (rowCount <= 30 || rowCount >= 70) {
           alert("The number of entries in the Excel file should be greater than 30 and less than 70.");
-          e.target.value = ""; 
+          e.target.value = "";
           return;
         }
 
@@ -244,6 +245,8 @@ const Bookingpage = () => {
         ...prevData,
         [name]: e.target.value,
       }));
+
+
     }
   };
 
@@ -513,13 +516,24 @@ const Bookingpage = () => {
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>
                       {"Learning License Number*"}
                     </p>
-                    <input
-                      name='learningNo'
-                      value={formData.learningNo}
-                      onChange={handleChange}
-                      placeholder="MH15/0012345/3456"
-                      className='dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder'
-                    />
+                    <InputMask
+                      mask="****/*******/****"
+                      value={formData.learningNo || ""} // Ensure controlled value
+                      onChange={(e) => {
+                        // Get the input value and convert it to uppercase
+                        const inputValue = e.target.value.toUpperCase();
+
+                        // Update state in real-time
+                        setFormData((prevFormData) => ({
+                          ...prevFormData,
+                          learningNo: inputValue,
+                        }));
+                      }}
+                      placeholder="____/_______/____"
+                      className="dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder"
+                    >
+                      {(inputProps) => <input {...inputProps} />}
+                    </InputMask>
                     {errors.learningNo && (
                       <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>
                     )}
@@ -622,7 +636,7 @@ const Bookingpage = () => {
 
 
         </Container>
-      </Container>
+      </Container >
     </>
   );
 }
