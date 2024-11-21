@@ -7,7 +7,7 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { captchaKey } from '../../App';
 import Form from 'react-bootstrap/Form';
-import excelFile from "../../Assets/Assets/Excel/BookingForm_Records.xlsx"
+import excelFile from "../../Assets/Assets/Excel/your-excel-file.xlsx"
 import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
 import InputMask from 'react-input-mask';
@@ -36,57 +36,10 @@ const Bookingpage = () => {
   const location = useLocation()
   const [slotsession, setSlotSession] = useState("")
   const [slotdate, setSlotDate] = useState("")
-  const [excel, setexcel] = useState("")
   const [category, setCategory] = useState(""); // Add a state for category
 
-  const [formData1, setFormData1] = useState({ learningNo: '' });
 
 
-
-  // const validate = () => {
-  //   const newErrors = {};
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
-  //   const phoneRegex = /^[0-9]{10}$/; // Adjust this pattern based on your requirements
-  //   const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/;
-  //   if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
-  //     if (!formData.excel) {
-  //       newErrors.excel = 'Please upload an Excel file.';
-  //     }
-  //     // Add validation for institution phone number
-  //     if (!formData.institution_phone) {
-  //       newErrors.institution_phone = 'Institution phone is required';
-  //     } else if (!landlineRegex.test(formData.institution_phone)) {
-  //       newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
-  //     }
-  //   } else {
-  //     if (!formData.learningNo) {
-  //       newErrors.learningNo = 'License number is required';
-  //     }
-  //     if (!formData.fname) {
-  //       newErrors.fname = 'First name is required';
-  //     }
-  //     if (!formData.lname) {
-  //       newErrors.lname = 'Last name is required';
-  //     }
-  //     if (!formData.email) {
-  //       newErrors.email = 'Email is required';
-  //     } else if (!emailRegex.test(formData.email)) {
-  //       newErrors.email = 'Please enter a valid email address';
-  //     }
-  //     if (!formData.phone) {
-  //       newErrors.phone = 'Phone is required';
-  //     } else if (!phoneRegex.test(formData.phone)) {
-  //       newErrors.phone = 'Phone number must be a valid 10-digit number';
-  //     }
-  //   }
-
-  //   if (!captchaValue) {
-  //     newErrors.captcha = 'Please complete the CAPTCHA';
-  //   }
-
-  //   setErrors(newErrors);
-  //   return Object.keys(newErrors).length === 0;
-  // };
 
   const validate = () => {
     const newErrors = {};
@@ -158,38 +111,10 @@ const Bookingpage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleChange = (e) => {
-  //   const { name, files } = e.target;
-
-  //   if (name === 'excel') {
-  //     const file = files[0];
-  //     if (file) {
-  //       const validExtensions = ['xls', 'xlsx'];
-  //       const fileExtension = file.name.split('.').pop().toLowerCase();
-
-  //       // Check if the uploaded file is an Excel file
-  //       if (!validExtensions.includes(fileExtension)) {
-  //         alert('Only Excel files are accepted.'); // Alert for invalid file type
-  //         setErrors((prev) => ({
-  //           ...prev,
-  //           excel: 'Please upload an Excel file.',
-  //         }));
-  //         setFormData((prev) => ({ ...prev, excel: '' })); // Clear the file input
-  //         return;
-  //       }
-
-  //       // If valid, set the file
-  //       setErrors((prev) => ({ ...prev, excel: '' })); // Clear error if valid
-  //       setFormData((prev) => ({ ...prev, [name]: file })); // Set the file
-  //     }
-  //   } else {
-  //     setFormData((prev) => ({ ...prev, [name]: e.target.value }));
-  //   }
-  // };
 
 
 
-  const requiredExcelColumns = ["learningNo", "fname", "mname", "lname", "email", "phone"];
+  const requiredExcelColumns = ["fname", "mname", "lname", "email", "phone"];
 
   const handleChange = (e) => {
     const { name, files } = e.target;
@@ -278,7 +203,7 @@ const Bookingpage = () => {
       const data = new FormData();
 
       // Append all form fields to the FormData instance
-      data.append('learningNo', formData.learningNo);
+      // data.append('learningNo', formData.learningNo);
       data.append('fname', formData.fname);
       data.append('mname', formData.mname);
       data.append('lname', formData.lname);
@@ -317,7 +242,7 @@ const Bookingpage = () => {
 
       // Resetting the form
       setFormData({
-        learningNo: '',
+        // learningNo: '',
         fname: '',
         mname: '',
         lname: '',
