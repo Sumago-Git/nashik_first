@@ -118,7 +118,6 @@ const Contactus = () => {
     return formErrors;
   };
   const submitForm = async (e) => {
-    alert("Thank You..! We Will Connect With You Soon.")
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
@@ -142,7 +141,7 @@ const Contactus = () => {
     try {
       // Replace the URL with your API endpoint
       const response = await axios.post('contactform/create-contactform', formData);
-      // alert('Form submitted successfully!');
+      alert("Thank You..! We Will Connect With You Soon.")
       setIsSubmitting(false);
       setFormData("")
 
