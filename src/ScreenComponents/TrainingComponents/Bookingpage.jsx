@@ -38,9 +38,6 @@ const Bookingpage = () => {
   const [slotdate, setSlotDate] = useState("")
   const [category, setCategory] = useState(""); // Add a state for category
 
-
-
-
   // const validate = () => {
   //   const newErrors = {};
   //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
@@ -118,10 +115,20 @@ const Bookingpage = () => {
     const phoneRegex = /^[0-9]{10}$/; // 10-digit phone number regex
     const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/; // Landline number regex
     const nameRegex = /^[A-Za-z\s]+$/; // Only letters and spaces for name fields
-    const licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
     const charOnlyRegex = /^[A-Za-z]+$/; // Only letters, no spaces or special characters
     const numberOnlyRegex = /^\d+$/; // Only numbers
+    let licenseRegex
+    if (category === "RTO – Suspended Driving License Holders Training") {
+      licenseRegex = /^[A-Z]{2}\/\d{2}\/[A-Z]{2}\/\d{4}$/;
+  } else {
+      licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
+  }
   
+  if (!formData.learningNo) {
+      newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training" ? "Permanant license number is required" : "Learning license number is required"}`;
+  } else if (!licenseRegex.test(formData.learningNo)) {
+      newErrors.learningNo = 'Please enter a valid license number';
+  }
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
       // Validate for group training category
       if (!formData.excel) {
@@ -145,45 +152,45 @@ const Bookingpage = () => {
     } else {
       // Validate for individual training
       if (!formData.learningNo) {
-        newErrors.learningNo = 'Learning license number is required';
+        newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training" ? "Permanant license number is required" : "Learning license number is required"}`;
       } else if (!licenseRegex.test(formData.learningNo)) {
-        newErrors.learningNo = 'Please enter a valid license number (e.g., MH15/0123456/3456)';
+        newErrors.learningNo = 'Please enter a valid license number';
       }
-  
+
       if (!formData.fname) {
         newErrors.fname = 'First name is required';
       } else if (!charOnlyRegex.test(formData.fname)) {
         newErrors.fname = 'First name should only contain letters';
       }
-  
+
       if (!formData.lname) {
         newErrors.lname = 'Last name is required';
       } else if (!charOnlyRegex.test(formData.lname)) {
         newErrors.lname = 'Last name should only contain letters';
       }
-  
+
       if (!formData.email) {
         newErrors.email = 'Email is required';
       } else if (!emailRegex.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address';
       }
-  
+
       if (!formData.phone) {
         newErrors.phone = 'Phone is required';
       } else if (!phoneRegex.test(formData.phone)) {
         newErrors.phone = 'Phone number must be a valid 10-digit number';
       }
     }
-  
+
     // Validate the ReCAPTCHA
     if (!captchaValue) {
       newErrors.captcha = 'Please complete the CAPTCHA';
     }
-  
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
+
 
   const requiredExcelColumns = ["fname", "mname", "lname", "email", "phone"];
 
@@ -251,10 +258,14 @@ const Bookingpage = () => {
   };
 
   const handleSubmit = async (e) => {
+    alert("inside submit")
+    console.log("formData..", formData);
+
+    
     e.preventDefault();
-    console.log("formData", formData);
 
     if (!validate()) return;
+    alert("after validation submit")
     let value = slotdate
     const parts = value.split(' '); // Split the string by space
     const dateParts = parts[1].split('/'); // Split the date part (e.g., "27/11/2024") by "/"
@@ -275,7 +286,9 @@ const Bookingpage = () => {
 
       // Append all form fields to the FormData instance
       // data.append('learningNo', formData.learningNo);
+      
       data.append('fname', formData.fname);
+      data.append('learningNo', formData.learningNo);
       data.append('mname', formData.mname);
       data.append('lname', formData.lname);
       data.append('email', formData.email);
@@ -512,26 +525,48 @@ const Bookingpage = () => {
                 <Row className='justify-content-center'>
                   <Col lg={6} md={7} sm={12}>
                     <p className='bookingdate text-black text-start ms-lg-4 ms-sm-3 mt-3'>
-                      {"Learning License Number*"}
+                      {category === "RTO – Suspended Driving License Holders Training" ? "Permanant License Number*" : "Learning License Number*"}
                     </p>
-                    <InputMask
-                      mask="****/*******/****"
-                      value={formData.learningNo || ""} // Ensure controlled value
-                      onChange={(e) => {
-                        // Get the input value and convert it to uppercase
-                        const inputValue = e.target.value.toUpperCase();
+                    {category === "RTO – Suspended Driving License Holders Training" ?
+                      <InputMask
+                        mask="**/**/**/****"
+                        value={formData.learningNo || ""} // Ensure controlled value
+                        onChange={(e) => {
+                          // Get the input value and convert it to uppercase
+                          const inputValue = e.target.value.toUpperCase();
 
-                        // Update state in real-time
-                        setFormData((prevFormData) => ({
-                          ...prevFormData,
-                          learningNo: inputValue,
-                        }));
-                      }}
-                      placeholder="____/_______/____"
-                      className="dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder"
-                    >
-                      {(inputProps) => <input {...inputProps} />}
-                    </InputMask>
+                          // Update state in real-time
+                          setFormData((prevFormData) => ({
+                            ...prevFormData,
+                            learningNo: inputValue,
+                          }));
+                        }}
+                        placeholder="____/_______/____"
+                        className="dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder"
+                      >
+                        {(inputProps) => <input {...inputProps} />}
+                      </InputMask>
+                      :
+                      <InputMask
+                        mask="****/*******/****"
+                        value={formData.learningNo || ""} // Ensure controlled value
+                        onChange={(e) => {
+                          // Get the input value and convert it to uppercase
+                          const inputValue = e.target.value.toUpperCase();
+
+                          // Update state in real-time
+                          setFormData((prevFormData) => ({
+                            ...prevFormData,
+                            learningNo: inputValue,
+                          }));
+                        }}
+                        placeholder="____/_______/____"
+                        className="dateinput p-3 m-0 mt-0 ms-lg-3 custom-placeholder"
+                      >
+                        {(inputProps) => <input {...inputProps} />}
+                      </InputMask>
+                    }
+
                     {errors.learningNo && (
                       <p className='text-start ms-md-4 mt-1 text-danger'>{errors.learningNo}</p>
                     )}
@@ -630,10 +665,6 @@ const Bookingpage = () => {
               </form>
             </div>
           )}
-
-
-
-
         </Container>
       </Container >
     </>
