@@ -11,7 +11,7 @@ const Aboutbanner = () => {
         {
             headline: (
                 <>
-                    <span style={{ fontWeight: "800" }}>Happiness...</span> is living in the <br />city of your dreams...
+                    <span style={{ fontWeight: "800", color:"black" }}>Happiness...</span> is living in the <br />city of your dreams...
                 </>
             ),
             subtext: (
@@ -104,10 +104,10 @@ const Aboutbanner = () => {
                         <Carousel className=' w-100 h-75 caru'>
                             {carouselItems.map((item, index) => (
                                 <Carousel.Item key={index} className='carouselitem'>
-                                    <p className='text-start ms-md-4 ms-md-0 headline pt-md-5 w-sm-100 ms-3'>
+                                    <p className='text-start ms-md-4 ms-md-0 headline text-black pt-md-5 w-sm-100 ms-3'>
                                         {item.headline}
                                     </p>
-                                    <p className='text-start ms-md-4 headlinetext pb-5 m-md-0 w-sm-100 ms-3'>
+                                    <p className='text-start ms-md-4 text-black headlinetext pb-5 m-md-0 w-sm-100 ms-3'>
                                         {item.subtext}
                                     </p>
                                 </Carousel.Item>
