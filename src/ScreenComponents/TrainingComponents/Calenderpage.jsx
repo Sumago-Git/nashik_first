@@ -18,7 +18,7 @@ const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("");
+  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState();
   const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
@@ -148,17 +148,21 @@ const Calendar = () => {
 
     setSelectedButton(btncategory);
     setbrno(buttonNumber);
+    getdata_here({
+      category: btncategory,
+      buttonNumber,
+    })
 
     // Check if the category matches
-    if (btncategory === "College / Organization Training – Individual") {
-      // Navigate to the desired page
-      navigate('/bookingpage2'); // Replace with your target route
-    } else {
-      getdata_here({
-        category: btncategory,
-        buttonNumber,
-      });
-    }
+    // if (btncategory === "College / Organization Training – Individual") {
+    //   // Navigate to the desired page
+    //   navigate('/bookingpage2'); // Replace with your target route
+    // } else {
+    //   getdata_here({
+    //     category: btncategory,
+    //     buttonNumber,
+    //   });
+    // }
   };
 
 
@@ -168,7 +172,7 @@ const Calendar = () => {
     { id: 3, label: "RTO – Training for School Bus Driver" },
     { id: 4, label: "School Students Training – Group" },
     { id: 5, label: "College/Organization Training – Group" },
-    { id: 6, label: "College / Organization Training – Individual" }
+    // { id: 6, label: "College / Organization Training – Individual" }
   ];
   return (
     <>
@@ -188,7 +192,7 @@ const Calendar = () => {
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
                 {tabsData.map((tab) => (
-                  <Col md={4} className="p-0" key={tab.id}  onClick={() => handleButtonClick(tab.id, tab.label)}>
+                  <Col md={4} className="p-0" key={tab.id} onClick={() => handleButtonClick(tab.id, tab.label)}>
                     <Nav.Item className="calendertabs">
                       <Nav.Link eventKey={`link-${tab.id}`} className="text-black">
                         <button
@@ -198,7 +202,7 @@ const Calendar = () => {
                             backgroundColor: btno === tab.id ? '#feeeea' : 'white', // Set selected background color
                             color: btno === tab.id ? 'orange' : 'black' // Set text color based on selection
                           }}
-                         
+
                           aria-label={tab.label}
                         >
                           <span className="glyphicon glyphicon-download-alt"></span> {tab.label}

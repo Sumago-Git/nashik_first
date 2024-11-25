@@ -141,17 +141,26 @@ const Slotpage = () => {
                                                 <button
                                                     onClick={() => {
                                                         if (isAvailable) {
-                                                            localStorage.setItem('slotsid', session.id)
-                                                            navigate("/bookingpage", {
-                                                                state: {
-                                                                    selectedDate: slotDate,
-                                                                    selectedTime: `${formattedTime}-${session.title}`,
-                                                                    category: category
-                                                                }
-                                                            });
+                                                            // Check if category is either 'abc' or 'xyz'
+                                                            if (
+
+                                                                category === "RTO – Learner Driving License Holder Training"
+                                                                || category === "RTO – Suspended Driving License Holders Training"
+                                                                || category === "RTO – Training for School Bus Driver") {
+                                                                localStorage.setItem('slotsid', session.id);
+                                                                navigate("/bookingpage", {
+                                                                    state: {
+                                                                        selectedDate: slotDate,
+                                                                        selectedTime: `${formattedTime}-${session.title}`,
+                                                                        category: category
+                                                                    }
+                                                                });
+                                                                // Ensure window scrolls to top after navigation
+                                                                setTimeout(() => window.scrollTo(0, 790), 0);
+                                                            } else {
+                                                                console.log("Navigation prevented: Invalid category");
+                                                            }
                                                         }
-                                                        // Ensure window scrolls to top after navigation
-                                                        setTimeout(() => window.scrollTo(0, 790), 0);
                                                     }}
                                                     className='w-100'
                                                     style={buttonStyle}
