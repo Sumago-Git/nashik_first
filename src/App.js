@@ -21,7 +21,8 @@ import AnnualReport from "./ScreenComponents/InvestorComponents/Annualreport";
 import Newsphoto from "./ScreenComponents/NewsComponent/Newsphoto";
 import Movingicon from "./Components/Movingicon";
 import Bookingpage2 from "./ScreenComponents/TrainingComponents/Bookingpage2";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
 // export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
 
@@ -52,6 +53,7 @@ function App() {
         </Routes>
         <Movingicon />
         <Bottom />
+        <ToastContainer />
       </BrowserRouter>
     </div>
   );

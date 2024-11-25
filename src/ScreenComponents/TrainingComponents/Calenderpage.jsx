@@ -9,16 +9,11 @@ import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
 import axios from "axios";
 
-
-
-// Event data for sample holidays
-
-
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("RTO – Learner Driving License Holder Training");
+  const [selectedButton, setSelectedButton] = useState("");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState();
   const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
@@ -199,7 +194,8 @@ const Calendar = () => {
                           type="button"
                           className={`btn3d btn w-100 calendertabs custom-button ${btno === tab.id ? 'selected' : ''}`}
                           style={{
-                            backgroundColor: btno === tab.id ? '#feeeea' : 'white', // Set selected background color
+                            fontSize: "1.1rem",
+                            backgroundColor: btno === tab.id ? '#ededf9' : 'white', // Set selected background color
                             color: btno === tab.id ? 'orange' : 'black' // Set text color based on selection
                           }}
 

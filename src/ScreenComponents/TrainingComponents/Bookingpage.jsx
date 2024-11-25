@@ -12,6 +12,7 @@ import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
 import InputMask from 'react-input-mask';
 import Modal from 'react-bootstrap/Modal';
+import { toast } from 'react-toastify';
 
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
@@ -58,15 +59,15 @@ const Bookingpage = () => {
     let licenseRegex
     if (category === "RTO – Suspended Driving License Holders Training") {
       licenseRegex = /^[A-Z]{2}\/\d{2}\/[A-Z]{2}\/\d{4}$/;
-  } else {
+    } else {
       licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
-  }
-  
-  if (!formData.learningNo) {
+    }
+
+    if (!formData.learningNo) {
       newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training" ? "Permanant license number is required" : "Learning license number is required"}`;
-  } else if (!licenseRegex.test(formData.learningNo)) {
+    } else if (!licenseRegex.test(formData.learningNo)) {
       newErrors.learningNo = 'Please enter a valid license number';
-  }
+    }
 
     if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
       // Validate for group training category
@@ -204,10 +205,6 @@ const Bookingpage = () => {
   };
 
   const handleSubmit = async (e) => {
-    alert("inside submit")
-    console.log("formData..", formData);
-
-    
     e.preventDefault();
 
     if (!validate()) return;
@@ -234,7 +231,6 @@ const Bookingpage = () => {
       // Append all form fields to the FormData instance
       data.append('learningNo', formData.learningNo);
       data.append('fname', formData.fname);
-      data.append('learningNo', formData.learningNo);
       data.append('mname', formData.mname);
       data.append('lname', formData.lname);
       data.append('email', formData.email);
@@ -265,14 +261,7 @@ const Bookingpage = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log("Setting showModal to true");
-      setShowModal(true);
-      console.log("showModal:", showModal);
-      console.log('Response:', response.data);
-      // Show success message
-      // alert('Booking successfully created!');
-
-      // Resetting the form
+      toast.success(`Hello ${formData.fname} ${formData.lname}, your name has been booked for the slot `);
       setFormData({
         learningNo: '',
         fname: '',
@@ -290,9 +279,10 @@ const Bookingpage = () => {
       console.error('Error submitting form:', error);
       // Handle error
       if (error.response) {
+        toast.error(`Error: ${error.response.data.message || 'Something went wrong!'}`);
         alert(`Error: ${error.response.data.message || 'Something went wrong!'}`);
       } else {
-        alert('Error: No response from server.');
+        toast.error('Error: No response from server.');
       }
     } finally {
       setIsSubmitting(false); // Stop loading
@@ -635,7 +625,7 @@ const Bookingpage = () => {
         </Container>
       </Container >
 
-      <Modal show={showModal} onHide={() => setShowModal(false)} >
+      {/* <Modal show={showModal} onHide={() => setShowModal(false)} >
         <Modal.Header closeButton>
           <Modal.Title>Submission Status</Modal.Title>
         </Modal.Header>
@@ -645,7 +635,7 @@ const Bookingpage = () => {
             Close
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
