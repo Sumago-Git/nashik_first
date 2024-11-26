@@ -42,6 +42,18 @@ const Calendar = () => {
         data: "Consists of 2 hour training to create awareness of Traffic rules, Road signs, Safety measures and tools, Causes of accidents, Dos & Don’ts of traffic rules.",
         note: "No individual bookings accepted. To be booked By the Concerned coordinator for batch size of minimum 30 & maximum 50 participants."
       })
+    } else if (selectedButton === "RTO – Suspended Driving License Holders Training") {
+      setCategoryData({
+        heading: "Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.",
+        data: "Consists of 2 hour training at Traffic Education Park and knowledge sharing on Traffic Rules and Licenses Suspension rules, Defensive Driving, Right of Way, Safety Measures, Causes of Road Accidents, Dos and Don’ts while driving. Participants are given attendance certificate which is required to be submitted to RTO to get back suspended license.",
+        note: ""
+      })
+    } else if (selectedButton === "RTO – Training for School Bus Driver") {
+      setCategoryData({
+        heading: "Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and Nashik First.",
+        data: "Consists of 2 hour training at Traffic Education Park and knowledge sharing on Traffic Rules, Defensive Driving, Right of Way, Safety measures, Causes of Road Accidents, Dos and Don’ts while driving. Participants are given attendance certificate which is required to be submitted to RTO to get new permit or renewal of permit.",
+        note: ""
+      })
     }
   }, [selectedButton, categoryData])
   useEffect(() => {
