@@ -16,8 +16,34 @@ const Calendar = () => {
   const [selectedButton, setSelectedButton] = useState("");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState();
+  const [categoryData, setCategoryData] = useState({
+    heading: "",
+    data: "",
+    note: ""
+  });
   const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
 
+  useEffect(() => {
+    if (selectedButton === "RTO – Learner Driving License Holder Training") {
+      setCategoryData({
+        heading: "Road Safety & Traffic Awareness programme jointly organized by RTO Nashik and Nashik First.",
+        data: "This programme is conducted exclusively designed for people holding Learner License & applied for Permanent License. Consists of 2 hour training at Traffic Education Park and knowledge sharing on Traffic Rules, Defensive Driving, Right of Way, Safety measures, Causes of Road Accidents, Do’s and Don’ts while driving. Participants are given attendance certificate which is required to be submitted to RTO before final test.",
+        note: "Applicants for a Permanent Driving License who have a Learner Driving License."
+      })
+    } else if (selectedButton === "School Students Training – Group") {
+      setCategoryData({
+        heading: "This programme is exclusively designed for school students from Std. 5th to Std. 10th.",
+        data: "Consists of 2 hours training to create awareness of Basic traffic rules, Road signs, Safety measures and tools, Dos & Don’ts of traffic rules in high school students.",
+        note: "No individual bookings accepted. To be booked By the Concerned teacher for batch size of minimum 30 & maximum 50 participants."
+      })
+    } else if (selectedButton === "College/Organization Training – Group") {
+      setCategoryData({
+        heading: "This programme is exclusively designed for College students, Employees working in various organisations & all other types of adult groups.",
+        data: "Consists of 2 hour training to create awareness of Traffic rules, Road signs, Safety measures and tools, Causes of accidents, Dos & Don’ts of traffic rules.",
+        note: "No individual bookings accepted. To be booked By the Concerned coordinator for batch size of minimum 30 & maximum 50 participants."
+      })
+    }
+  }, [selectedButton, categoryData])
   useEffect(() => {
     getdata_here();
   }, []);
@@ -212,18 +238,22 @@ const Calendar = () => {
 
             <br />
 
-
-            Road Safety & Traffic Awareness programme jointly <br />
-            organized by RTO, Nashik and Nashik First.
+            {categoryData.heading}
+            {/* Road Safety & Traffic Awareness programme jointly <br />
+            organized by RTO, Nashik and Nashik First. */}
 
           </p>
           <p className='slotpagepara text-start'>
-            This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
+            {categoryData.data}
+            {/* This programme is conducted exclusively for people holding Learner License & applied for Permanent License.
             It consists of 2-hour training at Traffic Education Park with knowledge sharing on Traffic Rules, Defensive Driving,
             Right of Way, Safety measures, Causes of Road Accidents, and Do’s and Don’ts while driving.
             Participants are provided with attendance certificates required to be submitted to the RTO before the final test.
+           */}
           </p>
-
+          <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
+            {categoryData.note}
+          </p>
 
         </Container>
 
