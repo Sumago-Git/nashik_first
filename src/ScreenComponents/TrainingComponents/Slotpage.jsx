@@ -27,7 +27,11 @@ const Slotpage = () => {
             const options = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
 
             // Get the formatted date in 'Tuesday 10/09/2024' format
-            const formattedDate = date.toLocaleDateString('en-GB', options).replace(',', '');
+            const formattedDate = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+            });
             setSlotDate(formattedDate)
 
         }
@@ -144,9 +148,7 @@ const Slotpage = () => {
                                                             // Check if category is either 'abc' or 'xyz'
                                                             if (
 
-                                                                category === "RTO – Learner Driving License Holder Training"
-                                                                || category === "RTO – Suspended Driving License Holders Training"
-                                                                || category === "RTO – Training for School Bus Driver") {
+                                                                category === "RTO – Learner Driving License Holder Training") {
                                                                 localStorage.setItem('slotsid', session.id);
                                                                 navigate("/bookingpage", {
                                                                     state: {

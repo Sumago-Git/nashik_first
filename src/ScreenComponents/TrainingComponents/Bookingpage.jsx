@@ -204,9 +204,7 @@ const Bookingpage = () => {
   };
 
   const handleSubmit = async (e) => {
-    alert("inside submit")
-    console.log("formData..", formData);
-
+  
     
     e.preventDefault();
 
@@ -234,7 +232,7 @@ const Bookingpage = () => {
       // Append all form fields to the FormData instance
       data.append('learningNo', formData.learningNo);
       data.append('fname', formData.fname);
-      data.append('learningNo', formData.learningNo);
+ 
       data.append('mname', formData.mname);
       data.append('lname', formData.lname);
       data.append('email', formData.email);
@@ -265,12 +263,9 @@ const Bookingpage = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log("Setting showModal to true");
-      setShowModal(true);
-      console.log("showModal:", showModal);
-      console.log('Response:', response.data);
+  
       // Show success message
-      // alert('Booking successfully created!');
+      alert('Booking successfully created!');
 
       // Resetting the form
       setFormData({
