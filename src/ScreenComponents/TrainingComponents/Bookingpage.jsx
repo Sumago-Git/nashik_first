@@ -326,7 +326,7 @@ const Bookingpage = () => {
         note: ""
       })
     }
-  }, [category, categoryData])
+  }, [categoryData])
 
   useEffect(() => {
     if (location && location.state) {

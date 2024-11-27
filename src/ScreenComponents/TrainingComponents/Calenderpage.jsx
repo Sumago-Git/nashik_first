@@ -55,7 +55,7 @@ const Calendar = () => {
         note: ""
       })
     }
-  }, [selectedButton, categoryData])
+  }, [categoryData])
   useEffect(() => {
     getdata_here();
   }, []);
