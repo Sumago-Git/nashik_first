@@ -14,6 +14,7 @@ import { captchaKey } from '../../App';
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { toast } from 'react-toastify';
 
 const Contactus = () => {
 
@@ -46,13 +47,13 @@ const Contactus = () => {
     subject: "",
     profession: "",
     suggestions: "",
+    suggestionfile: "",
     captchaToken: ""
   });
-  console.log("formData", formData);
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -119,40 +120,49 @@ const Contactus = () => {
   };
   const submitForm = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
+  const validationErrors = validateForm();
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+  setIsSubmitting(true);
+
+    // Prepare form data for submission
+    const formDataToSend = new FormData();
+    for (const key in formData) {
+      if (key === "suggestionfile" && formData[key]) {
+        formDataToSend.append(key, formData[key]);
+      } else {
+        formDataToSend.append(key, formData[key]);
+      }
     }
-    setFormData({
-      firstName: "",
-      email: "",
-      contact: "",
-      age: "",
-      subject: "",
-      profession: "",
-      suggestions: "",
-      captchaToken: ""
-    })
-
-    setIsSubmitting(true);
-
 
     try {
       // Replace the URL with your API endpoint
-      const response = await axios.post('contactform/create-contactform', formData);
-      alert("Thank You..! We Will Connect With You Soon.")
+      const response = await axios.post('contactform/create-contactform', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data', // Important for file uploads
+        }
+      });
+  
+      toast.success("Thank You..! We Will Connect With You Soon.");
       setIsSubmitting(false);
-      setFormData("")
-
+      setFormData({
+        firstName: "",
+        email: "",
+        contact: "",
+        age: "",
+        subject: "",
+        profession: "",
+        suggestions: "",
+        suggestionfile: null,
+        captchaToken: ""
+      });
+  
     } catch (error) {
       console.error("Error submitting form", error);
-      // alert("There was an error submitting the form.");
       setIsSubmitting(false);
     }
-
-
-
   };
   const handleRecaptchaChange = (token) => {
     setFormData({ ...formData, captchaToken: token });
@@ -330,12 +340,25 @@ const Contactus = () => {
                     {errors.suggestions && <p className="text-danger">{errors.suggestions}</p>}
                   </div>
 
-                  <div className="col-lg-12 col-md-12 text-center mt-4">
+                  <div className="col-lg-6 col-md-6 text-center mt-4">
                     <ReCAPTCHA
                       sitekey={captchaKey}
                       onChange={handleRecaptchaChange}
                     />
                     {errors.captchaToken && <p className="text-start text-danger">{errors.captchaToken}</p>}
+                  </div>
+                  <div className="col-lg-6 col-md-6 text-center mt-3">
+                    <p className="text-start mb-2">Suggestion File</p>
+                    <input
+                      name="suggestionfile"
+                      type='file'
+                      accept='.jpg,.jpeg,.png,.pdf'
+                      onChange={(e) => setFormData({
+                        ...formData,
+                        suggestionfile: e.target.files[0], // Store the file object in state
+                      })}
+                      className="p-2 w-100 contactinput"
+                    />
                   </div>
 
                   <div className="col-lg-12 text-center mt-4 mb-4 ">
