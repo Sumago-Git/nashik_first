@@ -17,7 +17,7 @@ const AnnualReturns = () => {
   const [getdata, setdata] = useState([]);
 
   const fetch_data = () => {
-    axios.get('AnnualReturn/get-annualReturns')
+    axios.get('AnnualReturn/get-active-annualReturns')
       .then((res) => {
         setdata(res.data.responseData)
       })
