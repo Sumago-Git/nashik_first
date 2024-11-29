@@ -24,10 +24,23 @@ const Homecounter = () => {
 
   const [counterOn, setCounterOn] = useState(false);
 
-  const [getdata, setdata] = useState([]);
+  const [getdata, setdata] = useState();
 
   const navigate = useNavigate();
 
+  const countsData = () => {
+    axios.get('counts/get-entry-counts')
+      .then((res) => {
+        setdata(res.data.data)
+        console.log("res.data", res.data);
+
+
+      })
+      .catch((err) => {
+        console.log(err);
+
+      })
+  }
   const counter = () => {
     axios.get('counter/get-homecounter')
       .then((res) => {
@@ -40,7 +53,8 @@ const Homecounter = () => {
       })
   }
   useEffect(() => {
-    counter();
+    // counter();
+    countsData();
     Aos.init();
   }, [])
 
@@ -56,47 +70,47 @@ const Homecounter = () => {
               <Col md={12} lg={5} sm={12}>
                 <Row className="justify-content-center mt-3">
                   {
-                    getdata.map((a) => {
-                      return (
-                        <>
-                          <Col xs={6} sm={5} md={5} className="h-50">
-                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
-                              <h5 style={{ fontWeight: "700" }} className="text-white">
-                                Training<br /> Sessions
-                              </h5>
-                              <img src={trining_imparted} className="w-50 mx-auto" alt="" />
-                              {/* <h3 className="text-white">{a.training_imparted}</h3> */}
-                              <h3>{counterOn && <CountUp start={0} end={a.training_imparted} duration={2} delay={0} />}</h3>
-                            </Card>
-                          </Col>
-                          <Col xs={6} sm={5} md={5} className="h-50">
-                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
-                              <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
-                              <img src={lives} className="w-50 mx-auto" alt="" />
-                              {/* <h3 className="">{a.lives_changed}</h3> */}
-                              <h3>{counterOn && <CountUp start={0} end={a.lives_changed} duration={2} delay={0} />}</h3>
-                            </Card>
-                          </Col>
-                          <Col xs={6} sm={5} md={5} className="h-50">
-                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
-                              <h5 style={{ fontWeight: "700" }}>Adult</h5>
-                              <img src={adult} className="w-50 mx-auto" alt="" />
-                              {/* <h3>{a.children}</h3> */}
-                              <h3>{counterOn && <CountUp start={0} end={a.children} duration={2} delay={0} />}</h3>
-                            </Card>
-                          </Col>
+                    // getdata.map((a) => {
+                    //   return (
+                    <>
+                      <Col xs={6} sm={5} md={5} className="h-50">
+                        <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem", background: "#F96945" }}>
+                          <h5 style={{ fontWeight: "700" }} className="text-white">
+                            Training<br /> Sessions
+                          </h5>
+                          <img src={trining_imparted} className="w-50 mx-auto" alt="" />
+                          {/* <h3 className="text-white">{a.training_imparted}</h3> */}
+                          <h2>{counterOn && <CountUp start={0} end={getdata.sessionSlotCount ? getdata.sessionSlotCount : 0} duration={2} delay={0} />}</h2>
+                        </Card>
+                      </Col>
+                      <Col xs={6} sm={5} md={5} className="h-50">
+                        <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                          <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
+                          <img src={lives} className="w-50 mx-auto" alt="" />
+                          {/* <h3 className="">{a.lives_changed}</h3> */}
+                          <h2>{counterOn && <CountUp start={0} end={getdata.totalBookingCount ? getdata.totalBookingCount : 0} duration={2} delay={0} />}</h2>
+                        </Card>
+                      </Col>
+                      <Col xs={6} sm={5} md={5} className="h-50">
+                        <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopRightRadius: "6rem", borderBottomLeftRadius: "6rem" }}>
+                          <h5 style={{ fontWeight: "700" }}>Adult</h5>
+                          <img src={adult} className="w-50 mx-auto" alt="" />
+                          {/* <h3>{a.children}</h3> */}
+                          <h4>{counterOn && <CountUp start={0} end={getdata.totalExcludingSchoolStudents ? getdata.totalExcludingSchoolStudents : 0} duration={2} delay={0} />}</h4>
+                        </Card>
+                      </Col>
 
-                          <Col xs={6} sm={5} md={5} className="h-50">
-                            <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
-                              <h5 style={{ fontWeight: "700" }}>Children</h5>
-                              <img src={child} className="w-50 mx-auto" alt="" />
-                              {/* <h3>{a.adult}</h3> */}
-                              <h3>{counterOn && <CountUp start={0} end={a.adult} duration={2} delay={0} />}</h3>
-                            </Card>
-                          </Col>
-                        </>
-                      )
-                    })
+                      <Col xs={6} sm={5} md={5} className="h-50">
+                        <Card className="py-4 shadow-md mt-3 border-0 h-75 w-100" style={{ borderTopLeftRadius: "6rem", borderBottomRightRadius: "6rem" }}>
+                          <h5 style={{ fontWeight: "700" }}>Children</h5>
+                          <img src={child} className="w-50 mx-auto" alt="" />
+                          {/* <h3>{a.adult}</h3> */}
+                          <h4>{counterOn && <CountUp start={0} end={getdata.bookingEntryCountByCategory ? getdata.bookingEntryCountByCategory[1].count : 0} duration={2} delay={0} />}</h4>
+                        </Card>
+                      </Col>
+                    </>
+                    //   )
+                    // })
                   }
 
                   {/* <Col xs={6} sm={5} md={5} className="h-50">
@@ -163,7 +177,7 @@ const Homecounter = () => {
               <Row className='justify-content-center'>
                 <Col md={6} lg={5} sm={11}>
                   <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-md-0'>
-                    <img src={counterimg1} alt="counterimg1" data-aos="zoom-in" data-aos-duration="2000"  />
+                    <img src={counterimg1} alt="counterimg1" data-aos="zoom-in" data-aos-duration="2000" />
                     <h3 className='countHeading my-3'> <strong> RTO Training </strong></h3>
                     <p className='textCard'><strong>Road Safety & Traffic Awareness programme jointly organized by RTO, Nashik and <span style={{ color: "#c50c1c" }}>Nashik</span><span style={{ color: "#ff6600" }}> First.</span></strong></p>
                     <p className='textCard' style={{ textAlign: "left" }}>In this initiative, the learning license holders (<em>youth aged 18 to 25 yrs</em>) will get permanent license only after undergoing Counselling &amp; Training on <strong>Road Safety &amp; Traffic Awareness Programme</strong> for two hours.</p>
