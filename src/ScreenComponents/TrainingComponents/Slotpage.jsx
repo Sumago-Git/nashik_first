@@ -55,7 +55,7 @@ const Slotpage = () => {
                 note: ""
             })
         }
-    }, [categoryData])
+    }, [category])
     useEffect(() => {
         if (location) {
             console.log("location state : ", location.state);
