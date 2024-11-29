@@ -96,7 +96,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Adult</h5>
                           <img src={adult} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.children}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata.bookingEntryCountByCategory ? getdata.bookingEntryCountByCategory[2].count : 0} duration={2} delay={0} />}</h4>
+                          <h4>{counterOn && <CountUp start={0} end={getdata.totalExcludingSchoolStudents ? getdata.totalExcludingSchoolStudents : 0} duration={2} delay={0} />}</h4>
                         </Card>
                       </Col>
 
