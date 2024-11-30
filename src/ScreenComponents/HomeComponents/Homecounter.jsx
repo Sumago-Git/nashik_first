@@ -80,7 +80,7 @@ const Homecounter = () => {
                           </h5>
                           <img src={trining_imparted} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="text-white">{a.training_imparted}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata.sessionSlotCount ? getdata.sessionSlotCount : 0} duration={2} delay={0} />}</h2>
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.sessionSlotCount ? getdata?.sessionSlotCount : 0} duration={2} delay={0} />}</h2>
                         </Card>
                       </Col>
                       <Col xs={6} sm={5} md={5} className="h-50">
@@ -88,7 +88,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
                           <img src={lives} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="">{a.lives_changed}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata.totalBookingCount ? getdata.totalBookingCount : 0} duration={2} delay={0} />}</h2>
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.totalBookingCount ? getdata?.totalBookingCount : 0} duration={2} delay={0} />}</h2>
                         </Card>
                       </Col>
                       <Col xs={6} sm={5} md={5} className="h-50">
@@ -96,7 +96,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Adult</h5>
                           <img src={adult} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.children}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata.totalExcludingSchoolStudents ? getdata.totalExcludingSchoolStudents : 0} duration={2} delay={0} />}</h4>
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.totalExcludingSchoolStudents ? getdata?.totalExcludingSchoolStudents : 0} duration={2} delay={0} />}</h4>
                         </Card>
                       </Col>
 
@@ -105,7 +105,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Children</h5>
                           <img src={child} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.adult}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata.bookingEntryCountByCategory ? getdata.bookingEntryCountByCategory[1].count : 0} duration={2} delay={0} />}</h4>
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.bookingEntryCountByCategory ? getdata?.bookingEntryCountByCategory[1]?.count : 0} duration={2} delay={0} />}</h4>
                         </Card>
                       </Col>
                     </>

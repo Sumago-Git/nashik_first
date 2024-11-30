@@ -55,7 +55,7 @@ const Slotpage = () => {
                 note: ""
             })
         }
-    }, [categoryData])
+    }, [category])
     useEffect(() => {
         if (location) {
             console.log("location state : ", location.state);
@@ -80,9 +80,6 @@ const Slotpage = () => {
 
         }
     }, [location])
-
-    console.log("category", category);
-
 
     useEffect(() => {
         if (category && slotDate1) {
@@ -109,7 +106,6 @@ const Slotpage = () => {
                     // Add any additional headers if required
                 }
             }).then((result) => {
-                console.log("result", result.data.responseData);
                 setSessions(result.data.responseData)
             }).catch((err) => {
                 console.log("err", err);
@@ -216,7 +212,7 @@ const Slotpage = () => {
                                                     className='w-100'
                                                     style={buttonStyle}
                                                 >
-                                                    <Container className='session p-lg-3'>
+                                                    <Container className={`${session.available_seats > 0 ? "session" : "session1"} p-lg-3`}>
                                                         {formattedTime} -- {session.title}
                                                     </Container>
                                                 </button>
