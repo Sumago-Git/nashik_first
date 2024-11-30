@@ -32,6 +32,13 @@
     font-size: 30px;
     border-radius: 20px;
 }
+.session1 {
+    background: #36e414;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 30px;
+    border-radius: 20px;
+}
 
 .returnbutton {
     background-color: #F96945;
