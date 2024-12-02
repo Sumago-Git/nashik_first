@@ -61,16 +61,77 @@ const Contactus = () => {
       [name]: value
     });
   };
+  // const validateForm = () => {
+  //   let formErrors = {};
+
+  //   // First Name: Required, minimum length of 2 characters
+  //   if (!formData.firstName.trim()) {
+  //     formErrors.firstName = "First name is required.";
+  //   } else if (formData.firstName.length < 2) {
+  //     formErrors.firstName = "First name must be at least 2 characters.";
+  //   }
+
+  //   // Email: Required and must be a valid email format
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!formData.email.trim()) {
+  //     formErrors.email = "Email is required.";
+  //   } else if (!emailRegex.test(formData.email)) {
+  //     formErrors.email = "Invalid email format.";
+  //   }
+
+  //   // Contact: Required, must be a valid phone number format (10 digits)
+  //   const contactRegex = /^[0-9]{10}$/;
+  //   if (!formData.contact.trim()) {
+  //     formErrors.contact = "Contact is required.";
+  //   } else if (!contactRegex.test(formData.contact)) {
+  //     formErrors.contact = "Contact must be a valid 10-digit number.";
+  //   }
+
+  //   // Age: Required and must be a valid number (between 18 and 100)
+  //   if (!formData.age.trim()) {
+  //     formErrors.age = "Age is required.";
+  //   } else if (isNaN(formData.age) || formData.age < 18 || formData.age > 100) {
+  //     formErrors.age = "Age must be a number between 18 and 100.";
+  //   }
+
+  //   // Subject: Required, minimum length of 3 characters
+  //   if (!formData.subject.trim()) {
+  //     formErrors.subject = "Subject is required.";
+  //   } else if (formData.subject.length < 3) {
+  //     formErrors.subject = "Subject must be at least 3 characters long.";
+  //   }
+
+  //   // Profession: Required
+  //   if (!formData.profession.trim()) {
+  //     formErrors.profession = "Profession is required.";
+  //   }
+
+  //   // Suggestions: Optional, but if provided must be at least 10 characters
+  //   if (formData.suggestions && formData.suggestions.length < 10) {
+  //     formErrors.suggestions = "Suggestions must be at least 10 characters.";
+  //   }
+
+  //   // Google reCAPTCHA: Required
+  //   if (!formData.captchaToken) {
+  //     formErrors.captchaToken = "Please complete the reCAPTCHA.";
+  //   }
+
+  //   return formErrors;
+  // };
+  
   const validateForm = () => {
     let formErrors = {};
-
-    // First Name: Required, minimum length of 2 characters
+  
+    // First Name: Required, minimum length of 2 characters, only letters
+    const nameRegex = /^[a-zA-Z\s]+$/;
     if (!formData.firstName.trim()) {
       formErrors.firstName = "First name is required.";
     } else if (formData.firstName.length < 2) {
       formErrors.firstName = "First name must be at least 2 characters.";
+    } else if (!nameRegex.test(formData.firstName)) {
+      formErrors.firstName = "First name must only contain letters.";
     }
-
+  
     // Email: Required and must be a valid email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
@@ -78,46 +139,53 @@ const Contactus = () => {
     } else if (!emailRegex.test(formData.email)) {
       formErrors.email = "Invalid email format.";
     }
-
-    // Contact: Required, must be a valid phone number format (10 digits)
+  
+    // Contact: Required, must be a valid phone number format (10 digits, no special characters)
     const contactRegex = /^[0-9]{10}$/;
     if (!formData.contact.trim()) {
       formErrors.contact = "Contact is required.";
     } else if (!contactRegex.test(formData.contact)) {
       formErrors.contact = "Contact must be a valid 10-digit number.";
     }
-
-    // Age: Required and must be a valid number (between 18 and 100)
+  
+    // Age: Required, must be a valid number (between 18 and 100)
     if (!formData.age.trim()) {
       formErrors.age = "Age is required.";
-    } else if (isNaN(formData.age) || formData.age < 18 || formData.age > 100) {
-      formErrors.age = "Age must be a number between 18 and 100.";
+    } else if (isNaN(formData.age)) {
+      formErrors.age = "Age must be a valid number.";
+    } else if (formData.age < 18 || formData.age > 100) {
+      formErrors.age = "Age must be between 18 and 100.";
     }
-
-    // Subject: Required, minimum length of 3 characters
+  
+    // Subject: Required, minimum length of 3 characters, only letters and spaces
     if (!formData.subject.trim()) {
       formErrors.subject = "Subject is required.";
     } else if (formData.subject.length < 3) {
       formErrors.subject = "Subject must be at least 3 characters long.";
+    } else if (!nameRegex.test(formData.subject)) {
+      formErrors.subject = "Subject must only contain letters and spaces.";
     }
-
-    // Profession: Required
+  
+    // Profession: Required, only letters
     if (!formData.profession.trim()) {
       formErrors.profession = "Profession is required.";
+    } else if (!nameRegex.test(formData.profession)) {
+      formErrors.profession = "Profession must only contain letters.";
     }
-
+  
     // Suggestions: Optional, but if provided must be at least 10 characters
-    if (formData.suggestions && formData.suggestions.length < 10) {
+    if (formData.suggestions && formData.suggestions.trim().length < 10) {
       formErrors.suggestions = "Suggestions must be at least 10 characters.";
     }
-
+  
     // Google reCAPTCHA: Required
     if (!formData.captchaToken) {
       formErrors.captchaToken = "Please complete the reCAPTCHA.";
     }
-
+  
     return formErrors;
-  };
+  }
+  
   const submitForm = async (e) => {
     e.preventDefault();
   const validationErrors = validateForm();
