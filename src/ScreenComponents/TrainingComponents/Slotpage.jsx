@@ -157,7 +157,7 @@ const Slotpage = () => {
                             {
                                 sessions.length == 0 ? "No Slots Available"
                                     :
-                                    sessions.map((session, index) => {
+                                    sessions.filter(slot => slot.slotType !== "onsite").map((session, index) => {
                                         let time = session.time; // Example input time in 24-hour format
 
                                         // Split the time into hours and minutes
