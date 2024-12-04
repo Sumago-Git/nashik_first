@@ -24,7 +24,7 @@ const Directors = () => {
             {directors.map((director, index) => (
               <Col lg={4} md={6} sm={12} className='mb-5' key={index}>
                 <div className='section mt-4 '>
-                  <p className='sectiontext p-1'>{director.description}</p>
+                  <p className='sectiontext p-1'>{""}</p>
                 </div>
                 <div className='sectiontop text-center pb-5'>
                   <p className='mt-3 drname mb-md-1'>{director.name}</p>

@@ -40,7 +40,7 @@ const Aboutbanner = () => {
         {
             headline: (
                 <>
-                    <span style={{ fontWeight: "800" }}>Contributing to</span> Happiness
+                    <span >Contributing to</span> <span style={{ fontWeight: "800" }}>Happiness</span>
                 </>
             ),
             subtext: (
