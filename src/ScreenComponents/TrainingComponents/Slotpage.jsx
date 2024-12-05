@@ -56,6 +56,8 @@ const Slotpage = () => {
             })
         }
     }, [category])
+    const [slotDatefortest, setslotDatefortest] = useState("")
+
     useEffect(() => {
         if (location) {
             console.log("location state : ", location.state);
@@ -70,13 +72,15 @@ const Slotpage = () => {
             const year = date.getFullYear();
             // Get the formatted date in 'Tuesday 10/09/2024' format
             const formattedDate1 = `${month}/${day}/${year}`;
-            const formattedDate = date.toLocaleDateString("en-GB", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-            });
+            const formattedDate = date.toLocaleDateString('en-GB', options).replace(',', '');
             setSlotDate(formattedDate)
             setSlotDate1(formattedDate1)
+            const year1 = date.getFullYear();
+            const month1 = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+            const day1 = String(date.getDate()).padStart(2, '0'); // Ensure two digits for day
+
+            const formattedDate2 = `${year1}-${month1}-${day1}`;
+            setslotDatefortest(formattedDate2);
 
         }
     }, [location])
@@ -199,7 +203,8 @@ const Slotpage = () => {
                                                                     state: {
                                                                         selectedDate: slotDate,
                                                                         selectedTime: `${formattedTime}-${session.title}`,
-                                                                        category: category
+                                                                        category: category,
+                                                                        temodate: slotDatefortest
                                                                     }
                                                                 });
                                                                 // Ensure window scrolls to top after navigation

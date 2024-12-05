@@ -43,7 +43,8 @@ const Bookingpage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-
+  const [slotDatefortest, setslotDatefortest] = useState("")
+  console.log(slotDatefortest)
 
   const [categoryData, setCategoryData] = useState({
     heading: "",
@@ -150,24 +151,23 @@ const Bookingpage = () => {
     const charOnlyRegex = /^[A-Za-z]+$/; // Only letters, no spaces or special characters
     const numberOnlyRegex = /^\d+$/; // Only numbers
     let licenseRegex;
-  
+
     if (category === "RTO – Suspended Driving License Holders Training") {
       licenseRegex = /^[A-Z]{2}\/\d{2}\/[A-Z]{2}\/\d{4}$/; // Format for suspended license holders
     } else {
       licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
     }
-  
+
     // License number validation
     if (!formData.learningNo) {
-      newErrors.learningNo = `${
-        category === "RTO – Suspended Driving License Holders Training"
+      newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training"
           ? "Permanent license number is required"
           : "Learning license number is required"
-      }`;
+        }`;
     } else if (!licenseRegex.test(formData.learningNo)) {
       newErrors.learningNo = "Please enter a valid license number.";
     }
-  
+
     if (
       category === "School Students Training – Group" ||
       category === "College/Organization Training – Group"
@@ -199,37 +199,37 @@ const Bookingpage = () => {
       } else if (!charOnlyRegex.test(formData.fname)) {
         errors.fname = "First name should only contain letters and no spaces.";
       }
-    
+
       // Last Name Validation
       if (!formData.lname) {
         errors.lname = "Last name is required.";
       } else if (!charOnlyRegex.test(formData.lname)) {
         errors.lname = "Last name should only contain letters and no spaces.";
       }
-  
+
       if (!formData.email) {
         newErrors.email = "Email is required.";
       } else if (!emailRegex.test(formData.email)) {
         newErrors.email = "Please enter a valid email address.";
       }
-  
+
       if (!formData.phone) {
         newErrors.phone = "Phone is required.";
       } else if (!phoneRegex.test(formData.phone)) {
         newErrors.phone = "Phone number must be a valid 10-digit number.";
       }
     }
-  
+
     // Validate the CAPTCHA
     if (!captchaValue) {
       newErrors.captcha = "Please complete the CAPTCHA.";
     }
-  
+
     // Finalize and set errors
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
+
 
 
   const requiredExcelColumns = ["fname", "mname", "lname", "email", "phone"];
@@ -334,6 +334,7 @@ const Bookingpage = () => {
       data.append('category', category);
       data.append('slotsession', slotsession);
       data.append('slotdate', formattedDate);
+      data.append('tempdate', slotDatefortest);
       data.append('institution_name', formData.institution_name);
       data.append('institution_email', formData.institution_email);
       data.append('institution_phone', formData.institution_phone);
@@ -426,6 +427,8 @@ const Bookingpage = () => {
       const selectedSession = location.state.selectedTime.split('-')[1];
       setSlotSession(selectedSession)
       setSlotDate(location.state.selectedDate)
+      setslotDatefortest(location.state.temodate)
+
       // console.log("location.selectedTime", location.state.selectedTime);
       setCategory(location.state.category || ""); // Assume category comes from the location state
       setSlotTime(`${location.state.selectedDate} ${location.state.selectedTime}`);
