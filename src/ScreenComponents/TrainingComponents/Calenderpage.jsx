@@ -309,7 +309,7 @@ const Calendar = () => {
                           onClick={() => !isDisabled && handleDateClick(day)}
                           style={{
                             height: "100px",
-                            textAlign: "end",
+                            textAlign: "center",
                             verticalAlign: "middle",
                             borderRight: "1px solid #ddd",
                             backgroundColor: day
@@ -334,14 +334,15 @@ const Calendar = () => {
                             transition: 'color 0.3s',
                             fontFamily: "Poppins",
                             fontWeight: "600",
+                            fontSize:"1.6rem"
                           }}
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}
                           <br />
                           {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
                             <div style={{
-                              fontSize: '10px',
-                              marginTop: '5px',
+                              fontSize: '13px',
+                              marginTop: '3px',
                               color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
                               backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
                               padding: '3px 8px',

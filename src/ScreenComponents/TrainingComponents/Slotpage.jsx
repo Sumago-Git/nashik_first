@@ -218,7 +218,7 @@ const Slotpage = () => {
                                                     style={buttonStyle}
                                                 >
                                                     <Container className={`${session.available_seats > 0 ? "session" : "session1"} p-lg-3`}>
-                                                        {formattedTime} -- {session.title}
+                                                        {formattedTime} - {session.title}
                                                     </Container>
                                                 </button>
                                             </Col>
