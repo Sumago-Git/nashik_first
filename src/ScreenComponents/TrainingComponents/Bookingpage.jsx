@@ -358,7 +358,6 @@ const Bookingpage = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      toast.success(`Hello ${formData.fname} ${formData.lname}, your name has been booked for the slot `);
       setFormData({
         learningNo: '',
         fname: '',
@@ -372,6 +371,7 @@ const Bookingpage = () => {
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
       navigate('/training')
+      alert(`Hello ${formData.fname} ${formData.lname}, your name has been booked for the slot `);
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error

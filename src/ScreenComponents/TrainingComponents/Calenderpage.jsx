@@ -311,6 +311,7 @@ const Calendar = () => {
                             height: "100px",
                             textAlign: "center",
                             verticalAlign: "middle",
+                            cursor:"pointer",
                             borderRight: "1px solid #ddd",
                             backgroundColor: day
                               ? day.isNextMonth
@@ -334,7 +335,7 @@ const Calendar = () => {
                             transition: 'color 0.3s',
                             fontFamily: "Poppins",
                             fontWeight: "600",
-                            fontSize:"1.6rem"
+                            fontSize:"1.3rem"
                           }}
                         >
                           {day && (day.isNextMonth ? day.day : day || "")}

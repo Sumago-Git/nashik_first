@@ -6,7 +6,7 @@ import './FloatingIcons.css';
 const Movingicon = () => {
   return (
     <div className="floating-icons">
-      <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?"className="iconz whatsapp" rel="noopener noreferrer">
+      <a href="https://wa.me/+917796116555?text=Hello How Can I Help You ?"className="iconz whatsapp" target='_blank' rel="noopener noreferrer">
         <FaWhatsapp className="iconz whatsapp" />
       </a>
       {/* <a href="https://wa.me/8530388815"className="iconz whatsapp" rel="noopener noreferrer">
