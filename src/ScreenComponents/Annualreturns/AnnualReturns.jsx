@@ -100,7 +100,7 @@ const AnnualReturns = () => {
                   return (
                     <>
                       <a href={a.file} className='text-black my-2' >
-                        <p className='returntext'>Annual Retunr {a.financialYear}</p>
+                        <p className='returntext'>{a.financialYear}</p>
                       </a>
                     </>
                   )

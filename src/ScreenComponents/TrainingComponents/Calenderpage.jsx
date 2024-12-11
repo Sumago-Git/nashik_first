@@ -282,8 +282,8 @@ const Calendar = () => {
             </button>
           </Col>
 
-          <Container className="mt-4">
-            <Table responsive style={{ tableLayout: 'fixed', borderCollapse: 'collapse' }}>
+          <Container className="mt-4" style={{overflowX:"auto"}}>
+            <Table >
               <thead>
                 <tr className="text-start">
                   {daysOfWeek.map((day) => (
