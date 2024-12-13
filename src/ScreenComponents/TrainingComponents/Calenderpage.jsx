@@ -216,7 +216,7 @@ const Calendar = () => {
 
 
 
-      <Container fluid className="slotbg pb-5 mb-4">
+      <Container fluid className="slotbg">
         <Container>
           <p className='slotheadline text-start mt-0 pt-4 '>
             <div className='datetime p-3 text-center'>
@@ -268,103 +268,106 @@ const Calendar = () => {
           </p>
 
         </Container>
+        {
+          selectedButton &&
+          <Container className="calender">
+            <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
+              <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
+                <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
+              </button>
+              <h3 className="calendarheadline mx-4 mt-4">
+                {monthNames[currentMonth]} {currentYear}
+              </h3>
+              <button className="btn ms-1" onClick={() => changeMonth('next')}>
+                <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
+              </button>
+            </Col>
 
-        <Container className="calender">
-          <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
-            <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
-              <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
-            </button>
-            <h3 className="calendarheadline mx-4 mt-4">
-              {monthNames[currentMonth]} {currentYear}
-            </h3>
-            <button className="btn ms-1" onClick={() => changeMonth('next')}>
-              <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
-            </button>
-          </Col>
-
-          <Container className="mt-4" style={{overflowX:"auto"}}>
-            <Table >
-              <thead>
-                <tr className="text-start">
-                  {daysOfWeek.map((day) => (
-                    <th key={day} style={{ borderLeft: '1px solid #ddd', borderRight: '1px solid #ddd', padding: '10px', textAlign: 'center' }}>
-                      {day}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {weeks.map((week, weekIndex) => (
-                  <tr key={weekIndex} style={{ cursor: 'default' }}>
-                    {week.map((day, dayIndex) => {
-                      const isDisabled = day && isPastDate(day);
-                      const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
-                      const isAvailable = dateStatuses[day] === "available"; // Check status from state
-
-                      return (
-                        <td
-                          key={dayIndex}
-                          onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
-                          onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
-                          onClick={() => !isDisabled && handleDateClick(day)}
-                          style={{
-                            height: "100px",
-                            textAlign: "center",
-                            verticalAlign: "middle",
-                            cursor:"pointer",
-                            borderRight: "1px solid #ddd",
-                            backgroundColor: day
-                              ? day.isNextMonth
-                                ? "#f0f0f0" // Next month's dates (light gray)
-                                : isDisabled
-                                  ? "#f9f9f9" // Disabled (past dates or holidays)
-                                  : dateStatuses[day] === "available"
-                                    ? "#d4ffd4" // Green for available
-                                    : dateStatuses[day] === "Holiday"
-                                      ? "#ea7777" // Light blue for holiday
-                                      : "#ffd4d4" // Red for closed or other statuses
-                              : "white",
-                            color: day
-                              ? day.isNextMonth
-                                ? "#ccc" // Light color for next month's dates
-                                : isDisabled || dateStatuses[day] === "Holiday"
-                                  ? "#999" // Gray for disabled or holiday
-                                  : "black"
-                              : "black", color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
-                            pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
-                            transition: 'color 0.3s',
-                            fontFamily: "Poppins",
-                            fontWeight: "600",
-                            fontSize:"1.3rem"
-                          }}
-                        >
-                          {day && (day.isNextMonth ? day.day : day || "")}
-                          <br />
-                          {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
-                            <div style={{
-                              fontSize: '13px',
-                              marginTop: '3px',
-                              color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
-                              backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
-                              padding: '3px 8px',
-                              borderRadius: '15px',
-                              display: 'inline-block',
-                              fontWeight: 'bold',
-                            }}>
-                              {specialDates.find((date) => date.day === day)?.label}
-                            </div>
-                          )}
-
-                        </td>
-
-                      );
-                    })}
+            <Container className="mt-4" style={{ overflowX: "auto" }}>
+              <Table >
+                <thead>
+                  <tr className="text-start">
+                    {daysOfWeek.map((day) => (
+                      <th key={day} style={{ borderLeft: '2px solid #888', borderRight: '2px solid #888', border:"2px solid #888", padding: '10px', textAlign: 'center' }}>
+                        {day}
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </Table>
+                </thead>
+                <tbody>
+                  {weeks.map((week, weekIndex) => (
+                    <tr key={weekIndex} style={{ cursor: 'default' }}>
+                      {week.map((day, dayIndex) => {
+                        const isDisabled = day && isPastDate(day);
+                        const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
+                        const isAvailable = dateStatuses[day] === "available"; // Check status from state
+
+                        return (
+                          <td
+                            key={dayIndex}
+                            onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
+                            onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
+                            onClick={() => !isDisabled && handleDateClick(day)}
+                            style={{
+                              height: "100px",
+                              textAlign: "center",
+                              verticalAlign: "middle",
+                              cursor: "pointer",
+                              border:"2px solid #888",
+                              borderRight: "2px solid #888",
+                              backgroundColor: day
+                                ? day.isNextMonth
+                                  ? "#f0f0f0" // Next month's dates (light gray)
+                                  : isDisabled
+                                    ? "#f9f9f9" // Disabled (past dates or holidays)
+                                    : dateStatuses[day] === "available"
+                                      ? "#d4ffd4" // Green for available
+                                      : dateStatuses[day] === "Holiday"
+                                        ? "#ea7777" // Light blue for holiday
+                                        : "#ffd4d4" // Red for closed or other statuses
+                                : "white",
+                              color: day
+                                ? day.isNextMonth
+                                  ? "#ccc" // Light color for next month's dates
+                                  : isDisabled || dateStatuses[day] === "Holiday"
+                                    ? "#999" // Gray for disabled or holiday
+                                    : "black"
+                                : "black", color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
+                              pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
+                              transition: 'color 0.3s',
+                              fontFamily: "Poppins",
+                              fontWeight: "600",
+                              fontSize: "1.3rem"
+                            }}
+                          >
+                            {day && (day.isNextMonth ? day.day : day || "")}
+                            <br />
+                            {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
+                              <div style={{
+                                fontSize: '13px',
+                                marginTop: '3px',
+                                color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
+                                backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
+                                padding: '3px 8px',
+                                borderRadius: '15px',
+                                display: 'inline-block',
+                                fontWeight: 'bold',
+                              }}>
+                                {specialDates.find((date) => date.day === day)?.label}
+                              </div>
+                            )}
+
+                          </td>
+
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Container>
           </Container>
-        </Container>
+        }
       </Container>
     </>
   );
