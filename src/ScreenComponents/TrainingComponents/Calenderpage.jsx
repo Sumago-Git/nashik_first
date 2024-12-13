@@ -288,7 +288,7 @@ const Calendar = () => {
                 <thead>
                   <tr className="text-start">
                     {daysOfWeek.map((day) => (
-                      <th key={day} style={{ borderLeft: '2px solid #888', borderRight: '2px solid #888', border:"2px solid #888", padding: '10px', textAlign: 'center' }}>
+                      <th key={day} style={{ borderLeft: '2px solid #888', borderRight: '2px solid #888', border: "2px solid #888", padding: '10px', textAlign: 'center' }}>
                         {day}
                       </th>
                     ))}
@@ -312,8 +312,8 @@ const Calendar = () => {
                               height: "100px",
                               textAlign: "center",
                               verticalAlign: "middle",
-                              cursor: "pointer",
-                              border:"2px solid #888",
+                              cursor: `${dateStatuses[day] === "available" ? "pointer" : ""}`,
+                              border: "2px solid #888",
                               borderRight: "2px solid #888",
                               backgroundColor: day
                                 ? day.isNextMonth
