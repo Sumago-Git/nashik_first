@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Modal } from 'react-bootstrap'
+import { Container, Row, Col, Modal, Card } from 'react-bootstrap'
 import pastbanner from "../../Assets/Assets/Pastevents/pastbanner1.jpg"
 import "../../Components/Pastevents.css"
 import event1 from "../../Assets/Assets/Pastevents/event1.png";
@@ -28,7 +28,7 @@ const eventGallery = [
 const Pastevents = () => {
 
   const [pastgetdata, setpastgetdata] = useState([]);
-  const [eventgallery_data , setevent] = useState([]);
+  const [eventgallery_data, setevent] = useState([]);
 
   const [show, setShow] = useState(false);
   const [id, setId] = useState();
@@ -41,9 +41,9 @@ const Pastevents = () => {
     setId(id)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init();
-  },[])
+  }, [])
 
   const getdata = () => {
     axios.get('PostEvents/get-PostEvents')
@@ -89,6 +89,9 @@ const Pastevents = () => {
                 <>
                   <Col xs={12} sm={6} md={4} className='mb-2' data-aos="fade-up" >
                     <img src={a.img} className='events img-fluid' alt={a.title} />
+                    <Card.Text className='my-3 cardtext text-center'>
+                      {a.title}
+                    </Card.Text>
                   </Col>
                 </>
               )
@@ -100,10 +103,13 @@ const Pastevents = () => {
       <Container fluid className='trainingeventbg pb-5'>
         <p className='trainingeventheadline mt-lg-5 pt-5  text-center'>Event Gallery</p>
         <Row className='mx-5 p-0 justify-content-center'>
-          {eventgallery_data.map((event ,index) => (
+          {eventgallery_data.map((event, index) => (
             <>
               <Col xs={12} sm={6} md={4} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
                 <img src={event.img} className='events img-fluid' alt={event.title} />
+                <Card.Text className='my-3 cardtext text-center'>
+                  {event.title}
+                </Card.Text>
               </Col>
             </>
           ))}
