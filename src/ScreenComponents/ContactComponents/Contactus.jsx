@@ -158,13 +158,13 @@ const Contactus = () => {
     }
   
     // Subject: Required, minimum length of 3 characters, only letters and spaces
-    if (!formData.subject.trim()) {
-      formErrors.subject = "Subject is required.";
-    } else if (formData.subject.length < 3) {
-      formErrors.subject = "Subject must be at least 3 characters long.";
-    } else if (!nameRegex.test(formData.subject)) {
-      formErrors.subject = "Subject must only contain letters and spaces.";
-    }
+    // if (!formData.subject.trim()) {
+    //   formErrors.subject = "Subject is required.";
+    // } else if (formData.subject.length < 3) {
+    //   formErrors.subject = "Subject must be at least 3 characters long.";
+    // } else if (!nameRegex.test(formData.subject)) {
+    //   formErrors.subject = "Subject must only contain letters and spaces.";
+    // }
   
     // Profession: Required, only letters
     if (!formData.profession.trim()) {
@@ -394,7 +394,7 @@ const Contactus = () => {
                       <option value="Education" className='outline-none'>Education
                       </option>
                     </select>
-                    {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
+                    {/* {errors.subject && <p className="text-start text-danger">{errors.subject}</p>} */}
                   </div>
 
                   <div className="col-lg-12">

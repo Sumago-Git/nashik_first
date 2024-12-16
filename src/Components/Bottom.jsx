@@ -193,7 +193,7 @@ const Bottom = () => {
             <Col md={6} lg={4}>
               <Row className="mt-0 pb-0 mt-lg-3 ">
                 <Col lg={4} className='text-start p-0 ms-lg-4' style={{ width: "30%" }}>
-                  <h5 className=' mt-2  text-white'>Follow Us On</h5>
+                  <h5 className=' mt-2  text-white'>Follow Us <span className='d-none d-md-inline'>On</span></h5>
                 </Col>
                 {
                   getdata.map((a) => {

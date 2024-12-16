@@ -12,7 +12,7 @@ import m1 from "../Assets/Assets/Vission/m1.png"
 import m2 from "../Assets/Assets/Vission/m2.png";
 import m3 from "../Assets/Assets/Vission/m3.png";
 import divider from "../Assets/Assets/Vission/divider.png"
-
+import ab from "../Assets/Assets/Home/111.png"
 const Vission = () => {
 
 
@@ -46,7 +46,7 @@ const Vission = () => {
                 </div>
                 <div className='d-flex flex-column align-items-center  mx-xl-2'>
                   <img src={v4} className='missionimg' />
-                  <p className='imgtext'>Econoically Developed</p>
+                  <p className='imgtext'>Economically Developed</p>
                 </div>
               </div>
             </Col>
@@ -62,14 +62,16 @@ const Vission = () => {
                 world class infrastructure and well connected with
                 major cities of India by 2035.</p>
             </Col>
-            
+
 
           </Row>
 
         </Container>
       </Container>
-
-      <div> <img src={divider} className='img-fluid p-0 w-100' /></div>
+      <div class="road-container">
+        <img src={divider} class="road-image  w-100" alt="Road Image" />
+        <img src={ab} class="bike" alt="Bike Image" />
+      </div>
 
       <Container fluid className=' p-0'>
         <Container fluid className=' mbg'>

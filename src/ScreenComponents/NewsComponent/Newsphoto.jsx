@@ -55,7 +55,7 @@ const Newsphoto = () => {
                     </Col>
                 </Row>
             </Container>
-            <h1 style={{ fontWeight: '700', fontFamily: "'Century Gothic Paneuropean', sans-serif", fontSize: "40px" }} className='mt-lg-4'>
+            <h1 style={{ fontWeight: '700', fontFamily: "'Century Gothic Paneuropean', sans-serif", fontSize: "40px" }} className='mt-lg-4 my-4'>
              News
             </h1>
             <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto justify-content-center'>
@@ -63,11 +63,11 @@ const Newsphoto = () => {
                     <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
                         <Card className='photo h-100 border-0 w-100'data-aos="zoom-in-down">
                             <img src={a.img} className='picture img-fluid' alt={`Photo ${index + 1}`} />
-                            <Card.Body>
+                            {/* <Card.Body>
                                 <Card.Text className='mt-3 cardtext text-start'>
                                     {a.title}
                                 </Card.Text>
-                            </Card.Body>
+                            </Card.Body> */}
                         </Card>
                     </Col>
                 ))}

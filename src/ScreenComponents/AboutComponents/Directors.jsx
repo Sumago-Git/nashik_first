@@ -17,8 +17,8 @@ const Directors = () => {
 
   return (
     <>
-      <Container fluid className='directorbg mt-lg-5 pt-lg-5 p-0'>
-        <h2 className='drheadline lg-text-center '>Directors of <span style={{ color: "#ee7f37" }}>Advantage Nashik Foundation</span></h2>
+      <Container fluid className='directorbg mt-lg-5  pt-lg-5 p-0'>
+        <h2 className='drheadline pt-4 lg-text-center '>Directors of <span style={{ color: "#ee7f37" }}>Advantage Nashik Foundation</span></h2>
         <Container className='mt-4 pb-lg-5 mt-md-5'>
           <Row className=' mx-lg-5 justify-content-center'>
             {directors.map((director, index) => (

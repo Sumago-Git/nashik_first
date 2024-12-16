@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
+import im from "../../Assets/Assets/Training/WhatsApp Image 2024-12-14 at 11.31.49 AM.jpeg"
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -161,8 +162,8 @@ const Bookingpage = () => {
     // License number validation
     if (!formData.learningNo) {
       newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training"
-          ? "Permanent license number is required"
-          : "Learning license number is required"
+        ? "Permanent license number is required"
+        : "Learning license number is required"
         }`;
     } else if (!licenseRegex.test(formData.learningNo)) {
       newErrors.learningNo = "Please enter a valid license number.";
@@ -358,7 +359,6 @@ const Bookingpage = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      toast.success(`Hello ${formData.fname} ${formData.lname}, your name has been booked for the slot `);
       setFormData({
         learningNo: '',
         fname: '',
@@ -371,7 +371,7 @@ const Bookingpage = () => {
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-      navigate('/training')
+      navigate('/')
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error
@@ -695,7 +695,7 @@ const Bookingpage = () => {
                       name='email'
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder={"email"}
+                      placeholder={"Email"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3'
                     />
                     {errors.email && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.email}</p>}
@@ -707,7 +707,7 @@ const Bookingpage = () => {
                       maxlength="10"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder={"phone"}
+                      placeholder={"Phone"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3 ms-md-0'
                     />
                     {errors.phone && <p className='text-start ms-md-4 mt-1 text-danger'>{errors.phone}</p>}
@@ -762,17 +762,15 @@ const Bookingpage = () => {
         </Container>
       </Container >
 
-      {/* <Modal show={showModal} onHide={() => setShowModal(false)} >
+      <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
         <Modal.Header closeButton>
-          <Modal.Title>Submission Status</Modal.Title>
+          Thank you for your registration
         </Modal.Header>
-        <Modal.Body>thank you</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
+        <Modal.Body>
+          <img src={im}  className='img-fluid w-100' alt="" />
+        </Modal.Body>
+
+      </Modal>
     </>
   );
 }

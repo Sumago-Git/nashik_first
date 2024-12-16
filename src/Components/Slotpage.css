@@ -33,7 +33,7 @@
     border-radius: 20px;
 }
 .session1 {
-    background: #36e414;
+    background: lightgreen;
     font-family: "Poppins";
     font-weight: 600;
     font-size: 30px;
@@ -174,5 +174,5 @@
 
   .btn.focus, .btn:focus {
     outline: 0;
-    box-shadow: none !important;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
 }

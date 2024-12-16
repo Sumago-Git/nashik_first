@@ -14,6 +14,8 @@ const Slotpage = () => {
     const navigate = useNavigate(); // Get the navigate function from useNavigate hook
     const [category, setcategory] = useState("");
     const [sessions, setSessions] = useState([]);
+    console.log("sessions", sessions);
+    
     const [categoryData, setCategoryData] = useState({
         heading: "",
         data: "",
@@ -180,8 +182,7 @@ const Slotpage = () => {
 
                                         // Format the hours and minutes to ensure two digits for minutes
                                         let formattedTime = `${hours}:${minutes} ${period}`;
-                                        console.log("formattedTime", formattedTime);
-                                        console.log("session.title", session.title);
+
                                         const isAvailable = session.available_seats > 0;
 
                                         const buttonStyle = {
@@ -202,7 +203,7 @@ const Slotpage = () => {
                                                                 navigate("/bookingpage", {
                                                                     state: {
                                                                         selectedDate: slotDate,
-                                                                        selectedTime: `${formattedTime}-${session.title}`,
+                                                                        selectedTime: `${formattedTime}- ${session.title}`,
                                                                         category: category,
                                                                         temodate: slotDatefortest
                                                                     }
@@ -217,7 +218,7 @@ const Slotpage = () => {
                                                     className='w-100'
                                                     style={buttonStyle}
                                                 >
-                                                    <Container className={`${session.available_seats > 0 ? "session" : "session1"} p-lg-3`}>
+                                                    <Container className={`${session.available_seats > 0 ? "session1" : "session"} p-lg-3`}>
                                                         {formattedTime} - {session.title}
                                                     </Container>
                                                 </button>

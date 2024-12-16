@@ -20,7 +20,12 @@
     margin-top: 80px;
   
 }
-
+@media (max-width: 768px) {
+    .event{
+        height: 280px;
+        padding: 0.5rem;
+    }
+}
 .eventimg {
     /* position: absolute; */
     height: 300px;
