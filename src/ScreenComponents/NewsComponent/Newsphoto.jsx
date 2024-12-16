@@ -1,79 +1,104 @@
-import React, { useEffect, useState } from 'react'
-import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
-import img4 from "../../Assets/Assets/Home/traffic_education_mob.png"
-import photo1 from '../../Assets/Assets/Photogallery/photo1.png';
-import photo2 from '../../Assets/Assets/Photogallery/photo2.png';
-import photo3 from '../../Assets/Assets/Photogallery/photo3.png';
-import { Col, Container, Row, Card } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react';
+import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
+import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
+import { Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
-
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-
+import Masonry from 'react-masonry-css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Newsphoto = () => {
+  const [getdata, setdata] = useState([]);
 
-    const[getdata , setdata] = useState([]);
+  const fetchData = () => {
+    axios.get('news/get-news')
+      .then((res) => {
+        setdata(res.data.responseData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    const fetdata = () => {
-        axios.get('news/get-news')
-            .then((res) => {
-                setdata(res.data.responseData)
-            })
-            .catch((err) => {
-                console.log(err);
-                
-            })
-    }
-    useEffect(()=>{
-        fetdata();
-        Aos.init();
-    },[])
+  useEffect(() => {
+    fetchData();
+    Aos.init();
+  }, []);
 
-   
-    const photos = [
-        {
-            src: photo1,
-            text: ' '
-        },
-        {
-            src: photo2,
-            text: 'Aika Na Nashikkar – Road Safety Campaign'
-        },
-        {
-            src: photo3,
-            text: 'Road Safety Month 2024 – Contest for School Children'
-        }
-    ];
-    return (
-        <>
-            <Container fluid className=' me-0'>
-                <Row>
-                    <Col className='p-0'>
-                        <img src={lghead} className='lghead d-none d-md-block w-100 ' alt="Banner" />
-                        <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
-                    </Col>
-                </Row>
-            </Container>
-            <h1 style={{ fontWeight: '700', fontFamily: "'Century Gothic Paneuropean', sans-serif", fontSize: "40px" }} className='mt-lg-4 my-4'>
-             News
-            </h1>
-            <Row className='mt-lg-5 p-0 px-lg-3 mx-lg-5 mx-auto justify-content-center'>
-                {getdata.map((a, index) => (
-                    <Col xs={12} sm={12} md={4} lg={4} className='mb-4' key={index}>
-                        <Card className='photo h-100 border-0 w-100'data-aos="zoom-in-down">
-                            <img src={a.img} className='picture img-fluid' alt={`Photo ${index + 1}`} />
-                            {/* <Card.Body>
-                                <Card.Text className='mt-3 cardtext text-start'>
-                                    {a.title}
-                                </Card.Text>
-                            </Card.Body> */}
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-        </>
-    )
-}
+  const breakpointColumnsObj = {
+    default: 4,
+    1200: 3,
+    768: 2,
+    576: 1
+  };
 
-export default Newsphoto
+  return (
+    <>
+      <style>
+        {`
+          .masonry-grid {
+            display: flex;
+            margin-left: -15px;
+            width: auto;
+          }
+
+          .masonry-grid_column {
+            padding-left: 15px;
+            background-clip: padding-box;
+          }
+
+          .masonry-card {
+            margin-bottom: 15px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          }
+
+          .masonry-card img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+        `}
+      </style>
+      
+      {/* Banner Section */}
+      <Container fluid className='me-0'>
+        <Row>
+          <Col className='p-0'>
+            <img src={lghead} className='lghead d-none d-md-block w-100' alt="Banner" />
+            <img src={img4} className='img4 d-block d-md-none w-100' alt="Banner" />
+          </Col>
+        </Row>
+      </Container>
+
+      {/* News Title */}
+      <h1
+        style={{
+          fontWeight: '700',
+          fontFamily: "'Century Gothic Paneuropean', sans-serif",
+          fontSize: '40px'
+        }}
+        className='mt-lg-4 my-4 text-center'
+      >
+        News
+      </h1>
+
+      {/* Masonry Layout */}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid mx-lg-5 px-lg-3"
+        columnClassName="masonry-grid_column"
+      >
+        {getdata.map((item, index) => (
+          <div className="masonry-card" key={index} data-aos="zoom-in-down">
+            <img src={item.img} alt={`Photo ${index + 1}`} />
+          </div>
+        ))}
+      </Masonry>
+    </>
+  );
+};
+
+export default Newsphoto;
