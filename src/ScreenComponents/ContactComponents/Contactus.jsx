@@ -53,7 +53,7 @@ const Contactus = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -118,10 +118,10 @@ const Contactus = () => {
 
   //   return formErrors;
   // };
-  
+
   const validateForm = () => {
     let formErrors = {};
-  
+
     // First Name: Required, minimum length of 2 characters, only letters
     const nameRegex = /^[a-zA-Z\s]+$/;
     if (!formData.firstName.trim()) {
@@ -131,7 +131,7 @@ const Contactus = () => {
     } else if (!nameRegex.test(formData.firstName)) {
       formErrors.firstName = "First name must only contain letters.";
     }
-  
+
     // Email: Required and must be a valid email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
@@ -139,7 +139,7 @@ const Contactus = () => {
     } else if (!emailRegex.test(formData.email)) {
       formErrors.email = "Invalid email format.";
     }
-  
+
     // Contact: Required, must be a valid phone number format (10 digits, no special characters)
     const contactRegex = /^[0-9]{10}$/;
     if (!formData.contact.trim()) {
@@ -147,7 +147,7 @@ const Contactus = () => {
     } else if (!contactRegex.test(formData.contact)) {
       formErrors.contact = "Contact must be a valid 10-digit number.";
     }
-  
+
     // Age: Required, must be a valid number (between 18 and 100)
     if (!formData.age.trim()) {
       formErrors.age = "Age is required.";
@@ -156,7 +156,7 @@ const Contactus = () => {
     } else if (formData.age < 18 || formData.age > 100) {
       formErrors.age = "Age must be between 18 and 100.";
     }
-  
+
     // Subject: Required, minimum length of 3 characters, only letters and spaces
     // if (!formData.subject.trim()) {
     //   formErrors.subject = "Subject is required.";
@@ -165,35 +165,35 @@ const Contactus = () => {
     // } else if (!nameRegex.test(formData.subject)) {
     //   formErrors.subject = "Subject must only contain letters and spaces.";
     // }
-  
+
     // Profession: Required, only letters
     if (!formData.profession.trim()) {
       formErrors.profession = "Profession is required.";
     } else if (!nameRegex.test(formData.profession)) {
       formErrors.profession = "Profession must only contain letters.";
     }
-  
+
     // Suggestions: Optional, but if provided must be at least 10 characters
     if (formData.suggestions && formData.suggestions.trim().length < 10) {
       formErrors.suggestions = "Suggestions must be at least 10 characters.";
     }
-  
+
     // Google reCAPTCHA: Required
     if (!formData.captchaToken) {
       formErrors.captchaToken = "Please complete the reCAPTCHA.";
     }
-  
+
     return formErrors;
   }
-  
+
   const submitForm = async (e) => {
     e.preventDefault();
-  const validationErrors = validateForm();
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return;
-  }
-  setIsSubmitting(true);
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setIsSubmitting(true);
 
     // Prepare form data for submission
     const formDataToSend = new FormData();
@@ -212,8 +212,8 @@ const Contactus = () => {
           'Content-Type': 'multipart/form-data', // Important for file uploads
         }
       });
-  
-      toast.success("Thank You..! We Will Connect With You Soon.");
+
+      alert("Thank You..! We Will Connect With You Soon.");
       setIsSubmitting(false);
       setFormData({
         firstName: "",
@@ -226,7 +226,7 @@ const Contactus = () => {
         suggestionfile: null,
         captchaToken: ""
       });
-  
+
     } catch (error) {
       console.error("Error submitting form", error);
       setIsSubmitting(false);
@@ -363,6 +363,8 @@ const Contactus = () => {
                     <p className="text-start mt-3">Mobile Number</p>
                     <input
                       name="contact"
+                      maxLength={10} // Restrict input to 10 characters
+                      minLength={10} // Optionally enforce a minimum length
                       value={formData.contact}
                       onChange={handleChange}
                       className="p-2 w-100 contactinput"
