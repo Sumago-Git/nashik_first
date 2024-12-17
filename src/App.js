@@ -26,7 +26,7 @@ import { ToastContainer } from "react-toastify";
 // export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
 // export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
 
-export const captchaKey = "6LdEP50qAAAAAOcayDjFO4nisQEtdkNfJRrOfObs"
+export const captchaKey = "6LdEP50qAAAAAOcayDjFO4nisQEtdkNfJRrOfObs" //nashikfirst.com
 function App() {
   // useEffect(() => {
   //   console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
