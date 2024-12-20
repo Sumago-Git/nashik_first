@@ -371,7 +371,7 @@ const Bookingpage = () => {
       });
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-      navigate('/')
+      navigate('/training')
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error
