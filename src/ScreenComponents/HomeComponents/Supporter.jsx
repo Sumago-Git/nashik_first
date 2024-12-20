@@ -66,14 +66,32 @@ const Supporter = () => {
 
   return (
     <>
-      <Container fluid className='mt-lg-5 pt-4'>
+      {/* <Container fluid className='mt-lg-5 pt-4'>
         <Row>
           <Col className='p-0'>
             <img src={banner} style={{ width: '100%' }} alt="Banner" />
           </Col>
         </Row>
-      </Container>
+      </Container> */}
 
+      <div class="road mt-2 mt-4">
+        {/* <!-- Divider in the middle --> */}
+        <div class="divider"></div>
+
+        {/* <!-- Top lane (Left to Right) --> */}
+        <div class="vehicles top-lane">
+          <div class="vehicle truck"></div>
+          <div class="vehicle car"></div>
+
+        </div>
+
+        {/* <!-- Bottom lane (Right to Left) --> */}
+        <div class="vehicles bottom-lane">
+          <div class="vehicle auto"></div>
+          <div class="vehicle taxi"></div>
+          <div class="vehicle bicycle"></div>
+        </div>
+      </div>
       {/* Conditional Rendering of the "Thanks to" Section */}
       {thanksto_brands.length > 0 && (
         <Container fluid className='mt-lg-5 pt-2 support text-center'>
