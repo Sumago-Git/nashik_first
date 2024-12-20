@@ -14,7 +14,6 @@ import { captchaKey } from '../../App';
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { toast } from 'react-toastify';
 
 const Contactus = () => {
 
@@ -158,9 +157,10 @@ const Contactus = () => {
     }
 
     // Subject: Required, minimum length of 3 characters, only letters and spaces
-    // if (!formData.subject.trim()) {
-    //   formErrors.subject = "Subject is required.";
-    // } else if (formData.subject.length < 3) {
+    if (!formData.subject.trim()) {
+      formErrors.subject = "Subject is required.";
+    }
+    // else if (formData.subject.length < 3) {
     //   formErrors.subject = "Subject must be at least 3 characters long.";
     // } else if (!nameRegex.test(formData.subject)) {
     //   formErrors.subject = "Subject must only contain letters and spaces.";
@@ -174,7 +174,9 @@ const Contactus = () => {
     }
 
     // Suggestions: Optional, but if provided must be at least 10 characters
-    if (formData.suggestions && formData.suggestions.trim().length < 10) {
+    if (!formData.suggestions.trim()) {
+      formErrors.suggestions = "Suggestion is required.";
+    } else if (formData.suggestions && formData.suggestions.trim().length < 10) {
       formErrors.suggestions = "Suggestions must be at least 10 characters.";
     }
 
@@ -213,7 +215,7 @@ const Contactus = () => {
         }
       });
 
-      alert("Thank You..! We Will Connect With You Soon.");
+      // alert("Thank You..! We Will Connect With You Soon.");
       setIsSubmitting(false);
       setFormData({
         firstName: "",
@@ -328,7 +330,7 @@ const Contactus = () => {
               <form onSubmit={submitForm}>
                 <div className="row">
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Full Name</p>
+                    <p className="text-start mt-3">Full Name<span className='text-danger'>*</span></p>
                     <input
                       name="firstName"
                       value={formData.firstName}
@@ -339,7 +341,7 @@ const Contactus = () => {
                   </div>
 
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Age</p>
+                    <p className="text-start mt-3">Age<span className='text-danger'>*</span></p>
                     <input
                       name="age"
                       value={formData.age}
@@ -349,7 +351,7 @@ const Contactus = () => {
                     {errors.age && <p className="text-start text-danger">{errors.age}</p>}
                   </div>
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Email</p>
+                    <p className="text-start mt-3">Email<span className='text-danger'>*</span></p>
                     <input
                       name="email"
                       value={formData.email}
@@ -360,7 +362,7 @@ const Contactus = () => {
                   </div>
 
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Mobile Number</p>
+                    <p className="text-start mt-3">Mobile Number<span className='text-danger'>*</span></p>
                     <input
                       name="contact"
                       maxLength={10} // Restrict input to 10 characters
@@ -372,7 +374,7 @@ const Contactus = () => {
                     {errors.contact && <p className="text-start text-danger">{errors.contact}</p>}
                   </div>
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Profession</p>
+                    <p className="text-start mt-3">Profession<span className='text-danger'>*</span></p>
                     <input
                       name="profession"
                       value={formData.profession}
@@ -382,7 +384,7 @@ const Contactus = () => {
                     {errors.profession && <p className="text-start text-danger">{errors.profession}</p>}
                   </div>
                   <div className="col-lg-6 col-md-6">
-                    <p className="text-start mt-3">Subject</p>
+                    <p className="text-start mt-3">Subject<span className='text-danger'>*</span></p>
                     <select
                       name="subject"
                       value={formData.subject}
@@ -396,18 +398,18 @@ const Contactus = () => {
                       <option value="Education" className='outline-none'>Education
                       </option>
                     </select>
-                    {/* {errors.subject && <p className="text-start text-danger">{errors.subject}</p>} */}
+                    {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}
                   </div>
 
                   <div className="col-lg-12">
-                    <p className="text-start mt-3">Suggestions</p>
+                    <p className="text-start mt-3">Suggestion<span className='text-danger'>*</span></p>
                     <textarea
                       name="suggestions"
                       value={formData.suggestions}
                       onChange={handleChange}
                       className="p-2 w-100 contactinput"
                     />
-                    {errors.suggestions && <p className="text-danger">{errors.suggestions}</p>}
+                    {errors.suggestions && <p className="text-start text-danger">{errors.suggestions}</p>}
                   </div>
 
                   <div className="col-lg-6 col-md-6 text-center mt-4">
