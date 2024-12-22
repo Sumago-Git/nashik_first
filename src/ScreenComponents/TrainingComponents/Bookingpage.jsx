@@ -13,7 +13,6 @@ import * as XLSX from 'xlsx';
 import { MdOutlineFileDownload } from "react-icons/md";
 import InputMask from 'react-input-mask';
 import Modal from 'react-bootstrap/Modal';
-import { toast } from 'react-toastify';
 
 const Bookingpage = () => {
   const [formData, setFormData] = useState({
@@ -44,6 +43,8 @@ const Bookingpage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [isSubmit, setIsSubmit] = useState(false);
+  const handleShow = () => setShowModal(true);
   const [slotDatefortest, setslotDatefortest] = useState("")
   console.log(slotDatefortest)
 
@@ -52,96 +53,6 @@ const Bookingpage = () => {
     data: "",
     note: ""
   });
-
-
-  // const validate = () => {
-  //   const newErrors = {};
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
-  //   const phoneRegex = /^[0-9]{10}$/; // 10-digit phone number regex
-  //   const landlineRegex = /^(?:\+91[-.\s]?)?(\(?\d{2,4}\)?[-.\s]?)?\d{6,8}$/; // Landline number regex
-  //   const nameRegex = /^[A-Za-z\s]+$/; // Only letters and spaces for name fields
-  //   const charOnlyRegex = /^[A-Za-z]+$/; // Only letters, no spaces or special characters
-  //   const numberOnlyRegex = /^\d+$/; // Only numbers
-  //   let licenseRegex
-  //   if (category === "RTO – Suspended Driving License Holders Training") {
-  //     licenseRegex = /^[A-Z]{2}\/\d{2}\/[A-Z]{2}\/\d{4}$/;
-  //   } else {
-  //     licenseRegex = /^[A-Z]{2}\d{2}\/\d{7}\/\d{4}$/; // Format like "MH15/0012345/3456"
-  //   }
-
-  //   if (!formData.learningNo) {
-  //     newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training" ? "Permanant license number is required" : "Learning license number is required"}`;
-  //   } else if (!licenseRegex.test(formData.learningNo)) {
-  //     newErrors.learningNo = 'Please enter a valid license number';
-  //   }
-
-  //   if (category === "School Students Training – Group" || category === "College/Organization Training – Group") {
-  //     // Validate for group training category
-  //     if (!formData.excel) {
-  //       newErrors.excel = 'Please upload an Excel file.';
-  //     }
-  //     if (!formData.institution_name) {
-  //       newErrors.institution_name = 'Institution name is required';
-  //     } else if (!nameRegex.test(formData.institution_name)) {
-  //       newErrors.institution_name = 'Institution name should only contain letters and spaces';
-  //     }
-  //     if (!formData.institution_email) {
-  //       newErrors.institution_email = 'Institution email is required';
-  //     } else if (!emailRegex.test(formData.institution_email)) {
-  //       newErrors.institution_email = 'Please enter a valid institution email address';
-  //     }
-  //     if (!formData.institution_phone) {
-  //       newErrors.institution_phone = 'Institution phone is required';
-  //     } else if (!landlineRegex.test(formData.institution_phone)) {
-  //       newErrors.institution_phone = 'Institution phone number must be a valid format (e.g., +1-800-123-4567 or 8001234567)';
-  //     }
-  //   } else {
-  //     // Validate for individual training
-  //     if (!formData.learningNo) {
-  //       newErrors.learningNo = `${category === "RTO – Suspended Driving License Holders Training" ? "Permanant license number is required" : "Learning license number is required"}`;
-  //     } else if (!licenseRegex.test(formData.learningNo)) {
-  //       newErrors.learningNo = 'Please enter a valid license number';
-  //     }
-
-
-  //     if (!formData.fname) {
-  //       newErrors.fname = 'First name is required';
-  //     } else if (!charOnlyRegex.test(formData.fname)) {
-  //       newErrors.fname = 'First name should only contain letters';
-  //     }
-
-
-  //     if (!formData.lname) {
-  //       newErrors.lname = 'Last name is required';
-  //     } else if (!charOnlyRegex.test(formData.lname)) {
-  //       newErrors.lname = 'Last name should only contain letters';
-  //     }
-
-
-  //     if (!formData.email) {
-  //       newErrors.email = 'Email is required';
-  //     } else if (!emailRegex.test(formData.email)) {
-  //       newErrors.email = 'Please enter a valid email address';
-  //     }
-
-
-  //     if (!formData.phone) {
-  //       newErrors.phone = 'Phone is required';
-  //     } else if (!phoneRegex.test(formData.phone)) {
-  //       newErrors.phone = 'Phone number must be a valid 10-digit number';
-  //     }
-  //   }
-
-
-  //   // Validate the ReCAPTCHA
-  //   if (!captchaValue) {
-  //     newErrors.captcha = 'Please complete the CAPTCHA';
-  //   }
-
-
-  //   setErrors(newErrors);
-  //   return Object.keys(newErrors).length === 0;
-  // };
 
   const validate = () => {
     const newErrors = {};
@@ -307,98 +218,192 @@ const Bookingpage = () => {
     setCaptchaValue(value);
   };
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
 
 
+  //   e.preventDefault();
+
+  //   if (!validate()) return;
+
+  //   setIsSubmitting(true); // Start loading
+  //   let value = slotdate
+  //   const parts = value.split(' '); // Split the string by space
+  //   const dateParts = parts[1].split('/'); // Split the date part (e.g., "27/11/2024") by "/"
+
+  //   // Extract day, month, and year
+  //   const day = dateParts[0];
+  //   const month = dateParts[1];
+  //   const year = dateParts[2];
+
+  //   // Format to YYYY-MM-DD
+  //   const formattedDate = `${month}/${day}/${year}`;
+
+  //   try {
+  //     // Create a new FormData instance
+  //     const sessionSlotId = localStorage.getItem('slotsid');
+
+  //     const data = new FormData();
+
+  //     // Append all form fields to the FormData instance
+  //     data.append('learningNo', formData.learningNo);
+  //     data.append('fname', formData.fname);
+
+  //     data.append('mname', formData.mname);
+  //     data.append('lname', formData.lname);
+  //     data.append('email', formData.email);
+  //     data.append('phone', formData.phone);
+  //     data.append('category', category);
+  //     data.append('slotsession', slotsession);
+  //     data.append('slotdate', formattedDate);
+  //     data.append('tempdate', slotDatefortest);
+  //     data.append('institution_name', formData.institution_name);
+  //     data.append('institution_email', formData.institution_email);
+  //     data.append('institution_phone', formData.institution_phone);
+  //     data.append('hm_principal_manager_name', formData.hm_principal_manager_name);
+  //     data.append('hm_principal_manager_mobile', formData.hm_principal_manager_mobile);
+  //     data.append('coordinator_mobile', formData.coordinator_mobile);
+  //     data.append('coordinator_name', formData.coordinator_name);
+  //     data.append('sessionSlotId', sessionSlotId);
+
+  //     // Append the Excel file if it exists
+  //     if (formData.excel) {
+  //       data.append('file', formData.excel);
+  //     }
+
+  //     // Append the vehicle types as a comma-separated string
+  //     // data.append('vehicletype', formData.vehicletype.join(','));
+
+  //     // Make the axios request to the combined endpoint
+
+      
+  //     const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     });
+  //     console.log("response", response);
+      
+  //     setFormData({
+  //       learningNo: '',
+  //       fname: '',
+  //       mname: '',
+  //       lname: '',
+  //       email: '',
+  //       phone: '',
+  //       excel: '',
+  //       // vehicletype: [],
+  //     });
+  //     handleShow()
+  //     setShowModal(true)
+  //     setCaptchaValue(null); // Reset the captcha
+  //     setErrors({}); // Clear errors
+  //     navigate('/training')
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //     // Handle error
+  //     if (error.response) {
+  //       // toast.error(`Error: ${error.response.data.message || 'Something went wrong!'}`);
+  //       alert(`Error: ${error.response.data.message || 'Something went wrong!'}`);
+  //     } else {
+  //       // toast.error('Error: No response from server.');
+  //       alert('Error: No response from server.');
+  //     }
+  //   } finally {
+  //     setIsSubmitting(false); // Stop loading
+  //   }
+  // };
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (!validate()) return;
-
+  
     setIsSubmitting(true); // Start loading
-    let value = slotdate
+    let value = slotdate;
     const parts = value.split(' '); // Split the string by space
     const dateParts = parts[1].split('/'); // Split the date part (e.g., "27/11/2024") by "/"
-
+  
     // Extract day, month, and year
     const day = dateParts[0];
     const month = dateParts[1];
     const year = dateParts[2];
-
+  
     // Format to YYYY-MM-DD
     const formattedDate = `${month}/${day}/${year}`;
-
-    try {
-      // Create a new FormData instance
-      const sessionSlotId = localStorage.getItem('slotsid');
-
-      const data = new FormData();
-
-      // Append all form fields to the FormData instance
-      data.append('learningNo', formData.learningNo);
-      data.append('fname', formData.fname);
-
-      data.append('mname', formData.mname);
-      data.append('lname', formData.lname);
-      data.append('email', formData.email);
-      data.append('phone', formData.phone);
-      data.append('category', category);
-      data.append('slotsession', slotsession);
-      data.append('slotdate', formattedDate);
-      data.append('tempdate', slotDatefortest);
-      data.append('institution_name', formData.institution_name);
-      data.append('institution_email', formData.institution_email);
-      data.append('institution_phone', formData.institution_phone);
-      data.append('hm_principal_manager_name', formData.hm_principal_manager_name);
-      data.append('hm_principal_manager_mobile', formData.hm_principal_manager_mobile);
-      data.append('coordinator_mobile', formData.coordinator_mobile);
-      data.append('coordinator_name', formData.coordinator_name);
-      data.append('sessionSlotId', sessionSlotId);
-
-      // Append the Excel file if it exists
-      if (formData.excel) {
-        data.append('file', formData.excel);
-      }
-
-      // Append the vehicle types as a comma-separated string
-      // data.append('vehicletype', formData.vehicletype.join(','));
-
-      // Make the axios request to the combined endpoint
-      const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
+  
+    // Create a new FormData instance
+    const sessionSlotId = localStorage.getItem('slotsid');
+  
+    const data = new FormData();
+  
+    // Append all form fields to the FormData instance
+    data.append('learningNo', formData.learningNo);
+    data.append('fname', formData.fname);
+    data.append('mname', formData.mname);
+    data.append('lname', formData.lname);
+    data.append('email', formData.email);
+    data.append('phone', formData.phone);
+    data.append('category', category);
+    data.append('slotsession', slotsession);
+    data.append('slotdate', formattedDate);
+    data.append('tempdate', slotDatefortest);
+    data.append('institution_name', formData.institution_name);
+    data.append('institution_email', formData.institution_email);
+    data.append('institution_phone', formData.institution_phone);
+    data.append('hm_principal_manager_name', formData.hm_principal_manager_name);
+    data.append('hm_principal_manager_mobile', formData.hm_principal_manager_mobile);
+    data.append('coordinator_mobile', formData.coordinator_mobile);
+    data.append('coordinator_name', formData.coordinator_name);
+    data.append('sessionSlotId', sessionSlotId);
+  
+    // Append the Excel file if it exists
+    if (formData.excel) {
+      data.append('file', formData.excel);
+    }
+  
+    // Make the axios request to the combined endpoint
+    axios
+      .post('bookingform/create-uploadOrAddBookingForm', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+      })
+      .then((response) => {
+        console.log('response', response);
+  
+        setFormData({
+          learningNo: '',
+          fname: '',
+          mname: '',
+          lname: '',
+          email: '',
+          phone: '',
+          excel: '',
+          // vehicletype: [],
+        });
+        setCaptchaValue(null); // Reset the captcha
+        setErrors({}); // Clear errors
+        // navigate('/training');
+        handleShow();
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+        // Handle error
+        if (error.response) {
+          // toast.error(`Error: ${error.response.data.message || 'Something went wrong!'}`);
+          alert(`Error: ${error.response.data.message || 'Something went wrong!'}`);
+        } else {
+          // toast.error('Error: No response from server.');
+          alert('Error: No response from server.');
+        }
+      })
+      .finally(() => {
+        setIsSubmitting(false); // Stop loading
       });
-      setShowModal(true)
-      setFormData({
-        learningNo: '',
-        fname: '',
-        mname: '',
-        lname: '',
-        email: '',
-        phone: '',
-        excel: '',
-        // vehicletype: [],
-      });
-       setShowModal(true)
-      setCaptchaValue(null); // Reset the captcha
-      setErrors({}); // Clear errors
-      
-      navigate('/training')
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      // Handle error
-      if (error.response) {
-        toast.error(`Error: ${error.response.data.message || 'Something went wrong!'}`);
-        alert(`Error: ${error.response.data.message || 'Something went wrong!'}`);
-      } else {
-        toast.error('Error: No response from server.');
-      }
-    } finally {
-      setIsSubmitting(false); // Stop loading
-    }
   };
 
-
+  
   useEffect(() => {
     if (category == "RTO – Learner Driving License Holder Training") {
       setCategoryData({
@@ -774,17 +779,16 @@ const Bookingpage = () => {
         </Container>
       </Container >
 
-      {
-        showModal &&
+
         <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
-          <Modal.Header closeButton>
+          {/* <Modal.Header closeButton>
             Thank you for your registration
-          </Modal.Header>
+          </Modal.Header> */}
           <Modal.Body>
             <img src={im} className='img-fluid w-100' alt="" />
           </Modal.Body>
         </Modal>
-      }
+
     </>
   );
 }
