@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
-import im from "../../Assets/Assets/Training/WhatsApp Image 2024-12-14 at 11.31.49 AM.jpeg"
+import im from "../../Assets/Assets/Aboutpage/111 (1).png"
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import "../../Components/Slotpage.css";
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -152,7 +152,16 @@ const Bookingpage = () => {
     const charOnlyRegex = /^[A-Za-z]+$/; // Only letters, no spaces or special characters
     const numberOnlyRegex = /^\d+$/; // Only numbers
     let licenseRegex;
-
+    if (!formData.fname) {
+      newErrors.fname = "First name is required.";
+    } else if (!nameRegex.test(formData.fname)) {
+      newErrors.fname = "First name should only contain letters and spaces.";
+    }
+    if (!formData.lname) {
+      newErrors.lname = "Last name is required.";
+    } else if (!nameRegex.test(formData.lname)) {
+      newErrors.lname = "Last name should only contain letters and spaces.";
+    }
     if (category === "RTO – Suspended Driving License Holders Training") {
       licenseRegex = /^[A-Z]{2}\/\d{2}\/[A-Z]{2}\/\d{4}$/; // Format for suspended license holders
     } else {
@@ -359,6 +368,7 @@ const Bookingpage = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
+      setShowModal(true)
       setFormData({
         learningNo: '',
         fname: '',
@@ -372,7 +382,8 @@ const Bookingpage = () => {
        setShowModal(true)
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
-      navigate('/')
+      
+      navigate('/training')
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error

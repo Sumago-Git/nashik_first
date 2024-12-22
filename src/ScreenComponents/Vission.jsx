@@ -13,6 +13,18 @@ import m2 from "../Assets/Assets/Vission/m2.png";
 import m3 from "../Assets/Assets/Vission/m3.png";
 import divider from "../Assets/Assets/Vission/divider.png"
 import ab from "../Assets/Assets/Home/111.png"
+import ab4 from "../Assets/Assets/Home/image 714.png"
+import ab5 from "../Assets/Assets/Home/image 715.png"
+import ab6 from "../Assets/Assets/Home/image 716.png"
+import ab8 from "../Assets/Assets/Home/image 718.png"
+import ab9 from "../Assets/Assets/Home/image 719.png"
+import ab0 from "../Assets/Assets/Home/image 720.png"
+
+
+
+
+
+
 const Vission = () => {
 
 
@@ -70,7 +82,7 @@ const Vission = () => {
       </Container>
       <div class="road-container">
         <img src={divider} class="road-image  w-100" alt="Road Image" />
-        <img src={ab} class="bike" alt="Bike Image" />
+
       </div>
 
       <Container fluid className=' p-0'>
