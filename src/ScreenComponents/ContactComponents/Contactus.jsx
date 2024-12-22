@@ -215,7 +215,6 @@ const Contactus = () => {
         }
       });
 
-      // alert("Thank You..! We Will Connect With You Soon.");
       setIsSubmitting(false);
       setFormData({
         firstName: "",
@@ -228,7 +227,7 @@ const Contactus = () => {
         suggestionfile: null,
         captchaToken: ""
       });
-
+      alert("Thank You..! We Will Connect With You Soon.");
     } catch (error) {
       console.error("Error submitting form", error);
       setIsSubmitting(false);

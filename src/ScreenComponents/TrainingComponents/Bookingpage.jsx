@@ -369,6 +369,7 @@ const Bookingpage = () => {
         excel: '',
         // vehicletype: [],
       });
+       setShowModal(true)
       setCaptchaValue(null); // Reset the captcha
       setErrors({}); // Clear errors
       navigate('/')
@@ -744,7 +745,7 @@ const Bookingpage = () => {
                     {errors.captcha && <p className='text-start mt-1 text-danger'>{errors.captcha}</p>}
                   </Col>
                   <div className='text-center'>
-                    <Button type="submit" disabled={isSubmitting} onClick={() => setShowModal(true)}>
+                    <Button type="submit" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <span>
                           <span className="spinner-border spinner-border-sm me-2"></span>
@@ -762,15 +763,17 @@ const Bookingpage = () => {
         </Container>
       </Container >
 
-      <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
-        <Modal.Header closeButton>
-          Thank you for your registration
-        </Modal.Header>
-        <Modal.Body>
-          <img src={im}  className='img-fluid w-100' alt="" />
-        </Modal.Body>
-
-      </Modal>
+      {
+        showModal &&
+        <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
+          <Modal.Header closeButton>
+            Thank you for your registration
+          </Modal.Header>
+          <Modal.Body>
+            <img src={im} className='img-fluid w-100' alt="" />
+          </Modal.Body>
+        </Modal>
+      }
     </>
   );
 }
