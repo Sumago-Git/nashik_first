@@ -203,7 +203,7 @@ const Slotpage = () => {
                                                                 navigate("/bookingpage", {
                                                                     state: {
                                                                         selectedDate: slotDate,
-                                                                        selectedTime: `${formattedTime}- ${session.title}`,
+                                                                        selectedTime: `${formattedTime} ${session.title ? ` - ${session.title}` : ""}`,
                                                                         category: category,
                                                                         temodate: slotDatefortest
                                                                     }
