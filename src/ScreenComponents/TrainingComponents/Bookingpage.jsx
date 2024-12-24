@@ -275,14 +275,14 @@ const Bookingpage = () => {
 
   //     // Make the axios request to the combined endpoint
 
-      
+
   //     const response = await axios.post('bookingform/create-uploadOrAddBookingForm', data, {
   //       headers: {
   //         'Content-Type': 'multipart/form-data',
   //       },
   //     });
   //     console.log("response", response);
-      
+
   //     setFormData({
   //       learningNo: '',
   //       fname: '',
@@ -316,27 +316,27 @@ const Bookingpage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (!validate()) return;
-  
+
     setIsSubmitting(true); // Start loading
     let value = slotdate;
     const parts = value.split(' '); // Split the string by space
     const dateParts = parts[1].split('/'); // Split the date part (e.g., "27/11/2024") by "/"
-  
+
     // Extract day, month, and year
     const day = dateParts[0];
     const month = dateParts[1];
     const year = dateParts[2];
-  
+
     // Format to YYYY-MM-DD
     const formattedDate = `${month}/${day}/${year}`;
-  
+
     // Create a new FormData instance
     const sessionSlotId = localStorage.getItem('slotsid');
-  
+
     const data = new FormData();
-  
+
     // Append all form fields to the FormData instance
     data.append('learningNo', formData.learningNo);
     data.append('fname', formData.fname);
@@ -356,12 +356,12 @@ const Bookingpage = () => {
     data.append('coordinator_mobile', formData.coordinator_mobile);
     data.append('coordinator_name', formData.coordinator_name);
     data.append('sessionSlotId', sessionSlotId);
-  
+
     // Append the Excel file if it exists
     if (formData.excel) {
       data.append('file', formData.excel);
     }
-  
+
     // Make the axios request to the combined endpoint
     axios
       .post('bookingform/create-uploadOrAddBookingForm', data, {
@@ -371,7 +371,7 @@ const Bookingpage = () => {
       })
       .then((response) => {
         console.log('response', response);
-  
+
         setFormData({
           learningNo: '',
           fname: '',
@@ -405,7 +405,7 @@ const Bookingpage = () => {
       });
   };
 
-  
+
   useEffect(() => {
     if (category == "RTO – Learner Driving License Holder Training") {
       setCategoryData({
@@ -680,6 +680,8 @@ const Bookingpage = () => {
                     <input
                       name='fname'
                       value={formData.fname}
+                      onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '')} // Allow only alphabets
+
                       onChange={handleChange}
                       placeholder={"First Name"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3'
@@ -691,6 +693,8 @@ const Bookingpage = () => {
                     <input
                       name='mname'
                       value={formData.mname}
+                      onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '')} // Allow only alphabets
+
                       onChange={handleChange}
                       placeholder={"Middle Name"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3'
@@ -702,6 +706,8 @@ const Bookingpage = () => {
                     <input
                       name='lname'
                       value={formData.lname}
+                      onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '')} // Allow only alphabets
+
                       onChange={handleChange}
                       placeholder={"Last Name"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3'
@@ -725,6 +731,8 @@ const Bookingpage = () => {
                       name='phone'
                       maxlength="10"
                       value={formData.phone}
+                      onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')} // Restrict to numbers only
+
                       onChange={handleChange}
                       placeholder={"Phone"}
                       className='dateinput p-3 m-0 mt-0 ms-lg-3 ms-md-0'
@@ -782,14 +790,14 @@ const Bookingpage = () => {
       </Container >
 
 
-        <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
-          {/* <Modal.Header closeButton>
+      <Modal show={showModal} size="lg" onHide={() => setShowModal(false)} >
+        {/* <Modal.Header closeButton>
             Thank you for your registration
           </Modal.Header> */}
-          <Modal.Body>
-            <img src={im} className='img-fluid w-100' alt="" />
-          </Modal.Body>
-        </Modal>
+        <Modal.Body>
+          <img src={im} className='img-fluid w-100' alt="" />
+        </Modal.Body>
+      </Modal>
 
     </>
   );
