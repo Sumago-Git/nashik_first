@@ -187,7 +187,7 @@ const Bottom = () => {
             <Col md={6} lg={8}>
               <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
                 <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="#" target="_blank">
-                  <img src="https://hitwebcounter.com/counter/counter.php?page=17281775&style=0025&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
+                  <img src="https://hitwebcounter.com/counter/counter.php?page=18050933&style=0025&nbdigits=5&type=page&initCount=10" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
               </div>
             </Col>
             <Col md={6} lg={4}>
