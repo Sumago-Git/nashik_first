@@ -15,7 +15,7 @@ const Slotpage = () => {
     const [category, setcategory] = useState("");
     const [sessions, setSessions] = useState([]);
     console.log("sessions", sessions);
-    
+
     const [categoryData, setCategoryData] = useState({
         heading: "",
         data: "",
@@ -171,9 +171,9 @@ const Slotpage = () => {
 
                                         // Convert hours to 12-hour format and determine AM/PM
                                         let period = 'P.M.';
-                                        if (hours >= 9) {
+                                        if (hours >= 12) {
                                             period = 'A.M.';
-                                            if (hours <= 9) {
+                                            if (hours <= 12) {
                                                 hours -= 12; // Convert hours greater than 12 to 12-hour format
                                             }
                                         } else if (hours === '0') {
@@ -182,7 +182,13 @@ const Slotpage = () => {
 
                                         // Format the hours and minutes to ensure two digits for minutes
                                         let formattedTime = `${hours}:${minutes} ${period}`;
-
+                                        const formatTimeTo12Hour = (time) => {
+                                            const [hour, minute] = time.split(':');
+                                            const hours = parseInt(hour, 10);
+                                            const period = hours >= 12 ? 'PM' : 'AM';
+                                            const formattedHour = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
+                                            return `${formattedHour}:${minute} ${period}`;
+                                        };
                                         const isAvailable = session.available_seats > 0;
 
                                         const buttonStyle = {
@@ -219,7 +225,7 @@ const Slotpage = () => {
                                                     style={buttonStyle}
                                                 >
                                                     <Container className={`${session.available_seats > 0 ? "session1" : "session"} p-lg-3`}>
-                                                    {formattedTime}  {session.title ? `- ${session.title}` : ""}
+                                                        {formatTimeTo12Hour(session.time)}  {session.title ? `- ${session.title}` : ""}
                                                     </Container>
                                                 </button>
                                             </Col>
