@@ -71,74 +71,81 @@ const Upcomingevents = () => {
       <Container fluid className='upcomingbg pb-5'>
         <p className='upcomingheadline mt-5'>Upcoming Events</p>
 
-        {getdata_upcomming.map((event) => {
-          const countdown = getCountdown(event.fromdate, event.todate);
+        {
+          getdata_upcomming.length > 0 ?
 
-          // Set color based on event status
-          let statusColor = '';
-          if (countdown.status === 'Coming Soon') {
-            statusColor = 'black';  // Color for Coming Soon
-          } else if (countdown.status === 'In Progress') {
-            statusColor = 'green';  // Color for In Progress
-          }
+            getdata_upcomming.map((event) => {
+              const countdown = getCountdown(event.fromdate, event.todate);
 
-          return (
-            <React.Fragment key={event.id}>
-              <Container className='event'>
-                <Row>
-                  <Col lg={4} md={5}>
-                    <div className='d-none d-md-block' data-aos="fade-right">
-                      <img src={event.img} className='eventimg pb-lg-4 pb-md-4' alt={event.area} />
-                    </div>
-                  </Col>
-                  <Col lg={8} md={7} className='text-start coll'>
-                    <p className='upcomingtext1 mb-0 ms-2'>
-                      Time Duration 
-                      <span 
-                        className='soontext d-none d-lg-inline-block' 
-                        style={{ color: statusColor }}  // Dynamically change color
-                      >
-                        {countdown.status}
-                      </span>
-                    </p>
+              // Set color based on event status
+              let statusColor = '';
+              if (countdown.status === 'Coming Soon') {
+                statusColor = 'black';  // Color for Coming Soon
+              } else if (countdown.status === 'In Progress') {
+                statusColor = 'green';  // Color for In Progress
+              }
 
-                    {/* Countdown display */}
-                    {countdown.status === 'Coming Soon' ? (
-                      <>
-                        <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "350px" }}>
-                          {countdown.days}<br />
-                          <span className="fs-6" style={{ color: "#f96945" }}>Day</span>
-                        </Container>
-                        <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "400px" }}>
-                          {countdown.hours}<br />
-                          <span className="fs-6" style={{ color: "#f96945" }}>Hour</span>
-                        </Container>
-                        <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "450px" }}>
-                          {countdown.minutes}<br />
-                          <span className="fs-6" style={{ color: "#f96945" }}>Min</span>
-                        </Container>
-                        <Container className={`soonbox d-none d-lg-inline-block p-1 animate-seconds`} style={{ marginLeft: "500px" }} key={animateKey}>
-                          {countdown.seconds}<br />
-                          <span className="fs-6" style={{ color: "#f96945" }}>Sec</span>
-                        </Container>
-                      </>
-                    ) : countdown.status === 'In Progress' ? (
-                      <p className='upcomingtext2 mb-0 ms-3 text-success'></p>
-                    ) : (
-                      <p className='upcomingtext2 mb-0 ms-3 text-danger'>Event Ended</p>
-                    )}
+              return (
+                <React.Fragment key={event.id}>
+                  <Container className='event'>
+                    <Row>
+                      <Col lg={4} md={5}>
+                        <div className='d-none d-md-block' data-aos="fade-right">
+                          <img src={event.img} className='eventimg pb-lg-4 pb-md-4' alt={event.area} />
+                        </div>
+                      </Col>
+                      <Col lg={8} md={7} className='text-start coll'>
+                        <p className='upcomingtext1 mb-0 ms-2'>
+                          Time Duration
+                          <span
+                            className='soontext d-none d-lg-inline-block'
+                            style={{ color: statusColor }}  // Dynamically change color
+                          >
+                            {countdown.status}
+                          </span>
+                        </p>
 
-                    <p className='upcomingtext2 mb-0 ms-3'>{event.fromdate} To {event.todate}</p>
-                    <p className='upcomingtext1 mb-0 ms-3'>Area</p>
-                    <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>
-                    <p className='upcomingtext1 mb-0 ms-3'>Purpose of the campaign</p>
-                    <p className='upcomingtext2 mb-0 ms-3'>{event.purpose}</p>
-                  </Col>
-                </Row>
-              </Container>
-            </React.Fragment>
-          );
-        })}
+                        {/* Countdown display */}
+                        {countdown.status === 'Coming Soon' ? (
+                          <>
+                            <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "350px" }}>
+                              {countdown.days}<br />
+                              <span className="fs-6" style={{ color: "#f96945" }}>Day</span>
+                            </Container>
+                            <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "400px" }}>
+                              {countdown.hours}<br />
+                              <span className="fs-6" style={{ color: "#f96945" }}>Hour</span>
+                            </Container>
+                            <Container className='soonbox d-none d-lg-inline-block p-1' style={{ marginLeft: "450px" }}>
+                              {countdown.minutes}<br />
+                              <span className="fs-6" style={{ color: "#f96945" }}>Min</span>
+                            </Container>
+                            <Container className={`soonbox d-none d-lg-inline-block p-1 animate-seconds`} style={{ marginLeft: "500px" }} key={animateKey}>
+                              {countdown.seconds}<br />
+                              <span className="fs-6" style={{ color: "#f96945" }}>Sec</span>
+                            </Container>
+                          </>
+                        ) : countdown.status === 'In Progress' ? (
+                          <p className='upcomingtext2 mb-0 ms-3 text-success'></p>
+                        ) : (
+                          <p className='upcomingtext2 mb-0 ms-3 text-danger'>Event Ended</p>
+                        )}
+
+                        <p className='upcomingtext2 mb-0 ms-3'>{event.fromdate} To {event.todate}</p>
+                        <p className='upcomingtext1 mb-0 ms-3'>Area</p>
+                        <p className='upcomingtext2 mb-0 ms-3'>{event.area}</p>
+                        <p className='upcomingtext1 mb-0 ms-3'>Purpose of the campaign</p>
+                        <p className='upcomingtext2 mb-0 ms-3'>{event.purpose}</p>
+                      </Col>
+                    </Row>
+                  </Container>
+                </React.Fragment>
+              );
+
+            }
+            )
+            :
+            "Comming Soon"}
       </Container>
     </>
   );
