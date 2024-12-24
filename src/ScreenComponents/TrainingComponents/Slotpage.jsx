@@ -170,10 +170,10 @@ const Slotpage = () => {
                                         let [hours, minutes] = time.split(':');
 
                                         // Convert hours to 12-hour format and determine AM/PM
-                                        let period = 'A.M.';
-                                        if (hours >= 12) {
-                                            period = 'P.M.';
-                                            if (hours > 12) {
+                                        let period = 'P.M.';
+                                        if (hours >= 9) {
+                                            period = 'A.M.';
+                                            if (hours <= 9) {
                                                 hours -= 12; // Convert hours greater than 12 to 12-hour format
                                             }
                                         } else if (hours === '0') {
