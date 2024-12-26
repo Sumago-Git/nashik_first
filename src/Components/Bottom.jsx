@@ -199,28 +199,28 @@ const Bottom = () => {
                   getdata.map((a) => {
                     return (
                       <>
-                        <Col lg={1} xs={2} className='p-0  mx-lg-3 ms-lg-5'>
+                        <Col lg={1} xs={2} className='p-0  mx-lg-1 ms-lg-3'>
                           <a href={a.facebook} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover1" style={{ width: "fit-content" }}>
                               <FaFacebookF />
                             </Card>
                           </a>
                         </Col>
-                        <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-1 '>
                           <a href={a.instagram} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover2" style={{ width: "fit-content" }}>
                               <BsInstagram />
                             </Card>
                           </a>
                         </Col>
-                        <Col lg={1} xs={2} className='p-0  mx-lg-3  ms-lg-0'>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-1 '>
                           <a href={a.youtube} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover3" style={{ width: "fit-content" }}>
                               <FaYoutube />
                             </Card>
                           </a>
                         </Col>
-                        <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-1'>
                           <a href={a.twitter} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
                               {/* <FaWhatsapp /> */}
@@ -228,13 +228,13 @@ const Bottom = () => {
                             </Card>
                           </a>
                         </Col>
-                        {/* <Col lg={1} xs={2} className='p-0 mx-lg-3   ms-lg-0'>
-                          <a href={a.linkedin} target="_blank" rel="noopener noreferrer" className='mt-3'>
+                        <Col lg={1} xs={2} className='p-0 mx-lg-1   '>
+                          <a href={"https://www.linkedin.com/company/nashikfirst/"} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
                               <FaLinkedin />
                             </Card>
                           </a>
-                        </Col> */}
+                        </Col>
                       </>
                     )
                   })
