@@ -171,9 +171,9 @@ const Slotpage = () => {
 
                                         // Convert hours to 12-hour format and determine AM/PM
                                         let period = 'P.M.';
-                                        if (hours >= 12) {
+                                        if (hours >= 9) {
                                             period = 'A.M.';
-                                            if (hours <= 12) {
+                                            if (hours <= 9) {
                                                 hours -= 12; // Convert hours greater than 12 to 12-hour format
                                             }
                                         } else if (hours === '0') {
@@ -181,7 +181,7 @@ const Slotpage = () => {
                                         }
 
                                         // Format the hours and minutes to ensure two digits for minutes
-                                        let formattedTime = `${hours}:${minutes} ${period}`;
+
                                         const formatTimeTo12Hour = (time) => {
                                             const [hour, minute] = time.split(':');
                                             const hours = parseInt(hour, 10);
@@ -189,6 +189,7 @@ const Slotpage = () => {
                                             const formattedHour = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
                                             return `${formattedHour}:${minute} ${period}`;
                                         };
+                                        let formattedTime = formatTimeTo12Hour(session.time)
                                         const isAvailable = session.available_seats > 0;
 
                                         const buttonStyle = {
@@ -211,7 +212,8 @@ const Slotpage = () => {
                                                                         selectedDate: slotDate,
                                                                         selectedTime: `${formattedTime} ${session.title ? ` - ${session.title}` : ""}`,
                                                                         category: category,
-                                                                        temodate: slotDatefortest
+                                                                        temodate: slotDatefortest,
+                                                                   
                                                                     }
                                                                 });
                                                                 // Ensure window scrolls to top after navigation
