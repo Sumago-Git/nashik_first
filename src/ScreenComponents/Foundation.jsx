@@ -28,7 +28,7 @@ const Foundation = () => {
               happening in Nashik, we strive to act as a body of citizens which will help our
               city grow systematically by complementing the efforts of the concerned
               authorities and make the city we dream of.
-              <br />
+              <br /><br/>
               To realize this dream and to focus our efforts on the activities which are
               going to be really meaningful for the development of the city, we strive to
               be a foundation which acts through a systematic methodology to achieve
