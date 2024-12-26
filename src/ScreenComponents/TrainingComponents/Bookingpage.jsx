@@ -36,6 +36,7 @@ const Bookingpage = () => {
   const [errors, setErrors] = useState({});
   const [captchaValue, setCaptchaValue] = useState(null);
   const [slotTime, setSlotTime] = useState("")
+  console.log("fdjgf",slotTime)
   const location = useLocation()
   const [slotsession, setSlotSession] = useState("")
   const [slotdate, setSlotDate] = useState("")
@@ -313,7 +314,13 @@ const Bookingpage = () => {
   //   }
   // };
 
-
+  const formatTimeTo12Hour = (time) => {
+    const [hour, minute] = time.split(':');
+    const hours = parseInt(hour, 10);
+    const period = hours >= 12 ? 'PM' : 'AM';
+    const formattedHour = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
+    return `${formattedHour}:${minute} ${period}`;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
