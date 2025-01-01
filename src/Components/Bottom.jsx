@@ -184,11 +184,11 @@ const Bottom = () => {
             </Col>
           </Row>
           <Row>
-          <Col md={6} lg={8}>
-            <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
-              <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="#" target="_blank">
-                <img src="https://hitwebcounter.com/counter/counter.php?page=18050933&style=0025&nbdigits=5&type=page&initCount=10" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
-            </div>
+            <Col md={6} lg={8}>
+              <div style={{ fontWeight: "600", fontSize: "20px", color: "white" }}>
+                <p className=' text-start ms-lg-3 mt-lg-4 ms-4 m-lg-0 '> Visitor count : <a href="#" target="_blank">
+                  <img src="https://hitwebcounter.com/counter/counter.php?page=18085753&style=0025&nbdigits=7&type=page&initCount=127255" title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a>   </p>
+              </div>
             </Col>
             <Col md={6} lg={4}>
               <Row className="mt-0 pb-0 mt-lg-3 ">

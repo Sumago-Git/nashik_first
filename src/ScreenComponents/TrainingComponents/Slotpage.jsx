@@ -198,7 +198,7 @@ const Slotpage = () => {
                                             opacity: isAvailable ? 1 : 0.5, // Make the button slightly transparent when unavailable
                                         };
                                         return (
-                                            <Col key={index} lg={6} sm={6} md={6} className={index === 0 ? 'pe-lg-5' : 'ps-lg-5'}>
+                                            <Col key={index} lg={6} sm={6} md={6} className={index % 2 === 0 ? 'pe-lg-5 pt-2' : 'ps-lg-5 pt-2'}>
                                                 <button
                                                     onClick={() => {
                                                         if (isAvailable) {
@@ -213,7 +213,7 @@ const Slotpage = () => {
                                                                         selectedTime: `${formattedTime} ${session.title ? ` - ${session.title}` : ""}`,
                                                                         category: category,
                                                                         temodate: slotDatefortest,
-                                                                   
+
                                                                     }
                                                                 });
                                                                 // Ensure window scrolls to top after navigation
