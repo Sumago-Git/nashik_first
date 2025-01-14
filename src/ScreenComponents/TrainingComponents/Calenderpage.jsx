@@ -178,6 +178,10 @@ const Calendar = () => {
   };
 
   const handleButtonClick = (buttonNumber, btncategory) => {
+    window.scrollBy(0, 1200);
+    if (window.innerWidth <= 768) {
+      window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
+    }
 
 
     setSelectedButton(btncategory);
@@ -237,7 +241,7 @@ const Calendar = () => {
                             backgroundColor: btno === tab.id ? '#ededf9' : 'white', // Set selected background color
                             color: btno === tab.id ? 'orange' : 'black' // Set text color based on selection
 
-                      
+
                           }}
 
                           aria-label={tab.label}
