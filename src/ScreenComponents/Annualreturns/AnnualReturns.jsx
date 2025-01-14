@@ -99,7 +99,7 @@ const AnnualReturns = () => {
                 getdata.map((a) => {
                   return (
                     <>
-                      <a href={a.file} className='text-black my-2' >
+                      <a href={a.file} target='_blank' className='text-black my-2' >
                         <p className='returntext'>{a.financialYear}</p>
                       </a>
                     </>

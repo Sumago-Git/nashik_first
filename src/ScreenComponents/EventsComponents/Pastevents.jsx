@@ -33,7 +33,7 @@ const Pastevents = () => {
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   const [id, setId] = useState();
-console.log("eventgallery_data", eventgallery_data);
+  console.log("eventgallery_data", eventgallery_data);
 
   const handleClose = () => setShow(false);
   const handleClose1 = () => setShow1(false);
@@ -48,7 +48,7 @@ console.log("eventgallery_data", eventgallery_data);
   useEffect(() => {
     Aos.init();
   }, [])
-  
+
   const getdata = () => {
     axios.get('PostEvents/get-PostEvents')
       .then((res) => {
@@ -86,7 +86,9 @@ console.log("eventgallery_data", eventgallery_data);
       <Container fluid className='trainingeventbg pb-lg-5'>
         <p className='trainingeventheadline mt-0 pt-5 text-center'>Special Event</p>
         <Row className='mx-5 justify-content-center'>
-          {
+          {pastgetdata.length == 0 ?
+            <h6>Currently, no special events are available.</h6>
+            :
             pastgetdata.map((a, id) => {
               return (
                 <>
