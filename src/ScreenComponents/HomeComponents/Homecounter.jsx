@@ -81,7 +81,8 @@ const Homecounter = () => {
                           </h5>
                           <img src={trining_imparted} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="text-white">{a.training_imparted}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata?.sessionSlotCount ? getdata?.sessionSlotCount + 4123 : 4123} duration={2} delay={0} />}</h2>
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.sessionSlotCount ? getdata?.sessionSlotCount + 4123 : 4123} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+ />}</h2>
                         </Card>
                       </Col>
                       <Col xs={6} sm={5} md={5} className="h-50">
@@ -89,7 +90,8 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
                           <img src={lives} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="">{a.lives_changed}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata?.totalBookingCount ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 + getdata?.totalExcludingSchoolStudents + 70830 : 0} duration={2} delay={0} />}</h2>
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.totalBookingCount ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 + getdata?.totalExcludingSchoolStudents + 70830 : 0} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+ />}</h2>
                         </Card>
                       </Col>
                       <Col xs={6} sm={5} md={5} className="h-50">
@@ -97,7 +99,8 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Adult</h5>
                           <img src={adult} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.children}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata?.totalExcludingSchoolStudents ? getdata?.totalExcludingSchoolStudents + 70830 : 70830} duration={2} delay={0} />}</h4>
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.totalExcludingSchoolStudents ? getdata?.totalExcludingSchoolStudents + 70830 : 70830} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+ />}</h4>
                         </Card>
                       </Col>
 
@@ -106,7 +109,8 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Children</h5>
                           <img src={child} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.adult}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata?.bookingEntryCountByCategory ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 : 151216} duration={2} delay={0} />}</h4>
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.bookingEntryCountByCategory ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 : 151216} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+ />}</h4>
                         </Card>
                       </Col>
                     </>
@@ -158,7 +162,7 @@ const Homecounter = () => {
                     Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}>Traffic Training Sessions for School & College students</span> and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span>
                   </li>
                   <li className='mb-md-3'>
-                    <span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.
+                    <span style={{ fontWeight: "800" }}>Vital role </span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget from the government
                   </li>
                   <li className='mb-md-3'>
                     <span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span>
@@ -230,8 +234,8 @@ const Homecounter = () => {
                 <Col md={6} lg={5} sm={11}>
                   <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-md-0'>
                     <img src={homecounterimg2a} alt="homecounterimg2a" data-aos="zoom-in" data-aos-duration="2000" />
-                    <h3 className='countHeading my-3'> <strong> School / College / Organization Trainings </strong></h3>
-                    <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em>free of cost</em></span>.</strong></p>
+                    <h3 className='countHeading my-3'> <strong> School / Institude Trainings </strong></h3>
+                    <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em> FREE OF COST</em></span>.</strong></p>
                     <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                     <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-1 my-lg-0 d-flex text-center d-none d-md-block">
                       <Row>

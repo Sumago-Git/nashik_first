@@ -225,7 +225,7 @@ const Calendar = () => {
         <Container>
           <p className='slotheadline text-start mt-0 pt-4 '>
             <div className='datetime p-3 text-center'>
-              Click on the calendar date & time slot, then fill out the form below to schedule your training.
+              Please select proper training (calendar) type as per your requirement
             </div>
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
@@ -273,7 +273,9 @@ const Calendar = () => {
           <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
             {categoryData.note}
           </p>
-
+          <div className='datetime p-3 text-center mb-2'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </div>
         </Container>
         {
           selectedButton &&
