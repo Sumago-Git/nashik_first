@@ -81,7 +81,7 @@ const Homecounter = () => {
                           </h5>
                           <img src={trining_imparted} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="text-white">{a.training_imparted}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata?.sessionSlotCount ? getdata?.sessionSlotCount + 4123 : 4123} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.sessionSlotCount ? getdata?.sessionSlotCount + 4149 : 4149} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
  />}</h2>
                         </Card>
                       </Col>
@@ -90,7 +90,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Lives<br /> Changed</h5>
                           <img src={lives} className="w-50 mx-auto" alt="" />
                           {/* <h3 className="">{a.lives_changed}</h3> */}
-                          <h2>{counterOn && <CountUp start={0} end={getdata?.totalBookingCount ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 + getdata?.totalExcludingSchoolStudents + 70830 : 0} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+                          <h2>{counterOn && <CountUp start={0} end={getdata?.totalBookingCount ? getdata?.bookingEntryCountByCategory[2]?.count + 152169 + getdata?.totalExcludingSchoolStudents + 72460 : 0} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
  />}</h2>
                         </Card>
                       </Col>
@@ -99,7 +99,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Adult</h5>
                           <img src={adult} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.children}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata?.totalExcludingSchoolStudents ? getdata?.totalExcludingSchoolStudents + 70830 : 70830} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.totalExcludingSchoolStudents ? getdata?.totalExcludingSchoolStudents + 72460 : 72460} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
  />}</h4>
                         </Card>
                       </Col>
@@ -109,7 +109,7 @@ const Homecounter = () => {
                           <h5 style={{ fontWeight: "700" }}>Children</h5>
                           <img src={child} className="w-50 mx-auto" alt="" />
                           {/* <h3>{a.adult}</h3> */}
-                          <h4>{counterOn && <CountUp start={0} end={getdata?.bookingEntryCountByCategory ? getdata?.bookingEntryCountByCategory[2]?.count + 151216 : 151216} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
+                          <h4>{counterOn && <CountUp start={0} end={getdata?.bookingEntryCountByCategory ? getdata?.bookingEntryCountByCategory[2]?.count + 152169 : 152169} duration={2} delay={0}       formattingFn={(value) => new Intl.NumberFormat('en-IN').format(value)}
  />}</h4>
                         </Card>
                       </Col>
