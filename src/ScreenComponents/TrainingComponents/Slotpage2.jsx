@@ -161,27 +161,9 @@ const Slotpage2 = () => {
                     <Container className='mt-md-5'>
                         <Row>
                             {
-                                sessions.length == 0 ? "No Slots Available"
+                                sessions.length === 0 ? "No Slots Available"
                                     :
                                     sessions.filter(slot => slot.slotType !== "onsite").map((session, index) => {
-                                        let time = session.time; // Example input time in 24-hour format
-
-                                        // Split the time into hours and minutes
-                                        let [hours, minutes] = time.split(':');
-
-                                        // Convert hours to 12-hour format and determine AM/PM
-                                        let period = 'P.M.';
-                                        if (hours >= 9) {
-                                            period = 'A.M.';
-                                            if (hours <= 9) {
-                                                hours -= 12; // Convert hours greater than 12 to 12-hour format
-                                            }
-                                        } else if (hours === '0') {
-                                            hours = 12; // Convert 00:xx to 12:xx A.M.
-                                        }
-
-                                        // Format the hours and minutes to ensure two digits for minutes
-
                                         const formatTimeTo12Hour = (time) => {
                                             const [hour, minute] = time.split(':');
                                             const hours = parseInt(hour, 10);
@@ -189,58 +171,62 @@ const Slotpage2 = () => {
                                             const formattedHour = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
                                             return `${formattedHour}:${minute} ${period}`;
                                         };
-                                        let formattedTime = formatTimeTo12Hour(session.time)
-                                        const isAvailable = session.available_seats > 0;
+
+                                        // Parse session time and current time
+                                        const [sessionHour, sessionMinute] = session.time.split(':').map(Number);
+                                        const currentTime = new Date();
+                                        const sessionDate = new Date(currentTime);
+
+                                        sessionDate.setHours(sessionHour, sessionMinute, 0, 0);
+
+                                        const isPast = sessionDate <= currentTime; // Check if the session time is in the past
+
+                                        const isAvailable =!isPast;
 
                                         const buttonStyle = {
                                             border: "0px",
-                                            cursor: isAvailable ? 'pointer' : 'pointer',
-                                            opacity: isAvailable ? 1 : 1, // Make the button slightly transparent when unavailable
+                                            // cursor: isAvailable ? 'pointer' : 'not-allowed',
+                                            opacity: isAvailable ? 1 : 0.5, // Make the button semi-transparent if unavailable
                                         };
+
                                         return (
                                             <Col key={index} lg={6} sm={6} md={6} className={index % 2 === 0 ? 'pe-lg-5 pt-2' : 'ps-lg-5 pt-2'}>
                                                 <button
                                                     onClick={() => {
                                                         if (isAvailable) {
-                                                            // Check if category is either 'abc' or 'xyz'
-                                                            if (
-
-                                                                category === "RTO – Learner Driving License Holder Training") {
+                                                            if (category === "RTO – Learner Driving License Holder Training") {
                                                                 localStorage.setItem('slotsid', session.id);
                                                                 navigate("/bookingpage", {
                                                                     state: {
                                                                         selectedDate: slotDate,
-                                                                        selectedTime: `${formattedTime} ${session.title ? ` - ${session.title}` : ""}`,
+                                                                        selectedTime: `${formatTimeTo12Hour(session.time)} ${session.title ? ` - ${session.title}` : ""}`,
                                                                         category: category,
                                                                         temodate: slotDatefortest,
-
                                                                     }
                                                                 });
-                                                                // Ensure window scrolls to top after navigation
                                                                 setTimeout(() => window.scrollTo(0, 790), 0);
-                                                            } else {
-                                                                console.log("Navigation prevented: Invalid category");
                                                             }
                                                         }
                                                     }}
                                                     className='w-100'
                                                     style={buttonStyle}
+                                                    // disabled={!isAvailable} // Disable button if not available
                                                 >
-                                                    <Container className={`${session.available_seats > 0 ? "session1" : "session"} p-lg-3`}>
-                                                        {formatTimeTo12Hour(session.time)}  {session.title ? `- ${session.title}` : ""}
+                                                    <Container className={`${isAvailable ? "session1" : "session"} p-lg-3`}>
+                                                        {formatTimeTo12Hour(session.time)} {session.title ? `- ${session.title}` : ""}
                                                     </Container>
                                                 </button>
                                             </Col>
                                         );
-                                    })}
-
+                                    })
+                            }
                             <Col lg={12} className='mt-md-5 pt-lg-3 pb-5 mb-lg-2 mt-4'>
                                 <Link to='/training'><button className='returnbutton p-lg-3'>
                                     Return
                                 </button></Link>
                             </Col>
-
                         </Row>
+
                     </Container>
                 </Container>
             </Container>

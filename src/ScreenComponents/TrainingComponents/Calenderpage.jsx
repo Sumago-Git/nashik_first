@@ -273,13 +273,14 @@ const Calendar = () => {
           <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
             {categoryData.note}
           </p>
-          <div className='datetime p-3 text-center mb-2'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </div>
+        
         </Container>
         {
           selectedButton &&
           <Container className="calender">
+              <div className='datetime p-3 text-center mb-2'>
+            Click on the calendar date & time slot, then fill out the form below to schedule your training.
+          </div> 
             <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
               <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
                 <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />

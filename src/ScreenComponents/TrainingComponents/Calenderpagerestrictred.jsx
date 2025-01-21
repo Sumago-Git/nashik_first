@@ -177,7 +177,7 @@ const Calenderpagerestrictred = () => {
   const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
 
   const handleDateClick = (day) => {
-    if (dateStatuses[day] === "available") { // Only handle click if the status is "Available"
+    if (dateStatuses[day] !== "Holiday") { // Only handle click if the status is "Available"
       const clickedDate = new Date(currentYear, currentMonth, day);
       window.scrollTo(0, 700);
       navigate("/slotpage2", { state: { selectedDate: clickedDate, category: selectedButton } });
@@ -347,7 +347,7 @@ const Calenderpagerestrictred = () => {
                                   ? "#f0f0f0" // Next month's dates (light gray)
                                   : isDisabled
                                     ? "#f9f9f9" // Disabled (past dates or holidays)
-                                    : dateStatuses[day] === "available"
+                                    : dateStatuses[day] !== "Holiday"
                                       ? "#d4ffd4" // Green for available
                                       : dateStatuses[day] === "Holiday"
                                         ? "#ea7777" // Light blue for holiday

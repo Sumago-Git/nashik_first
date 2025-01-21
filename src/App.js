@@ -27,9 +27,9 @@ import Calenderpagerestrictred from "./ScreenComponents/TrainingComponents/Calen
 import Slotpage2 from "./ScreenComponents/TrainingComponents/Slotpage2";
 
 // export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
-export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
+// export const captchaKey = "6LeORlsqAAAAALY9tTnLPSpVkAS56yymZ3G-ipgy"; // server
 
-// export const captchaKey = "6LdEP50qAAAAAOcayDjFO4nisQEtdkNfJRrOfObs" //nashikfirst.com
+export const captchaKey = "6LdEP50qAAAAAOcayDjFO4nisQEtdkNfJRrOfObs" //nashikfirst.com
 function App() {
   // useEffect(() => {
   //   console.log("process.env.REACT_APP_API_BASE_URL", process.env.REACT_APP_API_BASE_URL)
@@ -56,7 +56,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="upcomingevents" element={<Upcomingevents />} />
           <Route path="news" element={<Newsphoto />} />
-          <Route path='/QRCodePage' element={<QRCodePage/>}/>
+          {/* <Route path='/QRCodePage' element={<QRCodePage/>}/> */}
           <Route path='/Calenderpagerestrictred' element={<Calenderpagerestrictred/>}/>
         </Routes>
         <Movingicon />
