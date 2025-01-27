@@ -394,7 +394,7 @@ const Contactus = () => {
                       <option value="Roads (Intra-city and Intercity) Connectivity" className='outline-none'>Roads (Intra-city and Intercity) Connectivity</option>
                       <option value="Smooth & Disciplined City Traffic" className='outline-none'>Smooth & Disciplined City Traffic</option>
                       <option value="Industry and New Investments" className='outline-none'>Industry and New Investments</option>
-                      <option value="Education" className='outline-none'>Education
+                      <option value="Education (Road Safety)" className='outline-none'>Education (Road Safety)
                       </option>
                     </select>
                     {errors.subject && <p className="text-start text-danger">{errors.subject}</p>}

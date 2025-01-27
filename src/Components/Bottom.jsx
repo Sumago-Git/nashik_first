@@ -191,10 +191,11 @@ const Bottom = () => {
               </div>
             </Col>
             <Col md={6} lg={4}>
-              <Row className="mt-0 pb-0 mt-lg-3 ">
+              {/* <Row className="mt-0 pb-0 mt-lg-3 ">
                 <Col lg={4} className='text-start p-0 ms-lg-4' style={{ width: "30%" }}>
                   <h5 className=' mt-2  text-white'>Follow Us <span className='d-none d-md-inline'>On</span></h5>
                 </Col>
+                
                 {
                   getdata.map((a) => {
                     return (
@@ -223,7 +224,7 @@ const Bottom = () => {
                         <Col lg={1} xs={2} className='p-0 mx-lg-1'>
                           <a href={a.twitter} target="_blank" rel="noopener noreferrer" className='mt-3'>
                             <Card className=" p-2 rounded-5 mt-1  iconHover4" style={{ width: "fit-content" }}>
-                              {/* <FaWhatsapp /> */}
+                        
                               <FaXTwitter />
                             </Card>
                           </a>
@@ -242,11 +243,57 @@ const Bottom = () => {
 
 
 
+              </Row> */}
+              <Row className="mt-0 pb-0 mt-lg-3 align-items-center justify-content-center">
+                <Col lg={4} xs={12} className="text-start  p-0">
+                  <h5 className="mt-2 ms-4 ps-3 text-white">Follow Us <span className="d-none d-md-inline">On</span></h5>
+                </Col>
+
+                {getdata.map((a, index) => (
+                  <React.Fragment key={index}>
+                    <Col lg="auto" xs={2} className="d-flex justify-content-center align-items-center p-2">
+                      <a href={a.facebook} target="_blank" rel="noopener noreferrer" className="mt-2">
+                        <Card className="p-2 rounded-5 mt-1 iconHover1 d-flex justify-content-center align-items-center">
+                          <FaFacebookF />
+                        </Card>
+                      </a>
+                    </Col>
+                    <Col lg="auto" xs={2} className="d-flex justify-content-center align-items-center p-2">
+                      <a href={a.instagram} target="_blank" rel="noopener noreferrer" className="mt-2">
+                        <Card className="p-2 rounded-5 mt-1 iconHover2 d-flex justify-content-center align-items-center">
+                          <BsInstagram />
+                        </Card>
+                      </a>
+                    </Col>
+                    <Col lg="auto" xs={2} className="d-flex justify-content-center align-items-center p-2">
+                      <a href={a.youtube} target="_blank" rel="noopener noreferrer" className="mt-2">
+                        <Card className="p-2 rounded-5 mt-1 iconHover3 d-flex justify-content-center align-items-center">
+                          <FaYoutube />
+                        </Card>
+                      </a>
+                    </Col>
+                    <Col lg="auto" xs={2} className="d-flex justify-content-center align-items-center p-2">
+                      <a href={a.twitter} target="_blank" rel="noopener noreferrer" className="mt-2">
+                        <Card className="p-2 rounded-5 mt-1 iconHover4 d-flex justify-content-center align-items-center">
+                          <FaXTwitter />
+                        </Card>
+                      </a>
+                    </Col>
+                    <Col lg="auto" xs={2} className="d-flex justify-content-center align-items-center p-2">
+                      <a href="https://www.linkedin.com/company/nashikfirst/" target="_blank" rel="noopener noreferrer" className="mt-2">
+                        <Card className="p-2 rounded-5 mt-1 iconHover5 d-flex justify-content-center align-items-center">
+                          <FaLinkedin />
+                        </Card>
+                      </a>
+                    </Col>
+                  </React.Fragment>
+                ))}
               </Row>
+
             </Col>
           </Row>
           <p className='copyright mt-lg-2 m-0 p-0 mt-1 '>© {footerDate} Copyright <span style={{ fontSize: "20px" }}>Nashik First</span> : Made with Passion by <a href='https://www.sumagoinfotech.com/' target="_blank"> <img src={sumagologo} style={{ width: "250px" }} /> </a> </p>
-          <p className='p-0 m-0 copyright mt-0 p-0 mt-1'>*This Website is updated in 2024 </p>
+          <p className='p-0 m-0 copyright mt-0 p-0 mt-1'>*This Website is updated in {footerDate} </p>
 
         </Container>
         {/* <div className="">

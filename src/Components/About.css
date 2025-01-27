@@ -138,18 +138,23 @@
 
 .oppoimg {
   /* height: 50px; */
-  width: 330px;
+  width: 135px;
   position: relative;
 }
 
 .oppoimgtext {
   position: absolute;
-  margin-top: 210px;
+  margin-top: 120px;
   /* margin-left: -45px; */
   font-family: "Poppins";
   font-weight: 600;
 }
 
+/* @media (max-width: 480px) {
+  .oppoimgtext {
+    margin-top: 155px !important;
+  }
+} */
 @media (max-width: 768px) {
   .listtext {
     font-size: 20px;
@@ -175,9 +180,9 @@
     font-size: 28px;
   }
 
-  .oppoimgtext {
-    margin-top: 180px;
-  }
+  /* .oppoimgtext {
+    margin-top: 185px;
+  } */
   .headline {
     font-size: 26px;
   }
