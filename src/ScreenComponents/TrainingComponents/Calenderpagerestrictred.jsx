@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table, Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { useNavigate, useSearchParams } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
@@ -9,10 +9,22 @@ import "../../Components/Calender.css";
 import Nav from 'react-bootstrap/Nav';
 import axios from "axios";
 
-const Calendar = () => {
+
+const Calenderpagerestrictred = () => {
+
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const accessCode = searchParams.get('access');
+    if (accessCode !== '9f4f8a69ab47f51bb34b16294d12dfab') {
+      // Redirect to home or error page if the access code is incorrect
+      navigate('/');
+    }
+  }, [searchParams, navigate]);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoveredDay, setHoveredDay] = useState(null);
-  const navigate = useNavigate();
+
   const [selectedButton, setSelectedButton] = useState("");
   const [specialDates, setspecialDates] = useState([]);
   const [btno, setbrno] = useState();
@@ -165,23 +177,25 @@ const Calendar = () => {
   const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
 
   const handleDateClick = (day) => {
-    if (dateStatuses[day] === "available") { // Only handle click if the status is "Available"
+    if (dateStatuses[day] !== "Holiday") { // Only handle click if the status is "Available"
       const clickedDate = new Date(currentYear, currentMonth, day);
       window.scrollTo(0, 700);
-      navigate("/slotpage", { state: { selectedDate: clickedDate, category: selectedButton } });
+      navigate("/slotpage2", { state: { selectedDate: clickedDate, category: selectedButton } });
     }
   };
 
   const isPastDate = (day) => {
     const dateToCheck = new Date(currentYear, currentMonth, day);
-    return dateToCheck < today.setHours(0, 0, 0, 0);
+    const today = new Date(); // Get the current date
+
+    // Reset today's time to midnight
+    today.setHours(0, 0, 0, 0);
+
+    // Reset dateToCheck's time to midnight and compare
+    return dateToCheck.getTime() === today.getTime();
   };
 
   const handleButtonClick = (buttonNumber, btncategory) => {
-    window.scrollBy(0, 1200);
-    if (window.innerWidth <= 768) {
-      window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
-    }
 
 
     setSelectedButton(btncategory);
@@ -190,6 +204,9 @@ const Calendar = () => {
       category: btncategory,
       buttonNumber,
     })
+    if (window.innerWidth <= 768) {
+      window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
+    }
 
     // Check if the category matches
     // if (btncategory === "College / Organization Training – Individual") {
@@ -208,8 +225,7 @@ const Calendar = () => {
     { id: 1, label: "RTO – Learner Driving License Holder Training" },
     { id: 2, label: "RTO – Suspended Driving License Holders Training" },
     { id: 3, label: "RTO – Training for School Bus Driver" },
-    { id: 4, label: "School Students Training – Group" },
-    { id: 5, label: "College/Organization Training – Group" },
+
     // { id: 6, label: "College / Organization Training – Individual" }
   ];
   return (
@@ -225,7 +241,7 @@ const Calendar = () => {
         <Container>
           <p className='slotheadline text-start mt-0 pt-4 '>
             <div className='datetime p-3 text-center'>
-              Please select proper training (calendar) type as per your requirement
+              Click on the calendar date & time slot, then fill out the form below to schedule your training.
             </div>
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
@@ -273,14 +289,11 @@ const Calendar = () => {
           <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
             {categoryData.note}
           </p>
-        
+
         </Container>
         {
           selectedButton &&
           <Container className="calender">
-              <div className='datetime p-3 text-center mb-2'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </div> 
             <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
               <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
                 <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
@@ -308,9 +321,13 @@ const Calendar = () => {
                   {weeks.map((week, weekIndex) => (
                     <tr key={weekIndex} style={{ cursor: 'default' }}>
                       {week.map((day, dayIndex) => {
-                        const isDisabled = day && isPastDate(day);
-                        const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
+                        const isPast = day && isPastDate(day);
+                        const isDisabled = !day || !isPastDate(day); // Disable all days except past days
+                        const { label: dateLabel, isHoliday } = getSpecialDateDetails(day, currentMonth);
                         const isAvailable = dateStatuses[day] === "available"; // Check status from state
+                        const label = isPast ? "Available" : "Closed"; // Label logic
+                        const bgColor = isPast ? "#d4ffd4" : "#ffd4d4"; // Green for past days, red for others
+                        const textColor = isPast ? "green" : "red"; // Text color matches the label type
 
                         return (
                           <td
@@ -330,7 +347,7 @@ const Calendar = () => {
                                   ? "#f0f0f0" // Next month's dates (light gray)
                                   : isDisabled
                                     ? "#f9f9f9" // Disabled (past dates or holidays)
-                                    : dateStatuses[day] === "available"
+                                    : dateStatuses[day] !== "Holiday"
                                       ? "#d4ffd4" // Green for available
                                       : dateStatuses[day] === "Holiday"
                                         ? "#ea7777" // Light blue for holiday
@@ -356,14 +373,14 @@ const Calendar = () => {
                               <div style={{
                                 fontSize: '13px',
                                 marginTop: '3px',
-                                color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
-                                backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
+                                color: textColor, // Green for "Available", red for "Closed"
+                                backgroundColor: bgColor,
                                 padding: '3px 8px',
                                 borderRadius: '15px',
                                 display: 'inline-block',
                                 fontWeight: 'bold',
                               }}>
-                                {specialDates.find((date) => date.day === day)?.label}
+                                {label}
                               </div>
                             )}
 
@@ -383,4 +400,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default Calenderpagerestrictred;
