@@ -160,7 +160,7 @@ const Homecounter = () => {
                 <ul className="homecounterlist text-start md-ms-0 md-ps-0 mt-md-4">
                   <li className='mb-md-3'>
                     {/* Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}>Traffic Training Sessions for School & College students</span> and <span style={{ fontWeight: "800" }}>Traffic Awareness training sessions for adults.</span> */}
-                    As per the directives of the honorable Supreme Court The learning License holder need to undergo two hours mandatory Road Safety Training. Ours is only institute in India which is complying the above directive in coordination with RTO Nashik. Apart from the class room training
+                    As per the directives of the honorable Supreme Court The learning License holder need to undergo two hours mandatory Road Safety Training. Ours is only institute in India which is complying the above directive in coordination with RTO Nashik.
                   </li>
                   <li className='mb-md-3'>
                     <span style={{ fontWeight: "800" }}>Vital role </span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget from the government
@@ -236,7 +236,7 @@ const Homecounter = () => {
                   <Card className='px-4 pt-4 text-start border-0 shadow mb-3 mb-md-0'>
                     <img src={homecounterimg2a} alt="homecounterimg2a" data-aos="zoom-in" data-aos-duration="2000" />
                     <h3 className='countHeading my-3'> <strong> School / Institution Trainings </strong></h3>
-                    <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organizes <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em> FREE OF COST</em></span>.</strong></p>
+                    <p className='textCard' style={{ textAlign: "left" }}>To increase awareness about Traffic Safety, we organize <strong>Road Safety Traffic Awareness programs</strong> for <strong><span style={{ color: "#993300" }}><em> FREE OF COST</em></span>.</strong></p>
                     <p className='textCard' style={{ textAlign: "left" }}>This programme is exclusively designed for school students and Adult such as College students, Employees working in various organisations, Rickshaw Drivers, Bus Drivers and any other types of adult groups.</p>
                     <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-1 my-lg-0 d-flex text-center d-none d-md-block">
                       <Row>

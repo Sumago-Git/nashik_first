@@ -36,8 +36,8 @@ const Pastevents = () => {
   console.log("eventgallery_data", eventgallery_data);
 
   const handleClose = () => setShow(false);
-  const handleClose1 = () => setShow1(false);
   const handleShow = () => setShow(true);
+  const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
   // const handleShowFunc = (id) => {
@@ -118,7 +118,7 @@ const Pastevents = () => {
                 setShow1(true)
               }} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
                 <img src={event.img} className='events img-fluid' alt={event.title} />
-                <Card.Text className='my-3 cardtext text-center'>
+                <Card.Text className='my-3 homecounterlist text-center'>
                   {event.title}
                 </Card.Text>
               </Col>

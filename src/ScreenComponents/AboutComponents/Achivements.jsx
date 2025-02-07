@@ -27,7 +27,7 @@ const Achivements = () => {
           <text>
             <ul className='listtext text-start pb-lg-4 ms-lg-4'>
               <li className='mb-lg-2' >Setting up Traffic Education Park <span style={{ fontWeight: "800" }}>(TEP)</span> and continuously conducting <span style={{ fontWeight: "800" }}> Traffic Training Sessions for School & College students </span>and <span style={{ fontWeight: "800" }}>adults.</span></li>
-              <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>Vital role</span> in forming Traffic Planning Cell at Nashik Municipal Corporation & allocation of budget for the same.</li>
+              <li className='mb-lg-2'>Contributed significantly to the establishment of the Traffic Planning Cell at Nashik Municipal Corporation and the allocation of budgetary resources from the Government of Maharashtra.</li>
               <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>Addressing the Traffic Condition & problems</span> to Ministry of Road & Transport and Highway Department for <span style={{ fontWeight: "800" }}>improving connectivity of Nashik.</span></li>
               <li className='mb-lg-2'>A well appreciated creative campaign like <span style={{ fontWeight: "800" }}> DON (Dost Of Nashik), Aika na Nashikkar, etc</span> to create traffic rule <span style={{ fontWeight: "800" }}>awareness among youth.</span></li>
               <li className='mb-lg-2'><span style={{ fontWeight: "800" }}>“Lord Knowledge Hub“</span>, a library consisting of books, Video/Audio CDs/DVDs related to <span style={{ fontWeight: "800" }}>Traffic Management and simulators for teaching driving techniques to citizens during training sessions.</span></li>

@@ -51,7 +51,7 @@ const Photogallery = () => {
               <Card className='photo h-100 pb-4 border-0' data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
                 <img src={photo.img} className='picture img-fluid' style={{ borderRadius: "23px" }} alt={`Photo ${index + 1}`} />
                 <Card.Body>
-                  <Card.Text className='mt-3 cardtext text-start'>
+                  <Card.Text className='mt-3 homecounterlist text-start'>
                     {photo.title}
                   </Card.Text>
                 </Card.Body>
