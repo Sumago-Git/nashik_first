@@ -52,7 +52,7 @@ const Opportunities = () => {
                             <>
 
                                 <Col lg={3} md={6} sm={6} className='d-flex flex-column align-items-center text-center' data-aos="fade-down">
-                                    <img src={item.img} className='oppoimg img-fluid  ' alt={item.title} />
+                                    <img src={item.img} className='oppoimg mb-5 img-fluid  ' alt={item.title} />
                                     <p className='oppoimgtext pt-3 ' style={{ whiteSpace: 'pre-wrap' }}>{item.title}</p>
                                 </Col>
                             </>

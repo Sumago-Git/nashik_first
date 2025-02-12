@@ -40,19 +40,19 @@ const Calenderpagerestrictred = () => {
       setCategoryData({
         heading: "Road Safety & Traffic Awareness programme jointly organized by RTO Nashik and Nashik First.",
         data: "This programme is conducted exclusively designed for people holding Learner License & applied for Permanent License. Consists of 2 hour training at Traffic Education Park and knowledge sharing on Traffic Rules, Defensive Driving, Right of Way, Safety measures, Causes of Road Accidents, Do’s and Don’ts while driving. Participants are given attendance certificate which is required to be submitted to RTO before final test.",
-        note: "Applicants for a Permanent Driving License who have a Learner Driving License."
+        note: "Note : Applicants for a Permanent Driving License who have a Learner Driving License."
       })
     } else if (selectedButton == "School Students Training – Group") {
       setCategoryData({
         heading: "This programme is exclusively designed for school students from Std. 5th to Std. 10th.",
         data: "Consists of 2 hours training to create awareness of Basic traffic rules, Road signs, Safety measures and tools, Dos & Don’ts of traffic rules in high school students.",
-        note: "No individual bookings accepted. To be booked By the Concerned teacher for batch size of minimum 30 & maximum 50 participants."
+        note: "Note : No individual bookings accepted. To be booked By the Concerned teacher for batch size of minimum 30 & maximum 50 participants."
       })
     } else if (selectedButton == "College/Organization Training – Group") {
       setCategoryData({
         heading: "This programme is exclusively designed for College students, Employees working in various organisations & all other types of adult groups.",
         data: "Consists of 2 hour training to create awareness of Traffic rules, Road signs, Safety measures and tools, Causes of accidents, Dos & Don’ts of traffic rules.",
-        note: "No individual bookings accepted. To be booked By the Concerned coordinator for batch size of minimum 30 & maximum 50 participants."
+        note: "Note : No individual bookings accepted. To be booked By the Concerned coordinator for batch size of minimum 30 & maximum 50 participants."
       })
     } else if (selectedButton == "RTO – Suspended Driving License Holders Training") {
       setCategoryData({
@@ -288,7 +288,12 @@ const Calenderpagerestrictred = () => {
           <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
             {categoryData.note}
           </p>
+          {(selectedButton == "School Students Training – Group" || selectedButton == "College/Organization Training – Group") &&
 
+            <p className='slotpagepara text-start' style={{ fontWeight: 'bold', color: "#032377" }}>
+              (Please Call <a href="tel:+0253-2315966">0253-2315966</a> or <a href="tel:+917796116555">7796116555</a> for Bookings)
+            </p>
+          }
         </Container>
         {
           selectedButton &&

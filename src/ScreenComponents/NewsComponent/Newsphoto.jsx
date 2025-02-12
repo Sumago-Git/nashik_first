@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg";
 import img4 from "../../Assets/Assets/Home/traffic_education_mob.png";
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Modal, Row } from 'react-bootstrap';
 import axios from 'axios';
 import Masonry from 'react-masonry-css';
 import Aos from 'aos';
@@ -9,7 +9,10 @@ import 'aos/dist/aos.css';
 
 const Newsphoto = () => {
   const [getdata, setdata] = useState([]);
-
+  const [show, setShow] = useState(false);
+  const [id, setId] = useState();
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const fetchData = () => {
     axios.get('news/get-news')
       .then((res) => {
@@ -62,7 +65,7 @@ const Newsphoto = () => {
           }
         `}
       </style>
-      
+
       {/* Banner Section */}
       <Container fluid className='me-0'>
         <Row>
@@ -93,10 +96,18 @@ const Newsphoto = () => {
       >
         {getdata.map((item, index) => (
           <div className="masonry-card" key={index} data-aos="zoom-in-down">
-            <img src={item.img} alt={`Photo ${index + 1}`} />
+            <img src={item.img} alt={`Photo ${index + 1}`} onClick={() => {
+              setShow(true)
+              setId(index)
+            }} />
           </div>
         ))}
       </Masonry>
+      <Modal size="md" show={show} onHide={handleClose}>
+        <Modal.Body>
+          <img src={getdata[id]?.img} className=' img-fluid' alt={`Event Gallery `} />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

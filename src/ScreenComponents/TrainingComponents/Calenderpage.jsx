@@ -28,19 +28,19 @@ const Calendar = () => {
       setCategoryData({
         heading: "Road Safety & Traffic Awareness programme jointly organized by RTO Nashik and Nashik First.",
         data: "This programme is conducted exclusively designed for people holding Learner License & applied for Permanent License. Consists of 2 hour training at Traffic Education Park and knowledge sharing on Traffic Rules, Defensive Driving, Right of Way, Safety measures, Causes of Road Accidents, Do’s and Don’ts while driving. Participants are given attendance certificate which is required to be submitted to RTO before final test.",
-        note: "Applicants for a Permanent Driving License who have a Learner Driving License."
+        note: "Note : Applicants for a Permanent Driving License who have a Learner Driving License."
       })
     } else if (selectedButton == "School Students Training – Group") {
       setCategoryData({
         heading: "This programme is exclusively designed for school students from Std. 5th to Std. 10th.",
         data: "Consists of 2 hours training to create awareness of Basic traffic rules, Road signs, Safety measures and tools, Dos & Don’ts of traffic rules in high school students.",
-        note: "No individual bookings accepted. To be booked By the Concerned teacher for batch size of minimum 30 & maximum 50 participants."
+        note: "Note : No individual bookings to be accepted, the concerned coordinator must submit the participant details in the format provided by us. Batch size of minimum 30 & maximum 50 participants. "
       })
     } else if (selectedButton == "College/Organization Training – Group") {
       setCategoryData({
-        heading: "This programme is exclusively designed for College students, Employees working in various organisations & all other types of adult groups.",
-        data: "Consists of 2 hour training to create awareness of Traffic rules, Road signs, Safety measures and tools, Causes of accidents, Dos & Don’ts of traffic rules.",
-        note: "No individual bookings accepted. To be booked By the Concerned coordinator for batch size of minimum 30 & maximum 50 participants."
+        heading: "This programme is exclusively designed for College students, Employees working in various organisations & all other types of adult groups. ",
+        data: "Consists of 2 hour training to create awareness of Traffic rules, Road signs, Safety measures and tools, Causes of accidents, Dos & Don’ts of traffic rules",
+        note: "Note : No individual bookings to be accepted, the concerned coordinator must submit the participant details in the format provided by us. Batch size of minimum 30 & maximum 50 participants. "
       })
     } else if (selectedButton == "RTO – Suspended Driving License Holders Training") {
       setCategoryData({
@@ -246,7 +246,7 @@ const Calendar = () => {
 
                           aria-label={tab.label}
                         >
-                          <span className="glyphicon glyphicon-download-alt"></span> {tab.label}
+                          <span className="glyphicon glyphicon-download-alt"></span> {tab.label == "College/Organization Training – Group" ? "Institution Training – Group" : tab.label}
                         </button>
                       </Nav.Link>
                     </Nav.Item>
@@ -273,110 +273,118 @@ const Calendar = () => {
           <p className='slotpagepara text-start' style={{ fontStyle: 'italic', color: "#c90919" }}>
             {categoryData.note}
           </p>
-        
+          {(selectedButton == "School Students Training – Group" || selectedButton == "College/Organization Training – Group") &&
+
+            <p className='slotpagepara text-start' style={{ fontWeight: 'bold', color: "#032377" }}>
+              (Please Call <a href="tel:+0253-2315966">0253-2315966</a> or <a href="tel:+917796116555">7796116555</a> for Bookings)
+            </p>
+          }
         </Container>
         {
           selectedButton &&
-          <Container className="calender">
-              <div className='datetime p-3 text-center mb-2'>
-            Click on the calendar date & time slot, then fill out the form below to schedule your training.
-          </div> 
-            <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
-              <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
-                <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
-              </button>
-              <h3 className="calendarheadline mx-4 mt-4">
-                {monthNames[currentMonth]} {currentYear}
-              </h3>
-              <button className="btn ms-1" onClick={() => changeMonth('next')}>
-                <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
-              </button>
-            </Col>
 
-            <Container className="mt-4" style={{ overflowX: "auto" }}>
-              <Table >
-                <thead>
-                  <tr className="text-start">
-                    {daysOfWeek.map((day) => (
-                      <th key={day} style={{ borderLeft: '2px solid #888', borderRight: '2px solid #888', border: "2px solid #888", padding: '10px', textAlign: 'center' }}>
-                        {day}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {weeks.map((week, weekIndex) => (
-                    <tr key={weekIndex} style={{ cursor: 'default' }}>
-                      {week.map((day, dayIndex) => {
-                        const isDisabled = day && isPastDate(day);
-                        const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
-                        const isAvailable = dateStatuses[day] === "available"; // Check status from state
-
-                        return (
-                          <td
-                            key={dayIndex}
-                            onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
-                            onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
-                            onClick={() => !isDisabled && handleDateClick(day)}
-                            style={{
-                              height: "100px",
-                              textAlign: "center",
-                              verticalAlign: "middle",
-                              cursor: `${dateStatuses[day] === "available" ? "pointer" : ""}`,
-                              border: "2px solid #888",
-                              borderRight: "2px solid #888",
-                              backgroundColor: day
-                                ? day.isNextMonth
-                                  ? "#f0f0f0" // Next month's dates (light gray)
-                                  : isDisabled
-                                    ? "#f9f9f9" // Disabled (past dates or holidays)
-                                    : dateStatuses[day] === "available"
-                                      ? "#d4ffd4" // Green for available
-                                      : dateStatuses[day] === "Holiday"
-                                        ? "#ea7777" // Light blue for holiday
-                                        : "#ffd4d4" // Red for closed or other statuses
-                                : "white",
-                              color: day
-                                ? day.isNextMonth
-                                  ? "#ccc" // Light color for next month's dates
-                                  : isDisabled || dateStatuses[day] === "Holiday"
-                                    ? "#999" // Gray for disabled or holiday
-                                    : "black"
-                                : "black", color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
-                              pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
-                              transition: 'color 0.3s',
-                              fontFamily: "Poppins",
-                              fontWeight: "600",
-                              fontSize: "1.3rem"
-                            }}
-                          >
-                            {day && (day.isNextMonth ? day.day : day || "")}
-                            <br />
-                            {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
-                              <div style={{
-                                fontSize: '13px',
-                                marginTop: '3px',
-                                color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
-                                backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
-                                padding: '3px 8px',
-                                borderRadius: '15px',
-                                display: 'inline-block',
-                                fontWeight: 'bold',
-                              }}>
-                                {specialDates.find((date) => date.day === day)?.label}
-                              </div>
-                            )}
-
-                          </td>
-
-                        );
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
+          <>
+            <Container className='datetime p-3'>
+              Click on the calendar date & time slot, then fill out the form below to schedule your training.
             </Container>
-          </Container>
+            <Container className="calender" style={{ height: "auto" }}>
+              <Col lg={12} className="mt-4 d-flex justify-content-center align-items-center">
+                <button className="btn ms-1" onClick={() => changeMonth('prev')} disabled={isCurrentMonth}>
+                  <img src={leftarrow} className="w-75 arrowimg mt-4" alt="Previous" />
+                </button>
+                <h3 className="calendarheadline mx-4 mt-4">
+                  {monthNames[currentMonth]} {currentYear}
+                </h3>
+                <button className="btn ms-1" onClick={() => changeMonth('next')}>
+                  <img src={rightarrow} className="w-75 arrowimg mt-4" alt="Next" />
+                </button>
+              </Col>
+
+              <Container className="mt-4" style={{ overflowX: "auto" }}>
+                <Table >
+                  <thead>
+                    <tr className="text-start">
+                      {daysOfWeek.map((day) => (
+                        <th key={day} style={{ borderLeft: '2px solid #888', borderRight: '2px solid #888', border: "2px solid #888", padding: '10px', textAlign: 'center' }}>
+                          {day}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {weeks.map((week, weekIndex) => (
+                      <tr key={weekIndex} style={{ cursor: 'default' }}>
+                        {week.map((day, dayIndex) => {
+                          const isDisabled = day && isPastDate(day);
+                          const { label: dateLabel, color: textColor, bgColor, isHoliday } = getSpecialDateDetails(day, currentMonth);
+                          const isAvailable = dateStatuses[day] === "available"; // Check status from state
+
+                          return (
+                            <td
+                              key={dayIndex}
+                              onMouseEnter={() => day && !isDisabled && setHoveredDay(day)}
+                              onMouseLeave={() => day && !isDisabled && setHoveredDay(null)}
+                              onClick={() => !isDisabled && handleDateClick(day)}
+                              style={{
+                                height: "100px",
+                                textAlign: "center",
+                                verticalAlign: "middle",
+                                cursor: `${dateStatuses[day] === "available" ? "pointer" : ""}`,
+                                border: "2px solid #888",
+                                borderRight: "2px solid #888",
+                                backgroundColor: day
+                                  ? day.isNextMonth
+                                    ? "#f0f0f0" // Next month's dates (light gray)
+                                    : isDisabled
+                                      ? "#f9f9f9" // Disabled (past dates or holidays)
+                                      : dateStatuses[day] === "available"
+                                        ? "#d4ffd4" // Green for available
+                                        : dateStatuses[day] === "Holiday"
+                                          ? "#ea7777" // Light blue for holiday
+                                          : "#ffd4d4" // Red for closed or other statuses
+                                  : "white",
+                                color: day
+                                  ? day.isNextMonth
+                                    ? "#ccc" // Light color for next month's dates
+                                    : isDisabled || dateStatuses[day] === "Holiday"
+                                      ? "#999" // Gray for disabled or holiday
+                                      : "black"
+                                  : "black", color: day && (day.isNextMonth ? "#ccc" : isDisabled || isHoliday ? "#999" : "black"),
+                                pointerEvents: day && (isDisabled || isHoliday ? "none" : "auto"),
+                                transition: 'color 0.3s',
+                                fontFamily: "Poppins",
+                                fontWeight: "600",
+                                fontSize: "1.3rem"
+                              }}
+                            >
+                              {day && (day.isNextMonth ? day.day : day || "")}
+                              <br />
+                              {specialDates && specialDates.length > 0 && specialDates.find((date) => date.day === day) && !isPastDate(day) && (
+                                <div style={{
+                                  fontSize: '13px',
+                                  marginTop: '3px',
+                                  color: specialDates.find((date) => date.day === day)?.color, // Use color based on status
+                                  backgroundColor: specialDates.find((date) => date.day === day)?.bgColor,
+                                  padding: '3px 8px',
+                                  borderRadius: '15px',
+                                  display: 'inline-block',
+                                  fontWeight: 'bold',
+                                }}>
+                                  {specialDates.find((date) => date.day === day)?.label}
+                                </div>
+                              )}
+
+                            </td>
+
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </Container>
+            </Container>
+          </>
         }
       </Container>
     </>
