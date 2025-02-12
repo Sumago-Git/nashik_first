@@ -223,8 +223,7 @@ const Calenderpagerestrictred = () => {
 
   const tabsData = [
     { id: 1, label: "RTO – Learner Driving License Holder Training" },
-    { id: 2, label: "RTO – Suspended Driving License Holders Training" },
-    { id: 3, label: "RTO – Training for School Bus Driver" },
+   
 
     // { id: 6, label: "College / Organization Training – Individual" }
   ];
@@ -246,7 +245,7 @@ const Calenderpagerestrictred = () => {
             <Nav variant="tabs" defaultActiveKey="/home" className="mt-lg-4 mx-auto">
               <Row>
                 {tabsData.map((tab) => (
-                  <Col md={4} className="p-0" key={tab.id} onClick={() => handleButtonClick(tab.id, tab.label)}>
+                  <Col  className="p-0" key={tab.id} onClick={() => handleButtonClick(tab.id, tab.label)}>
                     <Nav.Item className="calendertabs">
                       <Nav.Link eventKey={`link-${tab.id}`} className="text-black">
                         <button

@@ -56,7 +56,7 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="upcomingevents" element={<Upcomingevents />} />
           <Route path="news" element={<Newsphoto />} />
-          {/* <Route path='/QRCodePage' element={<QRCodePage/>}/> */}
+          <Route path='/QRCodePage' element={<QRCodePage/>}/>
           <Route path='/Calenderpagerestrictred' element={<Calenderpagerestrictred/>}/>
         </Routes>
         <Movingicon />

@@ -175,17 +175,20 @@ const Slotpage2 = () => {
                                         // Parse session time and current time
                                         const [sessionHour, sessionMinute] = session.time.split(':').map(Number);
                                         const currentTime = new Date();
-                                        const sessionDate = new Date(currentTime);
-
+                                        currentTime.setHours(currentTime.getHours() + 1);
+                                        const sessionDate = new Date();
+                                        console.log("sessionDate", sessionDate);
+                                        console.log("currentTime", currentTime);
+                                        
                                         sessionDate.setHours(sessionHour, sessionMinute, 0, 0);
-
-                                        const isPast = sessionDate <= currentTime; // Check if the session time is in the past
+                                        console.log("sessionDate....", sessionDate);
+                                        const isPast = sessionDate <= currentTime +1; // Check if the session time is in the past
 
                                         const isAvailable =!isPast;
 
                                         const buttonStyle = {
                                             border: "0px",
-                                            // cursor: isAvailable ? 'pointer' : 'not-allowed',
+                                            cursor: isAvailable ? 'pointer' : 'pointer',
                                             opacity: isAvailable ? 1 : 0.5, // Make the button semi-transparent if unavailable
                                         };
 
