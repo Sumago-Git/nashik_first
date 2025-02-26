@@ -177,27 +177,25 @@ const Slotpage2 = () => {
                                             const formattedHour = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
                                             return `${formattedHour}:${minute} ${period}`;
                                         };
-
-                                        // Parse session time and current time
-                                        const [sessionHour, sessionMinute] = session.time.split(':').map(Number);
-                                        const currentTime = new Date();
-                                        currentTime.setHours(currentTime.getHours() + 1);
-                                        const sessionDate = new Date();
-                                        console.log("sessionDate", sessionDate);
-                                        console.log("currentTime", currentTime);
-                                        
-                                        sessionDate.setHours(sessionHour, sessionMinute, 0, 0);
-                                        console.log("sessionDate....", sessionDate);
-                                        const isPast = sessionDate <= currentTime +1; // Check if the session time is in the past
-
-                                        const isAvailable = !isPast;
-
+                                    
+                                        // Parse session deadline time
+                                        const [deadlineHour, deadlineMinute] = session.deadlineTime.split(':').map(Number);
+                                        const deadlineDate = new Date();
+                                        deadlineDate.setHours(deadlineHour, deadlineMinute, 0, 0); // Set session's deadline time
+                                    
+                                        const currentTime = new Date(); // Get current time
+                                    
+                                        console.log("Session:", session.time, "| Deadline:", deadlineDate, "| Current Time:", currentTime);
+                                    
+                                        const isPastDeadline = currentTime >= deadlineDate; // Check if current time is past the deadline
+                                        const isAvailable = !isPastDeadline; // Disable if past the deadline
+                                    
                                         const buttonStyle = {
                                             border: "0px",
-                                            cursor: isAvailable ? 'pointer' : 'pointer',
-                                            opacity: isAvailable ? 1 : 0.5, // Make the button semi-transparent if unavailable
+                                            cursor: isAvailable ? 'pointer' : 'not-allowed',
+                                            opacity: isAvailable ? 1 : 0.5, // Make button semi-transparent if unavailable
                                         };
-
+                                    
                                         return (
                                             <Col key={index} lg={6} sm={6} md={6} className={index % 2 === 0 ? 'pe-lg-5 pt-2' : 'ps-lg-5 pt-2'}>
                                                 <button
@@ -219,7 +217,7 @@ const Slotpage2 = () => {
                                                     }}
                                                     className='w-100'
                                                     style={buttonStyle}
-                                                // disabled={!isAvailable} // Disable button if not available
+                                                    disabled={!isAvailable} // Disable button if past deadline
                                                 >
                                                     <Container className={`${isAvailable ? "session1" : "session"} p-lg-3`}>
                                                         {formatTimeTo12Hour(session.time)} {session.title ? `- ${session.title}` : ""}
@@ -228,6 +226,7 @@ const Slotpage2 = () => {
                                             </Col>
                                         );
                                     })
+                                    
                             }
                             <Col lg={12} className='mt-md-5 pt-lg-3 pb-5 mb-lg-2 mt-4'>
                                 <Link to='/training'><button className='returnbutton p-lg-3'>
