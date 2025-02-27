@@ -3,7 +3,7 @@ import { QRCodeCanvas } from 'qrcode.react'; // Use QRCodeCanvas or QRCodeSVG
 
 const QRCodePage = () => {
 //   const uniqueUrl = 'https://nashikfirst.com/Calenderpagerestrictred?access=9f4f8a69ab47f51bb34b16294d12dfab'; // Replace with your unique URL
-  const uniqueUrl = 'https://nashikfirst.com/Calenderpagerestrictred?access=9f4f8a69ab47f51bb34b16294d12dfab'; // Replace with your unique URL
+  const uniqueUrl = 'https://front.nashikfirst.sumagodemo.com/Calenderpagerestrictred?access=9f4f8a69ab47f51bb34b16294d12dfab'; // Replace with your unique URL
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>

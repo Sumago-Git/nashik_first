@@ -178,17 +178,20 @@ const Slotpage2 = () => {
                                             return `${formattedHour}:${minute} ${period}`;
                                         };
                                     
-                                        // Parse session deadline time
-                                        const [deadlineHour, deadlineMinute] = session.deadlineTime.split(':').map(Number);
-                                        const deadlineDate = new Date();
-                                        deadlineDate.setHours(deadlineHour, deadlineMinute, 0, 0); // Set session's deadline time
+                                        // Parse session start time
+                                        const [sessionHour, sessionMinute] = session.time.split(':').map(Number);
+                                        const sessionDate = new Date();
+                                        sessionDate.setHours(sessionHour, sessionMinute, 0, 0); // Set session start time
+                                    
+                                        // Add 1 hour 30 minutes to session time to get cutoff time
+                                        const cutoffTime = new Date(sessionDate.getTime() + (1 * 60 * 60 * 1000));
                                     
                                         const currentTime = new Date(); // Get current time
                                     
-                                        console.log("Session:", session.time, "| Deadline:", deadlineDate, "| Current Time:", currentTime);
+                                        console.log("Session:", session.time, "| Cutoff Time:", cutoffTime, "| Current Time:", currentTime);
                                     
-                                        const isPastDeadline = currentTime >= deadlineDate; // Check if current time is past the deadline
-                                        const isAvailable = !isPastDeadline; // Disable if past the deadline
+                                        const isPastCutoff = currentTime >= cutoffTime; // Check if past cutoff time
+                                        const isAvailable = !isPastCutoff; // Disable if past cutoff time
                                     
                                         const buttonStyle = {
                                             border: "0px",
@@ -217,7 +220,7 @@ const Slotpage2 = () => {
                                                     }}
                                                     className='w-100'
                                                     style={buttonStyle}
-                                                    disabled={!isAvailable} // Disable button if past deadline
+                                                    disabled={!isAvailable} // Disable button if past cutoff time
                                                 >
                                                     <Container className={`${isAvailable ? "session1" : "session"} p-lg-3`}>
                                                         {formatTimeTo12Hour(session.time)} {session.title ? `- ${session.title}` : ""}
