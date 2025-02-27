@@ -117,7 +117,7 @@ const Pastevents = () => {
                 setGalleryId(index)
                 setShow1(true)
               }} className={index >= 3 ? 'mt-3 mb-2' : 'mb-2'}> {/* Reduced the margin-top and margin-bottom */}
-                <img src={event.img} className='events img-fluid' alt={event.title} />
+                <img src={event.img} className=' img-fluid' alt={event.title} />
                 <Card.Text className='my-3 homecounterlist text-center'>
                   {event.title}
                 </Card.Text>
