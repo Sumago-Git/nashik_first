@@ -191,17 +191,23 @@ const Homecounter = () => {
                     <Card.Footer style={{ maxHeight: "105px" }} className="p-0 bg-transparent py-3 my-md-3 my-lg-0 text-center d-none d-md-block">
 
                       <Button onClick={() => {
-                        navigate("/training")
+                        navigate("/training", {
+                          state: { buttonNumber: 1, btncategory: "RTO – Learner Driving License Holder Training" } // Pass your state here
+                        })
                         window.scroll(0, 600)
                       }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 '> Learning License </Button>
 
                       <Button onClick={() => {
-                        navigate("/training")
+                        navigate("/training", {
+                          state: { buttonNumber: 2, btncategory: "RTO – Suspended Driving License Holders Training" } // Pass your state here
+                        })
                         window.scroll(0, 0)
                       }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 '> Suspended License </Button>
 
                       <Button onClick={() => {
-                        navigate("/training")
+                        navigate("/training", {
+                          state: { buttonNumber: 3, btncategory: "RTO – Training for School Bus Driver" } // Pass your state here
+                        })
                         window.scroll(0, 0)
                       }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-lg-1 rounded-5 border-0 py-2 py-xxl-3 '> School Bus Driver </Button>
 
@@ -211,19 +217,25 @@ const Homecounter = () => {
                       <Row className='justify-content-center'>
                         <Col sm={12} lg={4} md={4}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 1, btncategory: "RTO – Learner Driving License Holder Training" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xl-3 w-100'> Learning License </Button>
                         </Col>
                         <Col sm={12} lg={4} md={4}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 2, btncategory: "RTO – Suspended Driving License Holders Training" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 w-100'> Suspended License </Button>
                         </Col>
                         <Col sm={12} lg={4} md={4}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 3, btncategory: "RTO – Training for School Bus Driver" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3 w-100'> School Bus Driver </Button>
                         </Col>
@@ -242,14 +254,18 @@ const Homecounter = () => {
                       <Row>
                         <Col lg={5} md={5}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 4, btncategory: "School Students Training – Group" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> School Students
                           </Button>
                         </Col>
                         <Col lg={7} md={7}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 5, btncategory: "College/Organization Training – Group" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }
                           } style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 py-xxl-3'> Adult (Institution)
@@ -262,13 +278,17 @@ const Homecounter = () => {
                       <Row className='justify-content-center'>
                         <Col sm={12}  >
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 4, btncategory: "School Students Training – Group" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 w-100'> School Students </Button>
                         </Col>
                         <Col sm={12}>
                           <Button onClick={() => {
-                            navigate("/training")
+                            navigate("/training", {
+                              state: { buttonNumber: 5, btncategory: "College/Organization Training – Group" } // Pass your state here
+                            })
                             window.scroll(0, 0)
                           }} style={{ backgroundColor: "#f96945" }} className='mx-1 my-2 my-md-1 rounded-5 border-0 py-2 w-100'> Adult Institution </Button>
                         </Col>

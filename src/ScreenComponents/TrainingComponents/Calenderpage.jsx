@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table, Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import leftarrow from "../../Assets/Assets/Training/leftarrow.png";
 import rightarrow from "../../Assets/Assets/Training/rightarrow.png";
 import lghead from "../../Assets/Assets/MainBanner/lghead.jpg"
@@ -22,7 +22,7 @@ const Calendar = () => {
     note: ""
   });
   const [dateStatuses, setDateStatuses] = useState({}); // State to store date statuses
-
+  const location = useLocation()
   useEffect(() => {
     if (selectedButton == "RTO – Learner Driving License Holder Training") {
       setCategoryData({
@@ -82,6 +82,22 @@ const Calendar = () => {
   useEffect(() => {
     getdata_here();
   }, [currentDate]);
+
+  useEffect(() => {
+    if (location.state) {
+      window.scrollBy(0, 1200);
+      if (window.innerWidth <= 768) {
+        window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
+      }
+      setSelectedButton(location.state.btncategory);
+      setbrno(location.state.buttonNumber);
+      getdata_here({
+        category: location.state.btncategory,
+        buttonNumber: location.state.buttonNumber,
+      })
+    }
+  }, [])
+
   const getdata_here = ({ category = selectedButton, buttonNumber = btno } = {}) => {
     axios.post('/Sessionslot/getAvailableslotslots', {
       year: currentYear.toString(),
@@ -182,8 +198,6 @@ const Calendar = () => {
     if (window.innerWidth <= 768) {
       window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
     }
-
-
     setSelectedButton(btncategory);
     setbrno(buttonNumber);
     getdata_here({
