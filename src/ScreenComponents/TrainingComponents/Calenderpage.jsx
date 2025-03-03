@@ -85,7 +85,7 @@ const Calendar = () => {
 
   useEffect(() => {
     if (location.state) {
-      window.scrollBy(0, 1200);
+      window.scrollBy(0, 800);
       if (window.innerWidth <= 768) {
         window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
       }
