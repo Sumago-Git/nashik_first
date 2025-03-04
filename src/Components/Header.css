@@ -287,3 +287,33 @@
 a:hover {
   color: #f17e3f;
 }
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: lightgray;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Wrapper to allow continuous scrolling */
+.marquee-wrapper {
+  display: flex;
+  width: 200%; /* Ensures continuous scrolling effect */
+  animation: scrollText 10s linear infinite;
+}
+
+/* Marquee text */
+.marquee {
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent text from resizing */
+  width: 100%; /* Ensures text spans full width */
+  display: inline-block;
+}
+
+/* Scrolling effect */
+@keyframes scrollText {
+  from { transform: translateX(0); } /* Start from right */
+  to { transform: translateX(-50%); } /* Move left and seamlessly repeat */
+}

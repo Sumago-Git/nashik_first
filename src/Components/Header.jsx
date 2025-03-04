@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom'; // Import useLocation
 import '../Components/Header.css';
 import Container from 'react-bootstrap/Container';
@@ -8,12 +8,13 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo1 from '../Assets/Assets/Home/logo1.png';
 import traffic from '../Assets/Assets/Homecounter/traffic.png';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import axios from 'axios';
 
 const Header = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation(); // Get the current route
-
+  const [notification, setNotification] = useState([])
   const handleClose = () => {
     setShowOffcanvas(false);
     window.scrollTo(0, 0);
@@ -26,6 +27,16 @@ const Header = () => {
 
   // Function to check if a route is active
   const isActive = (path) => location.pathname === path;
+
+  useEffect(() => {
+    axios.get("/notification/get-notification").then((res) => {
+      console.log("res______________", res.data.responseData);
+      setNotification(res.data.responseData)
+    }).catch((err) => {
+      console.log("err", err);
+
+    })
+  }, [])
 
   return (
     <>
@@ -141,7 +152,12 @@ const Header = () => {
         </Container>
         <img src={traffic} className="logo2 d-none d-lg-block " alt="Logo" />
       </Navbar>
-
+      {
+        notification[0]?.isActive &&
+        <div style={{ background: "floralwhite" }} className='d-flex align-items-center justify-content-center py-1'>
+          <marquee className="text-danger fw-bold text-capitalize">{notification[0].name}</marquee>
+        </div>
+      }
       {/* Add some styles to highlight the active link */}
       <style jsx>{`
         .active {
