@@ -85,9 +85,9 @@ const Calendar = () => {
 
   useEffect(() => {
     if (location.state) {
-      window.scrollBy(0, 800);
+      window.scrollTo(0, 200);
       if (window.innerWidth <= 768) {
-        window.scrollBy(0, 1400); // Scroll 100 pixels down for mobile view
+        window.scrollTo(0, 500); // Scroll 100 pixels down for mobile view
       }
       setSelectedButton(location.state.btncategory);
       setbrno(location.state.buttonNumber);
